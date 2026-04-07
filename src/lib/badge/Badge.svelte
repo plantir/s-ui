@@ -1,78 +1,85 @@
 <script lang="ts">
-  import type { BadgeProps, ParamsType } from "../types.js";
-  import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import clsx from "clsx";
-  import { fade } from "svelte/transition";
-  import { badge } from "./theme";
-  import { createDismissableContext } from "$lib/utils/dismissable";
-  import { untrack } from "svelte";
+	import type { BadgeProps, ParamsType } from '../types.js';
+	import CloseButton from '$lib/utils/CloseButton.svelte';
+	import { getTheme } from '$lib/theme/themeUtils';
+	import clsx from 'clsx';
+	import { fade } from 'svelte/transition';
+	import { badge } from './theme';
+	import { createDismissableContext } from '$lib/utils/dismissable';
 
-  let {
-    children,
-    icon,
-    badgeStatus = $bindable(true),
-    color = "primary",
-    large = false,
-    dismissable = false,
-    class: className,
-    classes,
-    border,
-    href,
-    target,
-    rounded,
-    transition = fade,
-    params,
-    aClass,
-    ...restProps
-  }: BadgeProps = $props();
+	let {
+		children,
+		icon,
+		badgeStatus = $bindable(true),
+		color = 'primary',
+		size = 'sm',
+		dismissable = false,
+		class: className,
+		border,
+		href,
+		target,
+		rounded,
+		transition = fade,
+		params,
+		classes,
+		...restProps
+	}: BadgeProps = $props();
 
-  warnThemeDeprecation(
-    "Badge",
-    untrack(() => ({ aClass })),
-    { aClass: "linkClass" }
-  );
+	
 
-  const styling = $derived(classes ?? { linkClass: aClass });
+	const styling = $derived(classes ?? {});
 
-  // Theme context
-  const theme = $derived(getTheme("badge"));
+	// Theme context
+	const theme = $derived(getTheme('badge'));
 
-  const { base, linkClass } = $derived(
-    badge({ color, size: large ? "large" : "small", rounded, border, href: Boolean(href) })
-  );
+	const { base, linkClass } = $derived(badge({ color, size, rounded, border }));
 
-  let ref: HTMLDivElement | undefined = $state(undefined);
+	let ref: HTMLDivElement | undefined = $state(undefined);
 
-  const close = () => {
-    if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
-      badgeStatus = false;
-    }
-  };
+	const close = () => {
+		if (ref?.dispatchEvent(new Event('close', { bubbles: true, cancelable: true }))) {
+			badgeStatus = false;
+		}
+	};
 
-  createDismissableContext(close);
+	createDismissableContext(close);
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} bind:this={ref} transition:transition={params as ParamsType} class={base({ class: clsx(theme?.base, className) })}>
-    {#if href}
-      <a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling.linkClass) })}>
-        {@render children()}
-      </a>
-    {:else}
-      {@render children()}
-    {/if}
+	<div
+		{...restProps}
+		bind:this={ref}
+		transition:transition={params as ParamsType}
+		class={base({ class: clsx(theme?.base, className) })}
+	>
+		{#if href}
+			<a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling.linkClass) })}>
+				{@render children()}
+			</a>
+		{:else}
+			{@render children()}
+		{/if}
 
-    {#if dismissable}
-      {#if icon}
-        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge">
-          {@render icon()}
-        </CloseButton>
-      {:else}
-        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge" />
-      {/if}
-    {/if}
-  </div>
+		{#if dismissable}
+			{#if icon}
+				<CloseButton
+					class="ms-1.5 -me-1.5"
+					{color}
+					{size}
+					ariaLabel="Remove badge"
+				>
+					{@render icon()}
+				</CloseButton>
+			{:else}
+				<CloseButton
+					class="ms-1.5 -me-1.5"
+					{color}
+					{size}
+					ariaLabel="Remove badge"
+				/>
+			{/if}
+		{/if}
+	</div>
 {/if}
 
 <!--
@@ -88,13 +95,12 @@
 @prop large = false
 @prop dismissable = false
 @prop class: className
-@prop classes
 @prop border
 @prop href
 @prop target
 @prop rounded
 @prop transition = fade
 @prop params
-@prop aClass
+@prop classes
 @prop ...restProps
 -->

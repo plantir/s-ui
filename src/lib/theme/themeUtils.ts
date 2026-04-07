@@ -1,7 +1,8 @@
 import type { ThemeConfig } from "$lib";
-import type { ClassValue } from "clsx";
 import { getThemeContext } from "$lib/context";
 import { DEV } from "esm-env";
+
+export type { Classes } from "./slots";
 
 export function getTheme<K extends keyof ThemeConfig>(componentKey: K) {
   const themeState = getThemeContext();
@@ -11,11 +12,6 @@ export function getTheme<K extends keyof ThemeConfig>(componentKey: K) {
   const finalTheme = theme as ThemeConfig | undefined;
   return finalTheme?.[componentKey];
 }
-
-type Slots<T extends { slots: Record<string, unknown> }> = Omit<T["slots"], "base">;
-export type Classes<T extends { slots: Record<string, unknown> }> = {
-  classes?: Partial<{ [K in keyof Slots<T>]: ClassValue }>;
-};
 
 /**
  * Warns about deprecated theme-related props and suggests modern alternatives.

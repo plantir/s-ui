@@ -1,6 +1,7 @@
 import { createContext } from 'svelte';
 import type { ThemeConfig } from './theme';
 import type { AccordionContextType } from './types';
+import type { BottomNavContextType, ButtonGroupContextType } from './types copy';
 /**
  * Helper function to create a context with safe getter that returns undefined instead of throwing
  * when accessed outside of the context provider.
@@ -26,3 +27,12 @@ export { getThemeContext, setThemeContext };
 // Accordion
 const [getAccordionContext, setAccordionContext] = createSafeContext<AccordionContextType>();
 export { getAccordionContext, setAccordionContext };
+
+// BottomNav
+const [getBottomNavContext, setBottomNavContext] = createSafeContext<BottomNavContextType>();
+export { getBottomNavContext, setBottomNavContext };
+
+
+// ButtonGroup
+const [getButtonGroupContext, setButtonGroupContext] = createSafeContext<ButtonGroupContextType>();
+export { getButtonGroupContext, setButtonGroupContext };

@@ -1,17 +1,8 @@
 // src/lib/utils/theme.ts
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
+import type { Classes } from "$lib/theme/slots";
 
-export const alertVariants = {
-	default: 'bg-gray-100 text-gray-900 border-gray-300',
-	success: 'bg-green-100 text-green-900 border-green-300',
-	error: 'bg-red-100 text-red-900 border-red-300',
-	warning: 'bg-yellow-100 text-yellow-900 border-yellow-300',
-	info: 'bg-blue-100 text-blue-900 border-blue-300',
-	zard: 'bg-yellow-100 text-yellow-500 focus:ring-yellow-400 dark:bg-yellow-200 dark:text-yellow-600'
-};
 
-export type AlertVariant = keyof typeof alertVariants;
 export type CloseButtonVariants = VariantProps<typeof closeButton> & Classes<typeof closeButton>;
 
 export const closeButton = tv({
@@ -45,7 +36,8 @@ export const closeButton = tv({
       xs: "m-0.5 rounded-xs focus:ring-1 p-0.5",
       sm: "m-0.5 rounded-sm focus:ring-1 p-0.5",
       md: "m-0.5 rounded-lg focus:ring-2 p-1.5",
-      lg: "m-0.5 rounded-lg focus:ring-2 p-2.5"
+      lg: "m-0.5 rounded-lg focus:ring-2 p-2.5",
+      xl: "m-0.5 rounded-xl focus:ring-2 p-3"
     }
   },
   defaultVariants: {
@@ -70,13 +62,19 @@ export const closeButton = tv({
       }
     },
     {
-      size: ["md", "lg"],
+      size: ["md", "lg",],
       class: {
         svg: "w-5 h-5"
       }
     },
     {
-      size: ["xs", "sm", "md", "lg"],
+      size: ["xl"],
+      class: {
+        svg: "w-6 h-6"
+      }
+    },
+    {
+      size: ["xs", "sm", "md", "lg", 'xl'],
       color: "none",
       class: "focus:ring-0 rounded-none m-0"
     }

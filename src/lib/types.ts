@@ -21,7 +21,7 @@ import type {
 	HTMLVideoAttributes,
 	SVGAttributes,
 	FullAutoFill
-  } from "svelte/elements";
+} from 'svelte/elements';
 import type {
 	BlurParams,
 	FadeParams,
@@ -38,14 +38,39 @@ export type ParamsType =
 	| SlideParams
 	| ScaleParams
 	| undefined;
-import type { IndicatorVariants } from "$lib/indicator/theme";
-import type { BadgeVariants } from "$lib/badge/theme";
-import type { AvatarVariants } from "./avatar/theme";
-import type { AlertVariants } from './alert/theme.js';
 import type { AccordionVariants, AccordionItemVariants } from './accordion/theme.js';
+import type { AlertVariants } from './alert/theme.js';
+import type { AvatarVariants } from './avatar/theme.js';
+import type { badge, BadgeVariants } from './badge/theme.js';
+import type { IndicatorVariants } from './indicator/theme.js';
+import type { CloseButtonVariants } from './utils/theme.js';
+import type { BannerVariants } from './banner/theme.js';
+import type { SpinnerVariants } from './spinner/theme.js';
+import type { Classes } from './theme/slots.js';
+import type {
+	BottomNavHeaderItemVariants,
+	BottomNavHeaderVariants,
+	BottomNavItemVariants,
+	BottomNavVariants,
+	bottomNav,
+	bottomNavHeader,
+	bottomNavItem
+} from './bottom-navigation/theme.js';
+import type {
+	breadcrumb,
+	breadcrumbItem,
+	BreadcrumbItemVariants,
+	BreadcrumbVariants
+} from './breadcrumb/theme.js';
+import type { ButtonGroupVariants } from './button-group/theme.js';
+import type { ButtonVariants, GradientButtonVariantes, gradientButton } from './buttons/theme';
+import type { VariantProps } from 'tailwind-variants';
 
+export type AnchorButtonAttributes =
+	| ({ href: string } & HTMLAnchorAttributes)
+	| ({ href?: undefined } & HTMLButtonAttributes);
 export type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
-export type { ThemeConfig } from '$lib/theme';
+export type { ThemeConfig } from './theme';
 // Context Types
 // These types are used by the context system in $lib/context.ts
 // Accordion Context
@@ -92,13 +117,13 @@ export interface AlertProps
 // indicator
 export interface IndicatorProps extends HTMLAttributes<HTMLDivElement> {
 	children?: Snippet;
-	color?: IndicatorVariants["color"];
-	cornerStyle?: IndicatorVariants["cornerStyle"];
-	size?: IndicatorVariants["size"];
+	color?: IndicatorVariants['color'];
+	cornerStyle?: IndicatorVariants['cornerStyle'];
+	size?: IndicatorVariants['size'];
 	border?: boolean;
-	placement?: IndicatorVariants["placement"];
+	placement?: IndicatorVariants['placement'];
 	offset?: boolean;
-  }
+}
 
 // avatar
 export interface AvatarProps extends AvatarVariants, HTMLAttributes<HTMLDivElement> {
@@ -112,20 +137,141 @@ export interface AvatarProps extends AvatarVariants, HTMLAttributes<HTMLDivEleme
 	onclick?: () => void;
 }
 
-
-
-
 // badge
-export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
 	children: Snippet;
 	icon?: Snippet;
 	badgeStatus?: boolean;
 	large?: boolean;
 	dismissable?: boolean;
+	classes?: Classes<typeof badge>;
 	color?: BadgeVariants['color'];
-	href?: HTMLAnchorAttributes["href"];
-	target?: HTMLAnchorAttributes["target"];
+	href?: HTMLAnchorAttributes['href'];
+	target?: HTMLAnchorAttributes['target'];
 	transition?: TransitionFunc;
 	params?: ParamsType;
-	aClass?: ClassValue;
-  }
+}
+
+// banner
+export interface BannerProps
+	extends BannerVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color' | 'onclose'> {
+	header?: Snippet;
+	open?: boolean;
+	color?: BannerVariants['color'];
+	dismissable?: boolean;
+	innerClass?: ClassValue;
+	transition?: TransitionFunc;
+	params?: ParamsType;
+	closeClass?: ClassValue;
+	onclose?: (ev: MouseEvent) => void;
+}
+
+// bottom-navigation
+
+export interface BottomNavProps extends BottomNavVariants, HTMLAttributes<HTMLDivElement> {
+	children: Snippet;
+	header?: Snippet;
+	classes?: Classes<typeof bottomNav>;
+	activeUrl?: string;
+	outerClass?: ClassValue;
+	innerClass?: ClassValue;
+	activeClass?: ClassValue;
+}
+
+export type BottomNavItemProps = BottomNavItemVariants &
+	AnchorButtonAttributes & {
+		children: Snippet;
+		classes?: Classes<typeof bottomNavItem>;
+		btnName?: string;
+		activeClass?: ClassValue;
+		btnClass?: ClassValue;
+		spanClass?: ClassValue;
+		active?: boolean;
+	};
+
+export interface BottomNavHeaderProps
+	extends BottomNavHeaderVariants, HTMLAttributes<HTMLDivElement> {
+	children: Snippet;
+	classes?: Classes<typeof bottomNavHeader>;
+	outerClass?: ClassValue;
+	innerClass?: ClassValue;
+}
+
+export interface BottomNavHeaderItemProps
+	extends BottomNavHeaderItemVariants, HTMLButtonAttributes {
+	itemName: string;
+	active?: boolean;
+}
+
+// breadcrumb
+export interface BreadcrumbProps extends BreadcrumbVariants, HTMLAttributes<HTMLElement> {
+	children: Snippet;
+	classes?: Classes<typeof breadcrumb>;
+	solid?: boolean;
+	olClass?: ClassValue;
+	ariaLabel?: string;
+	breadcrumbClass?: ClassValue;
+}
+
+export interface BreadcrumbItemProps
+	extends BreadcrumbItemVariants, Classes<typeof breadcrumbItem>, HTMLLiAttributes {
+	children: Snippet;
+	classes?: Classes<typeof breadcrumbItem>;
+	icon?: Snippet;
+	home?: boolean;
+	href?: string;
+	linkClass?: ClassValue;
+	spanClass?: ClassValue;
+	homeClass?: ClassValue;
+}
+
+// buttongroup
+export interface ButtonGroupProps extends ButtonGroupVariants, HTMLAttributes<HTMLDivElement> {
+	children: Snippet;
+	disabled?: boolean;
+}
+
+// button
+export type GradientButtonColor = NonNullable<VariantProps<typeof gradientButton>['color']>;
+
+export type HTMLButtonOrAnchorAttributes = Omit<
+	HTMLButtonAttributes & HTMLAnchorAttributes,
+	'color'
+>;
+
+export type ButtonProps = ButtonVariants &
+	AnchorButtonAttributes & {
+		tag?: string;
+		disabled?: boolean;
+		outline?: boolean;
+		shadow?: boolean;
+		loading?: boolean;
+		spinnerProps?: SpinnerProps;
+	};
+
+export interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {
+	tag?: string;
+	color?: GradientButtonColor;
+	disabled?: boolean;
+	href?: string;
+	btnClass?: ClassValue;
+}
+
+// CloseButton
+export type CloseButtonProps = CloseButtonVariants &
+	AnchorButtonAttributes & {
+		onclick?: (ev: MouseEvent) => void;
+		name?: string;
+		ariaLabel?: string;
+		class?: string;
+		svgClass?: string;
+	};
+
+// spinner
+export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
+	type?: 'default' | 'dots' | 'bars' | 'pulse' | 'orbit';
+	color?: SpinnerVariants['color'];
+	size?: SpinnerVariants['size'];
+	currentFill?: string;
+	currentColor?: string;
+}
