@@ -5,8 +5,15 @@ export { avatar } from '../avatar';
 export { indicator } from '../indicator';
 export { badge } from '../badge';
 export { banner } from '../banner';
-export { bottomNav, bottomNavItem, bottomNavHeader, bottomNavHeaderItem } from '../bottom-navigation';
+export {
+	bottomNav,
+	bottomNavItem,
+	bottomNavHeader,
+	bottomNavHeaderItem
+} from '../bottom-navigation';
 export { breadcrumb, breadcrumbItem } from '../breadcrumb';
 export { buttonGroup } from '../button-group';
-export { button, gradientButton } from '../buttons';
+export { button, gradientButton, type ButtonColor } from '../buttons';
+export { card } from '../card';
+export { carousel, slide, carouselIndicators, controlButton, thumbnail, thumbnails } from '../carousel';
 export { spinner } from '../spinner';

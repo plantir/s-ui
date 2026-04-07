@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { gradientButton } from "./theme";
+  import { gradientButton } from "./theme.js";
   import clsx from "clsx";
-  import type { GradientButtonProps } from "$lib";
+  import type { GradientButtonProps } from "../types.js";
   import Button from "./Button.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
   import { getButtonGroupContext } from "$lib/context";

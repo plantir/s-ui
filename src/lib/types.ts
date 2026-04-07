@@ -42,8 +42,9 @@ import type { AccordionVariants, AccordionItemVariants } from './accordion/theme
 import type { AlertVariants } from './alert/theme.js';
 import type { AvatarVariants } from './avatar/theme.js';
 import type { badge, BadgeVariants } from './badge/theme.js';
-import type { IndicatorVariants } from './indicator/theme.js';
+import type { card, CardVariants } from '$lib/card/theme.js';
 import type { CloseButtonVariants } from './utils/theme.js';
+import type { IndicatorVariants } from './indicator/theme.js';
 import type { BannerVariants } from './banner/theme.js';
 import type { SpinnerVariants } from './spinner/theme.js';
 import type { Classes } from './theme/slots.js';
@@ -63,14 +64,21 @@ import type {
 	BreadcrumbVariants
 } from './breadcrumb/theme.js';
 import type { ButtonGroupVariants } from './button-group/theme.js';
-import type { ButtonVariants, GradientButtonVariantes, gradientButton } from './buttons/theme';
+import type { ButtonVariants, GradientButtonVariantes, gradientButton } from './buttons/theme.js';
 import type { VariantProps } from 'tailwind-variants';
+import type { carousel, CarouselVariants, SlideVariants } from './carousel/theme.js';
+import type { Slide } from './carousel/index.js';
 
 export type AnchorButtonAttributes =
 	| ({ href: string } & HTMLAnchorAttributes)
 	| ({ href?: undefined } & HTMLButtonAttributes);
 export type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
 export type { ThemeConfig } from './theme';
+
+export type AnchorDivAttributes =
+	| ({ href: string } & HTMLAnchorAttributes)
+	| ({ href?: undefined } & HTMLAttributes<HTMLDivElement>);
+
 // Context Types
 // These types are used by the context system in $lib/context.ts
 // Accordion Context
@@ -239,24 +247,117 @@ export type HTMLButtonOrAnchorAttributes = Omit<
 	'color'
 >;
 
-export type ButtonProps = ButtonVariants &
-	AnchorButtonAttributes & {
-		tag?: string;
-		disabled?: boolean;
-		outline?: boolean;
-		shadow?: boolean;
-		loading?: boolean;
-		spinnerProps?: SpinnerProps;
-	};
-
+// export type ButtonProps = ButtonVariants &
+// 	AnchorButtonAttributes & {
+// 		tag?: string;
+// 		disabled?: boolean;
+// 		outline?: boolean;
+// 		shadow?: boolean;
+// 		loading?: boolean;
+// 		spinnerProps?: SpinnerProps;
+// 	};
+export interface ButtonProps extends ButtonVariants, HTMLButtonOrAnchorAttributes {
+	tag?: string;
+	color?: ButtonVariants['color'];
+	disabled?: boolean;
+	outline?: boolean;
+	shadow?: boolean;
+	pill?: boolean;
+	group?: boolean;
+	checked?: boolean;
+	size?: ButtonVariants['size'];
+	loading?: boolean;
+	spinnerProps?: SpinnerProps;
+}
 export interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {
 	tag?: string;
-	color?: GradientButtonColor;
+	color?: GradientButtonVariantes['color'];
 	disabled?: boolean;
 	href?: string;
 	btnClass?: ClassValue;
 }
 
+// card
+// export type CardProps = Omit<CardVariants, 'href'> &
+// 	AnchorDivAttributes & {
+// 		img?: string;
+// 		imgClass?: ClassValue;
+// 		contentClass?: string;
+// 	};
+
+export interface CardProps extends Omit<CardVariants, 'href'>, HTMLAttributes<HTMLDivElement> {
+	color?: CardVariants['color'];
+	classes?: Classes<typeof card>;
+	href?: string;
+	img?: string;
+	imgClass?: ClassValue;
+	contentClass?: string;
+}
+// carousel
+
+export interface CarouselProps
+	extends CarouselVariants, Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'onchange'> {
+	children?: Snippet<[number]>;
+	slide?: Snippet<[{ index: number; Slide: typeof Slide }]>;
+	images: HTMLImgAttributes[];
+	classes?: Classes<typeof carousel>;
+	index?: number;
+	slideDuration?: number;
+	transition?: TransitionFunc;
+	duration?: number;
+	disableSwipe?: boolean;
+	imgClass?: ClassValue;
+	onchange?: (x: HTMLImgAttributes) => void;
+	isPreload?: boolean;
+	slideFit?: SlideProps['fit'];
+}
+
+export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
+	children?: Snippet<[{ selected: boolean; index: number }]>;
+	activeClass?: ClassValue;
+	inactiveClass?: ClassValue;
+	position?: 'top' | 'bottom';
+}
+
+export interface ControlButtonProps extends HTMLButtonAttributes {
+	forward: boolean;
+	name?: string | null;
+	spanClass?: ClassValue;
+}
+
+export interface ControlsProps extends Omit<HTMLButtonAttributes, 'children'> {
+	children?: Snippet<[(forward: boolean) => void]>;
+}
+
+export interface ThumbnailProps extends HTMLImgAttributes {
+	selected?: boolean;
+}
+
+export interface ThumbnailsProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
+	children?: Snippet<
+		[{ image: HTMLImgAttributes; selected: boolean; imgClass: string; Thumbnail: Component }]
+	>;
+	images: HTMLImgAttributes[];
+	index: number;
+	ariaLabel?: string;
+	imgClass?: ClassValue;
+	throttleDelay?: number;
+}
+
+export interface SlideProps extends SlideVariants, HTMLImgAttributes {
+	image: HTMLImgAttributes;
+	transition?: TransitionFunc; // Optional transition function, overrides default slide transition
+}
+
+// Carousel Context
+export interface CarouselContextType {
+	images: HTMLImgAttributes[];
+	index: number;
+	lastSlideChange: number;
+	slideDuration: number;
+	forward: boolean;
+	changeSlide: (newIndex: number) => void;
+}
 // CloseButton
 export type CloseButtonProps = CloseButtonVariants &
 	AnchorButtonAttributes & {

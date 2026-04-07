@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { breadcrumb } from "./theme";
+  import { breadcrumb } from "./theme.js";
   import clsx from "clsx";
-  import type { BreadcrumbProps } from "$lib";
+  import type { BreadcrumbProps } from "../types.js";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { untrack } from "svelte";
 

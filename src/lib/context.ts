@@ -36,3 +36,8 @@ export { getBottomNavContext, setBottomNavContext };
 // ButtonGroup
 const [getButtonGroupContext, setButtonGroupContext] = createSafeContext<ButtonGroupContextType>();
 export { getButtonGroupContext, setButtonGroupContext };
+
+
+// Carousel
+const [getCarouselContext, setCarouselContext] = createSafeContext<CarouselContextType>();
+export { getCarouselContext, setCarouselContext };

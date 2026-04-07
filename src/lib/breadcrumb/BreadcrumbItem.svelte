@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { BreadcrumbItemProps } from "$lib";
+  import type { BreadcrumbItemProps } from "../types.js";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { breadcrumbItem } from "./theme";
+  import { breadcrumbItem } from "./theme.js";
 
   let { children, icon, home = false, href, linkClass, spanClass, homeClass, class: className, classes, ...restProps }: BreadcrumbItemProps = $props();
 

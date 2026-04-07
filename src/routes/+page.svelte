@@ -14,13 +14,31 @@
 		BreadcrumbItem,
 		ButtonGroup,
 		Button,
-		GradientButton
+		Card,
+		GradientButton,
+		Carousel,
+		Controls,
+		CarouselIndicators,
+		Thumbnails
 	} from '$lib';
 	import { page } from '$app/state';
 	const theme: ThemeConfig = {
 		alert: 'p-3'
 	};
+	export const images = [
+		{
+			alt: 'Cosmic timetraveler',
+			src: 'https://flowbite-svelte.com/images/carousel/cosmic-timetraveler-pYyOZ8q7AII-unsplash.webp',
+			title: 'cosmic-timetraveler-pYyOZ8q7AII-unsplash.com'
+		},
+		{
+			alt: 'Cosmic timetraveler',
+			src: 'https://flowbite-svelte.com/images/carousel/sergey-pesterev-tMvuB9se2uQ-unsplash.webp',
+			title: 'cosmic-timetraveler-pYyOZ8q7AII-unsplash.com'
+		}
+	];
 	let activeUrl = $derived(page.url.pathname);
+	let index = $state(0);
 </script>
 
 <ThemeProvider {theme}>
@@ -222,6 +240,24 @@
 			<GradientButton color="pinkToOrange">Pink to Orange</GradientButton>
 			<GradientButton color="tealToLime">Teal to Lime</GradientButton>
 			<GradientButton color="redToYellow">Red to Yellow</GradientButton>
+		</div>
+		<h1>card</h1>
+		<Card href="/cards" class="p-4 sm:p-6 md:p-8">
+			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+				Noteworthy technology acquisitions 2021
+			</h5>
+			<p class="leading-tight font-normal text-gray-700 dark:text-gray-400">
+				Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse
+				chronological order.
+			</p>
+		</Card>
+		<h1>carousel</h1>
+		<div class="max-w-4xl space-y-4">
+			<Carousel {images} bind:index>
+				<Controls />
+				<CarouselIndicators />
+			</Carousel>
+			<Thumbnails {images} bind:index />
 		</div>
 	</div>
 </ThemeProvider>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { spinner } from "./theme";
-  import type { SpinnerProps } from "$lib/types";
+  import { spinner } from "./theme.js";
+  import type { SpinnerProps } from "../types.js";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { type = "default", color = "primary", size = "8", class: className, currentFill = "inherit", currentColor = "currentColor", ...restProps }: SpinnerProps = $props();

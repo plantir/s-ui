@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { indicator } from "./theme";
+  import { indicator } from "./theme.js";
   import clsx from "clsx";
-  import type { IndicatorProps } from "$lib";
+  import type { IndicatorProps } from "../types.js";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, color = "primary", cornerStyle = "circular", size = "md", border = false, placement, offset = true, class: className, ...restProps }: IndicatorProps = $props();

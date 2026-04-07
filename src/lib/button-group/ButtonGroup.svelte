@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { buttonGroup } from "./theme";
+  import { buttonGroup } from "./theme.js";
   import clsx from "clsx";
-  import type { ButtonGroupProps } from "$lib";
+  import type { ButtonGroupProps } from "../types.js";
   import { getTheme } from "$lib/theme/themeUtils";
   import { setButtonGroupContext } from "$lib/context";
 

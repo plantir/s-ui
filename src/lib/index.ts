@@ -17,5 +17,14 @@ export { default as Button } from "./buttons/Button.svelte";
 export { default as GradientButton } from "./buttons/GradientButton.svelte";
 export { default as Spinner } from "./spinner/Spinner.svelte";
 export { default as Indicator } from './indicator/Indicator.svelte';
+export { default as Card } from './card/Card.svelte';
+export { default as Carousel } from './carousel/Carousel.svelte';
+export { default as ControlButton } from './carousel/ControlButton.svelte';
+export { default as Controls } from './carousel/Controls.svelte';
+export { default as CarouselIndicators } from './carousel/CarouselIndicators.svelte';
+export { default as Thumbnails } from './carousel/Thumbnails.svelte';
+export { default as Slide } from './carousel/Slide.svelte';
+export { default as Thumbnail } from './carousel/Thumbnail.svelte';
+
 export { type ThemeConfig, ThemeProvider } from '$lib/theme';
 export * from './types';

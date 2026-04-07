@@ -1,9 +1,9 @@
 <script lang="ts">
   import clsx from "clsx";
   import { Spinner } from "$lib";
-  import type { ButtonProps } from "$lib";
+  import type { ButtonProps } from "../types.js";
   import { getTheme } from "$lib/theme/themeUtils";
-  import { button } from "./theme";
+  import { button } from "./theme.js";
   import { getButtonGroupContext } from "$lib/context";
 
   const groupCtx = getButtonGroupContext();
