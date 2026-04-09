@@ -38,6 +38,7 @@ export type ParamsType =
 	| SlideParams
 	| ScaleParams
 	| undefined;
+import type { Day } from "date-fns";
 import type { AccordionVariants, AccordionItemVariants } from './accordion/theme.js';
 import type { AlertVariants } from './alert/theme.js';
 import type { AvatarVariants } from './avatar/theme.js';
@@ -70,7 +71,7 @@ import type { carousel, CarouselVariants, SlideVariants } from './carousel/theme
 import type { Slide } from './carousel/index.js';
 import type { ClipboardVariants } from './clipboard/theme.js';
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants, toolbar } from './toolbar/theme.js';
-import type { DatepickerVariants } from './datepicker/theme.js';
+import type { DatepickerVariants,datepicker } from './datepicker/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -488,16 +489,17 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   placeholder?: string;
   disabled?: boolean;
   required?: boolean;
-  color?: ButtonProps["color"];
+  color?: ButtonVariants['color'];
   inline?: boolean;
   autohide?: boolean;
   showActionButtons?: boolean;
   title?: string;
+  classes?: Classes<typeof datepicker>;
   onselect?: (x: DateOrRange) => void;
   onclear?: () => void;
   onapply?: (x: DateOrRange) => void;
   inputmode?: HTMLInputAttributes["inputmode"];
-  monthColor?: ButtonProps["color"];
+  monthColor?:ButtonVariants['color'];
   btnClass?: ClassValue;
   inputClass?: ClassValue;
   monthBtnSelected?: ClassValue;

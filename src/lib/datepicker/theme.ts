@@ -1,7 +1,6 @@
-import type { Classes } from "$lib/theme/themeUtils";
 import { tv, type VariantProps } from "tailwind-variants";
 
-export type DatepickerVariants = VariantProps<typeof datepicker> & Classes<typeof datepicker>;
+export type DatepickerVariants = VariantProps<typeof datepicker> ;
 
 export const datepicker = tv({
   slots: {
