@@ -45,16 +45,22 @@
 		drawer({ placement, width, modal: offset && !open ? false : modal, shifted })
 	);
 
-	let x = $state(),
-		y = $state();
+	let cachedOffset = $state<{ x?: number; y?: number; placement?: string }>({});
 
-	let transition_params = $derived({
-		x,
-		y,
-		duration: 300,
-		easing: sineIn,
-		opacity: 1,
-		...transitionParams
+	let transition_params = $derived.by(() => {
+		const useCache = cachedOffset.placement === placement;
+		const vw = typeof window !== 'undefined' ? window.innerWidth : 320;
+		const vh = typeof window !== 'undefined' ? window.innerHeight : 320;
+		const w = width === 'full' ? vw : width === 'half' ? vw / 2 : 320;
+
+		return {
+			x: (useCache ? cachedOffset.x : undefined) ?? (placement === 'left' ? -w : placement === 'right' ? w : undefined),
+			y: (useCache ? cachedOffset.y : undefined) ?? (placement === 'top' ? -vh : placement === 'bottom' ? vh : undefined),
+			duration: 300,
+			easing: sineIn,
+			opacity: 1,
+			...transitionParams
+		};
 	});
 
 	function init(node: HTMLDialogElement) {
@@ -80,18 +86,11 @@
 
 		const rect = dlg.getBoundingClientRect();
 
-		x =
-			placement === 'left'
-				? rect.left
-				: placement === 'right'
-					? rect.right - innerWidth
-					: undefined;
-		y =
-			placement === 'top'
-				? rect.top
-				: placement === 'bottom'
-					? rect.bottom - innerHeight
-					: undefined;
+		cachedOffset = {
+			x: placement === 'left' ? rect.left : placement === 'right' ? rect.right - innerWidth : undefined,
+			y: placement === 'top' ? rect.top : placement === 'bottom' ? rect.bottom - innerHeight : undefined,
+			placement
+		};
 
 		await tick(); // let transition start
 
