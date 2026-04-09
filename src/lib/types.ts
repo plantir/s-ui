@@ -72,6 +72,7 @@ import type { Slide } from './carousel/index.js';
 import type { ClipboardVariants } from './clipboard/theme.js';
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants, toolbar } from './toolbar/theme.js';
 import type { DatepickerVariants,datepicker } from './datepicker/theme.js';
+import type { android, AndroidVariants, defaultMockup, DefaultMockupVariants, desktop, DesktopVariants, ios, IosVariants, laptop, LaptopVariants, smartwatch, SmartwatchVariants, tablet, TabletVariants, } from './device-mockups/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -82,6 +83,8 @@ export type AnchorButtonAttributes =
 	| ({ href?: undefined } & HTMLButtonAttributes);
 export type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
 export type { ThemeConfig } from './theme';
+
+export type DeviceVariantType = "default" | "ios" | "android" | "tablet" | "laptop" | "desktop" | "smartwatch";
 
 export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
 
@@ -510,6 +513,88 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   inputProps?: HTMLInputAttributes;
 }
 
+
+// device-mockups
+export interface DeviceMockupProps {
+	children: Snippet;
+	classes?: Classes<typeof desktop> | Classes<typeof android> | Classes<typeof ios> | Classes<typeof laptop> | Classes<typeof smartwatch> | Classes<typeof tablet>;
+	device?: DeviceVariantType;
+  }
+  
+  export interface DesktopProps extends DesktopVariants, HTMLAttributes<HTMLElement> {
+	children?: Snippet;
+	classes?: Classes<typeof desktop>;
+	divClass?: ClassValue;
+	div2Class?: ClassValue;
+	div3Class?: ClassValue;
+	div4Class?: ClassValue;
+  }
+  
+  export interface LaptopProps extends LaptopVariants, HTMLAttributes<HTMLDivElement> {
+	children?: Snippet;
+	classes?: Classes<typeof laptop>;
+	divClass?: ClassValue;
+	div2Class?: ClassValue;
+	div3Class?: ClassValue;
+	div4Class?: ClassValue;
+  }
+  
+  export interface AndroidProps extends Omit<AndroidVariants, 'slot'>, HTMLAttributes<HTMLDivElement> {
+	children?: Snippet;
+	classes?: Classes<typeof android>;
+	divClass?: ClassValue;
+	div2Class?: ClassValue;
+	div3Class?: ClassValue;
+	div4Class?: ClassValue;
+	div5Class?: ClassValue;
+	div6Class?: ClassValue;
+	div7Class?: ClassValue;
+  }
+  
+  export interface DefaultMockupProps extends Omit<DefaultMockupVariants, 'slot'>, HTMLAttributes<HTMLDivElement> {
+	children?: Snippet;
+	classes?: Classes<typeof defaultMockup>;
+	divClass?: ClassValue;
+	div2Class?: ClassValue;
+	div3Class?: ClassValue;
+	div4Class?: ClassValue;
+	div5Class?: ClassValue;
+	div6Class?: ClassValue;
+  }
+  
+  export interface IosProps extends Omit<IosVariants, 'slot'>, HTMLAttributes<HTMLDivElement> {
+	children?: Snippet;
+	classes?: Classes<typeof ios>;
+	divClass?: ClassValue;
+	div2Class?: ClassValue;
+	div3Class?: ClassValue;
+	div4Class?: ClassValue;
+	div5Class?: ClassValue;
+	div6Class?: ClassValue;
+  }
+  
+  export interface SmartwatchProps extends Omit<SmartwatchVariants, 'slot'>, HTMLAttributes<HTMLDivElement> {
+	children?: Snippet;
+	classes?: Classes<typeof smartwatch>;
+	divClass?: ClassValue;
+	div2Class?: ClassValue;
+	div3Class?: ClassValue;
+	div4Class?: ClassValue;
+	div5Class?: ClassValue;
+	div6Class?: ClassValue;
+  }
+  
+  export interface TabletProps extends Omit<TabletVariants, 'slot'>, HTMLAttributes<HTMLDivElement> {
+	children?: Snippet;
+	classes?: Classes<typeof tablet>;
+	divClass?: ClassValue;
+	div2Class?: ClassValue;
+	div3Class?: ClassValue;
+	div4Class?: ClassValue;
+	div5Class?: ClassValue;
+	div6Class?: ClassValue;
+  }
+  
 // toolbar
 export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
 	classes?: Classes<typeof toolbar>;

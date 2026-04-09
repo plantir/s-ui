@@ -22,12 +22,16 @@
 		Clipboard,
 		DarkMode,
 		Datepicker,
-		Thumbnails
+		DeviceMockup,
+		Ios,
+		Thumbnails,
+		Android
 	} from '$lib';
 	import { page } from '$app/state';
 	const theme: ThemeConfig = {
 		alert: 'p-3'
 	};
+	let open = $state(false);
 	let selectedDate = $state<Date | undefined>(undefined);
 	let dateRange: { from: Date | undefined; to: Date | undefined } = $state({
 		from: undefined,
@@ -329,5 +333,92 @@
 				{dateRange.to ? dateRange.to.toLocaleDateString() : 'None'}
 			</p>
 		</div>
+		<h1>device mockup</h1>
+		<DeviceMockup
+			device="android"
+			classes={{
+				leftBot: 'bg-red-500',
+				right: 'bg-blue-500',
+				leftMid: 'bg-purple-500',
+				leftTop: 'bg-yellow-500'
+			}}
+		>
+			<img
+				src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
+				class="h-[572px] w-[272px] dark:hidden"
+				alt="default example 1"
+			/>
+			<img
+				src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-dark.png"
+				class="hidden h-[572px] w-[272px] dark:block"
+				alt="default example 2"
+			/>
+		</DeviceMockup>
+		<Ios
+			classes={{
+				leftBot: 'bg-red-500',
+				right: 'bg-blue-500',
+				top: 'bg-green-500',
+				leftTop: 'bg-yellow-500',
+				slot: 'bg-pink-500'
+			}}
+		>
+			<img
+				src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
+				class="h-[572px] w-[272px] dark:hidden"
+				alt="default example 1"
+			/>
+			<img
+				src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-dark.png"
+				class="hidden h-[572px] w-[272px] dark:block"
+				alt="default example 2"
+			/>
+		</Ios>
+		<Android
+			classes={{
+				leftBot: 'bg-red-500',
+				right: 'bg-blue-500',
+				top: 'bg-green-500',
+				leftTop: 'bg-yellow-500',
+				leftMid: 'bg-purple-500',
+				slot: 'bg-pink-500'
+			}}
+		>
+			<img
+				src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
+				class="h-[572px] w-[272px] dark:hidden"
+				alt="default example 1"
+			/>
+			<img
+				src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-dark.png"
+				class="hidden h-[572px] w-[272px] dark:block"
+				alt="default example 2"
+			/>
+		</Android>
+
+		<h1>drawer</h1>
+		<div class="text-center">
+			<Button onclick={() => (open = true)}>Show drawer</Button>
+		</div>
+
+		<Drawer bind:open aria-labelledby="drawer-label">
+			<h5
+				id="drawer-label"
+				class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400"
+			></h5>
+			<p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+				Supercharge your hiring by taking advantage of our <a
+					href="/"
+					class="text-primary-600 underline hover:no-underline dark:text-primary-500"
+					>limited-time sale</a
+				>
+				for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1
+				design job board.
+			</p>
+			<div class="grid grid-cols-2 gap-2">
+				<Button color="light" href="/">Learn more</Button>
+				<Button href="/" class="px-4">Get access</Button>
+			</div>
+		</Drawer>
 	</div>
 </ThemeProvider>
