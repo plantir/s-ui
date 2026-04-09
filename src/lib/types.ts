@@ -68,16 +68,26 @@ import type { ButtonVariants, GradientButtonVariantes, gradientButton } from './
 import type { VariantProps } from 'tailwind-variants';
 import type { carousel, CarouselVariants, SlideVariants } from './carousel/theme.js';
 import type { Slide } from './carousel/index.js';
-
+import type { ClipboardVariants } from './clipboard/theme.js';
+import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants, toolbar } from './toolbar/theme.js';
+import type { DatepickerVariants } from './datepicker/theme.js';
+export declare const xs = "xs";
+export declare const sm = "sm";
+export declare const md = "md";
+export declare const lg = "lg";
+export declare const xl = "xl";
 export type AnchorButtonAttributes =
 	| ({ href: string } & HTMLAnchorAttributes)
 	| ({ href?: undefined } & HTMLButtonAttributes);
 export type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
 export type { ThemeConfig } from './theme';
 
+export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
+
 export type AnchorDivAttributes =
 	| ({ href: string } & HTMLAnchorAttributes)
 	| ({ href?: undefined } & HTMLAttributes<HTMLDivElement>);
+
 
 // Context Types
 // These types are used by the context system in $lib/context.ts
@@ -86,8 +96,78 @@ export interface AccordionContextType {
 	flush?: boolean;
 	activeClass?: string | null;
 	inactiveClass?: string | null;
-	transitionType?: TransitionFunc | 'none';
-}
+	transitionType?: TransitionFunc | "none";
+  }
+  
+  // BottomNav Context
+  export interface BottomNavContextType {
+	activeClass?: string | null;
+	activeUrl?: string;
+	navType?: BottomNavVariants["navType"];
+  }
+  
+  // Carousel Context
+  export interface CarouselContextType {
+	images: HTMLImgAttributes[];
+	index: number;
+	lastSlideChange: number;
+	slideDuration: number;
+	forward: boolean;
+	changeSlide: (newIndex: number) => void;
+  }
+  
+  // Drawer Context
+  export interface DrawerContextType {
+	placement: "left" | "right" | "top" | "bottom";
+  }
+  
+  // Dropdown Context
+  export interface DropdownContextType {
+	activeUrl: string;
+  }
+  
+  // Pagination Context
+  export interface PaginationContextType {
+	group: boolean;
+	table?: boolean;
+	size?: "default" | "large";
+	activeClasses?: ClassValue;
+  }
+  
+  // ButtonToggle Context
+  export interface ButtonToggleContextType {
+	toggleSelected: (toggleValue: string) => void;
+	isSelected: (toggleValue: string) => boolean;
+	multiSelect: boolean;
+	color?: string;
+	size?: "xs" | "sm" | "md" | "lg" | "xl";
+	roundedSize?: "sm" | "md" | "lg" | "xl" | "full"; // Aligned with ButtonToggleGroupProps
+	ctxIconClass?: string;
+	ctxBtnClass?: string;
+  }
+  
+  // List Context
+  export interface ListContextType {
+	ctxClass: string;
+  }
+  
+  // Toolbar Context
+  export interface ToolbarContextType {
+	separators: boolean;
+  }
+  
+  // ListGroup Context
+  export interface ListGroupContextType {
+	active?: boolean;
+	horizontal?: boolean;
+  }
+  
+  // ButtonGroup Context
+  export interface ButtonGroupContextType {
+	size: SizeType;
+	disabled?: boolean;
+  }
+
 export interface AccordionProps
 	extends AccordionVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
 	children: Snippet;
@@ -367,7 +447,81 @@ export type CloseButtonProps = CloseButtonVariants &
 		class?: string;
 		svgClass?: string;
 	};
+// clipboard
+export interface ClipboardProps extends ClipboardVariants, Omit<ButtonProps, 'children'> {
+	children: Snippet<[boolean]>;
+	value?: string;
+	success?: boolean;
+	showLabel?: boolean;
+	embedded?: boolean;
+}
 
+// darkmode
+export interface DarkmodeProps extends HTMLButtonAttributes {
+	lightIcon?: Snippet;
+	darkIcon?: Snippet;
+	size?: 'sm' | 'md' | 'lg';
+	ariaLabel?: string;
+}
+
+// datepicker
+export type DateOrRange = Date | { from?: Date; to?: Date };
+
+export interface ActionSlotParams {
+  selectedDate: DateOrRange | undefined;
+  handleClear: () => void;
+  handleApply: (date: DateOrRange) => void;
+  close: () => void;
+}
+
+export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes<HTMLDivElement>, "onselect"> {
+  value?: Date;
+  defaultDate?: Date | null;
+  range?: boolean;
+  rangeFrom?: Date;
+  rangeTo?: Date;
+  availableFrom?: Date | null;
+  availableTo?: Date | null;
+  locale?: string;
+  firstDayOfWeek?: Day;
+  dateFormat?: Intl.DateTimeFormatOptions;
+  placeholder?: string;
+  disabled?: boolean;
+  required?: boolean;
+  color?: ButtonProps["color"];
+  inline?: boolean;
+  autohide?: boolean;
+  showActionButtons?: boolean;
+  title?: string;
+  onselect?: (x: DateOrRange) => void;
+  onclear?: () => void;
+  onapply?: (x: DateOrRange) => void;
+  inputmode?: HTMLInputAttributes["inputmode"];
+  monthColor?: ButtonProps["color"];
+  btnClass?: ClassValue;
+  inputClass?: ClassValue;
+  monthBtnSelected?: ClassValue;
+  monthBtn?: ClassValue;
+  translationLocale?: string;
+  elementRef?: HTMLInputElement;
+  actionSlot?: Snippet<[ActionSlotParams]>;
+  inputProps?: HTMLInputAttributes;
+}
+
+// toolbar
+export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+	classes?: Classes<typeof toolbar>;
+	color?: ToolbarVariants['color'];
+	end?: Snippet;
+  }
+  
+  export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
+  
+  export type ToolbarButtonProps = ToolbarButtonVariants &
+	AnchorButtonAttributes & {
+	  name?: string;
+	};
+  
 // spinner
 export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
 	type?: 'default' | 'dots' | 'bars' | 'pulse' | 'orbit';

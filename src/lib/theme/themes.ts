@@ -17,3 +17,6 @@ export { button, gradientButton, type ButtonColor } from '../buttons';
 export { card } from '../card';
 export { carousel, slide, carouselIndicators, controlButton, thumbnail, thumbnails } from '../carousel';
 export { spinner } from '../spinner';
+export { clipboard } from "../clipboard";
+export { darkmode } from "../darkmode";
+export { toolbar, toolbarGroup, toolbarButton } from "../toolbar";

@@ -19,13 +19,23 @@
 		Carousel,
 		Controls,
 		CarouselIndicators,
+		Clipboard,
+		DarkMode,
+		Datepicker,
 		Thumbnails
 	} from '$lib';
 	import { page } from '$app/state';
 	const theme: ThemeConfig = {
 		alert: 'p-3'
 	};
-	export const images = [
+	let selectedDate = $state<Date | undefined>(undefined);
+	let dateRange: { from: Date | undefined; to: Date | undefined } = $state({
+		from: undefined,
+		to: undefined
+	});
+	let value = $state('npm install flowbite');
+	let success = $state(false);
+	const images = [
 		{
 			alt: 'Cosmic timetraveler',
 			src: 'https://flowbite-svelte.com/images/carousel/cosmic-timetraveler-pYyOZ8q7AII-unsplash.webp',
@@ -258,6 +268,66 @@
 				<CarouselIndicators />
 			</Carousel>
 			<Thumbnails {images} bind:index />
+		</div>
+		<h1>clipboard</h1>
+		<div class="flex gap-x-1">
+			<input bind:value class="w-64" />
+			<Clipboard bind:value bind:success class="w-24">
+				{#if success}
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						color="currentColor"
+						class="h-5 w-5 shrink-0"
+						viewBox="0 0 24 24"
+						aria-hidden="true"
+						><!----><!----><path
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M5 11.917 9.724 16.5 19 7.5"
+							stroke-width="2"
+						></path></svg
+					>
+				{:else}
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="currentColor"
+						class="h-5 w-5 shrink-0"
+						viewBox="0 0 24 24"
+						aria-hidden="true"
+						><!----><!----><path
+							fill-rule="evenodd"
+							d="M8 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1h2a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2Zm6 1h-4v2H9a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2h-1V4Z"
+							clip-rule="evenodd"
+						></path></svg
+					>
+				{/if}
+			</Clipboard>
+		</div>
+		<h1>dark mode</h1>
+		<div class="flex gap-x-1">
+			<DarkMode class="border text-primary-500 dark:border-gray-800 dark:text-primary-600" />
+		</div>
+		<h1>datepicker</h1>
+		<div class="mb-64 md:w-1/2">
+			<Datepicker bind:value={selectedDate} />
+			<p class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : 'None'}</p>
+		</div>
+		<div class="md:w-1/2">
+			<Datepicker inline bind:value={selectedDate} />
+			<p class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : 'None'}</p>
+		</div>
+		<div class="mb-64 md:w-1/2">
+			<Datepicker dateFormat={{ year: 'numeric', month: 'short', day: '2-digit' }} />
+		</div>
+		<div class="mb-64 md:w-1/2">
+			<Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="blue" />
+			<p class="mt-4">
+				Selected range:
+				{dateRange.from ? dateRange.from.toLocaleDateString() : 'None'} -
+				{dateRange.to ? dateRange.to.toLocaleDateString() : 'None'}
+			</p>
 		</div>
 	</div>
 </ThemeProvider>

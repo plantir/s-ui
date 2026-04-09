@@ -22,9 +22,14 @@ export { default as Carousel } from './carousel/Carousel.svelte';
 export { default as ControlButton } from './carousel/ControlButton.svelte';
 export { default as Controls } from './carousel/Controls.svelte';
 export { default as CarouselIndicators } from './carousel/CarouselIndicators.svelte';
+export { default as Clipboard } from './clipboard/Clipboard.svelte';
 export { default as Thumbnails } from './carousel/Thumbnails.svelte';
 export { default as Slide } from './carousel/Slide.svelte';
+export { default as DarkMode } from './darkmode/DarkMode.svelte';
+export { default as Datepicker } from './datepicker/Datepicker.svelte';
 export { default as Thumbnail } from './carousel/Thumbnail.svelte';
-
+export { default as Toolbar } from './toolbar/Toolbar.svelte';
+export { default as ToolbarGroup } from './toolbar/ToolbarGroup.svelte';
+export { default as ToolbarButton } from './toolbar/ToolbarButton.svelte';
 export { type ThemeConfig, ThemeProvider } from '$lib/theme';
 export * from './types';

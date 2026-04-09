@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@theme{
+@theme {
 	--z-index-100: 2;
 	--color-primary-50: #fdf4ff;
 	--color-primary-100: #fae8ff;
@@ -42,10 +42,10 @@
 	--color-danger-800: #991b1b;
 	--color-danger-900: #7f1d1d;
 }
+@custom-variant dark (&:where(.dark, .dark *));
 
-
-[data-theme="fluent"] {
-	[role="alert"] {
+[data-theme='fluent'] {
+	[role='alert'] {
 		.icon {
 			font-size: 20px;
 		}
