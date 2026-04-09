@@ -22,3 +22,4 @@ export { darkmode } from "../darkmode";
 export { toolbar, toolbarGroup, toolbarButton } from "../toolbar";
 export { datepicker } from "../datepicker";
 export { android, defaultMockup, desktop, ios, laptop, smartwatch, tablet } from "../device-mockups";
+export { drawer, drawerhead, drawerhandle } from "../drawer";

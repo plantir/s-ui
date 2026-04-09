@@ -25,6 +25,7 @@
 		DeviceMockup,
 		Ios,
 		Thumbnails,
+		Drawer,
 		Android
 	} from '$lib';
 	import { page } from '$app/state';
@@ -53,6 +54,8 @@
 	];
 	let activeUrl = $derived(page.url.pathname);
 	let index = $state(0);
+	let open5 = $state(false);
+	let placement: 'right' | 'left' | 'top' | 'bottom' = $state('right');
 </script>
 
 <ThemeProvider {theme}>
@@ -402,18 +405,33 @@
 		</div>
 
 		<Drawer bind:open aria-labelledby="drawer-label">
-			<h5
-				id="drawer-label"
-				class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400"
-			></h5>
 			<p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-				Supercharge your hiring by taking advantage of our <a
-					href="/"
-					class="text-primary-600 underline hover:no-underline dark:text-primary-500"
-					>limited-time sale</a
-				>
-				for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1
-				design job board.
+				Supercharge your hiring by taking advantage of our for Flowbite Docs + Job Board. Unlimited
+				access to over 190K top-ranked candidates and the #1 design job board.
+			</p>
+			<div class="grid grid-cols-2 gap-2">
+				<Button color="light" href="/">Learn more</Button>
+				<Button href="/" class="px-4">Get access</Button>
+			</div>
+		</Drawer>
+		<div class="text-center">
+			<Button onclick={() => ((placement = 'top'), (open5 = true))}>Top drawer</Button>
+			<div class="my-2 space-x-6">
+				<Button onclick={() => ((placement = 'left'), (open5 = true))}>Left drawer</Button>
+				<Button onclick={() => ((placement = 'right'), (open5 = true))}>Right drawer</Button>
+			</div>
+			<Button onclick={() => ((placement = 'bottom'), (open5 = true))}>Bottom drawer</Button>
+		</div>
+
+		<Drawer {placement} bind:open={open5}>
+			<h5
+				class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400"
+			>
+				Info
+			</h5>
+			<p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+				Supercharge your hiring by taking advantage of our e for Flowbite Docs + Job Board.
+				Unlimited access to over 190K top-ranked candidates and the #1 design job board.
 			</p>
 			<div class="grid grid-cols-2 gap-2">
 				<Button color="light" href="/">Learn more</Button>

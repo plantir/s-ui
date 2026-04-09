@@ -73,6 +73,8 @@ import type { ClipboardVariants } from './clipboard/theme.js';
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants, toolbar } from './toolbar/theme.js';
 import type { DatepickerVariants,datepicker } from './datepicker/theme.js';
 import type { android, AndroidVariants, defaultMockup, DefaultMockupVariants, desktop, DesktopVariants, ios, IosVariants, laptop, LaptopVariants, smartwatch, SmartwatchVariants, tablet, TabletVariants, } from './device-mockups/theme.js';
+import type { drawer, drawerhandle, DrawerHandleVariants, drawerhead, DrawerheadVariants, DrawerVariants } from './drawer/theme.js';
+import type { dialog, DialogVariants } from './dialog/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -593,6 +595,41 @@ export interface DeviceMockupProps {
 	div4Class?: ClassValue;
 	div5Class?: ClassValue;
 	div6Class?: ClassValue;
+  }
+  
+
+  
+// dialog
+
+export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
+	onaction?: ({ action, data }: { action: string; data: FormData }) => void;
+	classes?: Classes<typeof dialog>;
+	form?: boolean;
+	modal?: boolean;
+	autoclose?: boolean;
+	focustrap?: boolean;
+	permanent?: boolean;
+	dismissable?: boolean;
+	outsideclose?: boolean;
+	transition?: TransitionFunc;
+	transitionParams?: ParamsType;
+  }
+  
+  // drawer
+  export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "classes" | "form"> {
+	classes?: Classes<typeof drawer>;
+	offset?: string;
+  }
+  
+  export interface DrawerHandleProps extends DrawerHandleVariants, HTMLButtonAttributes {
+	classes?: Classes<typeof drawerhandle>;
+  }
+  
+  export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {
+	closeIcon?: Snippet;
+	classes?: Classes<typeof drawerhead>;
+	buttonClass?: ClassValue;
+	svgClass?: ClassValue;
   }
   
 // toolbar
