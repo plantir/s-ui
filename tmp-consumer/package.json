@@ -1,9 +1,0 @@
-{
-  "name": "tmp-consumer",
-  "private": true,
-  "type": "module",
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "svelte": "^5.51.0"
-  }
-}
