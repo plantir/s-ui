@@ -26,9 +26,26 @@
 		Ios,
 		Thumbnails,
 		Drawer,
-		Android
+		Android,
+		Modal,
+		CloseButton,
+		Footer,
+		FooterCopyright,
+		FooterLinkGroup,
+		FooterLink,
+		KanbanBoard,
+		Kbd,
+		Listgroup
 	} from '$lib';
 	import { page } from '$app/state';
+	import { slide } from 'svelte/transition';
+	let popupModal = $state(false);
+	let buttons = [
+		{ name: 'Profile', mycustomfield: 'data1' },
+		{ name: 'Settings', mycustomfield: 'data2', current: true },
+		{ name: 'Messages', mycustomfield: 'data3' },
+		{ name: 'Download', mycustomfield: 'data4', disabled: false, attrs: { type: 'submit' } }
+	];
 	const theme: ThemeConfig = {
 		alert: 'p-3'
 	};
@@ -38,6 +55,36 @@
 		from: undefined,
 		to: undefined
 	});
+	let columns = $state([
+		{
+			id: 1,
+			title: 'Column 1',
+			cards: [
+				{ id: '1', title: 'Card 1' },
+				{ id: '2', title: 'Card 2' },
+				{ id: '3', title: 'Card 3' },
+				{ id: '4', title: 'Card 4' },
+				{ id: '5', title: 'Card 5' },
+				{ id: '6', title: 'Card 6' },
+				{ id: '7', title: 'Card 7' },
+				{ id: '8', title: 'Card 8' }
+			]
+		},
+		{
+			id: 2,
+			title: 'Column 2',
+			cards: [
+				{ id: '9', title: 'Card 9' },
+				{ id: '10', title: 'Card 10' },
+				{ id: '11', title: 'Card 11' },
+				{ id: '12', title: 'Card 12' },
+				{ id: '13', title: 'Card 13' },
+				{ id: '14', title: 'Card 14' },
+				{ id: '15', title: 'Card 15' },
+				{ id: '16', title: 'Card 16' }
+			]
+		}
+	]);
 	let value = $state('npm install flowbite');
 	let success = $state(false);
 	const images = [
@@ -76,7 +123,8 @@
 			</AccordionItem>
 		</Accordion>
 		<h1>AlertProps</h1>
-		<Alert color="cyan">Hello my friend</Alert>
+
+		<Alert color="cyan" dismissable closeIcon={CloseButton}>Hello my friend</Alert>
 		<Alert color="gray" border={true}>
 			<div class="flex items-center gap-2">
 				<i class="icon">
@@ -94,7 +142,7 @@
 					</svg>
 				</i>
 				<p>Message providing information to the user with actionable insights.</p>
-				<Button></Button>
+				<CloseButton></CloseButton>
 			</div>
 		</Alert>
 		<Alert color="indigo" border={true} rounded={false}>
@@ -113,7 +161,7 @@
 					></path>
 				</svg>
 				<p>Message providing information to the user with actionable insights.</p>
-				<Button></Button>
+				<CloseButton></CloseButton>
 			</div>
 		</Alert>
 		<h1>avatar</h1>
@@ -438,5 +486,52 @@
 				<Button href="/" class="px-4">Get access</Button>
 			</div>
 		</Drawer>
+		<h1>modal</h1>
+		<div class="flex">
+			<Button onclick={() => (popupModal = true)}>Pop-up modal</Button>
+		</div>
+
+		<Modal form bind:open={popupModal} size="xs" transition={slide} permanent>
+			<div class="text-center">
+				<h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+					Are you sure you want to delete this product?
+				</h3>
+				<div class="space-x-2">
+					<Button type="submit" value="yes" color="red">Yes, I'm sure</Button>
+					<Button type="submit" value="no" color="alternative">No, cancel</Button>
+				</div>
+			</div>
+		</Modal>
+		<h1>footer</h1>
+		<Footer>
+			<FooterCopyright href="/" by="Flowbite™" year={2022} />
+			<FooterLinkGroup
+				class="mt-3 flex flex-wrap items-center text-sm text-gray-500 sm:mt-0 dark:text-gray-400"
+			>
+				<FooterLink href="/">About</FooterLink>
+				<FooterLink href="/">Privacy Policy</FooterLink>
+				<FooterLink href="/">Licensing</FooterLink>
+				<FooterLink href="/">Contact</FooterLink>
+			</FooterLinkGroup>
+		</Footer>
+		<h1>kanban</h1>
+		<KanbanBoard bind:columns></KanbanBoard>
+		<h1>kbd</h1>
+		<div class="flex">
+			<Kbd>Ctrl</Kbd>+<Kbd>C</Kbd> <span class="ml-2 text-gray-500">to copy</span>
+		</div>
+		<div class="flex">
+			<Kbd>Ctrl</Kbd>+<Kbd>V</Kbd> <span class="ml-2 text-gray-500">to paste</span>
+		</div>
+		<h1>list-group</h1>
+		<div class="flex">
+			<Listgroup
+				rounded={true}
+				horizontal={false}
+				active
+				items={buttons}
+				onclick={(e) => alert(Object.entries(e?.detail ?? {}))}
+			></Listgroup>
+		</div>
 	</div>
 </ThemeProvider>

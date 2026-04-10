@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import { alert } from './theme.js';
-	import clsx from "clsx";
+	import clsx from 'clsx';
 	import type { AlertProps, ParamsType } from '../types.js';
-	import { getTheme } from "$lib/theme/themeUtils";
-	import { createDismissableContext } from "$lib/utils/dismissable";
+	import { getTheme } from '$lib/theme/themeUtils';
+	import { createDismissableContext } from '$lib/utils/dismissable';
 	let {
 		children,
 		icon,
@@ -21,7 +21,7 @@
 	}: AlertProps = $props();
 
 	// Theme context
-	const theme = $derived(getTheme("alert"));
+	const theme = $derived(getTheme('alert'));
 
 	let divCls = $derived(
 		alert({
@@ -61,7 +61,12 @@
 		{/if}
 
 		{#if dismissable}
-			<button type="button" class="ms-auto inline-flex cursor-pointer" aria-label="Close alert" onclick={close}>
+			<button
+				type="button"
+				class="ms-auto inline-flex cursor-pointer"
+				aria-label="Close alert"
+				onclick={close}
+			>
 				{#if CloseIcon}
 					<CloseIcon />
 				{:else}

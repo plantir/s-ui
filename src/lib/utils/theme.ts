@@ -6,7 +6,7 @@ import type { Classes } from "$lib/theme/slots";
 export type CloseButtonVariants = VariantProps<typeof closeButton> & Classes<typeof closeButton>;
 
 export const closeButton = tv({
-  base: "focus:outline-hidden whitespace-normal disabled:cursor-not-allowed disabled:opacity-50",
+  base: "cursor-pointer focus:outline-hidden whitespace-normal disabled:cursor-not-allowed disabled:opacity-50",
   variants: {
     // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
     color: {

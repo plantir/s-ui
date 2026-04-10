@@ -48,6 +48,7 @@ import type { CloseButtonVariants } from './utils/theme.js';
 import type { IndicatorVariants } from './indicator/theme.js';
 import type { BannerVariants } from './banner/theme.js';
 import type { SpinnerVariants } from './spinner/theme.js';
+import type { ClipboardManagerVariants } from './clipboard-manager/theme.js';
 import type { Classes } from './theme/slots.js';
 import type {
 	BottomNavHeaderItemVariants,
@@ -75,6 +76,11 @@ import type { DatepickerVariants,datepicker } from './datepicker/theme.js';
 import type { android, AndroidVariants, defaultMockup, DefaultMockupVariants, desktop, DesktopVariants, ios, IosVariants, laptop, LaptopVariants, smartwatch, SmartwatchVariants, tablet, TabletVariants, } from './device-mockups/theme.js';
 import type { drawer, drawerhandle, DrawerHandleVariants, drawerhead, DrawerheadVariants, DrawerVariants } from './drawer/theme.js';
 import type { dialog, DialogVariants } from './dialog/theme.js';
+import type { modal, ModalVariants } from './modal/theme.js';
+import type { footerLink, FooterLinkVariants,FooterCopyrightVariants, footerCopyright } from './footer/theme.js';
+import type { kanbanBoard, KanbanBoardVariants,kanbanCard,KanbanCardVariants } from './kanban/theme.js';
+import type { GalleryVariants } from './gallery/theme.js';
+import type { ListgroupVariants, ListgroupItemVariants } from './list-group/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -398,6 +404,40 @@ export interface CarouselProps
 	slideFit?: SlideProps['fit'];
 }
 
+
+// clipboard-manager
+
+
+export interface ClipboardItem {
+  id: number;
+  text: string;
+  pinned?: boolean;
+  timestamp: number;
+}
+
+export interface ClipboardManagerProps extends ClipboardManagerVariants {
+  children?: Snippet<[{ item: ClipboardItem; copyItem: (item: ClipboardItem) => Promise<void>; deleteItem: (id: number) => void; togglePin: (id: number) => void }]>;
+  items?: ClipboardItem[];
+  placeholder?: string;
+  saveLabel?: string;
+  clearLabel?: string;
+  limit?: number;
+  saveToStorage?: boolean;
+  class?: ClassValue | null;
+  toastDuration?: number;
+  filterSensitive?: boolean;
+  maxLength?: number;
+  enableSelectionMenu?: boolean;
+  selectionTarget?: string;
+  showInput?: boolean; // NEW!
+  emptyState?: Snippet;
+  storageKey?: string;
+  open?: boolean;
+  badgeProps?: Omit<BadgeProps, "children">;
+  modalProps?: ModalProps;
+  detectSensitiveData?: (text: string) => boolean;
+}
+
 export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
 	children?: Snippet<[{ selected: boolean; index: number }]>;
 	activeClass?: ClassValue;
@@ -646,6 +686,125 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
 	  name?: string;
 	};
   
+
+
+// footer
+export type FooterType = "default" | "sticky" | "sitemap" | "socialmedia" | "logo" | undefined;
+
+export interface FooterProps extends HTMLAttributes<HTMLElement> {
+  children: Snippet;
+  footerType?: FooterType;
+}
+
+export interface FooterBrandProps extends HTMLAnchorAttributes {
+  children?: Snippet;
+  aClass?: ClassValue;
+  spanClass?: ClassValue;
+  imgClass?: ClassValue;
+  href?: string;
+  src?: string;
+  alt?: string;
+  name?: string;
+}
+
+export interface FooterCopyrightProps extends FooterCopyrightVariants, HTMLAnchorAttributes {
+  spanClass?: ClassValue;
+  aClass?: ClassValue;
+  classes?: Classes<typeof footerCopyright>;
+  href?: string;
+  by?: string;
+  copyrightMessage?: string;
+  year?: number;
+  bySpanClass?: ClassValue;
+}
+
+export interface FooterIconProps extends HTMLAnchorAttributes {
+  children: Snippet;
+  href?: string;
+  ariaLabel?: string;
+}
+
+export interface FooterLinkGroupProps extends HTMLAttributes<HTMLUListElement> {
+  children: Snippet;
+}
+
+export interface FooterLinkProps extends FooterLinkVariants, HTMLAnchorAttributes {
+  children: Snippet;
+  classes?: Classes<typeof footerLink>;
+  liClass?: ClassValue;
+  aClass?: ClassValue;
+  href?: string;
+}
+
+
+// gallery
+export type ImgType = {
+	src?: string;
+	alt?: string;
+  };
+  
+  export interface GalleryProps extends GalleryVariants, HTMLAttributes<HTMLDivElement> {
+	children?: Snippet;
+	figure?: Snippet<[item: ImgType]>;
+	items?: HTMLImgAttributes[];
+	imgClass?: ClassValue;
+	height?: string;
+	rowHeight?: number;
+	columns?: number;
+  }
+  
+  // indicator
+  export interface IndicatorProps extends HTMLAttributes<HTMLDivElement> {
+	children?: Snippet;
+	color?: IndicatorVariants["color"];
+	cornerStyle?: IndicatorVariants["cornerStyle"];
+	size?: IndicatorVariants["size"];
+	border?: boolean;
+	placement?: IndicatorVariants["placement"];
+	offset?: boolean;
+  }
+  
+  // kbd
+  export interface KbdProps extends HTMLAttributes<HTMLElement> {
+	children: Snippet;
+  }
+  
+  // list-group
+  export interface ListGroupItemType {
+	name?: string;
+	Icon?: Component;
+	onclick?: () => void;
+	href?: string;
+	active?: boolean;
+	current?: boolean;
+	disabled?: boolean;
+	img?: { src: string; alt: string };
+	comment?: string;
+	message?: string;
+	[key: string]: unknown;
+  }
+  
+  export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<HTMLUListElement>, "children"> {
+	children?: Snippet<[item: ListGroupItemType | string]>;
+	items?: (ListGroupItemType | string)[];
+	active?: boolean;
+	onclick?: (event?: MouseEvent) => void;
+	itemClass?: ClassValue;
+	aClasss?: ClassValue;
+	btnClass?: ClassValue;
+	iconClass?: ClassValue;
+  }
+  
+  export interface ListgroupItemProps extends Omit<ListgroupItemVariants, "state">, HTMLAttributes<HTMLDivElement> {
+	  current?: boolean;
+	  disabled?: boolean;
+	  Icon?: Component;
+	  iconClass?: ClassValue;
+	  name?: string;
+	  children?: Snippet;
+	};
+  
+
 // spinner
 export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
 	type?: 'default' | 'dots' | 'bars' | 'pulse' | 'orbit';
@@ -654,3 +813,48 @@ export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
 	currentFill?: string;
 	currentColor?: string;
 }
+
+// Kanbanboard
+export interface KanbanCardType {
+	id: string | number;
+	title: string;
+	description?: string;
+	tags?: string[];
+  }
+  
+  export interface KanbanColumnType {
+	id: string | number;
+	title: string;
+	cards: KanbanCardType[];
+	color?: string;
+  }
+  
+  export interface KanbanBoardProps extends KanbanBoardVariants, HTMLAttributes<HTMLDivElement> {
+	columns?: KanbanColumnType[];
+	classes?: Classes<typeof kanbanBoard>;
+	onMove?: (card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) => void;
+	onAddCard?: (col: KanbanColumnType) => void;
+	cardProps?: Partial<Omit<KanbanCardProps, "card" | "isDragging" | "onDragStart" | "onDragEnd">>;
+	class?: ClassValue | null;
+  }
+  
+  export interface KanbanCardProps extends KanbanCardVariants, HTMLAttributes<HTMLElement> {
+	card: KanbanCardType;
+	isDragging?: boolean;
+	classes?: Classes<typeof kanbanCard>;
+	onDragStart?: (card: KanbanCardType, ev?: DragEvent) => void;
+	onDragEnd?: (ev?: DragEvent) => void;
+	class?: ClassValue | null;
+  }
+  
+// modal
+export interface ModalProps extends ModalVariants, DialogProps {
+	header?: Snippet;
+	footer?: Snippet;
+	classes?: Classes<typeof modal>;
+	headerClass?: ClassValue;
+	bodyClass?: ClassValue;
+	footerClass?: ClassValue;
+	closeBtnClass?: ClassValue;
+	fullscreen?: boolean;
+  }

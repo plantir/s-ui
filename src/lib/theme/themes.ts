@@ -23,3 +23,8 @@ export { toolbar, toolbarGroup, toolbarButton } from "../toolbar";
 export { datepicker } from "../datepicker";
 export { android, defaultMockup, desktop, ios, laptop, smartwatch, tablet } from "../device-mockups";
 export { drawer, drawerhead, drawerhandle } from "../drawer";
+export { modal } from "../modal";
+export { footer, footerBrand, footerCopyright, footerIcon, footerLinkGroup, footerLink } from "../footer";
+export { kanbanBoard, kanbanCard } from "../kanban";
+export { kbd } from "../kbd";
+export { listGroup, listGroupItem } from "../list-group";
