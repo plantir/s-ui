@@ -2190,6 +2190,14 @@ flowbite-datepicker@^2.0.0:
     "@rollup/plugin-node-resolve" "^15.2.3"
     "@tailwindcss/postcss" "^4.1.17"
 
+flowbite-svelte-icons@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/flowbite-svelte-icons/-/flowbite-svelte-icons-3.1.0.tgz#d861ec9262b74e6894cb50c3a1e1717f18d6861e"
+  integrity sha512-ZKBFlJY6VbORSo0aHvhqP152/QQN+YKU2upZA6lOkIbTN2vHgENerzd+PnZpLA+os3QbJTG2LKK0l7Zeh1vDBQ==
+  dependencies:
+    clsx "^2.1.1"
+    tailwind-merge "^3.4.0"
+
 flowbite-svelte@^1.31.0:
   version "1.31.0"
   resolved "https://registry.yarnpkg.com/flowbite-svelte/-/flowbite-svelte-1.31.0.tgz#34c47aff54c7dc84a2e0a865b5b746fb669c8069"

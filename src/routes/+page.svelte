@@ -35,8 +35,33 @@
 		FooterLink,
 		KanbanBoard,
 		Kbd,
-		Listgroup
+		Listgroup,
+		Navbar,
+		NavBrand,
+		NavLi,
+		NavUl,
+		NavHamburger,
+		PaginationNav,
+		Popover,
+		Progressbar,
+		MegaMenu,
+		Dropdown,
+		DropdownItem
 	} from '$lib';
+	import { ChevronDownOutline } from 'flowbite-svelte-icons';
+	let menu = [
+		{ name: 'About us', href: '/about' },
+		{ name: 'Blog', href: '/blog' },
+		{ name: 'Contact us', href: '/contact' },
+		{ name: 'Library', href: '/library' },
+		{ name: 'Newsletter', href: '/news' },
+		{ name: 'Support Center', href: '/support' },
+		{ name: 'Resources', href: '/resource' },
+		{ name: 'Playground', href: '/play' },
+		{ name: 'Terms', href: '/terms' },
+		{ name: 'Pro Version', href: '/pro' },
+		{ name: 'License', href: '/license' }
+	];
 	import { page } from '$app/state';
 	import { slide } from 'svelte/transition';
 	let popupModal = $state(false);
@@ -103,6 +128,11 @@
 	let index = $state(0);
 	let open5 = $state(false);
 	let placement: 'right' | 'left' | 'top' | 'bottom' = $state('right');
+	let currentPage = $state(1);
+	const totalPages = 20;
+	const handlePageChange = (page: number) => {
+		currentPage = page;
+	};
 </script>
 
 <ThemeProvider {theme}>
@@ -514,6 +544,20 @@
 				<FooterLink href="/">Contact</FooterLink>
 			</FooterLinkGroup>
 		</Footer>
+		<h1>dropdown</h1>
+		<div class="flex">
+			<Button
+				>Dropdown button<ChevronDownOutline
+					class="ms-2 h-6 w-6 text-white dark:text-white"
+				/></Button
+			>
+			<Dropdown simple>
+				<DropdownItem>Dashboard</DropdownItem>
+				<DropdownItem>Settings</DropdownItem>
+				<DropdownItem>Earnings</DropdownItem>
+				<DropdownItem>Sign out</DropdownItem>
+			</Dropdown>
+		</div>
 		<h1>kanban</h1>
 		<KanbanBoard bind:columns></KanbanBoard>
 		<h1>kbd</h1>
@@ -532,6 +576,53 @@
 				items={buttons}
 				onclick={(e) => alert(Object.entries(e?.detail ?? {}))}
 			></Listgroup>
+		</div>
+		<h1>navbar</h1>
+		<Navbar>
+			<NavBrand href="/">
+				<img
+					src="/images/flowbite-svelte-icon-logo.svg"
+					class="me-3 h-6 sm:h-9"
+					alt="Flowbite Logo"
+				/>
+				<span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+					>Flowbite</span
+				>
+			</NavBrand>
+			<NavHamburger />
+			<NavUl>
+				<NavLi href="/">Home</NavLi>
+				<NavLi class="cursor-pointer">
+					Mega menu<ChevronDownOutline
+						class="ms-2 inline h-6 w-6 text-primary-800 dark:text-white"
+					/>
+				</NavLi>
+				<MegaMenu items={menu}>
+					{#snippet children({ item })}
+						<a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500"
+							>{item.name}</a
+						>
+					{/snippet}
+				</MegaMenu>
+				<NavLi href="/services">Services</NavLi>
+				<NavLi href="/services">Products</NavLi>
+				<NavLi href="/services">Contact</NavLi>
+			</NavUl>
+		</Navbar>
+		<h1>pagination</h1>
+		<div class="flex">
+			<PaginationNav color="" {currentPage} {totalPages} onPageChange={handlePageChange} />
+		</div>
+		<h1>popover</h1>
+		<div class="flex">
+			<Button>Default popover</Button>
+			<Popover class="w-64 text-sm font-light " title="Popover title" placement="right">
+				And here's some amazing content. It's very engaging. Right?
+			</Popover>
+		</div>
+		<h1>progress</h1>
+		<div class="flex">
+			<Progressbar color="cyan" progress="50" />
 		</div>
 	</div>
 </ThemeProvider>

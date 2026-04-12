@@ -11,8 +11,8 @@ import type {
   ToolbarContextType,
   ListGroupContextType,
   ButtonGroupContextType,
-//   NavbarState,
-//   NavbarBreakpoint,
+  NavbarState,
+  NavbarBreakpoint,
 //   SidebarContextType,
 //   TableContextType,
 //   TabsContextType
@@ -87,12 +87,12 @@ export { getListGroupContext, setListGroupContext };
 const [getButtonGroupContext, setButtonGroupContext] = createSafeContext<ButtonGroupContextType>();
 export { getButtonGroupContext, setButtonGroupContext };
 
-// // Navbar
-// const [getNavbarStateContext, setNavbarStateContext] = createSafeContext<NavbarState>();
-// export { getNavbarStateContext, setNavbarStateContext };
+// Navbar
+const [getNavbarStateContext, setNavbarStateContext] = createSafeContext<NavbarState>();
+export { getNavbarStateContext, setNavbarStateContext };
 
-// const [getNavbarBreakpointContext, setNavbarBreakpointContext] = createSafeContext<NavbarBreakpoint>();
-// export { getNavbarBreakpointContext, setNavbarBreakpointContext };
+const [getNavbarBreakpointContext, setNavbarBreakpointContext] = createSafeContext<NavbarBreakpoint>();
+export { getNavbarBreakpointContext, setNavbarBreakpointContext };
 
 // // Sidebar
 // const [getSidebarContext, setSidebarContext] = createSafeContext<SidebarContextType>();

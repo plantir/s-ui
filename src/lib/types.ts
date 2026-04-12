@@ -1,29 +1,32 @@
 import type { Component, Snippet } from 'svelte';
+import type { fade, fly, scale, slide } from "svelte/transition";
+import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
 import type {
 	ClassValue,
 	HTMLAnchorAttributes,
 	HTMLAttributes,
-	HTMLBlockquoteAttributes,
+	// HTMLBlockquoteAttributes,
 	HTMLButtonAttributes,
 	HTMLDialogAttributes,
 	HTMLImgAttributes,
 	HTMLInputAttributes,
-	HTMLLabelAttributes,
+	// HTMLLabelAttributes,
 	HTMLLiAttributes,
-	HTMLOlAttributes,
-	HTMLSelectAttributes,
-	HTMLSourceAttributes,
-	HTMLTableAttributes,
-	HTMLTdAttributes,
-	HTMLTextareaAttributes,
-	HTMLThAttributes,
-	HTMLTrackAttributes,
-	HTMLVideoAttributes,
+	// HTMLOlAttributes,
+	// HTMLSelectAttributes,
+	// HTMLSourceAttributes,
+	// HTMLTableAttributes,
+	// HTMLTdAttributes,
+	// HTMLTextareaAttributes,
+	// HTMLThAttributes,
+	// HTMLTrackAttributes,
+	// HTMLVideoAttributes,
 	SVGAttributes,
-	FullAutoFill
+	// FullAutoFill
 } from 'svelte/elements';
 import type {
 	BlurParams,
+	EasingFunction,
 	FadeParams,
 	FlyParams,
 	ScaleParams,
@@ -81,6 +84,14 @@ import type { footerLink, FooterLinkVariants,FooterCopyrightVariants, footerCopy
 import type { kanbanBoard, KanbanBoardVariants,kanbanCard,KanbanCardVariants } from './kanban/theme.js';
 import type { GalleryVariants } from './gallery/theme.js';
 import type { ListgroupVariants, ListgroupItemVariants } from './list-group/theme.js';
+import type { progressbar, ProgressbarVariants, progressradial, ProgressradialVariants } from './progress/theme.js';
+import type { popover, PopoverVariants } from './popover/theme.js';
+import type { PaginationItemVariants, PaginationVariants } from './pagination/theme.js';
+import type { PaginationNavVariants } from './pagination/theme.js';
+import type { TooltipVariants } from './tooltip/theme.js';
+import type { NavbarHamburgerVariants, NavbarUlVariants,navbarHamburger,navbarUl } from './navbar/theme.js';
+import type { LinkType } from './types copy.js';
+import type { megamenu, MegaMenuVariants } from './mega-menu/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -681,12 +692,44 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   
   export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
   
-  export type ToolbarButtonProps = ToolbarButtonVariants &
-	AnchorButtonAttributes & {
+  export interface ToolbarButtonProps extends ToolbarButtonVariants,Omit<HTMLAttributes<HTMLDivElement>, "color"> {
 	  name?: string;
 	};
   
 
+	
+// dropdown
+export interface DropdownProps extends PopperProps {
+	simple?: boolean;
+	activeUrl?: string;
+	isOpen?: boolean;
+  }
+  
+  export type DropdownDividerProps = HTMLAttributes<HTMLDivElement>;
+  
+  export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
+	children: Snippet;
+  }
+  
+  export interface DropdownItemProps {
+	children: Snippet;
+	aClass?: ClassValue;
+	activeClass?: ClassValue;
+	liClass?: ClassValue;
+	classes?: {
+	  active?: ClassValue;
+	  base?: ClassValue;
+	  li?: ClassValue;
+	};
+	class?: ClassValue;
+	href?: string;
+	onclick?: (e: MouseEvent) => void;
+	[key: string]: unknown;
+  }
+  
+  export interface DropdownGroupProps extends HTMLAttributes<HTMLUListElement> {
+	children: Snippet;
+  }
 
 // footer
 export type FooterType = "default" | "sticky" | "sitemap" | "socialmedia" | "logo" | undefined;
@@ -846,7 +889,17 @@ export interface KanbanCardType {
 	onDragEnd?: (ev?: DragEvent) => void;
 	class?: ClassValue | null;
   }
-  
+  // mega-menu
+export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, "children"> {
+	children: Snippet<[{ item: LinkType; index: number }]>;
+	extra?: Snippet;
+	items?: LinkType[];
+	classes?: Classes<typeof megamenu>;
+	full?: boolean;
+	ulClass?: ClassValue;
+	extraClass?: ClassValue;
+	isOpen?: boolean;
+  }
 // modal
 export interface ModalProps extends ModalVariants, DialogProps {
 	header?: Snippet;
@@ -858,3 +911,205 @@ export interface ModalProps extends ModalVariants, DialogProps {
 	closeBtnClass?: ClassValue;
 	fullscreen?: boolean;
   }
+
+  
+// navbar
+export interface MenuProps extends SVGAttributes<SVGSVGElement> {
+	size?: string;
+	color?: string;
+	variation?: "solid" | "outline";
+	ariaLabel?: string;
+  }
+  
+  export type NavbarState = {
+	hidden: boolean;
+	activeClass?: string;
+	nonActiveClass?: string;
+	activeUrl?: string;
+  };
+  
+  export type NavbarBreakpoint = "sm" | "md" | "lg" | "xl";
+  
+  export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+	children: Snippet<[{ hidden: boolean; toggle: () => void; NavContainer: Component }]>;
+	fluid?: boolean;
+	navContainerClass?: ClassValue;
+	closeOnClickOutside?: boolean;
+	breakpoint?: NavbarBreakpoint;
+  }
+  
+  export type NavBrandProps = HTMLAnchorAttributes;
+  
+  export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
+	fluid?: boolean;
+  }
+  
+  export interface NavHamburgerProps extends  NavbarHamburgerVariants, Omit<HTMLAttributes<HTMLDivElement>, "class">  {
+	classes?: Classes<typeof navbarHamburger>;
+	href?: undefined;
+	class?: ClassValue;
+	name?: string
+	menuClass?: ClassValue;
+  };
+  
+  export interface NavUlProps extends NavbarUlVariants, Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+	activeUrl?: string;
+	ulClass?: ClassValue;
+	hidden?: boolean;
+	classes?: Classes<typeof navbarUl>;
+	// Legacy support
+	slideParams?: SlideParams;
+	// New transition props
+	transition?: typeof slide | typeof fly | typeof fade | typeof scale;
+	transitionParams?: SlideParams | FlyParams | FadeParams | ScaleParams;
+	activeClass?: ClassValue;
+	nonActiveClass?: ClassValue;
+	respectMotionPreference?: boolean;
+	class?: ClassValue;
+  }
+  
+  export type NavLiProps = AnchorButtonAttributes & {
+	activeClass?: ClassValue;
+	nonActiveClass?: ClassValue;
+  };
+  
+  // pagination
+  export type PaginationItemType = {
+	size?: "default" | "large";
+	active?: boolean | null;
+	group?: boolean | null;
+	table?: boolean | null;
+  };
+  
+  export interface PaginationItemSpecificProps {
+	children?: Snippet;
+	name?: string;
+	href?: string;
+	active?: boolean;
+	rel?: string;
+	size?: "default" | "large";
+  }
+  
+  export type PaginationHTMLButtonOrAnchorAttributes = HTMLButtonAttributes & HTMLAnchorAttributes;
+  
+  export interface PaginationButtonProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
+	children?: Snippet;
+	onclick?: () => void;
+	disabled?: boolean;
+  }
+  
+  export interface PaginationNavProps extends PaginationNavVariants, HTMLAttributes<HTMLElement>, PaginationVariants {
+	prevContent?: Snippet;
+	nextContent?: Snippet;
+	prevClass?: ClassValue;
+	nextClass?: ClassValue;
+	currentPage: number;
+	totalPages: number;
+	visiblePages?: number;
+	onPageChange: (page: number) => void;
+	layout?: "navigation" | "pagination" | "table";
+	previousLabel?: string;
+	nextLabel?: string;
+	showIcons?: boolean;
+	ariaLabel?: string;
+	size?: "default" | "large";
+	spanClass?: ClassValue;
+	tableDivClass?: ClassValue;
+	classes?: {
+	  prev?: ClassValue;
+	  next?: ClassValue;
+	  span?: ClassValue;
+	  tableDiv?: ClassValue;
+	  active?: ClassValue; // Add this line to support custom active classes
+	};
+  }
+  
+  export interface PaginationItemProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
+	children?: Snippet;
+  }
+  
+  export interface PaginationProps extends PaginationVariants, HTMLLiAttributes {
+	prevContent?: Snippet;
+	nextContent?: Snippet;
+	pages?: PaginationItemProps[];
+	previous?: () => void;
+	next?: () => void;
+	ariaLabel?: string;
+  }
+  
+  // popover
+  export interface PopoverProps extends PopoverVariants, Omit<PopperProps, "title"> {
+	title?: Snippet | string;
+	color?: PopoverVariants["color"];
+	classes?: Classes<typeof popover>;
+	params?: ParamsType;
+	defaultClass?: ClassValue;
+	transition?: TransitionFunc;
+	isOpen?: boolean;
+  }
+  
+  // progress
+  export interface ProgressbarProps extends ProgressbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+	progress?: string | number;
+	precision?: number;
+	tweenDuration?: number;
+	animate?: boolean;
+	size?: string;
+	classes?: Classes<typeof progressbar>;
+	labelInside?: boolean;
+	labelOutside?: string;
+	easing?: EasingFunction;
+  }
+  
+  export interface ProgressradialProps extends ProgressradialVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+	progress?: number | string;
+	radius?: number;
+	startingPosition?: "top" | "right" | "bottom" | "left";
+	precision?: number;
+	tweenDuration?: number;
+	classes?: Classes<typeof progressradial>;
+	animate?: boolean;
+	size?: string;
+	thickness?: number | string;
+	labelInside?: boolean;
+	labelOutside?: string;
+	easing?: (t: number) => number;
+  }
+  
+  // tooltip
+export interface TooltipProps extends TooltipVariants, PopperProps {}
+
+// popper
+export interface TriggeredToggleEvent extends ToggleEvent {
+	trigger: HTMLElement;
+  }
+  
+  export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbeforetoggle" | "ontoggle" | "onclose" | "color"> {
+	triggeredBy?: string;
+	triggerDelay?: number;
+	trigger?: "hover" | "click";
+	placement?: Placement;
+	arrow?: boolean;
+	arrowClass?: string;
+	offset?: number;
+	role?: "tooltip" | "menu" | "dialog" | "listbox" | "combobox";
+	yOnly?: boolean; // special case for megamenu - only move on y axis
+	strategy?: Strategy;
+	reference?: string;
+	middlewares?: Middleware[];
+	children: Snippet;
+	onbeforetoggle?: (ev: TriggeredToggleEvent) => void;
+	ontoggle?: (ev: TriggeredToggleEvent) => void;
+	onclose?: (ev: TriggeredToggleEvent) => void;
+	transition?: TransitionFunc;
+	transitionParams?: ParamsType;
+	isOpen?: boolean;
+  }
+  
+  export interface ArrowProps {
+	placement?: Placement;
+	cords: Partial<Coords>;
+	strategy?: "absolute" | "fixed";
+	class?: ClassValue | null;
+  }
+  
