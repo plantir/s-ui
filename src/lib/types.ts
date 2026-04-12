@@ -1,6 +1,7 @@
 import type { Component, Snippet } from 'svelte';
 import type { fade, fly, scale, slide } from "svelte/transition";
 import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
+import type { Writable } from "svelte/store";
 import type {
 	ClassValue,
 	HTMLAnchorAttributes,
@@ -92,6 +93,27 @@ import type { TooltipVariants } from './tooltip/theme.js';
 import type { NavbarHamburgerVariants, NavbarUlVariants,navbarHamburger,navbarUl } from './navbar/theme.js';
 import type { LinkType } from './types copy.js';
 import type { megamenu, MegaMenuVariants } from './mega-menu/theme.js';
+import type { AdvancedRatingVariants, RatingVariants, ReviewVariants, ScoreRatingVariants,advancedRating,rating,review,scoreRating } from './rating/theme.js';
+import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants, SidebarButtonVariants, sidebar, sidebarButton, sidebarCta, sidebarDropdownWrapper, sidebarBrand } from './sidebar/theme.js';
+import type { SpeedDialButtonVariants, SpeedDialVariants, speedDial, speedDialButton } from './speed-dial/theme.js';
+import type {
+	CardPlaceholderVariants,
+	ImagePlaceholderVariants,
+	ListPlaceholderVariants,
+	SkeletonVariants,
+	TestimonialPlaceholderVariants,
+	TextPlaceholderVariants,
+	VideoPlaceholderVariants,
+	WidgetPlaceholderVariants,
+	cardPlaceholder,
+	imagePlaceholder,
+	listPlaceholder,
+	skeleton,
+	testimonialPlaceholder,
+	textPlaceholder,
+	widgetPlaceholder
+  } from './skeleton/theme.js';
+import type { scrollspy, ScrollSpyVariants } from './scroll-spy/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -1076,6 +1098,316 @@ export interface MenuProps extends SVGAttributes<SVGSVGElement> {
 	easing?: (t: number) => number;
   }
   
+  
+// rating
+export type RatingItem = { label: string | null | undefined; rating: number };
+
+export interface AdvancedRatingProps extends AdvancedRatingVariants, HTMLAttributes<HTMLDivElement> {
+  rating?: Snippet;
+  globalText?: Snippet;
+  classes?: Classes<typeof advancedRating>;
+  ratings: RatingItem[];
+  divClass?: ClassValue;
+  spanClass?: ClassValue;
+  div2Class?: ClassValue;
+  div3Class?: ClassValue;
+  span2Class?: ClassValue;
+  unit?: string;
+}
+
+export interface RatingProps extends RatingVariants, HTMLAttributes<HTMLDivElement> {
+  children?: Snippet;
+  classes?: Classes<typeof rating>;
+  text?: Snippet;
+  size?: number;
+  total?: number;
+  rating?: number;
+  icon?: Component;
+  count?: boolean;
+  pClass?: ClassValue;
+}
+
+export interface RatingCommentProps {
+  children: Snippet;
+  evaluation?: Snippet;
+  helpfullink?: string;
+  abuselink?: string;
+  comment: {
+    id?: string;
+    user: {
+      name?: string;
+      img: {
+        src: string | undefined | null;
+        alt?: string;
+      };
+      joined?: string;
+    };
+    total?: number;
+    rating: number;
+    heading?: string;
+    address?: string;
+    datetime?: string;
+  };
+}
+
+export type ReviewType = {
+  name?: string;
+  imgSrc?: string;
+  imgAlt?: string;
+  address?: string;
+  reviewDate?: string;
+  title?: string;
+  rating?: number;
+  item1?: string;
+  item2?: string;
+  item3?: string;
+};
+
+export interface ReviewProps extends ReviewVariants, HTMLAttributes<HTMLElement> {
+  children: Snippet;
+  address?: Snippet;
+  item1?: Snippet;
+  item2?: Snippet;
+  item3?: Snippet;
+  classes?: Classes<typeof review>;
+  review?: ReviewType;
+  articleClass?: ClassValue;
+  divClass?: ClassValue;
+  div2Class?: ClassValue;
+  div3Class?: ClassValue;
+  imgClass?: ClassValue;
+  ulClass?: ClassValue;
+  liClass?: ClassValue;
+}
+
+export interface ScoreRatingProps extends ScoreRatingVariants {
+  ratings?: { label: string | undefined | null; rating: number }[];
+  ratings2?: { label: string | undefined | null; rating: number }[];
+  classes?: Classes<typeof scoreRating>;
+  headerLabel?: {
+    desc1?: string;
+    desc2?: string;
+    desc3?: string;
+    link?: { label: string | undefined | null; url: string };
+  };
+}
+
+export interface RatingIconProps extends SVGAttributes<SVGSVGElement> {
+  fillPercent?: number;
+  fillColor?: string;
+  strokeColor?: string;
+  size?: number;
+  ariaLabel?: string;
+  role?: string;
+  svgClass?: ClassValue;
+  iconIndex?: number;
+  groupId?: string;
+  pathd?: string;
+}
+
+// sidebar
+export type SidebarContextType = {
+  closeSidebar?: () => void;
+  activeClass?: string;
+  nonActiveClass?: string;
+  isSingle?: boolean;
+  selected?: Writable<object | null>;
+  activeUrl?: string;
+};
+
+export interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElement> {
+  children: Snippet;
+  isOpen?: boolean;
+  closeSidebar?: () => void;
+  activateClickOutside?: boolean;
+  isSingle?: boolean;
+  ariaLabel?: string;
+  divClass?: ClassValue;
+  nonActiveClass?: ClassValue;
+  activeClass?: ClassValue;
+  params?: ParamsType;
+  classes?: Classes<typeof sidebar>;
+  transition?: TransitionFunc;
+  backdrop?: boolean;
+  backdropClass?: ClassValue;
+  activeUrl?: string;
+  alwaysOpen?: boolean;
+  disableBreakpoints?: boolean;
+}
+
+export interface SidebarButtonProps extends SidebarButtonVariants, HTMLButtonAttributes {
+  breakpoint?: SidebarVariants["breakpoint"];
+  classes?: Classes<typeof sidebarButton>;
+  svgClass?: ClassValue;
+}
+
+export interface SidebarCtaProps extends SidebarCtaVariants, HTMLAttributes<HTMLDivElement> {
+  classes?: Classes<typeof sidebarCta>;
+  icon?: Snippet;
+  divClass?: ClassValue;
+  spanClass?: ClassValue;
+  label: string;
+}
+
+export interface SiteType {
+  name?: string;
+  href?: string;
+  img?: string;
+}
+
+export interface SidebarBrandProps extends SidebarBrandVariants, HTMLAnchorAttributes {
+  site?: SiteType;
+  classes?: Classes<typeof sidebarBrand>;
+  imgClass?: ClassValue;
+  spanClass?: ClassValue;
+}
+
+export type Bindable<T> = {
+  get(): T;
+  set(value: T): void;
+};
+
+export interface SidebarDropdownWrapperProps extends SidebarDropdownWrapperVariants, HTMLButtonAttributes {
+  children: Snippet;
+  arrowup?: Snippet;
+  arrowdown?: Snippet;
+  icon?: Snippet;
+  isOpen?: boolean;
+  btnClass?: ClassValue;
+  label?: string;
+  spanClass?: ClassValue;
+  ulClass?: ClassValue;
+  params?: ParamsType;
+  transition?: TransitionFunc;
+  svgClass?: ClassValue;
+  classes?: Classes<typeof sidebarDropdownWrapper>;
+  onclick?: () => void;
+  isSingle?: boolean;
+}
+
+export interface SidebarGroupProps extends HTMLAttributes<HTMLUListElement> {
+  children: Snippet;
+  borderClass?: ClassValue;
+  border?: boolean;
+}
+
+export interface SidebarItemProps extends HTMLAnchorAttributes {
+  icon?: Snippet;
+  subtext?: Snippet;
+  label?: string;
+  spanClass?: ClassValue;
+  activeClass?: ClassValue;
+  nonActiveClass?: ClassValue;
+  aClass?: ClassValue;
+  active?: boolean;
+}
+
+// skeleton
+export interface CardPlaceholderProps extends CardPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+  size?: CardPlaceholderVariants["size"];
+  classes?: Classes<typeof cardPlaceholder>;
+}
+
+export interface ImagePlaceholderProps extends ImagePlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+  size?: ImagePlaceholderVariants["size"];
+  classes?:Classes<typeof imagePlaceholder>;
+  rounded?: ImagePlaceholderVariants["rounded"];
+  imgOnly?: boolean;
+}
+
+export interface ListPlaceholderProps extends ListPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+  itemNumber?: number;
+  classes?: Classes<typeof listPlaceholder>;
+  title?: string;
+  size?: ListPlaceholderVariants["size"];
+  rounded?: ListPlaceholderVariants["rounded"];
+}
+
+export interface SkeletonProps extends SkeletonVariants, HTMLAttributes<HTMLDivElement> {
+  size?: SkeletonVariants["size"];
+  classes?: Classes<typeof skeleton>;
+}
+
+export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+	classes?: Classes<typeof testimonialPlaceholder>;
+}
+
+export interface TextPlaceholderProps extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+  size?: TextPlaceholderVariants["size"];
+  classes?: Classes<typeof textPlaceholder>;	
+}
+
+export interface VideoPlaceholderProps extends VideoPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+  size?: VideoPlaceholderVariants["size"];
+}
+	
+export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+	classes?: Classes<typeof widgetPlaceholder>;
+}
+
+// speeddial
+export interface SpeedCtxType {
+  pill: boolean;
+  tooltip: Placement | "none";
+  textOutside: boolean;
+}
+
+type BaseSpeedDialTriggerProps = {
+  children?: Snippet;
+  name?: string;
+  pill?: boolean;
+  icon?: Snippet;
+  class?: string;
+  [key: string]: unknown;
+};
+
+// Two different prop types based on gradient flag
+export type RegularSpeedDialTriggerProps = BaseSpeedDialTriggerProps & {
+  gradient?: false;
+  color?: ButtonVariants["color"];
+};
+
+export type GradientSpeedDialTriggerProps = BaseSpeedDialTriggerProps & {
+  gradient: true;
+  color?: GradientButtonColor;
+};
+export interface SpeedDialProps extends PopperProps ,
+  SpeedDialVariants  {
+    children: Snippet;
+    button?: Snippet;
+    popperClass?: ClassValue;
+    placement?: Placement;
+    tooltip?: Placement | "none";
+    trigger?: PopperProps["trigger"];
+    textOutside?: boolean;
+	classes?: Classes<typeof speedDial>;
+    pill?: boolean;
+    ontoggle?: PopperProps["ontoggle"];
+    onbeforetoggle?: PopperProps["onbeforetoggle"];
+    isOpen?: boolean;
+  };
+// Union type that forces TypeScript to check properly
+export interface SpeedDialTriggerProps extends BaseSpeedDialTriggerProps {
+  name?: string;
+  pill?: boolean;
+  icon?: Snippet;
+  color?: GradientButtonColor;
+  gradient?: boolean;
+  class?: string;
+  [key: string]: unknown;
+}
+
+
+
+export interface SpeedDialButtonProps extends ButtonProps, SpeedDialButtonVariants {
+  name?: string;
+  tooltip?: Placement | "none";
+  pill?: boolean;
+  textOutside?: boolean;
+  textClass?: ClassValue;
+  classes?: Classes<typeof speedDialButton>;
+}
+
   // tooltip
 export interface TooltipProps extends TooltipVariants, PopperProps {}
 
@@ -1111,5 +1443,40 @@ export interface TriggeredToggleEvent extends ToggleEvent {
 	cords: Partial<Coords>;
 	strategy?: "absolute" | "fixed";
 	class?: ClassValue | null;
+  }
+  
+
+  
+// scrollspy
+export interface ScrollSpyItem {
+	id: string;
+	label: string;
+	href?: string;
+  }
+  
+  export interface ScrollSpyProps extends ScrollSpyVariants, HTMLAttributes<HTMLElement> {
+	/** Array of navigation items */
+	items: ScrollSpyItem[];
+	/** Position of the navigation bar */
+	position?: "top" | "left" | "right";
+	/** Offset from top when calculating active section (useful for fixed headers) */
+	offset?: number;
+	/** Enable sticky positioning */
+	sticky?: boolean;
+	/** Custom class for active item */
+	activeClass?: string;
+	/** Custom class for inactive item */
+	inactiveClass?: string;
+	/** Custom class for nav container */
+	class?: string;
+	/** Enable smooth scroll behavior */
+	smoothScroll?: boolean;
+	/** Scroll container selector (if scrolling within a container instead of window) */
+	scrollContainer?: string;
+	classes?: Classes<typeof scrollspy>;
+	/** Callback when active section changes */
+	onActiveChange?: (itemId: string) => void;
+	/** Callback when navigation item is clicked */
+	onNavigate?: (itemId: string) => void;
   }
   

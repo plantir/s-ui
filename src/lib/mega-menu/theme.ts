@@ -1,8 +1,7 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
-export type MegaMenuVariants = VariantProps<typeof megamenu> & Classes<typeof megamenu>;
+export type MegaMenuVariants = VariantProps<typeof megamenu>;
 
 export const megamenu = tv({
   slots: {

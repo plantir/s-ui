@@ -1,62 +1,74 @@
 <script lang="ts">
-  import type { CardProps } from "../types.js";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import clsx from "clsx";
-  import { card } from "./theme.js";
-  import { untrack } from "svelte";
+	import type { CardProps } from '../types.js';
+	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
+	import clsx from 'clsx';
+	import { card } from './theme.js';
+	import { untrack } from 'svelte';
 
-  let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, imgClass, ...restProps }: CardProps = $props();
+	let {
+		children,
+		color = 'gray',
+		horizontal = false,
+		shadow = 'md',
+		reverse = false,
+		img,
+		size = 'sm',
+		class: className,
+		classes,
+		imgClass,
+		...restProps
+	}: CardProps = $props();
 
-  warnThemeDeprecation(
-    "Card",
-    untrack(() => ({ imgClass })),
-    { imgClass: "image" }
-  );
+	warnThemeDeprecation(
+		'Card',
+		untrack(() => ({ imgClass })),
+		{ imgClass: 'image' }
+	);
 
-  const styling = $derived(classes ?? { image: imgClass });
+	const styling = $derived(classes ?? { image: imgClass });
 
-  const theme = $derived(getTheme("card"));
+	const theme = $derived(getTheme('card'));
 
-  const { base, image } = $derived(
-    card({
-      size,
-      color,
-      shadow,
-      horizontal,
-      reverse,
-      href: !!restProps.href
-    })
-  );
+	const { base, image } = $derived(
+		card({
+			size,
+			color,
+			shadow,
+			horizontal,
+			reverse,
+			href: !!restProps.href
+		})
+	);
 </script>
 
 {#snippet childSlot()}
-  {#if img}
-    <img
-      class={image({ class: clsx(theme?.image, styling.image) })}
-      src={img}
-      alt=""
-      loading="lazy"
-      onerror={(e) => {
-        const target = e.currentTarget as HTMLImageElement;
-        if (target) {
-          target.style.display = "none";
-        }
-      }}
-    />
-    {@render children?.()}
-  {:else}
-    {@render children?.()}
-  {/if}
+	{#if img}
+		<img
+			class={image({ class: clsx(theme?.image, styling.image) })}
+			src={img}
+			alt=""
+			loading="lazy"
+			onerror={(e) => {
+				const target = e.currentTarget as HTMLImageElement;
+				if (target) {
+					target.style.display = 'none';
+				}
+			}}
+		/>
+		{@render children?.()}
+	{:else}
+		{@render children?.()}
+	{/if}
 {/snippet}
 
 {#if restProps.href === undefined}
-  <div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-    {@render childSlot()}
-  </div>
+	<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+		{@render childSlot()}
+	</div>
 {:else}
-  <a {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-    {@render childSlot()}
-  </a>
+	<a {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+		{@render childSlot()}
+	</a>
 {/if}
 
 <!--

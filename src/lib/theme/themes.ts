@@ -34,3 +34,13 @@ export { navbar, navbarUl, navbarBrand, navbarLi, navbarHamburger, navbarContain
 export { paginationItem, pagination, paginationButton, paginationNav } from "../pagination/theme";
 export { popover } from "../popover/theme";
 export { progressbar, progressradial } from "../progress/theme";
+
+export { advancedRating, rating, review, scoreRating } from "../rating/theme";
+export { scrollspy } from "../scroll-spy/theme";
+
+export { sidebar, sidebarButton, sidebarCta, sidebarBrand, sidebarDropdownWrapper } from "../sidebar/theme";
+
+
+export { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder } from "../skeleton/theme";
+
+export { speedDial, speedDialButton } from "../speed-dial/theme";

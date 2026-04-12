@@ -1,8 +1,7 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
-export type PaginationNavVariants = VariantProps<typeof paginationNav> & Classes<typeof paginationNav>;
+export type PaginationNavVariants = VariantProps<typeof paginationNav>;
 export type PaginationVariants = VariantProps<typeof pagination>;
 export type PaginationItemVariants = VariantProps<typeof paginationItem>;
 

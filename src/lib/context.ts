@@ -13,7 +13,7 @@ import type {
   ButtonGroupContextType,
   NavbarState,
   NavbarBreakpoint,
-//   SidebarContextType,
+  SidebarContextType,
 //   TableContextType,
 //   TabsContextType
 } from "./types";
@@ -94,12 +94,12 @@ export { getNavbarStateContext, setNavbarStateContext };
 const [getNavbarBreakpointContext, setNavbarBreakpointContext] = createSafeContext<NavbarBreakpoint>();
 export { getNavbarBreakpointContext, setNavbarBreakpointContext };
 
-// // Sidebar
-// const [getSidebarContext, setSidebarContext] = createSafeContext<SidebarContextType>();
-// export { getSidebarContext, setSidebarContext };
+// Sidebar
+const [getSidebarContext, setSidebarContext] = createSafeContext<SidebarContextType>();
+export { getSidebarContext, setSidebarContext };
 
-// const [getActiveUrlContext, setActiveUrlContext] = createSafeContext<{ value: string }>();
-// export { getActiveUrlContext, setActiveUrlContext };
+const [getActiveUrlContext, setActiveUrlContext] = createSafeContext<{ value: string }>();
+export { getActiveUrlContext, setActiveUrlContext };
 
 // // Table
 // const [getTableContext, setTableContext] = createSafeContext<TableContextType>();

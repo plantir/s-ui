@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type CardVariants = VariantProps<typeof card>;

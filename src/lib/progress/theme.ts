@@ -1,9 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
-export type ProgressbarVariants = VariantProps<typeof progressbar> & Classes<typeof progressbar>;
-export type ProgressradialVariants = VariantProps<typeof progressradial> & Classes<typeof progressradial>;
+export type ProgressbarVariants = VariantProps<typeof progressbar>;
+export type ProgressradialVariants = VariantProps<typeof progressradial>;
 
 export const progressbar = tv({
   slots: {

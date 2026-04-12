@@ -2,7 +2,7 @@
 	import { darkmode } from './theme.js';
 	import clsx from 'clsx';
 	import type { DarkmodeProps } from '../types.js';
-	import { getTheme } from '$lib/theme/themeUtils';
+	import { getTheme, isDark } from '$lib/theme/themeUtils';
 
 	// const THEME_PREFERENCE_KEY = 'color-theme';
 	let {
@@ -24,10 +24,12 @@
 
 	const toggleTheme = (ev: MouseEvent) => {
 		const target = ev.target as HTMLElement;
-		const isDark = target.ownerDocument.documentElement.classList.toggle('dark');
-		if (target.ownerDocument === document)
+		const _isDark = target.ownerDocument.documentElement.classList.toggle('dark');
+		if (target.ownerDocument === document) {
 			// we are NOT in the iFrame
-			localStorage.setItem('THEME_PREFERENCE_KEY', isDark ? 'dark' : 'light');
+			isDark.set(_isDark);
+			localStorage.setItem('THEME_PREFERENCE_KEY', _isDark ? 'dark' : 'light');
+		}
 	};
 </script>
 
@@ -38,8 +40,12 @@
 				? window.document.documentElement.classList.add('dark')
 				: window.document.documentElement.classList.remove('dark');
 		} else {
-			if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 				window.document.documentElement.classList.add('dark');
+				localStorage.setItem('THEME_PREFERENCE_KEY', 'dark');
+			} else {
+				localStorage.setItem('THEME_PREFERENCE_KEY', 'light');
+			}
 		}
 	</script>
 </svelte:head>

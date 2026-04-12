@@ -46,9 +46,35 @@
 		Progressbar,
 		MegaMenu,
 		Dropdown,
-		DropdownItem
+		DropdownItem,
+		Rating,
+		Star,
+		Heart,
+		Thumbup,
+		type RatingIconProps,
+		Skeleton,
+		ImagePlaceholder,
+		ListPlaceholder,
+		TestimonialPlaceholder,
+		TextPlaceholder,
+		VideoPlaceholder,
+		WidgetPlaceholder,
+		CardPlaceholder,
+		SpeedDialTrigger,
+		SpeedDial,
+		SpeedDialButton,
+		isDark
 	} from '$lib';
-	import { ChevronDownOutline } from 'flowbite-svelte-icons';
+	const wrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) =>
+		Heart(anchor, { ..._props, ...props });
+
+	import {
+		ChevronDownOutline,
+		ShareNodesSolid,
+		PrinterSolid,
+		DownloadSolid,
+		FileCopySolid
+	} from 'flowbite-svelte-icons';
 	let menu = [
 		{ name: 'About us', href: '/about' },
 		{ name: 'Blog', href: '/blog' },
@@ -624,5 +650,48 @@
 		<div class="flex">
 			<Progressbar color="cyan" progress="50" />
 		</div>
+		<h1>rating</h1>
+		<div class="flex">
+			<Rating id="example-1" icon={Star} total={5} size={50} rating={1.4} />
+			<Rating id="example-1b" icon={Thumbup} total={5} size={50} rating={4.66} />
+			<Rating
+				id="example-1b"
+				icon={wrapper({ fillColor: '#008800', strokeColor: '#008800' })}
+				total={5}
+				size={50}
+				rating={4.72}
+			/>
+		</div>
+		<h1>skeleton</h1>
+		<Skeleton size="sm" class="my-8" />
+		<Skeleton size="2xl" class="mt-8 mb-2.5" />
+		<ImagePlaceholder size="sm" class="my-8" />
+		<CardPlaceholder size="sm" class="my-8" />
+		<ListPlaceholder itemNumber={5} size="md" class="my-8" />
+		<TestimonialPlaceholder class="my-8" />
+		<TextPlaceholder size="sm" class="my-8" />
+		<VideoPlaceholder size="sm" class="my-8" />
+		<WidgetPlaceholder class="my-8" />
+
+		<h1>speed dial</h1>
+		<SpeedDialTrigger
+			color={$isDark ? 'cyanToBlue' : 'pinkToOrange'}
+			gradient
+			class="fixed inset-e-6 bottom-6"
+		/>
+		<SpeedDial>
+			<SpeedDialButton name="Share">
+				<ShareNodesSolid class="h-6 w-6" />
+			</SpeedDialButton>
+			<SpeedDialButton name="Print">
+				<PrinterSolid class="h-6 w-6" />
+			</SpeedDialButton>
+			<SpeedDialButton name="Download">
+				<DownloadSolid class="h-6 w-6" />
+			</SpeedDialButton>
+			<SpeedDialButton name="Copy">
+				<FileCopySolid class="h-6 w-6" />
+			</SpeedDialButton>
+		</SpeedDial>
 	</div>
 </ThemeProvider>
