@@ -14,10 +14,10 @@ import type {
   NavbarState,
   NavbarBreakpoint,
   SidebarContextType,
-//   TableContextType,
-//   TabsContextType
+  SplitPaneContext,
+  TableContextType,
+  TabsContextType
 } from "./types";
-// import type { SplitPaneContext } from "./types";
 import type { ThemeConfig } from "./theme";
 
 /**
@@ -101,14 +101,14 @@ export { getSidebarContext, setSidebarContext };
 const [getActiveUrlContext, setActiveUrlContext] = createSafeContext<{ value: string }>();
 export { getActiveUrlContext, setActiveUrlContext };
 
-// // Table
-// const [getTableContext, setTableContext] = createSafeContext<TableContextType>();
-// export { getTableContext, setTableContext };
+// Table
+const [getTableContext, setTableContext] = createSafeContext<TableContextType>();
+export { getTableContext, setTableContext };
 
-// // SplitPane
-// const [getSplitPaneContext, setSplitPaneContext] = createSafeContext<SplitPaneContext>();
-// export { getSplitPaneContext, setSplitPaneContext };
+// SplitPane
+const [getSplitPaneContext, setSplitPaneContext] = createSafeContext<SplitPaneContext>();
+export { getSplitPaneContext, setSplitPaneContext };
 
-// // Tabs
-// const [getTabsContext, setTabsContext] = createSafeContext<TabsContextType>();
-// export { getTabsContext, setTabsContext };
+// Tabs
+const [getTabsContext, setTabsContext] = createSafeContext<TabsContextType>();
+export { getTabsContext, setTabsContext };

@@ -6,24 +6,24 @@ import type {
 	ClassValue,
 	HTMLAnchorAttributes,
 	HTMLAttributes,
-	// HTMLBlockquoteAttributes,
+	HTMLBlockquoteAttributes,
 	HTMLButtonAttributes,
 	HTMLDialogAttributes,
 	HTMLImgAttributes,
 	HTMLInputAttributes,
-	// HTMLLabelAttributes,
+	HTMLLabelAttributes,
 	HTMLLiAttributes,
-	// HTMLOlAttributes,
-	// HTMLSelectAttributes,
-	// HTMLSourceAttributes,
-	// HTMLTableAttributes,
-	// HTMLTdAttributes,
-	// HTMLTextareaAttributes,
-	// HTMLThAttributes,
-	// HTMLTrackAttributes,
-	// HTMLVideoAttributes,
+	HTMLOlAttributes,
+	HTMLSelectAttributes,
+	HTMLSourceAttributes,
+	HTMLTableAttributes,
+	HTMLTdAttributes,
+	HTMLTextareaAttributes,
+	HTMLThAttributes,
+	HTMLTrackAttributes,
+	HTMLVideoAttributes,
 	SVGAttributes,
-	// FullAutoFill
+	FullAutoFill
 } from 'svelte/elements';
 import type {
 	BlurParams,
@@ -114,6 +114,10 @@ import type {
 	widgetPlaceholder
   } from './skeleton/theme.js';
 import type { scrollspy, ScrollSpyVariants } from './scroll-spy/theme.js';
+import type { stepIndicator, StepIndicatorVariants } from './step-indicator/theme.js';
+import type { StepperVariants,BreadcrumbStepperVariants,DetailedStepperVariants ,ProgressStepperVariants, TimelineStepperVariants, VerticalStepperVariants, breadcrumbStepper, detailedStepper, progressStepper, stepper, timelineStepper, verticalStepper } from './stepper/theme.js';
+import type {table, tableSearch, TableSearchColor, TableSearchVariants, TableVariants} from './table/theme.js'
+import type {tabItem, TabItemVariants,TabsVaraints} from './tabs/theme.js'
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -1478,5 +1482,326 @@ export interface ScrollSpyItem {
 	onActiveChange?: (itemId: string) => void;
 	/** Callback when navigation item is clicked */
 	onNavigate?: (itemId: string) => void;
+  }
+  
+
+  
+// splitpane
+export interface SplitPaneProps {
+	direction?: "horizontal" | "vertical";
+	minSize?: number;
+	responsive?: boolean;
+	breakpoint?: number;
+	transition?: boolean;
+	transitionDuration?: number;
+	keyboardStep?: number;
+	initialSizes?: number[];
+	onResize?: (sizes: number[]) => void;
+	children: Snippet;
+	class?: ClassValue | null;
+  }
+  
+  export interface PaneProps {
+	children?: Snippet;
+	class?: ClassValue | null;
+	style?: string;
+  }
+  
+  export interface DividerProps {
+	direction: "horizontal" | "vertical";
+	index: number;
+	onMouseDown: (e: MouseEvent, index: number) => void;
+	onTouchStart: (e: TouchEvent, index: number) => void;
+	onKeyDown: (e: KeyboardEvent, index: number) => void;
+	isDragging: boolean;
+	class?: ClassValue | null;
+	currentSize: number;
+  }
+  
+  export interface SplitPaneContext {
+	registerPane: () => number;
+	getPaneStyle: (index: number) => string;
+	getPaneSize: (index: number) => number;
+	shouldRenderDivider: (index: number) => boolean;
+	getDirection: () => "horizontal" | "vertical";
+	getIsDragging: () => boolean;
+	onMouseDown: (e: MouseEvent, index: number) => void;
+	onTouchStart: (e: TouchEvent, index: number) => void;
+	onKeyDown: (e: KeyboardEvent, index: number) => void;
+  }
+  
+  
+// stepindicator
+export interface StepIndicatorProps extends StepIndicatorVariants, HTMLAttributes<HTMLElement> {
+	steps?: string[];
+	currentStep?: number;
+	size?: StepIndicatorVariants["size"];
+	color?: StepIndicatorVariants["color"] | "custom";
+	glow?: boolean;
+	hideLabel?: boolean;
+	clickable?: boolean;
+	completedCustom?: string;
+	currentCustom?: string;
+	classes?: Classes<typeof stepIndicator>;
+	onStepClick?: (event: { current: number; last: number }) => void;
+  }
+  
+  // stepper
+  export type StepStatus = "completed" | "current" | "pending";
+  
+  export interface Step {
+	id?: number;
+	label: string;
+	description?: string;
+	status?: StepStatus;
+	icon?: Component;
+	iconClass?: ClassValue;
+	descriptionClass?: ClassValue;
+  }
+  
+  export interface StepperProps extends HTMLOlAttributes, StepperVariants {
+	steps: Step[];
+	current?: number; // Current step index (bindable, 1-based; 0 means no step active)
+	clickable?: boolean; // Allow clicking steps to navigate (default: true)
+	showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps (default: true)
+	classes?: Classes<typeof stepper>;
+	onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
+  }
+  export interface ProgressStep {
+	id?: string | number;
+	status?: StepStatus;
+	icon?: Component;
+	iconClass?: ClassValue;
+  }
+  
+  export interface ProgressStepperProps extends HTMLOlAttributes, ProgressStepperVariants {
+	steps: ProgressStep[];
+	current?: number; // Current step index (bindable)
+	clickable?: boolean; // Allow clicking steps to navigate (default: true)
+	showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps (default: true)
+	classes?: Classes<typeof progressStepper>;
+	onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
+  }
+  
+  export interface ProgressStepperProps extends HTMLOlAttributes, ProgressStepperVariants {
+	steps: ProgressStep[];
+	current?: number; // Current step index (bindable)
+	clickable?: boolean; // Allow clicking steps to navigate (default: true)
+	showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps (default: true)
+	onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
+}
+  export interface DetailedStep {
+	id: number;
+	label: string;
+	description?: string;
+	status?: "completed" | "current" | "pending"; // Optional: Override auto-status
+	icon?: Component; // Custom icon for this step (may be replaced by checkmark if step is completed and showCheckmarkForCompleted is true)
+	iconClass?: ClassValue;
+	descriptionClass?: ClassValue;
+  }
+
+  export interface DetailedStepperProps extends HTMLOlAttributes, DetailedStepperVariants {
+	steps: DetailedStep[];
+	contentClass?: ClassValue;
+	current?: number; // Current step index (bindable)
+	clickable?: boolean; // Allow clicking steps to navigate (default: true)
+	showCheckmarkForCompleted?: boolean;
+	classes?: Classes<typeof detailedStepper>;
+	onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
+  }
+// VerticalStepper
+export interface VerticalStep {
+	id: number;
+	label: string;
+	status?: "completed" | "current" | "pending";
+	icon?: Component;
+	iconClass?: ClassValue;
+  }
+  
+  export interface VerticalStepperProps extends HTMLOlAttributes, VerticalStepperVariants {
+	steps: VerticalStep[];
+	liClass?: ClassValue;
+	current?: number; // Current step index (bindable, 1-based; 0 means no step active)
+	clickable?: boolean; // Allow clicking steps to navigate (default: true)
+	showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps instead of icons
+	classes?: Classes<typeof verticalStepper>;
+	onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
+  }
+  
+  // BreadcrumbStepper
+  export interface BreadcrumbStep {
+	id: number;
+	label: string;
+	shortLabel?: string;
+	status?: "completed" | "current" | "pending";
+	icon?: Component;
+	iconClass?: ClassValue;
+  }
+  
+  export interface BreadcrumbStepperProps extends BreadcrumbStepperVariants, HTMLOlAttributes {
+	steps: BreadcrumbStep[];
+	current?: number; // Current step index (bindable, 1-based; 0 means no step active)
+	clickable?: boolean; // Allow clicking steps to navigate (default: true)
+	showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps instead of icons
+	classes?:Classes<typeof breadcrumbStepper>;
+	onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
+  }
+  
+  // TimelineStepper
+  export interface TimelineStep {
+	id?: string | number;
+	label: string;
+	description?: string;
+	status?: "completed" | "current" | "pending";
+	icon?: Component;
+	iconClass?: ClassValue;
+  }
+  
+  export interface TimelineStepperProps extends HTMLOlAttributes, TimelineStepperVariants {
+	steps: TimelineStep[];
+	contentClass?: ClassValue;
+	current?: number; // Current step index (bindable, 1-based; 0 means no step active)
+	clickable?: boolean; // Allow clicking steps to navigate (default: true)
+	showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps instead of icons
+	classes?: Classes<typeof timelineStepper>;
+	onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
+  }
+  
+  // tables
+  export type TableContextType = {
+	striped?: boolean;
+	hoverable?: boolean;
+	border?: boolean;
+	color?: TableVariants["color"];
+  };
+  
+  // prettier-ignore
+  export type HeadItemType = string | number | {
+	text: string;
+	[key: string]: string | number | boolean;
+  };
+  
+  export interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
+	children?: Snippet;
+	headerSlot?: Snippet;
+	defaultRow?: boolean;
+	headItems?: HeadItemType[];
+	striped?: boolean;
+	border?: boolean;
+	color?: TableVariants["color"];
+  }
+  
+  export type TableItemType = Record<string, string | number | boolean>;
+  
+  export interface TableProps extends TableVariants, Omit<HTMLTableAttributes, "border"> {
+	children?: Snippet;
+	footerSlot?: Snippet;
+	captionSlot?: Snippet;
+	classes?: Classes<typeof table>;
+	divClass?: ClassValue;
+	striped?: boolean;
+	hoverable?: boolean;
+	border?: boolean;
+	shadow?: boolean;
+	color?: TableVariants["color"];
+	items?: TableItemType[];
+  }
+  
+  export interface TableBodyRowProps extends HTMLAttributes<HTMLTableRowElement> {
+	children?: Snippet;
+	striped?: boolean;
+	hoverable?: boolean;
+	border?: boolean;
+	color?: TableVariants["color"];
+  }
+  
+  export interface TableBodyCellProps extends HTMLTdAttributes {
+	children?: Snippet;
+	colspan?: number;
+	color?: TableVariants["color"];
+	onclick?: () => void;
+  }
+  
+  export type CellValue = string | number | boolean | null | undefined;
+  
+  export type BodyRow = CellValue[] | (Record<string, CellValue> & { id?: string | number });
+  
+  export interface TableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
+	children?: Snippet;
+	bodyItems?: BodyRow[];
+  }
+  
+  export interface TableHeadCellProps<T = unknown> extends HTMLThAttributes {
+	children?: Snippet;
+	padding?: string;
+	sort?: ((a: T, b: T) => number) | null;
+	defaultDirection?: "asc" | "desc";
+	defaultSort?: boolean;
+	direction?: "asc" | "desc" | null;
+  }
+  
+  export type TableSearchType = {
+	striped?: boolean;
+	hoverable?: boolean;
+	color?: string;
+  };
+  
+  export interface TableSearchProps extends TableSearchVariants, HTMLTableAttributes {
+	children?: Snippet;
+	header?: Snippet;
+	footer?: Snippet;
+	classes?: Classes<typeof tableSearch>;
+	divClass?: ClassValue;
+	inputValue?: string;
+	striped?: boolean;
+	hoverable?: boolean;
+	customColor?: string;
+	color?: TableSearchColor;
+	innerDivClass?: ClassValue;
+	inputClass?: ClassValue;
+	searchClass?: ClassValue;
+	svgDivClass?: ClassValue;
+	svgClass?: ClassValue;
+	tableClass?: ClassValue;
+	placeholder?: string;
+  }
+  
+  // tabs
+  export interface TabsProps extends TabsVaraints, HTMLAttributes<HTMLUListElement> {
+	children: Snippet;
+	selected?: string;
+	tabStyle?: TabsVaraints["tabStyle"];
+	ulClass?: ClassValue;
+	contentClass?: ClassValue;
+	divider?: boolean;
+  }
+  
+  export interface TabitemProps extends TabItemVariants, HTMLLiAttributes {
+	children?: Snippet;
+	titleSlot?: Snippet;
+	open?: boolean;
+	classes?: Classes<typeof tabItem>;
+	title?: string; // for UI label
+	key?: string; // for identifier
+	activeClass?: ClassValue;
+	inactiveClass?: ClassValue;
+	disabled?: boolean;
+	tabStyle?: TabsVaraints["tabStyle"];
+  }
+  
+  export interface TabCtxType {
+	activeClass?: string;
+	inactiveClass?: string;
+	tabStyle?: TabsVaraints["tabStyle"];
+	panelId: string;
+  }
+  
+  export type SelectedTab = { snippet?: Snippet; id?: string };
+  
+  export interface TabsContextType {
+	activeClasses?: string;
+	ctx: TabCtxType;
+	registerTab: (tab: SelectedTab) => void;
+	unregisterTab: (tabId: string) => void;
   }
   

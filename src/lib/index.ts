@@ -103,7 +103,26 @@ export { default as WidgetPlaceholder } from "./skeleton/WidgetPlaceholder.svelt
 export { default as SpeedDial } from "./speed-dial/SpeedDial.svelte";
 export { default as SpeedDialButton } from "./speed-dial/SpeedDialButton.svelte";
 export { default as SpeedDialTrigger } from "./speed-dial/SpeedDialTrigger.svelte";
-
+export { default as SplitPane } from "./split-pane/SplitPane.svelte";
+export { default as Pane } from "./split-pane/Pane.svelte";
+export { default as Divider } from "./split-pane/Divider.svelte";
+export { default as StepIndicator } from "./step-indicator/StepIndicator.svelte";
+export { default as Stepper } from "./stepper/Stepper.svelte";
+export { default as ProgressStepper } from "./stepper/ProgressStepper.svelte";
+export { default as DetailedStepper } from "./stepper/DetailedStepper.svelte";
+export { default as VerticalStepper } from "./stepper/VerticalStepper.svelte";
+export { default as BreadcrumbStepper } from "./stepper/BreadcrumbStepper.svelte";
+export { default as TimelineStepper } from "./stepper/TimelineStepper.svelte";
+export { default as CheckmarkIcon } from "./stepper/CheckmarkIcon.svelte";
+export { default as DoubleArrowIcon } from "./stepper/DoubleArrowIcon.svelte";
+export { default as ProfileCardIcon } from "./stepper/ProfileCardIcon.svelte";
+export { default as Table } from "./table/Table.svelte";
+export { default as TableBody } from "./table/TableBody.svelte";
+export { default as TableBodyCell } from "./table/TableBodyCell.svelte";
+export { default as TableBodyRow } from "./table/TableBodyRow.svelte";
+export { default as TableHeadCell } from "./table/TableHeadCell.svelte";
+export { default as TableHead } from "./table/TableHead.svelte";
+export { default as TableSearch } from "./table/TableSearch.svelte";
 export { type ThemeConfig, ThemeProvider } from '$lib/theme';
 export * from './types';
 export * from './utils';
