@@ -45,3 +45,4 @@ export { stepper, progressStepper, detailedStepper, verticalStepper, breadcrumbS
 export { table, tableBodyRow, tableHead, tableBodyCell, tableHeadCell, tableSearch } from "../table/theme";
 export { tabs, tabItem } from "../tabs/theme";
 export { toast, toastContainer } from '../toast/theme';
+export { activity, activityItem, group, groupItem, timeline, timelineItem, type TimelineVariants } from "../timeline/theme";

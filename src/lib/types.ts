@@ -119,6 +119,7 @@ import type { StepperVariants, BreadcrumbStepperVariants, DetailedStepperVariant
 import type { table, tableSearch, TableSearchColor, TableSearchVariants, TableVariants } from './table/theme.js'
 import type { tabItem, TabItemVariants, TabsVaraints } from './tabs/theme.js'
 import type { ToastVaraints, toast } from './toast/theme.js';
+import type { TimelineVariants, TimelineItemVariants, timelineItem } from './timeline/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -1805,7 +1806,33 @@ export interface TabsContextType {
 	registerTab: (tab: SelectedTab) => void;
 	unregisterTab: (tabId: string) => void;
 }
+export type DateFormat = "year" | "month-year" | "full-date";
 
+export interface TimelineProps extends HTMLOlAttributes {
+  children: Snippet;
+  order?: TimelineVariants["order"];
+}
+
+type ColorVariant = "primary" | "green" | "orange" | "red" | "blue" | "purple" | "gray";
+
+export interface TimelineItemProps extends TimelineItemVariants, HTMLLiAttributes {
+  children: Snippet;
+  orientationSlot?: Snippet;
+  title: string;
+  date: string;
+  svgClass?: string;
+  liClass?: string;
+  defaultDivClass?: string;
+  divClass?: string;
+  timeClass?: string;
+  h3Class?: string;
+  dateFormat?: DateFormat;
+  color?: ColorVariant;
+  isLast?: boolean;
+  connectorClass?: string;
+  datePrefix?: string;
+  classes?: Classes<typeof timelineItem>;
+}
 export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement> {
 	children: Snippet;
 	icon?: Snippet;
