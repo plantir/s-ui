@@ -123,6 +123,8 @@ export { default as TableBodyRow } from "./table/TableBodyRow.svelte";
 export { default as TableHeadCell } from "./table/TableHeadCell.svelte";
 export { default as TableHead } from "./table/TableHead.svelte";
 export { default as TableSearch } from "./table/TableSearch.svelte";
+export { default as Toast } from "./toast/Toast.svelte";
+export { default as ToastContainer } from "./toast/ToastContainer.svelte";
 export { type ThemeConfig, ThemeProvider } from '$lib/theme';
 export * from './types';
 export * from './utils';

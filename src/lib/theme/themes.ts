@@ -44,3 +44,4 @@ export { type StepIndicatorVariants, stepIndicator, getStepStateClasses, type St
 export { stepper, progressStepper, detailedStepper, verticalStepper, breadcrumbStepper, timelineStepper } from "../stepper/theme";
 export { table, tableBodyRow, tableHead, tableBodyCell, tableHeadCell, tableSearch } from "../table/theme";
 export { tabs, tabItem } from "../tabs/theme";
+export { toast, toastContainer } from '../toast/theme';

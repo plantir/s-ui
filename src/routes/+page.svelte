@@ -73,7 +73,8 @@
 		ShareNodesSolid,
 		PrinterSolid,
 		DownloadSolid,
-		FileCopySolid
+		FileCopySolid,
+		ImageOutline
 	} from 'flowbite-svelte-icons';
 	let menu = [
 		{ name: 'About us', href: '/about' },
@@ -89,7 +90,8 @@
 		{ name: 'License', href: '/license' }
 	];
 	import { page } from '$app/state';
-	import { slide } from 'svelte/transition';
+	import { slide, blur } from 'svelte/transition';
+	import Toast from '$lib/toast/Toast.svelte';
 	let popupModal = $state(false);
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1' },
@@ -180,7 +182,7 @@
 		</Accordion>
 		<h1>AlertProps</h1>
 
-		<Alert color="cyan" dismissable closeIcon={CloseButton}>Hello my friend</Alert>
+		<Alert color="blue" dismissable closeIcon={CloseButton}>Hello my friend</Alert>
 		<Alert color="gray" border={true}>
 			<div class="flex items-center gap-2">
 				<i class="icon">
@@ -652,7 +654,7 @@
 		</div>
 		<h1>rating</h1>
 		<div class="flex">
-			<Rating id="example-1" icon={Star} total={5} size={50} rating={1.4} />
+			<!-- <Rating id="example-1" icon={Star} total={5} size={50} rating={1.4} />
 			<Rating id="example-1b" icon={Thumbup} total={5} size={50} rating={4.66} />
 			<Rating
 				id="example-1b"
@@ -660,7 +662,7 @@
 				total={5}
 				size={50}
 				rating={4.72}
-			/>
+			/> -->
 		</div>
 		<h1>skeleton</h1>
 		<Skeleton size="sm" class="my-8" />
@@ -693,5 +695,12 @@
 				<FileCopySolid class="h-6 w-6" />
 			</SpeedDialButton>
 		</SpeedDial>
+		<h1>toast</h1>
+		<Toast color="orange" dismissable={true} transition={blur}>
+			{#snippet icon()}
+				<ImageOutline class="h-6 w-6" />
+			{/snippet}
+			test
+		</Toast>
 	</div>
 </ThemeProvider>
