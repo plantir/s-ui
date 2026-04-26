@@ -131,6 +131,7 @@ export { default as Group } from "./timeline/Group.svelte";
 export { default as GroupItem } from "./timeline/GroupItem.svelte";
 export { default as Timeline } from "./timeline/Timeline.svelte";
 export { default as TimelineItem } from "./timeline/TimelineItem.svelte";
+export { default as Tour } from "./tour/Tour.svelte";
 export { type ThemeConfig, ThemeProvider } from '$lib/theme';
 export * from './types';
 export * from './utils';

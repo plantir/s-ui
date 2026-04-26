@@ -120,6 +120,7 @@ import type { table, tableSearch, TableSearchColor, TableSearchVariants, TableVa
 import type { tabItem, TabItemVariants, TabsVaraints } from './tabs/theme.js'
 import type { ToastVaraints, toast } from './toast/theme.js';
 import type { TimelineVariants, TimelineItemVariants, timelineItem } from './timeline/theme.js';
+import type { TourVariants, tour } from './tour/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -1809,29 +1810,29 @@ export interface TabsContextType {
 export type DateFormat = "year" | "month-year" | "full-date";
 
 export interface TimelineProps extends HTMLOlAttributes {
-  children: Snippet;
-  order?: TimelineVariants["order"];
+	children: Snippet;
+	order?: TimelineVariants["order"];
 }
 
 type ColorVariant = "primary" | "green" | "orange" | "red" | "blue" | "purple" | "gray";
 
 export interface TimelineItemProps extends TimelineItemVariants, HTMLLiAttributes {
-  children: Snippet;
-  orientationSlot?: Snippet;
-  title: string;
-  date: string;
-  svgClass?: string;
-  liClass?: string;
-  defaultDivClass?: string;
-  divClass?: string;
-  timeClass?: string;
-  h3Class?: string;
-  dateFormat?: DateFormat;
-  color?: ColorVariant;
-  isLast?: boolean;
-  connectorClass?: string;
-  datePrefix?: string;
-  classes?: Classes<typeof timelineItem>;
+	children: Snippet;
+	orientationSlot?: Snippet;
+	title: string;
+	date: string;
+	svgClass?: string;
+	liClass?: string;
+	defaultDivClass?: string;
+	divClass?: string;
+	timeClass?: string;
+	h3Class?: string;
+	dateFormat?: DateFormat;
+	color?: ColorVariant;
+	isLast?: boolean;
+	connectorClass?: string;
+	datePrefix?: string;
+	classes?: Classes<typeof timelineItem>;
 }
 export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement> {
 	children: Snippet;
@@ -1853,4 +1854,24 @@ export interface ToastContainerProps extends HTMLAttributes<HTMLDivElement> {
 	children: Snippet;
 	position?: ToastVaraints["position"];
 	class?: ClassValue | null;
+}
+
+export type TourStep = {
+	target: string;
+	title?: string;
+	description: string;
+	placement?: Placement;
+};
+
+export interface TourProps extends TourVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+	steps: TourStep[];
+	active?: boolean;
+	currentStep?: number;
+	oncomplete?: () => void;
+	onskip?: () => void;
+	showOverlay?: boolean;
+	scrollBehavior?: ScrollBehavior;
+	tooltipOffset?: number;
+	highlightClass?: string;
+	classes?: Classes<typeof tour>;
 }

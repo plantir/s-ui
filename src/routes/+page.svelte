@@ -100,6 +100,7 @@
 	import ActivityItem from '$lib/timeline/ActivityItem.svelte';
 	import Group from '$lib/timeline/Group.svelte';
 	import GroupItem from '$lib/timeline/GroupItem.svelte';
+	import Tour from '$lib/tour/Tour.svelte';
 	let popupModal = $state(false);
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1' },
@@ -218,32 +219,83 @@
 			comment: '"I wanted to share a webinar zeroheight."'
 		}
 	];
+	let tour = $state({
+		active: false,
+		currentStep: 0,
+		steps: [
+			{
+				target: '#accordion',
+				title: 'Accordion',
+				description:
+					'Accordion is a vertically stacked set of panels, only one of which can be expanded at a time.',
+				placement: 'top'
+			},
+			{
+				target: '#alert',
+				title: 'Alert',
+				description: 'Alert is a message that provides information to the user.',
+				placement: 'top'
+			},
+			{
+				target: '#avatar',
+				title: 'Avatar',
+				description: 'Avatar is a graphical representation of a user.'
+			}
+		]
+	});
+	const startTour = () => {
+		tour.currentStep = 0;
+		tour.active = true;
+	};
 </script>
 
 <ThemeProvider {theme}>
 	<div class="flex flex-col gap-4 p-8 pb-24">
-		<h1>accordion</h1>
-		<Accordion>
-			<AccordionItem>
-				{#snippet header()}
-					Accordion Item 1
-				{/snippet}
-				Hello
-			</AccordionItem>
-			<AccordionItem>
-				{#snippet header()}
-					Accordion Item 2
-				{/snippet}
-				Hello
-			</AccordionItem>
-		</Accordion>
-		<h1>AlertProps</h1>
+		<div id="accordion">
+			<h1>accordion</h1>
+			<Accordion>
+				<AccordionItem>
+					{#snippet header()}
+						Accordion Item 1
+					{/snippet}
+					Hello
+				</AccordionItem>
+				<AccordionItem>
+					{#snippet header()}
+						Accordion Item 2
+					{/snippet}
+					Hello
+				</AccordionItem>
+			</Accordion>
+		</div>
+		<div id="alert">
+			<h1>AlertProps</h1>
 
-		<Alert color="blue" dismissable closeIcon={CloseButton}>Hello my friend</Alert>
-		<Alert color="gray" border={true}>
-			<div class="flex items-center gap-2">
-				<i class="icon">
+			<Alert color="blue" dismissable closeIcon={CloseButton}>Hello my friend</Alert>
+			<Alert color="gray" border={true}>
+				<div class="flex items-center gap-2">
+					<i class="icon">
+						<svg
+							fill="currentColor"
+							aria-hidden="true"
+							width="1em"
+							height="1em"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg"
+							><path
+								d="M18 10a8 8 0 1 0-16 0 8 8 0 0 0 16 0ZM9.5 8.91a.5.5 0 0 1 1 0V13.6a.5.5 0 0 1-1 0V8.9Zm-.25-2.16a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Z"
+								fill="currentColor"
+							></path>
+						</svg>
+					</i>
+					<p>Message providing information to the user with actionable insights.</p>
+					<CloseButton></CloseButton>
+				</div>
+			</Alert>
+			<Alert color="indigo" border={true} rounded={false}>
+				<div class="flex items-center gap-2">
 					<svg
+						class="icon"
 						fill="currentColor"
 						aria-hidden="true"
 						width="1em"
@@ -255,51 +307,35 @@
 							fill="currentColor"
 						></path>
 					</svg>
-				</i>
-				<p>Message providing information to the user with actionable insights.</p>
-				<CloseButton></CloseButton>
-			</div>
-		</Alert>
-		<Alert color="indigo" border={true} rounded={false}>
-			<div class="flex items-center gap-2">
-				<svg
-					class="icon"
-					fill="currentColor"
-					aria-hidden="true"
-					width="1em"
-					height="1em"
-					viewBox="0 0 20 20"
-					xmlns="http://www.w3.org/2000/svg"
-					><path
-						d="M18 10a8 8 0 1 0-16 0 8 8 0 0 0 16 0ZM9.5 8.91a.5.5 0 0 1 1 0V13.6a.5.5 0 0 1-1 0V8.9Zm-.25-2.16a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Z"
-						fill="currentColor"
-					></path>
-				</svg>
-				<p>Message providing information to the user with actionable insights.</p>
-				<CloseButton></CloseButton>
-			</div>
-		</Alert>
-		<h1>avatar</h1>
-		<div class="flex gap-x-1">
-			<Avatar>A</Avatar>
-			<Avatar>R</Avatar>
-			<Avatar>M</Avatar>
-			<Avatar>I</Avatar>
-			<Avatar dot={{ color: 'green', placement: 'top-left' }}>N</Avatar>
+					<p>Message providing information to the user with actionable insights.</p>
+					<CloseButton></CloseButton>
+				</div>
+			</Alert>
 		</div>
-		<div class="flex gap-x-1">
-			<Avatar size="xs">A</Avatar>
-			<Avatar size="sm">R</Avatar>
-			<Avatar size="md">M</Avatar>
-			<Avatar size="lg">I</Avatar>
-			<Avatar size="xl">N</Avatar>
-		</div>
-		<div class="flex gap-x-1">
-			<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>A</Avatar>
-			<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>R</Avatar>
-			<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>M</Avatar>
-			<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>I</Avatar>
-			<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>N</Avatar>
+
+		<div id="avatar">
+			<h1>avatar</h1>
+			<div class="flex gap-x-1">
+				<Avatar>A</Avatar>
+				<Avatar>R</Avatar>
+				<Avatar>M</Avatar>
+				<Avatar>I</Avatar>
+				<Avatar dot={{ color: 'green', placement: 'top-left' }}>N</Avatar>
+			</div>
+			<div class="flex gap-x-1">
+				<Avatar size="xs">A</Avatar>
+				<Avatar size="sm">R</Avatar>
+				<Avatar size="md">M</Avatar>
+				<Avatar size="lg">I</Avatar>
+				<Avatar size="xl">N</Avatar>
+			</div>
+			<div class="flex gap-x-1">
+				<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>A</Avatar>
+				<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>R</Avatar>
+				<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>M</Avatar>
+				<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>I</Avatar>
+				<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>N</Avatar>
+			</div>
 		</div>
 		<h1>badge</h1>
 		<div>
@@ -789,5 +825,12 @@
 		<Group date="January 13th, 2022">
 			<GroupItem timelines={groupTimelines} />
 		</Group>
+		<div id="tour">
+			<h1>tour</h1>
+			<div>
+				<Button onclick={startTour}>Start Tour</Button>
+			</div>
+		</div>
+		<Tour bind:active={tour.active} bind:currentStep={tour.currentStep} steps={tour.steps} />
 	</div>
 </ThemeProvider>

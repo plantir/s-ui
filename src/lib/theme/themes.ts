@@ -46,3 +46,4 @@ export { table, tableBodyRow, tableHead, tableBodyCell, tableHeadCell, tableSear
 export { tabs, tabItem } from "../tabs/theme";
 export { toast, toastContainer } from '../toast/theme';
 export { activity, activityItem, group, groupItem, timeline, timelineItem, type TimelineVariants } from "../timeline/theme";
+export { tour } from "../tour/theme";
