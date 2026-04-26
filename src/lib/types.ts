@@ -121,6 +121,14 @@ import type { tabItem, TabItemVariants, TabsVaraints } from './tabs/theme.js'
 import type { ToastVaraints, toast } from './toast/theme.js';
 import type { TimelineVariants, TimelineItemVariants, timelineItem } from './timeline/theme.js';
 import type { TourVariants, tour } from './tour/theme.js';
+import type { AnchorVariants } from './a/theme.js';
+import type { BlockquoteVariants } from './blockquote/theme.js';
+import type { DescriptionListVariants } from './descriptionlist/theme.js';
+import type { HeadingVariants } from './heading/theme.js';
+import type { ParagraphVariants } from './paragraph/theme.js';
+import type { ImgVariants, img } from './img/theme.js';
+import type { ListVariants } from './list/theme.js';
+import type { SpanVariants } from './span/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -1874,4 +1882,124 @@ export interface TourProps extends TourVariants, Omit<HTMLAttributes<HTMLDivElem
 	tooltipOffset?: number;
 	highlightClass?: string;
 	classes?: Classes<typeof tour>;
+}
+
+export interface AnchorProps {
+	children: Snippet;
+	color?: AnchorVariants["color"];
+	asButton?: boolean;
+	onclick?: (event: MouseEvent) => void;
+	// Common attributes that make sense for both button and anchor
+	id?: string;
+	class?: string;
+	style?: string;
+	tabindex?: number;
+	title?: string;
+	role?: string;
+	"aria-label"?: string;
+	"data-testid"?: string;
+	// Anchor-specific attributes (used when asButton is false)
+	href?: string;
+	target?: string;
+	rel?: string;
+	download?: string | boolean;
+	// Button-specific attributes (used when asButton is true)
+	type?: "button" | "submit" | "reset";
+	disabled?: boolean;
+	name?: string;
+	value?: string | number | string[];
+	// Allow any other attributes (like data-* attributes)
+	[key: string]: any;
+
+}
+export interface BlockquoteProps extends HTMLBlockquoteAttributes {
+	children: Snippet;
+	border?: boolean;
+	italic?: boolean;
+	bg?: boolean;
+	alignment?: BlockquoteVariants["alignment"];
+	size?: BlockquoteVariants["size"];
+}
+export interface DescriptionListProps extends HTMLAttributes<HTMLElement> {
+	children: Snippet;
+	tag: DescriptionListVariants["tag"];
+}
+export interface HeadingProps extends HTMLAttributes<HTMLElement> {
+	children: Snippet;
+	tag?: HeadingVariants["tag"];
+}
+export interface ParagraphProps extends ParagraphVariants, HTMLAttributes<HTMLParagraphElement> {
+	children: Snippet;
+	italic?: boolean;
+	firstUpper?: boolean;
+	justify?: boolean;
+}
+export interface Picture {
+	/**
+	 * Key is format. Value is srcset.
+	 */
+	sources: Record<string, string>;
+	img: {
+		src: string;
+		w: number;
+		h: number;
+	};
+}
+// export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string };
+
+export interface ImgProps extends ImgVariants, Omit<HTMLImgAttributes, "children"> {
+	children?: Snippet<[{ class: string; restProps: any }]>;
+	size?: ImgVariants["size"];
+	effect?: ImgVariants["effect"];
+	caption?: string;
+	figClass?: string;
+	captionClass?: string;
+	href?: HTMLAnchorElement["href"];
+	align?: ImgVariants["align"];
+	class?: string;
+	classes?: Classes<typeof img>;
+}
+
+export interface EnhandedImgProps extends ImgVariants, Omit<HTMLImgAttributes, "src"> {
+	src: string | Picture;
+	size?: ImgVariants["size"];
+	multiple?: boolean;
+	transform?: string;
+	effect?: ImgVariants["effect"];
+	caption?: string;
+	figClass?: string;
+	captionClass?: string;
+	href?: HTMLAnchorElement["href"];
+}
+export interface LayoutProps extends HTMLAttributes<HTMLElement> {
+	children: Snippet;
+}
+
+export interface ListProps extends HTMLOlAttributes {
+	children: Snippet;
+	tag?: ListVariants["tag"];
+	position?: ListVariants["position"];
+	ctxClass?: string;
+	isContenteditable?: boolean;
+}
+
+export interface LiProps extends HTMLLiAttributes {
+	children: Snippet;
+	icon?: boolean;
+}
+
+export interface MarkProps extends HTMLAttributes<HTMLElement> {
+	children: Snippet;
+}
+
+export interface SecondaryProps extends HTMLAttributes<HTMLElement> {
+	children: Snippet;
+}
+
+export interface SpanProps extends SpanVariants, HTMLAttributes<HTMLSpanElement> {
+	children?: Snippet;
+	italic?: boolean;
+	underline?: boolean;
+	linethrough?: boolean;
+	uppercase?: boolean;
 }

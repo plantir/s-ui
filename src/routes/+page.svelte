@@ -76,7 +76,16 @@
 		FileCopySolid,
 		ImageOutline,
 		ArrowRightOutline,
-		CalendarWeekSolid
+		CalendarWeekSolid,
+
+		QuoteSolid,
+
+		CheckCircleSolid,
+
+		CloseCircleSolid
+
+
+
 	} from 'flowbite-svelte-icons';
 	let menu = [
 		{ name: 'About us', href: '/about' },
@@ -101,6 +110,19 @@
 	import Group from '$lib/timeline/Group.svelte';
 	import GroupItem from '$lib/timeline/GroupItem.svelte';
 	import Tour from '$lib/tour/Tour.svelte';
+	import A from '$lib/a/A.svelte';
+	import Blockquote from '$lib/blockquote/Blockquote.svelte';
+	import DescriptionList from '$lib/descriptionlist/DescriptionList.svelte';
+	import Heading from '$lib/heading/Heading.svelte';
+	import P from '$lib/paragraph/P.svelte';
+	import Hr from '$lib/hr/Hr.svelte';
+	import Img from '$lib/img/Img.svelte';
+	import Layout from '$lib/layout/Layout.svelte';
+	import List from '$lib/list/List.svelte';
+	import Li from '$lib/list/Li.svelte';
+	import Mark from '$lib/mark/Mark.svelte';
+	import Secondary from '$lib/secondary/Secondary.svelte';
+	import Span from '$lib/span/Span.svelte';
 	let popupModal = $state(false);
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1' },
@@ -838,5 +860,66 @@
 			</div>
 		</div>
 		<Tour bind:active={tour.active} bind:currentStep={tour.currentStep} steps={tour.steps} />
+		<h1>a</h1>
+		<A href="/" color="primary">Link</A>
+		<A href="/" color="amber">Link</A>
+		<A href="/" color="green">Link</A>
+		<h1>blockquote</h1>
+		<Blockquote size="base">
+			"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."
+		  </Blockquote>
+		<h1>description list</h1>
+		<DescriptionList tag="dd">
+			<dt>Description list</dt>
+			<dd>A list of terms and their definitions.</dd>
+		</DescriptionList>
+		<h1>heading</h1>
+		<Heading tag="h1">Heading 1</Heading>
+		<Heading tag="h2">Heading 2</Heading>
+		<Heading tag="h3">Heading 3</Heading>
+		<Heading tag="h4">Heading 4</Heading>
+		<Heading tag="h5">Heading 5</Heading>
+		<Heading tag="h6">Heading 6</Heading>
+		<h1>hr & paragraph</h1>
+		<P>
+			Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
+			richer contextual information to rapidly respond to requests, incidents, and changes.
+		  </P>
+		  <Hr class="h-1 w-64">
+			<QuoteSolid class="h-6 w-6 text-gray-700 dark:text-gray-300" />
+		  </Hr>
+		  <P>
+			Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+			audit trail for every change.
+		  </P>
+		  <h1>img</h1>
+		  <Img src="https://flowbite-svelte.com/images/examples/image-1@2x.jpg" alt="default example 1" />
+		  <h1>layout</h1>
+		  <Layout>
+			<h1>Header</h1>
+			<h1>Main</h1>
+			<h1>Footer</h1>
+		  </Layout>
+		  <h1>list</h1>
+		  <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
+			<Li icon>
+			  <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
+			  At least 10 characters (and up to 100 characters)
+			</Li>
+			<Li icon>
+			  <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
+			  At least one lowercase character
+			</Li>
+			<Li icon>
+			  <CloseCircleSolid class="me-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
+			  Inclusion of at least one special character, e.g., ! @ # ?
+			</Li>
+		  </List>
+		  <h1>mark</h1>
+		  <P>this is a <Mark>marked</Mark> text</P>
+		  <h1>secondary</h1>
+			<p>this is a <Secondary>secondary</Secondary> text</p>
+		  <h1>span</h1>
+		  <P>this is a <Span gradient="blueToGreen" highlight="lime" underline>span</Span> text</P>
 	</div>
 </ThemeProvider>
