@@ -240,6 +240,12 @@
 				target: '#avatar',
 				title: 'Avatar',
 				description: 'Avatar is a graphical representation of a user.'
+			},
+			{
+				target: '#tour',
+				title: 'Tour',
+				description: 'Tour is a guided tour of the application.',
+				placement: 'top'
 			}
 		]
 	});
