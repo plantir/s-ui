@@ -145,6 +145,7 @@ export { default as Li } from "./list/Li.svelte";
 export { default as Mark } from "./mark/Mark.svelte";
 export { default as Secondary } from "./secondary/Secondary.svelte";
 export { default as Span } from "./span/Span.svelte";
+export { default as Video } from "./video/Video.svelte";
 export { type ThemeConfig, ThemeProvider } from '$lib/theme';
 export * from './types';
 export * from './utils';

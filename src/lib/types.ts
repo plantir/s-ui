@@ -2003,3 +2003,11 @@ export interface SpanProps extends SpanVariants, HTMLAttributes<HTMLSpanElement>
 	linethrough?: boolean;
 	uppercase?: boolean;
 }
+
+export interface VideoProps extends HTMLVideoAttributes {
+	type?: HTMLSourceAttributes["type"];
+	src?: HTMLSourceAttributes["src"];
+	trackSrc?: HTMLTrackAttributes["src"];
+	srclang?: HTMLTrackAttributes["lang"];
+	label?: HTMLTrackAttributes["label"];
+}

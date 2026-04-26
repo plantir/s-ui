@@ -123,6 +123,7 @@
 	import Mark from '$lib/mark/Mark.svelte';
 	import Secondary from '$lib/secondary/Secondary.svelte';
 	import Span from '$lib/span/Span.svelte';
+	import Video from '$lib/video/Video.svelte';
 	let popupModal = $state(false);
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1' },
@@ -921,5 +922,7 @@
 			<p>this is a <Secondary>secondary</Secondary> text</p>
 		  <h1>span</h1>
 		  <P>this is a <Span gradient="blueToGreen" highlight="lime" underline>span</Span> text</P>
+		  <h1>video</h1>
+		  <Video src="https://flowbite-svelte.com/videos/flowbite.mp4" controls />
 	</div>
 </ThemeProvider>
