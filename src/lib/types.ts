@@ -129,6 +129,21 @@ import type { ParagraphVariants } from './paragraph/theme.js';
 import type { ImgVariants, img } from './img/theme.js';
 import type { ListVariants } from './list/theme.js';
 import type { SpanVariants } from './span/theme.js';
+import type { LabelVariants } from './label/theme.js';
+import type { CheckboxButtonVariants, CheckboxVariants, checkbox } from './checkbox/theme.js';
+import type { FileuploadViariants, fileupload } from './fileupload/theme.js';
+import type { InputVariants, input } from './input-field/theme.js';
+import type { ButtonToggleVariants, buttonToggle } from './button-toggle/theme.js';
+import type { FloatingLabelInputVaratiants, floatingLabelInput } from './floating-label/theme.js';
+import type { HelperVariants } from './helper/theme.js';
+import type { PhoneInputVariants, phoneInput } from './phoneinput/theme.js';
+import type { RadioVariants, radio } from './radio/theme.js';
+import type { RangeVariants } from './range/theme.js';
+import type { SearchVariants, search } from './search/theme.js';
+import type { MultiSelectVariants, SelectVariants, select, multiSelect } from './select/theme.js';
+import type { TagsVariants, tags } from './tags/theme.js';
+import type { TextareaVariants, textarea } from './textarea/theme.js';
+import type { ToggleVariants, toggle } from './toggle/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -2010,4 +2025,337 @@ export interface VideoProps extends HTMLVideoAttributes {
 	trackSrc?: HTMLTrackAttributes["src"];
 	srclang?: HTMLTrackAttributes["lang"];
 	label?: HTMLTrackAttributes["label"];
+}
+export interface LabelProps extends HTMLLabelAttributes {
+	children: Snippet;
+	color?: LabelVariants["color"];
+	show?: boolean;
+}
+
+export interface CheckboxItem {
+	value: string | number;
+	label?: string;
+	checked?: boolean | null;
+	[key: string]: any;
+}
+
+export interface CheckboxProps extends CheckboxVariants, Omit<HTMLInputAttributes, "children" | "color"> {
+	children?: Snippet<[{ value?: string | number; checked: boolean } | CheckboxItem]>;
+	custom?: boolean;
+	inline?: boolean;
+	tinted?: boolean;
+	rounded?: boolean;
+	choices?: CheckboxItem[];
+	divClass?: ClassValue;
+	labelProps?: Omit<LabelProps, "children">;
+	classes?: Classes<typeof checkbox>;
+}
+
+export interface CheckboxButtonProps extends CheckboxButtonVariants, Omit<HTMLInputAttributes, "size" | "checked"> {
+	inline?: boolean;
+	pill?: boolean;
+	outline?: boolean;
+	size?: ButtonProps["size"];
+	color?: ButtonProps["color"];
+	shadow?: boolean;
+}
+
+export interface FileuploadProps extends FileuploadViariants, Omit<HTMLInputAttributes, "size"> {
+	files?: FileList | null;
+	size?: FileuploadViariants["size"];
+	color?: InputProps<never>["color"];
+	elementRef?: HTMLInputElement;
+	clearable?: boolean;
+	clearableSvgClass?: ClassValue;
+	clearableColor?: CloseButtonVariants["color"];
+	clearableOnClick?: () => void;
+	clearableClass?: ClassValue;
+	wrapperClass?: ClassValue;
+	classes?: Classes<typeof fileupload>;
+}
+
+export type InputValue = string | number | string[] | undefined;
+
+export interface InputProps<T extends InputValue = string> extends InputVariants, Omit<HTMLInputAttributes, "size" | "children" | "value"> {
+	children?: Snippet<[{ class: string } & Omit<InputProps<T>, "children" | "left" | "right" | "size">]>;
+	left?: Snippet;
+	right?: Snippet;
+	size?: InputVariants["size"];
+	value?: T;
+	elementRef?: HTMLInputElement;
+	color?: InputVariants["color"];
+	leftClass?: ClassValue;
+	rightClass?: ClassValue;
+	divClass?: ClassValue;
+	wrapperClass?: ClassValue;
+	clearable?: boolean;
+	clearableSvgClass?: ClassValue;
+	clearableColor?: CloseButtonVariants["color"];
+	clearableClass?: ClassValue;
+	clearableOnClick?: () => void;
+	data?: string[];
+	maxSuggestions?: number;
+	onSelect?: (item: string) => void;
+	comboClass?: ClassValue;
+	comboItemClass?: ClassValue;
+	oninput?: (event: Event) => void;
+	onfocus?: (event: FocusEvent) => void;
+	onblur?: (event: FocusEvent) => void;
+	onkeydown?: (event: KeyboardEvent) => void;
+	/** @deprecated Use `oninput` instead. Will be removed in next minor version. */
+	onInput?: (event: Event) => void;
+	/** @deprecated Use `onfocus` instead. Will be removed in next minor version. */
+	onFocus?: (event: FocusEvent) => void;
+	/** @deprecated Use `onblur` instead. Will be removed in next minor version. */
+	onBlur?: (event: FocusEvent) => void;
+	/** @deprecated Use `onkeydown` instead. Will be removed in next minor version. */
+	onKeydown?: (event: KeyboardEvent) => void;
+	classes?: Classes<typeof input>;
+}
+export interface InputAddonProps extends HTMLAttributes<HTMLDivElement> {
+	children: Snippet;
+	size?: ButtonGroupProps["size"];
+}
+
+
+export type ButtonToggleGroupProps = HTMLAttributes<HTMLDivElement> & {
+	multiSelect?: boolean;
+	name?: string;
+	value?: string | null | string[];
+	color?: ButtonToggleVariants["color"];
+	size?: ButtonToggleVariants["size"];
+	roundedSize?: "sm" | "md" | "lg" | "xl" | "full"; // buttonToggleGroup roundedSize values
+	onSelect?: (val: string | null | string[]) => void;
+	children: Snippet;
+	ctxIconClass?: ClassValue;
+	ctxBtnClass?: ClassValue;
+};
+
+export type ButtonToggleProps = ButtonToggleVariants &
+	HTMLButtonAttributes & {
+		value: string;
+		selected?: boolean;
+		children: Snippet;
+		iconSlot?: Snippet;
+		color?: ButtonToggleVariants["color"];
+		iconClass?: ClassValue;
+		contentClass?: ClassValue;
+		txtClass?: ClassValue;
+		classes?: Classes<typeof buttonToggle>;
+	};
+
+export interface ButtonToggleContext {
+	toggleSelected: (toggleValue: string) => void;
+	isSelected: (toggleValue: string) => boolean;
+}
+
+export type CheckIconProps = SVGAttributes<SVGSVGElement>;
+
+export interface DropzoneProps extends HTMLInputAttributes {
+	children: Snippet;
+	files?: FileList | null;
+	onDrop?: HTMLLabelAttributes["ondrop"];
+	onDragOver?: HTMLLabelAttributes["ondragover"];
+	onChange?: HTMLInputAttributes["onchange"];
+}
+
+export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, Omit<HTMLInputAttributes, "size"> {
+	children: Snippet;
+	id?: string;
+	value?: string | number | readonly string[];
+	elementRef?: HTMLInputElement;
+	"aria-describedby"?: string;
+	variant?: FloatingLabelInputVaratiants["variant"];
+	size?: FloatingLabelInputVaratiants["size"];
+	color?: FloatingLabelInputVaratiants["color"];
+	inputClass?: ClassValue;
+	labelClass?: ClassValue;
+	clearable?: boolean;
+	clearableSvgClass?: ClassValue;
+	clearableColor?: CloseButtonVariants["color"];
+	clearableClass?: ClassValue;
+	clearableOnClick?: () => void;
+	data?: string[];
+	maxSuggestions?: number;
+	onSelect?: (item: string) => void;
+	comboClass?: ClassValue;
+	placeholder?: string; // this will filter out placeholder from restProps
+	classes?: Classes<typeof floatingLabelInput>;
+}
+
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
+
+export interface PhoneInputProps extends PhoneInputVariants, Omit<HTMLInputAttributes, "size" | "children" | "value"> {
+	phoneType?: "default" | "floating" | "countryCode" | "copy" | "advanced";
+	children?: Snippet;
+	floatingLabel?: string;
+	labelFor?: string;
+	phoneIcon?: boolean;
+	classes?: Classes<typeof phoneInput>;
+}
+
+export interface RadioProps<T> extends RadioVariants, Omit<HTMLInputAttributes, "color"> {
+	group?: T;
+	value?: T;
+	inputClass?: ClassValue;
+	labelClass?: ClassValue;
+	classes?: Classes<typeof radio>;
+}
+
+// raido-button
+export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size"> {
+	group?: T;
+	value?: T;
+	inline?: boolean;
+	pill?: boolean;
+	outline?: boolean;
+	size?: ButtonProps["size"];
+	color?: ButtonProps["color"];
+	shadow?: boolean;
+	checkedClass?: ClassValue;
+}
+
+export interface RangeProps extends RangeVariants, Omit<HTMLInputAttributes, "size" | "color"> {
+	value?: number | string;
+	inputClass?: ClassValue;
+}
+
+export interface SearchProps extends SearchVariants, Omit<HTMLInputAttributes, "size"> {
+	children?: Snippet;
+	value?: string;
+	elementRef?: HTMLInputElement;
+	clearable?: boolean;
+	clearableSvgClass?: ClassValue;
+	clearableColor?: CloseButtonVariants["color"];
+	clearableClass?: ClassValue;
+	clearableOnClick?: () => void;
+	inputClass?: ClassValue;
+	classes?: Classes<typeof search>;
+}
+
+export type SelectOptionType<T> = {
+	name: string | number;
+	value: T;
+	disabled?: boolean;
+	[key: string]: any;
+};
+
+export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "size" | "disabled"> {
+	children?: Snippet;
+	items?: SelectOptionType<T>[];
+	elementRef?: HTMLSelectElement;
+	placeholder?: string;
+	selectClass?: ClassValue;
+	clearable?: boolean;
+	clearableSvgClass?: ClassValue;
+	clearableColor?: CloseButtonVariants["color"];
+	clearableClass?: ClassValue;
+	// remove this in next major version
+	clearableOnClick?: () => void;
+	onClear?: () => void;
+	disabled?: boolean;
+	classes?: Classes<typeof select>;
+}
+
+export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLAttributes<HTMLDivElement>, "size" | "children" | "onchange" | "onblur"> {
+	children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
+	items: SelectOptionType<T>[];
+	value: T[];
+	dropdownClass?: ClassValue;
+	placeholder?: string;
+	disabled?: boolean | undefined;
+	size?: "sm" | "md" | "lg";
+	// Select-specific attributes for the hidden select element
+	name?: string | undefined | null;
+	form?: string | undefined | null;
+	required?: boolean | undefined | null;
+	autocomplete?: FullAutoFill | undefined | null;
+	onchange?: (event: Event) => void;
+	onblur?: (event: FocusEvent) => void;
+	classes?: Classes<typeof multiSelect>;
+}
+export interface TagsProps extends TagsVariants, HTMLAttributes<HTMLDivElement> {
+	value: string[];
+	itemClass?: ClassValue;
+	placeholder?: string;
+	spanClass?: ClassValue;
+	closeClass?: ClassValue;
+	inputClass?: ClassValue;
+	closeBtnSize?: CloseButtonVariants["size"];
+	unique?: boolean;
+	availableTags?: string[];
+	maxSuggestions?: number;
+	showHelper?: boolean;
+	showAvailableTags?: boolean;
+	allowNewTags?: boolean;
+	inputProps?: HTMLInputAttributes;
+	disabled?: boolean;
+	classes?: Classes<typeof tags>;
+}
+
+export interface TextareaProps extends TextareaVariants, HTMLTextareaAttributes {
+	header?: Snippet;
+	footer?: Snippet;
+	addon?: Snippet;
+	value?: string;
+	elementRef?: HTMLTextAreaElement;
+	wrapped?: boolean;
+	divClass?: ClassValue;
+	innerClass?: ClassValue;
+	headerClass?: ClassValue;
+	footerClass?: ClassValue;
+	addonClass?: ClassValue;
+	// cols?: number;
+	clearable?: boolean;
+	clearableSvgClass?: ClassValue;
+	clearableColor?: CloseButtonVariants["color"];
+	clearableClass?: ClassValue;
+	clearableOnClick?: () => void;
+	textareaClass?: ClassValue;
+	classes?: Classes<typeof textarea>;
+}
+
+export type TimePickerType = "default" | "dropdown" | "select" | "range" | "timerange-dropdown" | "timerange-toggle" | "inline-buttons";
+export type ColumnCount = 1 | 2 | 3 | 4;
+export type TimePickerOption = {
+	name: string;
+	value: string;
+};
+
+export interface TimepickerProps {
+	id?: string;
+	endId?: string;
+	value?: string;
+	endValue?: string;
+	min?: string;
+	max?: string;
+	required?: boolean;
+	disabled?: boolean;
+	inputColor?: InputProps["color"];
+	buttonColor?: ButtonProps["color"];
+	Icon?: Component;
+	iconClass?: string;
+	type?: TimePickerType;
+	optionLabel?: string;
+	options?: TimePickerOption[];
+	size?: ButtonGroupVariants["size"]; // Use the specific ButtonGroupSizeType
+	divClass?: ClassValue;
+	inputClass?: ClassValue;
+	selectClass?: ClassValue;
+	timerangeLabel?: string;
+	timerangeButtonLabel?: string;
+	timeIntervals?: string[];
+	columns?: ColumnCount;
+	// Callback props instead of events
+	onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
+}
+
+export interface ToggleProps extends Omit<ToggleVariants, "off_state_label">, Omit<HTMLInputAttributes, "size" | "color"> {
+	offLabel?: Snippet;
+	value?: string | number;
+	checked?: boolean;
+	disabled?: boolean;
+	spanClass?: ClassValue;
+	inputClass?: ClassValue;
+	classes?: Classes<typeof toggle>;
 }

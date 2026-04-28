@@ -77,14 +77,14 @@
 		ImageOutline,
 		ArrowRightOutline,
 		CalendarWeekSolid,
-
 		QuoteSolid,
-
 		CheckCircleSolid,
+		CloseCircleSolid,
+		AppleSolid,
+		FacebookSolid,
+		DiscordSolid,
 
-		CloseCircleSolid
-
-
+		DropboxSolid
 
 	} from 'flowbite-svelte-icons';
 	let menu = [
@@ -124,6 +124,9 @@
 	import Secondary from '$lib/secondary/Secondary.svelte';
 	import Span from '$lib/span/Span.svelte';
 	import Video from '$lib/video/Video.svelte';
+	import Label from '$lib/label/Label.svelte';
+	import Checkbox from '$lib/checkbox/Checkbox.svelte';
+	import CheckboxButton from '$lib/checkbox/CheckboxButton.svelte';
 	let popupModal = $state(false);
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1' },
@@ -276,6 +279,13 @@
 		tour.currentStep = 0;
 		tour.active = true;
 	};
+	let checkbox_choices = [
+		{ value: 'svelte', label: 'svelte' },
+		{ value: 'vue', label: 'Vue JS' },
+		{ value: 'react', label: 'React', checked: true },
+		{ value: 'angular', label: 'Angular' }
+	];
+	let checkbox_group = $state([]);
 </script>
 
 <ThemeProvider {theme}>
@@ -867,8 +877,9 @@
 		<A href="/" color="green">Link</A>
 		<h1>blockquote</h1>
 		<Blockquote size="base">
-			"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."
-		  </Blockquote>
+			"Flowbite is just awesome. It contains tons of predesigned components and pages starting from
+			login screen to complex dashboard. Perfect choice for your next SaaS application."
+		</Blockquote>
 		<h1>description list</h1>
 		<DescriptionList tag="dd">
 			<dt>Description list</dt>
@@ -883,46 +894,93 @@
 		<Heading tag="h6">Heading 6</Heading>
 		<h1>hr & paragraph</h1>
 		<P>
-			Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
-			richer contextual information to rapidly respond to requests, incidents, and changes.
-		  </P>
-		  <Hr class="h-1 w-64">
+			Track work across the enterprise through an open, collaborative platform. Link issues across
+			Jira and ingest data from other software development tools, so your IT support and operations
+			teams have richer contextual information to rapidly respond to requests, incidents, and
+			changes.
+		</P>
+		<Hr class="h-1 w-64">
 			<QuoteSolid class="h-6 w-6 text-gray-700 dark:text-gray-300" />
-		  </Hr>
-		  <P>
-			Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
-			audit trail for every change.
-		  </P>
-		  <h1>img</h1>
-		  <Img src="https://flowbite-svelte.com/images/examples/image-1@2x.jpg" alt="default example 1" />
-		  <h1>layout</h1>
-		  <Layout>
+		</Hr>
+		<P>
+			Deliver great service experiences fast - without the complexity of traditional ITSM
+			solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease,
+			with a complete audit trail for every change.
+		</P>
+		<h1>img</h1>
+		<Img src="https://flowbite-svelte.com/images/examples/image-1@2x.jpg" alt="default example 1" />
+		<h1>layout</h1>
+		<Layout>
 			<h1>Header</h1>
 			<h1>Main</h1>
 			<h1>Footer</h1>
-		  </Layout>
-		  <h1>list</h1>
-		  <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
+		</Layout>
+		<h1>list</h1>
+		<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
 			<Li icon>
-			  <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
-			  At least 10 characters (and up to 100 characters)
+				<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
+				At least 10 characters (and up to 100 characters)
 			</Li>
 			<Li icon>
-			  <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
-			  At least one lowercase character
+				<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
+				At least one lowercase character
 			</Li>
 			<Li icon>
-			  <CloseCircleSolid class="me-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
-			  Inclusion of at least one special character, e.g., ! @ # ?
+				<CloseCircleSolid class="me-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
+				Inclusion of at least one special character, e.g., ! @ # ?
 			</Li>
-		  </List>
-		  <h1>mark</h1>
-		  <P>this is a <Mark>marked</Mark> text</P>
-		  <h1>secondary</h1>
-			<p>this is a <Secondary>secondary</Secondary> text</p>
-		  <h1>span</h1>
-		  <P>this is a <Span gradient="blueToGreen" highlight="lime" underline>span</Span> text</P>
-		  <h1>video</h1>
-		  <Video src="https://flowbite-svelte.com/videos/flowbite.mp4" controls />
+		</List>
+		<h1>mark</h1>
+		<P>this is a <Mark>marked</Mark> text</P>
+		<h1>secondary</h1>
+		<p>this is a <Secondary>secondary</Secondary> text</p>
+		<h1>span</h1>
+		<P>this is a <Span gradient="blueToGreen" highlight="lime" underline>span</Span> text</P>
+		<h1>video</h1>
+		<Video src="https://flowbite-svelte.com/videos/flowbite.mp4" controls />
+		<h1>label</h1>
+		<Label color="primary">Label</Label>
+		<h1>checkbox</h1>
+		<Checkbox>Default checkbox</Checkbox>
+		<Checkbox checked color="blue">Checked state</Checkbox>
+		<Checkbox indeterminate>Indeterminate state</Checkbox>
+		<Hr></Hr>
+		<p class="my-2">Choices: {checkbox_group.join(', ')}</p>
+		<div class="flex gap-2">
+			<Checkbox
+				bind:group={checkbox_group}
+				choices={checkbox_choices}
+				color="green"
+				classes={{ div: 'p-1' }}
+			/>
+		</div>
+		<h1>checkbox button</h1>
+		<div>
+			<CheckboxButton bind:group={checkbox_group} value="Apple"
+				><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton
+			>
+			<CheckboxButton bind:group={checkbox_group} value="Facebook"
+				><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton
+			>
+			<CheckboxButton bind:group={checkbox_group} value="Discord"
+				><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton
+			>
+			<CheckboxButton bind:group={checkbox_group} value="Dropbox"
+				><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton
+			>
+		</div>
+
+		<ButtonGroup>
+			<CheckboxButton bind:group={checkbox_group} value="Apple"><AppleSolid class="h-6 w-6" />Apple</CheckboxButton>
+			<CheckboxButton bind:group={checkbox_group} value="Facebook"
+				><FacebookSolid class="h-6 w-6" />Facebook</CheckboxButton
+			>
+			<CheckboxButton bind:group={checkbox_group} value="Discord"
+				><DiscordSolid class="h-6 w-6" />Discord</CheckboxButton
+			>
+			<CheckboxButton bind:group={checkbox_group} value="Dropbox"
+				><DropboxSolid class="h-6 w-6" />Dropbox</CheckboxButton
+			>
+		</ButtonGroup>
 	</div>
 </ThemeProvider>
