@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
 @theme {
 	--z-index-100: 2;
 	--color-primary-50: #fdf4ff;
@@ -43,7 +45,6 @@
 	--color-danger-900: #7f1d1d;
 }
 @custom-variant dark (&:where(.dark, .dark *));
-
 [data-theme='fluent'] {
 	[role='alert'] {
 		.icon {

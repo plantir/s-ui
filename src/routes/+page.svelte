@@ -73,7 +73,19 @@
 		ShareNodesSolid,
 		PrinterSolid,
 		DownloadSolid,
-		FileCopySolid
+		FileCopySolid,
+		ImageOutline,
+		ArrowRightOutline,
+		CalendarWeekSolid,
+		QuoteSolid,
+		CheckCircleSolid,
+		CloseCircleSolid,
+		AppleSolid,
+		FacebookSolid,
+		DiscordSolid,
+
+		DropboxSolid
+
 	} from 'flowbite-svelte-icons';
 	let menu = [
 		{ name: 'About us', href: '/about' },
@@ -89,7 +101,32 @@
 		{ name: 'License', href: '/license' }
 	];
 	import { page } from '$app/state';
-	import { slide } from 'svelte/transition';
+	import { slide, blur } from 'svelte/transition';
+	import Toast from '$lib/toast/Toast.svelte';
+	import Timeline from '$lib/timeline/Timeline.svelte';
+	import TimelineItem from '$lib/timeline/TimelineItem.svelte';
+	import Activity from '$lib/timeline/Activity.svelte';
+	import ActivityItem from '$lib/timeline/ActivityItem.svelte';
+	import Group from '$lib/timeline/Group.svelte';
+	import GroupItem from '$lib/timeline/GroupItem.svelte';
+	import Tour from '$lib/tour/Tour.svelte';
+	import A from '$lib/a/A.svelte';
+	import Blockquote from '$lib/blockquote/Blockquote.svelte';
+	import DescriptionList from '$lib/descriptionlist/DescriptionList.svelte';
+	import Heading from '$lib/heading/Heading.svelte';
+	import P from '$lib/paragraph/P.svelte';
+	import Hr from '$lib/hr/Hr.svelte';
+	import Img from '$lib/img/Img.svelte';
+	import Layout from '$lib/layout/Layout.svelte';
+	import List from '$lib/list/List.svelte';
+	import Li from '$lib/list/Li.svelte';
+	import Mark from '$lib/mark/Mark.svelte';
+	import Secondary from '$lib/secondary/Secondary.svelte';
+	import Span from '$lib/span/Span.svelte';
+	import Video from '$lib/video/Video.svelte';
+	import Label from '$lib/label/Label.svelte';
+	import Checkbox from '$lib/checkbox/Checkbox.svelte';
+	import CheckboxButton from '$lib/checkbox/CheckboxButton.svelte';
 	let popupModal = $state(false);
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1' },
@@ -159,32 +196,145 @@
 	const handlePageChange = (page: number) => {
 		currentPage = page;
 	};
+	let activities = [
+		{
+			id: 'activity-1',
+			title:
+				'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
+			date: 'just now',
+			alt: 'image alt here',
+			src: 'https://flowbite-svelte.com/images/profile-picture-2.webp'
+		},
+		{
+			id: 'activity-2',
+			title: 'We don’t serve their kind here! What? Your droids. ',
+			date: '2 hours ago',
+			alt: 'image alt here',
+			src: 'https://flowbite-svelte.com/images/profile-picture-2.webp',
+			text: 'The approach will not be easy. You are required to maneuver straight down this trench and skim the surface to this point. The target area is only two meters wide. '
+		},
+		{
+			id: 'activity-3',
+			title: 'They’ll have to wait outside. We don’t want them here. ',
+			date: '1 day ago',
+			alt: 'image alt here',
+			src: 'https://flowbite-svelte.com/images/profile-picture-3.webp'
+		}
+	];
+	let groupTimelines = [
+		{
+			id: 'group-1',
+			name: '<span class="font-medium">Laura Romeros</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
+			title:
+				'<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
+			src: 'https://flowbite-svelte.com/images/profile-picture-1.webp',
+			alt: 'alt here',
+			href: '/',
+			isPrivate: true,
+			comment: '"I wanted to share a webinar zeroheight."'
+		},
+		{
+			id: 'group-2',
+			name: '<span class="font-medium">Jese Leos</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
+			title:
+				'<span class="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span class="font-medium text-gray-900 dark:text-white">Thomas Lean\'s</span> comment',
+			src: 'https://flowbite-svelte.com/images/profile-picture-2.webp',
+			alt: 'alt here',
+			href: '/',
+			isPrivate: true,
+			comment: '"I wanted to share a webinar zeroheight."'
+		}
+	];
+	let tour = $state({
+		active: false,
+		currentStep: 0,
+		steps: [
+			{
+				target: '#accordion',
+				title: 'Accordion',
+				description:
+					'Accordion is a vertically stacked set of panels, only one of which can be expanded at a time.',
+				placement: 'top'
+			},
+			{
+				target: '#alert',
+				title: 'Alert',
+				description: 'Alert is a message that provides information to the user.',
+				placement: 'top'
+			},
+			{
+				target: '#avatar',
+				title: 'Avatar',
+				description: 'Avatar is a graphical representation of a user.'
+			},
+			{
+				target: '#tour',
+				title: 'Tour',
+				description: 'Tour is a guided tour of the application.',
+				placement: 'top'
+			}
+		]
+	});
+	const startTour = () => {
+		tour.currentStep = 0;
+		tour.active = true;
+	};
+	let checkbox_choices = [
+		{ value: 'svelte', label: 'svelte' },
+		{ value: 'vue', label: 'Vue JS' },
+		{ value: 'react', label: 'React', checked: true },
+		{ value: 'angular', label: 'Angular' }
+	];
+	let checkbox_group = $state([]);
 </script>
 
 <ThemeProvider {theme}>
 	<div class="flex flex-col gap-4 p-8 pb-24">
-		<h1>accordion</h1>
-		<Accordion>
-			<AccordionItem>
-				{#snippet header()}
-					Accordion Item 1
-				{/snippet}
-				Hello
-			</AccordionItem>
-			<AccordionItem>
-				{#snippet header()}
-					Accordion Item 2
-				{/snippet}
-				Hello
-			</AccordionItem>
-		</Accordion>
-		<h1>AlertProps</h1>
+		<div id="accordion">
+			<h1>accordion</h1>
+			<Accordion>
+				<AccordionItem>
+					{#snippet header()}
+						Accordion Item 1
+					{/snippet}
+					Hello
+				</AccordionItem>
+				<AccordionItem>
+					{#snippet header()}
+						Accordion Item 2
+					{/snippet}
+					Hello
+				</AccordionItem>
+			</Accordion>
+		</div>
+		<div id="alert">
+			<h1>AlertProps</h1>
 
-		<Alert color="cyan" dismissable closeIcon={CloseButton}>Hello my friend</Alert>
-		<Alert color="gray" border={true}>
-			<div class="flex items-center gap-2">
-				<i class="icon">
+			<Alert color="blue" dismissable closeIcon={CloseButton}>Hello my friend</Alert>
+			<Alert color="gray" border={true}>
+				<div class="flex items-center gap-2">
+					<i class="icon">
+						<svg
+							fill="currentColor"
+							aria-hidden="true"
+							width="1em"
+							height="1em"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg"
+							><path
+								d="M18 10a8 8 0 1 0-16 0 8 8 0 0 0 16 0ZM9.5 8.91a.5.5 0 0 1 1 0V13.6a.5.5 0 0 1-1 0V8.9Zm-.25-2.16a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Z"
+								fill="currentColor"
+							></path>
+						</svg>
+					</i>
+					<p>Message providing information to the user with actionable insights.</p>
+					<CloseButton></CloseButton>
+				</div>
+			</Alert>
+			<Alert color="indigo" border={true} rounded={false}>
+				<div class="flex items-center gap-2">
 					<svg
+						class="icon"
 						fill="currentColor"
 						aria-hidden="true"
 						width="1em"
@@ -196,51 +346,35 @@
 							fill="currentColor"
 						></path>
 					</svg>
-				</i>
-				<p>Message providing information to the user with actionable insights.</p>
-				<CloseButton></CloseButton>
-			</div>
-		</Alert>
-		<Alert color="indigo" border={true} rounded={false}>
-			<div class="flex items-center gap-2">
-				<svg
-					class="icon"
-					fill="currentColor"
-					aria-hidden="true"
-					width="1em"
-					height="1em"
-					viewBox="0 0 20 20"
-					xmlns="http://www.w3.org/2000/svg"
-					><path
-						d="M18 10a8 8 0 1 0-16 0 8 8 0 0 0 16 0ZM9.5 8.91a.5.5 0 0 1 1 0V13.6a.5.5 0 0 1-1 0V8.9Zm-.25-2.16a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Z"
-						fill="currentColor"
-					></path>
-				</svg>
-				<p>Message providing information to the user with actionable insights.</p>
-				<CloseButton></CloseButton>
-			</div>
-		</Alert>
-		<h1>avatar</h1>
-		<div class="flex gap-x-1">
-			<Avatar>A</Avatar>
-			<Avatar>R</Avatar>
-			<Avatar>M</Avatar>
-			<Avatar>I</Avatar>
-			<Avatar dot={{ color: 'green', placement: 'top-left' }}>N</Avatar>
+					<p>Message providing information to the user with actionable insights.</p>
+					<CloseButton></CloseButton>
+				</div>
+			</Alert>
 		</div>
-		<div class="flex gap-x-1">
-			<Avatar size="xs">A</Avatar>
-			<Avatar size="sm">R</Avatar>
-			<Avatar size="md">M</Avatar>
-			<Avatar size="lg">I</Avatar>
-			<Avatar size="xl">N</Avatar>
-		</div>
-		<div class="flex gap-x-1">
-			<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>A</Avatar>
-			<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>R</Avatar>
-			<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>M</Avatar>
-			<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>I</Avatar>
-			<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>N</Avatar>
+
+		<div id="avatar">
+			<h1>avatar</h1>
+			<div class="flex gap-x-1">
+				<Avatar>A</Avatar>
+				<Avatar>R</Avatar>
+				<Avatar>M</Avatar>
+				<Avatar>I</Avatar>
+				<Avatar dot={{ color: 'green', placement: 'top-left' }}>N</Avatar>
+			</div>
+			<div class="flex gap-x-1">
+				<Avatar size="xs">A</Avatar>
+				<Avatar size="sm">R</Avatar>
+				<Avatar size="md">M</Avatar>
+				<Avatar size="lg">I</Avatar>
+				<Avatar size="xl">N</Avatar>
+			</div>
+			<div class="flex gap-x-1">
+				<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>A</Avatar>
+				<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>R</Avatar>
+				<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>M</Avatar>
+				<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>I</Avatar>
+				<Avatar stacked dot={{ color: 'green', placement: 'top-left' }}>N</Avatar>
+			</div>
 		</div>
 		<h1>badge</h1>
 		<div>
@@ -652,7 +786,7 @@
 		</div>
 		<h1>rating</h1>
 		<div class="flex">
-			<Rating id="example-1" icon={Star} total={5} size={50} rating={1.4} />
+			<!-- <Rating id="example-1" icon={Star} total={5} size={50} rating={1.4} />
 			<Rating id="example-1b" icon={Thumbup} total={5} size={50} rating={4.66} />
 			<Rating
 				id="example-1b"
@@ -660,7 +794,7 @@
 				total={5}
 				size={50}
 				rating={4.72}
-			/>
+			/> -->
 		</div>
 		<h1>skeleton</h1>
 		<Skeleton size="sm" class="my-8" />
@@ -693,5 +827,160 @@
 				<FileCopySolid class="h-6 w-6" />
 			</SpeedDialButton>
 		</SpeedDial>
+		<h1>toast</h1>
+		<Toast color="orange" dismissable={true} transition={blur}>
+			{#snippet icon()}
+				<ImageOutline class="h-6 w-6" />
+			{/snippet}
+			test
+		</Toast>
+		<h1>timeline</h1>
+		<Timeline>
+			<TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
+				<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+					Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar,
+					and pre-order E-commerce & Marketing pages.
+				</p>
+				<Button color="alternative">Learn more<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
+			</TimelineItem>
+			<TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
+				<p class="text-base font-normal text-gray-500 dark:text-gray-400">
+					All of the pages and components are first designed in Figma and we keep a parity between
+					the two versions even as we update the project.
+				</p>
+			</TimelineItem>
+			<TimelineItem title="Application UI code in Tailwind CSS" date="April 2022">
+				<p class="text-base font-normal text-gray-500 dark:text-gray-400">
+					Get started with dozens of web components and interactive elements built on top of
+					Tailwind CSS.
+				</p>
+			</TimelineItem>
+		</Timeline>
+		<h1>activity</h1>
+		<Activity>
+			<ActivityItem {activities} />
+		</Activity>
+		<h1>group</h1>
+		<Group date="January 13th, 2022">
+			<GroupItem timelines={groupTimelines} />
+		</Group>
+		<div id="tour">
+			<h1>tour</h1>
+			<div>
+				<Button onclick={startTour}>Start Tour</Button>
+			</div>
+		</div>
+		<Tour bind:active={tour.active} bind:currentStep={tour.currentStep} steps={tour.steps} />
+		<h1>a</h1>
+		<A href="/" color="primary">Link</A>
+		<A href="/" color="amber">Link</A>
+		<A href="/" color="green">Link</A>
+		<h1>blockquote</h1>
+		<Blockquote size="base">
+			"Flowbite is just awesome. It contains tons of predesigned components and pages starting from
+			login screen to complex dashboard. Perfect choice for your next SaaS application."
+		</Blockquote>
+		<h1>description list</h1>
+		<DescriptionList tag="dd">
+			<dt>Description list</dt>
+			<dd>A list of terms and their definitions.</dd>
+		</DescriptionList>
+		<h1>heading</h1>
+		<Heading tag="h1">Heading 1</Heading>
+		<Heading tag="h2">Heading 2</Heading>
+		<Heading tag="h3">Heading 3</Heading>
+		<Heading tag="h4">Heading 4</Heading>
+		<Heading tag="h5">Heading 5</Heading>
+		<Heading tag="h6">Heading 6</Heading>
+		<h1>hr & paragraph</h1>
+		<P>
+			Track work across the enterprise through an open, collaborative platform. Link issues across
+			Jira and ingest data from other software development tools, so your IT support and operations
+			teams have richer contextual information to rapidly respond to requests, incidents, and
+			changes.
+		</P>
+		<Hr class="h-1 w-64">
+			<QuoteSolid class="h-6 w-6 text-gray-700 dark:text-gray-300" />
+		</Hr>
+		<P>
+			Deliver great service experiences fast - without the complexity of traditional ITSM
+			solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease,
+			with a complete audit trail for every change.
+		</P>
+		<h1>img</h1>
+		<Img src="https://flowbite-svelte.com/images/examples/image-1@2x.jpg" alt="default example 1" />
+		<h1>layout</h1>
+		<Layout>
+			<h1>Header</h1>
+			<h1>Main</h1>
+			<h1>Footer</h1>
+		</Layout>
+		<h1>list</h1>
+		<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
+			<Li icon>
+				<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
+				At least 10 characters (and up to 100 characters)
+			</Li>
+			<Li icon>
+				<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
+				At least one lowercase character
+			</Li>
+			<Li icon>
+				<CloseCircleSolid class="me-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
+				Inclusion of at least one special character, e.g., ! @ # ?
+			</Li>
+		</List>
+		<h1>mark</h1>
+		<P>this is a <Mark>marked</Mark> text</P>
+		<h1>secondary</h1>
+		<p>this is a <Secondary>secondary</Secondary> text</p>
+		<h1>span</h1>
+		<P>this is a <Span gradient="blueToGreen" highlight="lime" underline>span</Span> text</P>
+		<h1>video</h1>
+		<Video src="https://flowbite-svelte.com/videos/flowbite.mp4" controls />
+		<h1>label</h1>
+		<Label color="primary">Label</Label>
+		<h1>checkbox</h1>
+		<Checkbox>Default checkbox</Checkbox>
+		<Checkbox checked color="blue">Checked state</Checkbox>
+		<Checkbox indeterminate>Indeterminate state</Checkbox>
+		<Hr></Hr>
+		<p class="my-2">Choices: {checkbox_group.join(', ')}</p>
+		<div class="flex gap-2">
+			<Checkbox
+				bind:group={checkbox_group}
+				choices={checkbox_choices}
+				color="green"
+				classes={{ div: 'p-1' }}
+			/>
+		</div>
+		<h1>checkbox button</h1>
+		<div>
+			<CheckboxButton bind:group={checkbox_group} value="Apple"
+				><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton
+			>
+			<CheckboxButton bind:group={checkbox_group} value="Facebook"
+				><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton
+			>
+			<CheckboxButton bind:group={checkbox_group} value="Discord"
+				><DiscordSolid class="me-2 h-6 w-6" />Discord</CheckboxButton
+			>
+			<CheckboxButton bind:group={checkbox_group} value="Dropbox"
+				><DropboxSolid class="me-2 h-6 w-6" />Dropbox</CheckboxButton
+			>
+		</div>
+
+		<ButtonGroup>
+			<CheckboxButton bind:group={checkbox_group} value="Apple"><AppleSolid class="h-6 w-6" />Apple</CheckboxButton>
+			<CheckboxButton bind:group={checkbox_group} value="Facebook"
+				><FacebookSolid class="h-6 w-6" />Facebook</CheckboxButton
+			>
+			<CheckboxButton bind:group={checkbox_group} value="Discord"
+				><DiscordSolid class="h-6 w-6" />Discord</CheckboxButton
+			>
+			<CheckboxButton bind:group={checkbox_group} value="Dropbox"
+				><DropboxSolid class="h-6 w-6" />Dropbox</CheckboxButton
+			>
+		</ButtonGroup>
 	</div>
 </ThemeProvider>
