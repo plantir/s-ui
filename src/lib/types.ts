@@ -144,6 +144,7 @@ import type { MultiSelectVariants, SelectVariants, select, multiSelect } from '.
 import type { TagsVariants, tags } from './tags/theme.js';
 import type { TextareaVariants, textarea } from './textarea/theme.js';
 import type { ToggleVariants, toggle } from './toggle/theme.js';
+import type { ThemeSelectorVariants, themeSelector } from './theme-selector/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -2358,4 +2359,8 @@ export interface ToggleProps extends Omit<ToggleVariants, "off_state_label">, Om
 	spanClass?: ClassValue;
 	inputClass?: ClassValue;
 	classes?: Classes<typeof toggle>;
+}
+export interface ThemeSelectorProps extends ThemeSelectorVariants, HTMLAttributes<HTMLDivElement> {
+	loadFromStatic?: boolean;
+	classes?: Classes<typeof themeSelector>;
 }

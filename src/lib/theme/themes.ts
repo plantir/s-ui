@@ -77,4 +77,7 @@ export { textarea } from "../textarea/theme";
 export { timepicker } from "../timepicker/theme";
 export { toggle } from "../toggle/theme";
 
+export * from "../theme-selector/theme.js";
+
+
 
