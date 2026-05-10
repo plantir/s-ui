@@ -40,6 +40,7 @@ export const card = tv({
       rose: { base: "border-rose-200 bg-rose-400 dark:bg-rose-800 dark:border-rose-700" }
     },
     shadow: {
+      none: { base: "shadow-none" },
       xs: { base: "shadow-xs" },
       sm: { base: "shadow-sm" },
       normal: { base: "shadow" },

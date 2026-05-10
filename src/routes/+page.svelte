@@ -127,6 +127,7 @@
 	import Label from '$lib/label/Label.svelte';
 	import Checkbox from '$lib/checkbox/Checkbox.svelte';
 	import CheckboxButton from '$lib/checkbox/CheckboxButton.svelte';
+	import ThemeSelector from '$lib/theme-selector/ThemeSelector.svelte';
 	let popupModal = $state(false);
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1' },
@@ -982,5 +983,6 @@
 				><DropboxSolid class="h-6 w-6" />Dropbox</CheckboxButton
 			>
 		</ButtonGroup>
+		<ThemeSelector />
 	</div>
 </ThemeProvider>

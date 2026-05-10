@@ -169,7 +169,9 @@ export { default as Tags } from "./tags/Tags.svelte";
 export { default as Textarea } from "./textarea/Textarea.svelte";
 export { default as Timepicker } from "./timepicker/Timepicker.svelte";
 export { default as Toggle } from "./toggle/Toggle.svelte";
-
+export { default as ThemeSelector } from "./theme-selector/ThemeSelector.svelte";
+export { default as TabItem } from "./tabs/TabItem.svelte";
+export { default as Tabs } from "./tabs/Tabs.svelte";
 export { type ThemeConfig, ThemeProvider } from '$lib/theme';
 export * from './types';
 export * from './utils';
