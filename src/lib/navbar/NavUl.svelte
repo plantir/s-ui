@@ -65,7 +65,7 @@
 	let hidden: boolean = $derived(navState?.hidden ?? true);
 
 	let { base, ul, active, nonActive } = $derived(
-		navbarUl({ hidden, breakpoint: navBreakpoint ?? 'md' })
+		navbarUl({ hidden, breakpoint: navBreakpoint?.value ?? 'md' })
 	);
 
 	$effect(() => {

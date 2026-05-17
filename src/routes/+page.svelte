@@ -128,6 +128,8 @@
 	import Checkbox from '$lib/checkbox/Checkbox.svelte';
 	import CheckboxButton from '$lib/checkbox/CheckboxButton.svelte';
 	import ThemeSelector from '$lib/theme-selector/ThemeSelector.svelte';
+	import Tabs from '$lib/tabs/Tabs.svelte';
+	import TabItem from '$lib/tabs/TabItem.svelte';
 	let popupModal = $state(false);
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1' },
@@ -984,5 +986,16 @@
 			>
 		</ButtonGroup>
 		<ThemeSelector />
+
+		<div class="mt-6">
+			<Tabs tabStyle="underline">
+				<TabItem open title="Home">
+					<p>Home</p>
+				</TabItem>
+				<TabItem title="Settings">
+					<p>Settings</p>
+				</TabItem>
+			</Tabs>
+		</div>
 	</div>
 </ThemeProvider>
