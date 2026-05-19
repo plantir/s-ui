@@ -7,7 +7,7 @@ export type ButtonColor = "primary" | "dark" | "alternative" | "light" | "second
 
 export const button = tv({
 	slots: {
-		base: 'text-center font-medium inline-flex items-center justify-center',
+		base: 'text-center font-medium inline-flex items-center justify-center ',
 		outline: 'bg-transparent border hover:text-white dark:bg-transparent dark:hover-text-white',
 		shadow: 'shadow-lg',
 		spinner: 'ms-2'
