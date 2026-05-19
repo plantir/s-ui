@@ -279,6 +279,7 @@ export interface AlertProps
 	transition?: TransitionFunc;
 	params?: ParamsType;
 	onclick?: () => void;
+	listContent?: boolean;
 }
 
 // indicator

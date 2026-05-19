@@ -318,7 +318,7 @@
 		</div>
 		<div id="alert">
 			<h1>AlertProps</h1>
-
+			<Alert >Hello my enemy</Alert>
 			<Alert color="blue" dismissable closeIcon={CloseButton}>Hello my friend</Alert>
 			<Alert color="gray" border={true}>
 				<div class="flex items-center gap-2">
