@@ -1,3 +1,4 @@
+@import '../../static/styles/docs.css';
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 

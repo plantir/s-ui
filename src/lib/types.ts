@@ -52,7 +52,7 @@ import type { CloseButtonVariants } from './utils/theme.js';
 import type { IndicatorVariants } from './indicator/theme.js';
 import type { BannerVariants } from './banner/theme.js';
 import type { SpinnerVariants } from './spinner/theme.js';
-import type { ClipboardManagerVariants } from './clipboard-manager/theme.js';
+import type { ClipboardManagerVariants, clipboardManager } from './clipboard-manager/theme.js';
 import type { Classes } from './theme/slots.js';
 import type {
 	BottomNavHeaderItemVariants,
@@ -145,6 +145,9 @@ import type { TagsVariants, tags } from './tags/theme.js';
 import type { TextareaVariants, textarea } from './textarea/theme.js';
 import type { ToggleVariants, toggle } from './toggle/theme.js';
 import type { ThemeSelectorVariants, themeSelector } from './theme-selector/theme.js';
+import type { CommandPaletteVariants, commandPalette } from './command-palette/theme.js';
+import type { VirtualMasonryVariants, virtualMasonry } from './virtual-masonry/theme.js';
+import type { VirtualListVariants, virtualList } from './virtuallist/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -500,6 +503,7 @@ export interface ClipboardManagerProps extends ClipboardManagerVariants {
 	badgeProps?: Omit<BadgeProps, "children">;
 	modalProps?: ModalProps;
 	detectSensitiveData?: (text: string) => boolean;
+	classes?: Classes<typeof clipboardManager>;
 }
 
 export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
@@ -2364,3 +2368,51 @@ export interface ThemeSelectorProps extends ThemeSelectorVariants, HTMLAttribute
 	loadFromStatic?: boolean;
 	classes?: Classes<typeof themeSelector>;
 }
+
+export interface CommandItem {
+	id: string;
+	label: string;
+	description?: string;
+	/** Icon can be a Svelte Component or a string representing an icon class/name */
+	icon?: string | Component;
+	keywords?: string[];
+	onselect: () => void;
+}
+
+export interface CommandPaletteProps extends CommandPaletteVariants, Omit<DialogProps, "classes"> {
+	items?: CommandItem[];
+	placeholder?: string;
+	emptyMessage?: string;
+	shortcutKey?: string;
+	vim?: boolean;
+	classes?:Classes<typeof commandPalette>;
+}
+
+export interface VirtualMasonryProps<T = unknown> extends VirtualMasonryVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+	children: Snippet<[item: T, index: number]>;
+	items?: T[];
+	columns?: number;
+	gap?: number;
+	height?: number;
+	overscan?: number;
+	getItemHeight?: (item: T, index: number) => number;
+	scrollToIndex?: (fn: (index: number) => void) => void;
+	contained?: boolean;
+	ariaLabel?: string;
+	class?: ClassValue | null;
+	classes?:Classes<typeof virtualMasonry>;
+  }
+
+  export interface VirtualListProps<T = unknown> extends VirtualListVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+	children: Snippet<[item: T, index: number]>;
+	items?: T[];
+	minItemHeight?: number;
+	height?: number;
+	overscan?: number;
+	getItemHeight?: (item: T, index: number) => number;
+	scrollToIndex?: (fn: (index: number) => void) => void;
+	contained?: boolean;
+	ariaLabel?: string;
+	class?: ClassValue | null;
+	classes?:Classes<typeof virtualList>;
+  }

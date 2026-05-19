@@ -84,12 +84,12 @@
 				item: 'ps-0 pe-0 lg:ps-2 lg:pe-2'
 			}}
 		>
-			<NavLi href="/docs/pages/introduction">Docs</NavLi>
+			<!-- <NavLi href="/docs/pages/introduction">Docs</NavLi> -->
 			<NavLi href="/docs/components/accordion">Components</NavLi>
-			<NavLi href="/blocks">Blocks</NavLi>
-			<NavLi href="/admin-dashboard">Dashboard</NavLi>
-			<NavLi href="/icons/quickstart">Icons</NavLi>
-			<NavLi href="/illustrations/illustrations">Illustrations</NavLi>
+			<!-- <NavLi href="/blocks">Blocks</NavLi> -->
+			<!-- <NavLi href="/admin-dashboard">Dashboard</NavLi> -->
+			<!-- <NavLi href="/icons/quickstart">Icons</NavLi> -->
+			<!-- <NavLi href="/illustrations/illustrations">Illustrations</NavLi> -->
 		</NavUl>
 
 		<div class="order-1 ml-auto flex items-center gap-1 lg:order-2">

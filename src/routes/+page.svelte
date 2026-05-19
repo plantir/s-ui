@@ -292,6 +292,12 @@
 </script>
 
 <ThemeProvider {theme}>
+
+	<div class="h-screen flex items-center justify-center">
+		<Button size="xl" href="/docs/components/buttons">
+			See Docs
+		</Button>
+	</div>
 	<div class="flex flex-col gap-4 p-8 pb-24">
 		<div id="accordion">
 			<h1>accordion</h1>

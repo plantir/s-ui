@@ -101,10 +101,10 @@
 		isSingle={false}
 		{isOpen}
 		{closeSidebar}
-		classes={{ content: contentClass, nonactive: nonActiveClass, active: activeClass }}
+		classes={{ div: contentClass, nonactive: nonActiveClass, active: activeClass }}
 		activeUrl={mainSidebarUrl}
 		class={mainClass}
-		transitionParams={{ x: -50, duration: 50 }}
+		params={{ x: -50, duration: 50 }}
 	>
 		<h4 id="sidebar-label" class="sr-only">Browse docs</h4>
 		<SidebarGroup>
