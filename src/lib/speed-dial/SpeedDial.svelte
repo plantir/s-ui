@@ -6,6 +6,7 @@
 	import { speedDial } from './theme.js';
 	import type { SpeedDialProps, SpeedCtxType } from '$lib/types.js';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
+	import { setSpeedDialContext } from '$lib/context.js';
 
 	let {
 		children,
@@ -32,13 +33,22 @@
 			popper: popperClass
 		}
 	);
+	const contextValue = () => ({ pill, tooltip, textOutside });
 
+	setSpeedDialContext(contextValue);
 	const theme = $derived(getTheme('speedDial'));
-
-	setContext<SpeedCtxType>('speed-dial', {
-		get pill() { return pill; },
-		get tooltip() { return tooltip; },
-		get textOutside() { return textOutside; }
+	$effect(() => {
+		setContext<SpeedCtxType>('speed-dial', {
+			get pill() {
+				return pill;
+			},
+			get tooltip() {
+				return tooltip;
+			},
+			get textOutside() {
+				return textOutside;
+			}
+		});
 	});
 	let vertical: boolean = $derived(getSideAxis(placement) === 'y');
 

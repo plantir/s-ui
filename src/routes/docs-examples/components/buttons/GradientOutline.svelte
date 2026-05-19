@@ -1,9 +1,12 @@
 <script lang="ts">
-	import { GradientButton } from 'flowbite-svelte';
+  import { GradientButton } from "flowbite-svelte";
 </script>
 
-<div class="flex flex-wrap gap-2">
-	<GradientButton outline color="purple">Outline</GradientButton>
-	<GradientButton outline color="green">Green outline</GradientButton>
-	<GradientButton outline color="pink">Pink outline</GradientButton>
-</div>
+<GradientButton outline color="purpleToBlue">Purple to Blue</GradientButton>
+<GradientButton outline color="cyanToBlue">Cyan to Blue</GradientButton>
+<GradientButton outline color="greenToBlue">Green to Blue</GradientButton>
+<GradientButton outline color="purpleToPink">Purple to Pink</GradientButton>
+<GradientButton outline color="pinkToOrange">Pink to Orange</GradientButton>
+<GradientButton outline color="tealToLime">Teal to Lime</GradientButton>
+<GradientButton outline pill color="redToYellow">Red to Yellow</GradientButton>
+<GradientButton outline color="redToYellow" class="w-72">Red to Yellow</GradientButton>

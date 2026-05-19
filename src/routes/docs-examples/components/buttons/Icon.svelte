@@ -1,30 +1,11 @@
 <script lang="ts">
-	import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
+  import { ArrowRightOutline, CartSolid } from "flowbite-svelte-icons";
 </script>
 
-<div class="flex justify-center gap-2">
-	<Button color="blue">
-		<svg
-			class="me-2 h-4 w-4"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke="currentColor"
-			aria-hidden="true"
-		>
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-		</svg>
-		Prev
-	</Button>
-	<Button color="blue">
-		Next
-		<svg
-			class="ms-2 h-4 w-4"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke="currentColor"
-			aria-hidden="true"
-		>
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-		</svg>
-	</Button>
-</div>
+<Button>
+  <CartSolid class="me-2 h-5 w-5" /> Buy Now
+</Button>
+<Button>
+  Choose Plan <ArrowRightOutline class="ms-2 h-5 w-5" />
+</Button>

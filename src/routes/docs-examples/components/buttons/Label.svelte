@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { Badge, Button } from 'flowbite-svelte';
+  import { Button, Indicator } from "flowbite-svelte";
 </script>
 
-<div class="flex justify-center gap-2">
-	<Button color="blue">
-		Messages
-		<Badge class="ms-2">2</Badge>
-	</Button>
-</div>
+<Button class="gap-2">
+  Messages
+  <Indicator class="bg-primary-200 text-primary-800 text-xs font-semibold" size="lg">2</Indicator>
+</Button>

@@ -1,0 +1,22 @@
+<script lang="ts">
+  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { HomeOutline, WalletOutline, AdjustmentsVerticalOutline, UserCircleOutline } from "flowbite-svelte-icons";
+</script>
+
+<Skeleton class="py-4" />
+<ImagePlaceholder class="pb-20" />
+
+<BottomNav position="absolute" navType="border" classes={{ content: "grid-cols-4" }}>
+  <BottomNavItem btnName="Home">
+    <HomeOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
+  </BottomNavItem>
+  <BottomNavItem btnName="Wallet">
+    <WalletOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
+  </BottomNavItem>
+  <BottomNavItem btnName="Settings">
+    <AdjustmentsVerticalOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
+  </BottomNavItem>
+  <BottomNavItem btnName="Profile">
+    <UserCircleOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
+  </BottomNavItem>
+</BottomNav>

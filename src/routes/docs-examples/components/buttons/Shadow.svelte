@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
 </script>
 
-<div class="flex flex-wrap gap-2">
-	<Button shadow color="blue">Blue</Button>
-	<Button shadow color="green">Green</Button>
-	<Button shadow color="cyan">Cyan</Button>
-	<Button shadow color="teal">Teal</Button>
-	<Button shadow color="lime">Lime</Button>
-	<Button shadow color="red">Red</Button>
-</div>
+<Button shadow>Brand</Button>
+<Button color="alternative" shadow>Alternative</Button>
+<Button color="gray" shadow>Gray</Button>
+<Button color="success" shadow>Success</Button>
+<Button color="danger" shadow>Danger</Button>
+<Button color="warning" shadow>Warning</Button>
+<Button color="transparent" shadow>Transparent</Button>
+<Button color="dark" shadow>Dark</Button>

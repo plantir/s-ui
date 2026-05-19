@@ -1,16 +1,13 @@
 <script lang="ts">
-	import { Button } from 'flowbite-svelte';
+  import { Button } from "flowbite-svelte";
+  import { ThumbsUpSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
-<div class="flex flex-wrap items-center gap-2">
-	<Button class="!p-2" color="blue" aria-label="Previous">
-		<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-		</svg>
-	</Button>
-	<Button class="!p-2" color="blue" aria-label="Next">
-		<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-		</svg>
-	</Button>
-</div>
+<Button class="p-2!"><ArrowRightOutline class="h-6 w-6" /></Button>
+<Button pill={true} class="p-2!"><ArrowRightOutline class="h-6 w-6" /></Button>
+<Button outline={true} class="p-2!" size="lg">
+  <ThumbsUpSolid class="text-primary-700 h-7 w-7" />
+</Button>
+<Button pill={true} outline={true} class="p-2!" size="xl">
+  <ThumbsUpSolid class="text-primary-700 h-6 w-6" />
+</Button>
