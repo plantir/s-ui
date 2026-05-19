@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Img, img, Radio, Label, type ImgProps } from "$lib";
+  import { Img, Radio, Label, type ImgProps } from "$lib";
+  import { img } from "$lib/img/theme.js";
 
   const effects = Object.keys(img.variants.effect);
   let imgEffect: ImgProps["effect"] = $state(undefined);

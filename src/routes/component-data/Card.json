@@ -1,19 +1,19 @@
 {
-	"name": "Card",
-	"type": {
-		"name": "CardProps",
-		"link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L461"
-	},
-	"props": [
-		["children", ""],
-		["color", "\"gray\""],
-		["horizontal", "false"],
-		["shadow", "\"md\""],
-		["reverse", "false"],
-		["img", ""],
-		["size", "\"sm\""],
-		["class: className", ""],
-		["classes", ""],
-		["imgClass", ""]
-	]
+  "name": "Card",
+  "type": {
+    "name": "CardProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L468"
+  },
+  "props": [
+    ["children", ""],
+    ["hoverable", "false"],
+    ["horizontal", "false"],
+    ["shadow", "\"md\""],
+    ["reverse", "false"],
+    ["img", ""],
+    ["imgAlt", ""],
+    ["size", "\"sm\""],
+    ["class: className", ""],
+    ["classes", ""]
+  ]
 }

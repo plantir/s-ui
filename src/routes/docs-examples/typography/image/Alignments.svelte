@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Img, img, Radio, Label, type ImgProps } from "$lib";
-
+  import { Img, Radio, Label, type ImgProps } from "$lib";
+  import { img } from "$lib/img/theme.js";
   const alignments = Object.keys(img.variants.align);
   let imgAlign: ImgProps["align"] = $state(undefined);
 </script>
