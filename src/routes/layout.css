@@ -1,6 +1,7 @@
+@import '../../static/styles/docs.css';
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
-
+@import '../../static/styles/default.css';
 @theme {
 	--z-index-100: 2;
 	--color-primary-50: #fdf4ff;

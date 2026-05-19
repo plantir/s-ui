@@ -128,6 +128,8 @@
 	import Checkbox from '$lib/checkbox/Checkbox.svelte';
 	import CheckboxButton from '$lib/checkbox/CheckboxButton.svelte';
 	import ThemeSelector from '$lib/theme-selector/ThemeSelector.svelte';
+	import Tabs from '$lib/tabs/Tabs.svelte';
+	import TabItem from '$lib/tabs/TabItem.svelte';
 	let popupModal = $state(false);
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1' },
@@ -290,6 +292,12 @@
 </script>
 
 <ThemeProvider {theme}>
+
+	<div class="h-screen flex items-center justify-center">
+		<Button size="xl" href="/docs/components/buttons">
+			See Docs
+		</Button>
+	</div>
 	<div class="flex flex-col gap-4 p-8 pb-24">
 		<div id="accordion">
 			<h1>accordion</h1>
@@ -310,7 +318,7 @@
 		</div>
 		<div id="alert">
 			<h1>AlertProps</h1>
-
+			<Alert >Hello my enemy</Alert>
 			<Alert color="blue" dismissable closeIcon={CloseButton}>Hello my friend</Alert>
 			<Alert color="gray" border={true}>
 				<div class="flex items-center gap-2">
@@ -984,5 +992,16 @@
 			>
 		</ButtonGroup>
 		<ThemeSelector />
+
+		<div class="mt-6">
+			<Tabs tabStyle="underline">
+				<TabItem open title="Home">
+					<p>Home</p>
+				</TabItem>
+				<TabItem title="Settings">
+					<p>Settings</p>
+				</TabItem>
+			</Tabs>
+		</div>
 	</div>
 </ThemeProvider>

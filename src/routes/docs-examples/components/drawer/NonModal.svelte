@@ -1,0 +1,25 @@
+<script lang="ts">
+  import { Drawer, CardPlaceholder, Button } from "$lib";
+  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
+
+  let openNonModal = $state(false);
+</script>
+
+<div class="text-center">
+  <Button onclick={() => (openNonModal = true)}>Show drawer</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
+</div>
+
+<Drawer modal={false} bind:open={openNonModal}>
+  <h5 class="text-body mb-4 inline-flex items-center text-base font-semibold">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
+  </h5>
+  <p class="text-body mb-6 text-sm">
+    Supercharge your hiring by taking advantage of our <a href="/" class="text-fg-brand underline hover:no-underline">limited-time sale</a>
+    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
+  </p>
+  <div class="grid grid-cols-2 gap-2">
+    <Button color="alternative" href="#/">Learn more</Button>
+    <Button href="#/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
+  </div>
+</Drawer>

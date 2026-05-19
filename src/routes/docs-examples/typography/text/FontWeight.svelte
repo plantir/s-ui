@@ -1,0 +1,13 @@
+<script lang="ts">
+  import { P } from "$lib";
+</script>
+
+<P class="text-heading" size="4xl" weight="thin">Aa</P>
+<P class="text-heading" size="4xl" weight="extralight">Aa</P>
+<P class="text-heading" size="4xl" weight="light">Aa</P>
+<P class="text-heading" size="4xl" weight="normal">Aa</P>
+<P class="text-heading" size="4xl" weight="medium">Aa</P>
+<P class="text-heading" size="4xl" weight="semibold">Aa</P>
+<P class="text-heading" size="4xl" weight="bold">Aa</P>
+<P class="text-heading" size="4xl" weight="extrabold">Aa</P>
+<P class="text-heading" size="4xl" weight="black">Aa</P>

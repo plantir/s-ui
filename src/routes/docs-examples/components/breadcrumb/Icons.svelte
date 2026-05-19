@@ -1,0 +1,24 @@
+<script lang="ts">
+  import { Breadcrumb, BreadcrumbItem } from "$lib";
+  import { HomeOutline, ChevronDoubleRightOutline } from "flowbite-svelte-icons";
+</script>
+
+<Breadcrumb aria-label="Solid background breadcrumb example" solid>
+  <BreadcrumbItem href="/" home>
+    {#snippet icon()}
+      <HomeOutline class="me-2 h-4 w-4" />
+    {/snippet}Home
+  </BreadcrumbItem>
+  <BreadcrumbItem href="/">
+    {#snippet icon()}
+      <ChevronDoubleRightOutline class="mx-2 h-5 w-5" />
+    {/snippet}
+    Projects
+  </BreadcrumbItem>
+  <BreadcrumbItem>
+    {#snippet icon()}
+      <ChevronDoubleRightOutline class="mx-2 h-5 w-5" />
+    {/snippet}
+    Flowbite Svelte
+  </BreadcrumbItem>
+</Breadcrumb>

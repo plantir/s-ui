@@ -1,0 +1,36 @@
+<script lang="ts">
+  import { Gallery } from "$lib";
+  import type { ImgType } from "$lib";
+
+  const image1 = {
+    alt: "erbology",
+    src: "https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg"
+  };
+
+  const images2 = [
+    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
+    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" },
+    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" },
+    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" },
+    { alt: "shoe", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" }
+  ];
+
+  let main = $state<ImgType>({
+    alt: image1.alt,
+    src: image1.src
+  });
+</script>
+
+<Gallery class="gap-4">
+  <!-- MAIN IMAGE -->
+  <img src={main.src} alt={main.alt} class="rounded-base bg-neutral-tertiary h-[450px] w-full object-cover" />
+
+  <!-- THUMBNAILS -->
+  <Gallery class="grid-cols-5" items={images2} {figure} />
+
+  {#snippet figure(item)}
+    <button type="button" class="rounded-base cursor-pointer border-0 bg-transparent p-0 hover:opacity-80" onclick={() => (main = item)}>
+      <img src={item.src} alt={item.alt} class="rounded-base" />
+    </button>
+  {/snippet}
+</Gallery>

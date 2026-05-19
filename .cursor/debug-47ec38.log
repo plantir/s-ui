@@ -1,0 +1,2 @@
+{"sessionId":"47ec38","location":"SpeedDial.svelte:38","message":"setContext call location check","data":{"inEffect":true,"pill":true,"tooltip":"left","textOutside":false},"timestamp":1779183762556,"hypothesisId":"H-A"}
+{"sessionId":"47ec38","location":"SpeedDial.svelte:38","message":"post-fix: setContext called at init","data":{"pill":true,"tooltip":"left","textOutside":false},"timestamp":1779184157627,"runId":"post-fix","hypothesisId":"H-A"}

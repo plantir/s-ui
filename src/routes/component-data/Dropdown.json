@@ -1,0 +1,17 @@
+{
+  "name": "Dropdown",
+  "type": {
+    "name": "DropdownProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L656"
+  },
+  "props": [
+    ["children", ""],
+    ["simple", "false"],
+    ["placement", "\"bottom\""],
+    ["offset", "2"],
+    ["class: className", ""],
+    ["activeUrl", "\"\""],
+    ["isOpen", "$bindable(false)"],
+    ["onclose", ""]
+  ]
+}

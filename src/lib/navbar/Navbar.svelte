@@ -2,7 +2,7 @@
 	import clsx from 'clsx';
 	import NavContainer from './NavContainer.svelte';
 	import { navbar } from './theme.js';
-	import type { NavbarState, NavbarProps } from '$lib/types.js';
+	import type { NavbarState, NavbarProps, NavbarBreakpoint } from '$lib/types.js';
 	import { getTheme } from '$lib/theme/themeUtils';
 	import { setNavbarStateContext, setNavbarBreakpointContext } from '$lib/context';
 
@@ -21,8 +21,11 @@
 	let navState = $state<NavbarState>({ hidden: true });
 	setNavbarStateContext(navState);
 
+	const navBreakpointRef = $state<{ value: NavbarBreakpoint }>({ value: breakpoint });
+	setNavbarBreakpointContext(navBreakpointRef);
+
 	$effect(() => {
-		setNavbarBreakpointContext(breakpoint);
+		navBreakpointRef.value = breakpoint;
 	});
 
 	// Add reference to the navbar element

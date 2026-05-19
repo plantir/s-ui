@@ -1,41 +1,42 @@
-import { createContext } from "svelte";
+import { createContext } from 'svelte';
 import type {
-  AccordionContextType,
-  BottomNavContextType,
-  CarouselContextType,
-  DrawerContextType,
-  DropdownContextType,
-  PaginationContextType,
-  ButtonToggleContextType,
-  ListContextType,
-  ToolbarContextType,
-  ListGroupContextType,
-  ButtonGroupContextType,
-  NavbarState,
-  NavbarBreakpoint,
-  SidebarContextType,
-  SplitPaneContext,
-  TableContextType,
-  TabsContextType
-} from "./types";
-import type { ThemeConfig } from "./theme";
+	AccordionContextType,
+	BottomNavContextType,
+	CarouselContextType,
+	DrawerContextType,
+	DropdownContextType,
+	PaginationContextType,
+	ButtonToggleContextType,
+	ListContextType,
+	ToolbarContextType,
+	ListGroupContextType,
+	ButtonGroupContextType,
+	NavbarState,
+	NavbarBreakpoint,
+	SidebarContextType,
+	SplitPaneContext,
+	TableContextType,
+	TabsContextType,
+	SpeedCtxType
+} from './types';
+import type { ThemeConfig } from './theme';
 
 /**
  * Helper function to create a context with safe getter that returns undefined instead of throwing
  * when accessed outside of the context provider.
  */
 function createSafeContext<T>() {
-  const [getRaw, set] = createContext<T>();
+	const [getRaw, set] = createContext<T>();
 
-  function get(): T | undefined {
-    try {
-      return getRaw();
-    } catch {
-      return undefined;
-    }
-  }
+	function get(): T | undefined {
+		try {
+			return getRaw();
+		} catch {
+			return undefined;
+		}
+	}
 
-  return [get, set] as const;
+	return [get, set] as const;
 }
 
 // Accordion
@@ -63,7 +64,8 @@ const [getPaginationContext, setPaginationContext] = createSafeContext<Paginatio
 export { getPaginationContext, setPaginationContext };
 
 // ButtonToggle
-const [getButtonToggleContext, setButtonToggleContext] = createSafeContext<ButtonToggleContextType>();
+const [getButtonToggleContext, setButtonToggleContext] =
+	createSafeContext<ButtonToggleContextType>();
 export { getButtonToggleContext, setButtonToggleContext };
 
 // List
@@ -91,7 +93,9 @@ export { getButtonGroupContext, setButtonGroupContext };
 const [getNavbarStateContext, setNavbarStateContext] = createSafeContext<NavbarState>();
 export { getNavbarStateContext, setNavbarStateContext };
 
-const [getNavbarBreakpointContext, setNavbarBreakpointContext] = createSafeContext<NavbarBreakpoint>();
+const [getNavbarBreakpointContext, setNavbarBreakpointContext] = createSafeContext<{
+	value: NavbarBreakpoint;
+}>();
 export { getNavbarBreakpointContext, setNavbarBreakpointContext };
 
 // Sidebar
@@ -112,3 +116,6 @@ export { getSplitPaneContext, setSplitPaneContext };
 // Tabs
 const [getTabsContext, setTabsContext] = createSafeContext<TabsContextType>();
 export { getTabsContext, setTabsContext };
+
+const [getSpeedDialContext, setSpeedDialContext] = createSafeContext<() => SpeedCtxType>();
+export { getSpeedDialContext, setSpeedDialContext };

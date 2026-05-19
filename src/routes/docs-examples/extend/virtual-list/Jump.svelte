@@ -1,0 +1,22 @@
+<script lang="ts">
+  import { VirtualList, Button } from "$lib";
+
+  const items = Array.from({ length: 5000 }, (_, i) => `Item ${i + 1}`);
+  let scrollToFn: ((index: number) => void) | undefined;
+
+  function jumpToItem(index: number) {
+    scrollToFn?.(index);
+  }
+</script>
+
+<div class="space-y-4">
+  <Button onclick={() => jumpToItem(2499)}>Jump to item 2500</Button>
+  <Button onclick={() => jumpToItem(0)}>Jump to top item</Button>
+  <VirtualList {items} minItemHeight={40} height={400} scrollToIndex={(fn) => (scrollToFn = fn)}>
+    {#snippet children(item, index)}
+      <div class="text-heading hover:bg-neutral-secondary-soft h-[40px] border-b p-2 leading-[40px]">
+        {index + 1}: {item}
+      </div>
+    {/snippet}
+  </VirtualList>
+</div>

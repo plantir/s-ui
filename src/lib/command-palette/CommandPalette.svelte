@@ -1,6 +1,6 @@
 <script lang="ts">
   import Dialog from "$lib/dialog/Dialog.svelte";
-  import Search from "$lib/forms/search/Search.svelte";
+  import Search from "$lib/search/Search.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
   import type { CommandItem, CommandPaletteProps } from "$lib/types";
   import clsx from "clsx";

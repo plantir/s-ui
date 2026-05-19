@@ -1,0 +1,14 @@
+<script lang="ts">
+  import { Toast, Avatar, Button } from "$lib";
+</script>
+
+<Toast align={false} color={undefined}>
+  {#snippet icon()}
+    <Avatar src="/images/people/profile-picture-1.jpg" class="h-8" />
+  {/snippet}
+  <div class="ms-3 text-sm font-normal">
+    <span class="text-heading mb-1 text-sm font-semibold">Jese Leos</span>
+    <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
+    <Button size="xs">Reply</Button>
+  </div>
+</Toast>

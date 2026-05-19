@@ -22,7 +22,7 @@
 	let active = $derived(navState?.activeUrl ? restProps.href === navState.activeUrl : false);
 	let liClass = $derived(
 		navbarLi({
-			breakpoint: navBreakpoint ?? 'md',
+			breakpoint: navBreakpoint?.value ?? 'md',
 			hidden: navState?.hidden ?? true,
 			class: clsx(
 				active

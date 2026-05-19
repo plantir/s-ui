@@ -1,0 +1,11 @@
+<script lang="ts">
+  import { Tooltip, Button } from "$lib";
+  import { slide, scale, blur } from "svelte/transition";
+</script>
+
+<Button>Blur</Button>
+<Tooltip transition={blur} transitionParams={{ duration: 300 }}>Tooltip content</Tooltip>
+<Button>Slide</Button>
+<Tooltip transition={slide} transitionParams={{ axis: "x" }}>Tooltip content</Tooltip>
+<Button>Scale</Button>
+<Tooltip transition={scale}>Tooltip content</Tooltip>

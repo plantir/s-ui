@@ -13,6 +13,7 @@
 		color = 'primary',
 		rounded = true,
 		border,
+		listContent,
 		class: className,
 		dismissable,
 		transition = fade,
@@ -26,6 +27,7 @@
 	let divCls = $derived(
 		alert({
 			color,
+			listContent,
 			rounded,
 			border,
 			icon: !!icon,
