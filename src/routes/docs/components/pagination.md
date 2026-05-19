@@ -20,7 +20,7 @@ The pagination component can be used to navigate across a series of content and 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { PaginationNav, Pagination, PaginationItem } from "flowbite-svelte";
+  import { PaginationNav, Pagination, PaginationItem } from "$lib";
 </script>
 ```
 

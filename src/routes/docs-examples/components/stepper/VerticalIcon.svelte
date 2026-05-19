@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VerticalStepper, Button, P, Heading } from "flowbite-svelte";
+  import { VerticalStepper, Button, P, Heading } from "$lib";
   import { UserCircleOutline, ApiKeyOutline, ShareNodesOutline, EyeOutline, CheckCircleOutline } from "flowbite-svelte-icons";
 
   let current = $state(1);

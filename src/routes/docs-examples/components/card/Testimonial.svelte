@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card } from "flowbite-svelte";
+  import { Card } from "$lib";
 </script>
 
 <Card size="xl" class="grid md:grid-cols-2">

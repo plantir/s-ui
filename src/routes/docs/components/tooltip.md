@@ -23,7 +23,7 @@ For interactive elements that need to display additional content on click, use t
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Tooltip } from "flowbite-svelte";
+  import { Tooltip } from "$lib";
 </script>
 ```
 

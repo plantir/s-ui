@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Blockquote } from "flowbite-svelte";
+  import { Blockquote } from "$lib";
 
   const alignments = ["left", "center", "right"] as const;
   type Alignment = (typeof alignments)[number];

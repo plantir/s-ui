@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Timepicker, P } from "flowbite-svelte";
+  import { Label, Timepicker, P } from "$lib";
 
   let selectedTime = $state({ time: "12:00", duration: "30" });
   const durations = [

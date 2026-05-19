@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
+  import { Breadcrumb, BreadcrumbItem } from "$lib";
 </script>
 
 <Breadcrumb aria-label="Default breadcrumb example">

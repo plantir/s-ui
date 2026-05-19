@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Dropzone } from "flowbite-svelte";
+  import { Dropzone } from "$lib";
 
   let filesInDropzone: FileList | null = $state(null);
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Toggle } from "flowbite-svelte";
+  import { Button, Toggle } from "$lib";
   let isDisabled = $state(false);
   let checked: boolean = $state(false);
   const handleClick = () => {

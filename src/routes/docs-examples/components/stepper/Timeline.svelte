@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { TimelineStepper } from "flowbite-svelte";
+  import { TimelineStepper } from "$lib";
 </script>
 
 <TimelineStepper

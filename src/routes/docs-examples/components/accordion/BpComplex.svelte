@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Accordion, AccordionItem, P, useMediaQuery, useBreakpoints, useCurrentBreakpoint } from "flowbite-svelte";
+  import { Accordion, AccordionItem, P, useMediaQuery, useBreakpoints, useCurrentBreakpoint } from "$lib";
 
   // Different approaches to responsive behavior
   const isMdAndUp = useMediaQuery("(min-width: 768px)");

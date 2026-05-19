@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Popover, Label, Input, Checkbox, Button } from "flowbite-svelte";
+  import { Popover, Label, Input, Checkbox, Button } from "$lib";
   import { CheckOutline, CloseOutline } from "flowbite-svelte-icons";
   const preventDefault = <E extends Event>(fn: (event: E) => void) => {
     return function (this: any, event: E) {

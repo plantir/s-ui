@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card } from "flowbite-svelte";
+  import { Card } from "$lib";
 </script>
 
 <Card href="/cards" class="p-4 sm:p-6">

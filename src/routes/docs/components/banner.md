@@ -28,7 +28,7 @@ Explore the following examples based on various styles, sizes, and positionings 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Banner } from "flowbite-svelte";
+  import { Banner } from "$lib";
 </script>
 ```
 

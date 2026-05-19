@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FloatingLabelInput, Helper } from "flowbite-svelte";
+  import { FloatingLabelInput, Helper } from "$lib";
 </script>
 
 <FloatingLabelInput variant="filled" id="floating_helper" aria-describedby="floating_helper_text" name="floating_helper" type="text">Floating helper</FloatingLabelInput>

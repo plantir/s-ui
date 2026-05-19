@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AccordionItem, Accordion, Button, P } from "flowbite-svelte";
+  import { AccordionItem, Accordion, Button, P } from "$lib";
   const items = $state([false, false, false]);
 
   const open_all = () => items.forEach((_, i) => (items[i] = true));

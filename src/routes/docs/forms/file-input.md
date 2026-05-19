@@ -25,7 +25,7 @@ The file input component can be used to upload one or more files from the device
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Fileupload } from "flowbite-svelte";
+  import { Fileupload } from "$lib";
 </script>
 ```
 

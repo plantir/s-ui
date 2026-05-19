@@ -24,7 +24,7 @@ Let's import all necessary components in the script tag. We import a heart, thum
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Rating, AdvancedRating, ScoreRating } from "flowbite-svelte";
+  import { Rating, AdvancedRating, ScoreRating } from "$lib";
 </script>
 ```
 

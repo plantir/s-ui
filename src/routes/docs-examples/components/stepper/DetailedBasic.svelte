@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { DetailedStepper, Button, P, Heading } from "flowbite-svelte";
+  import { DetailedStepper, Button, P, Heading } from "$lib";
 
   let current = $state(1);
   const steps = [

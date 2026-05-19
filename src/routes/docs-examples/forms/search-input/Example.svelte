@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Search, Button, P } from "flowbite-svelte";
+  import { Search, Button, P } from "$lib";
 
   let value = $state("");
 

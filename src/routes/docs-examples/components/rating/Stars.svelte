@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Star } from "flowbite-svelte";
+  import { Star } from "$lib";
 </script>
 
 <Star size={30} iconIndex={0} fillPercent={0} />

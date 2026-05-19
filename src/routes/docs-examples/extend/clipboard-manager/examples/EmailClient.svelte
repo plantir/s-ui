@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ClipboardManager } from "flowbite-svelte";
+  import { ClipboardManager } from "$lib";
 
   let responses = [
     { id: 1, text: "Thank you for contacting us!", pinned: true, timestamp: Date.now() - 20 * 60 * 1000 },

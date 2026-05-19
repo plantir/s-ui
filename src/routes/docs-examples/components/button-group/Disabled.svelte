@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ButtonGroup, Button } from "flowbite-svelte";
+  import { ButtonGroup, Button } from "$lib";
 </script>
 
 <div class="flex flex-col gap-4">

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { TextEditor, AlignmentButtonGroup, UndoRedoButtonGroup, BubbleMenu } from "@flowbite-svelte-plugins/texteditor";
-  import { Button } from "flowbite-svelte";
+  import { Button } from "$lib";
   import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);

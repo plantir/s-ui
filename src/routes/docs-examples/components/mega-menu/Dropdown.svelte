@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "$lib";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let menu2 = [
     { name: "Online Stores", help: "Connect with third-party tools that you're already using." },

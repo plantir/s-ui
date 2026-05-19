@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card, Button, Toggle } from "flowbite-svelte";
+  import { Card, Button, Toggle } from "$lib";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
   let vCard = $state(false);
 </script>

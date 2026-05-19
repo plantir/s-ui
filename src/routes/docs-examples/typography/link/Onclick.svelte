@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { A } from "flowbite-svelte";
+  import { A } from "$lib";
 
   const myaction = () => {
     console.log("Action triggered");

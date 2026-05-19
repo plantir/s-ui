@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { MultiSelect, Badge, type SelectOptionType } from "flowbite-svelte";
+  import { MultiSelect, Badge, type SelectOptionType } from "$lib";
 
   let selected: string[] = [];
   let countries: SelectOptionType<string>[] = [

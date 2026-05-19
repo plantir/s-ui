@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Dropdown, DropdownGroup, Checkbox, Search } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownGroup, Checkbox, Search } from "$lib";
   import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
   let searchTerm = $state("");
   const people = [

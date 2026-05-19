@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge } from "flowbite-svelte";
+  import { Badge } from "$lib";
   import { CheckOutline } from "flowbite-svelte-icons";
 </script>
 

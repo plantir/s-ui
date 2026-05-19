@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Datepicker, Timepicker, Button, Accordion, AccordionItem, Avatar, Input } from "flowbite-svelte";
+  import { Label, Datepicker, Timepicker, Button, Accordion, AccordionItem, Avatar, Input } from "$lib";
   import { CalendarMonthSolid, ClockSolid, MapPinSolid } from "flowbite-svelte-icons";
 
   let selectedDate = $state(new Date("2024-06-30"));

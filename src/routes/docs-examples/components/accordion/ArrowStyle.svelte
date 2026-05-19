@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "$lib";
   import { ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
 </script>
 

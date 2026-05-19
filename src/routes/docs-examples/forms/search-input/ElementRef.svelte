@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Search, Button } from "flowbite-svelte";
+  import { Search, Button } from "$lib";
   let searchRef: HTMLInputElement | undefined = $state();
   let elementTxt = $state("This text has NOT been updated.");
 </script>

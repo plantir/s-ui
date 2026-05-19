@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Spinner } from "flowbite-svelte";
+  import { Spinner } from "$lib";
 </script>
 
 <div class="text-left"><Spinner /></div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Heading, P, Span } from "flowbite-svelte";
+  import { Heading, P, Span } from "$lib";
 </script>
 
 <Heading tag="h1" class="mb-4">Get back to growth with <Span class="text-fg-brand">the world's #1</Span> CRM.</Heading>

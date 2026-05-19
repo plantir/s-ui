@@ -30,7 +30,7 @@ Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `Dropdow
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, Tooltip } from "flowbite-svelte";
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, Tooltip } from "$lib";
 </script>
 ```
 

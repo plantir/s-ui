@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Timepicker } from "flowbite-svelte";
+  import { Label, Timepicker } from "$lib";
 </script>
 
 <Label>Select Time:</Label>

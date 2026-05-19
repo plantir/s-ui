@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { A, P } from "flowbite-svelte";
+  import { A, P } from "$lib";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 

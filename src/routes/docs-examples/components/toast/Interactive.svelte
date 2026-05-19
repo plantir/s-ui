@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toast, Button } from "flowbite-svelte";
+  import { Toast, Button } from "$lib";
   import { CameraPhotoOutline } from "flowbite-svelte-icons";
 </script>
 

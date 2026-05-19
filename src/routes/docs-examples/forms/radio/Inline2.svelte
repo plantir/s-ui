@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "$lib";
   let inline2 = $state("third");
 </script>
 

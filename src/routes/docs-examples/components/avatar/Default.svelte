@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Avatar } from "flowbite-svelte";
+  import { Avatar } from "$lib";
 </script>
 
 <div class="flex space-x-4 rtl:space-x-reverse">

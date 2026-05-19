@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Progressbar } from "flowbite-svelte";
+  import { Progressbar } from "$lib";
 </script>
 
 <div class="space-y-4">

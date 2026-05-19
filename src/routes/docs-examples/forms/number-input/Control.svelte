@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Input, Label, P, Button, ButtonGroup } from "flowbite-svelte";
+  import { Input, Label, P, Button, ButtonGroup } from "$lib";
   import { PlusOutline, MinusOutline } from "flowbite-svelte-icons";
   let quantity: number = $state(12345);
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tooltip, Button } from "flowbite-svelte";
+  import { Tooltip, Button } from "$lib";
   import { slide, scale, blur } from "svelte/transition";
 </script>
 

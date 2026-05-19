@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PaginationNav } from "flowbite-svelte";
+  import { PaginationNav } from "$lib";
 
   let currentPage = $state(1);
   const totalPages = 20;

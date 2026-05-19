@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Fileupload } from "flowbite-svelte";
+  import { Fileupload } from "$lib";
 </script>
 
 <Fileupload

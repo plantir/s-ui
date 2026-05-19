@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toast, Avatar, Button } from "flowbite-svelte";
+  import { Toast, Avatar, Button } from "$lib";
 </script>
 
 <Toast align={false} color={undefined}>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
+  import { Breadcrumb, BreadcrumbItem } from "$lib";
   import { HomeOutline, ChevronDoubleRightOutline } from "flowbite-svelte-icons";
 </script>
 

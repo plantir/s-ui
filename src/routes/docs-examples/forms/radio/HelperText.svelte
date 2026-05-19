@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Radio, Helper } from "flowbite-svelte";
+  import { Radio, Helper } from "$lib";
 </script>
 
 <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>

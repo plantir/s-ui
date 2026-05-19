@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Gallery } from "flowbite-svelte";
+  import { Gallery } from "$lib";
   const images1 = [
     { alt: "erbology", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" },
     { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" },

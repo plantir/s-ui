@@ -21,7 +21,7 @@ Get started with a collection of responsive image components coded with the util
 
 ```html
 <script lang="ts">
-  import { Img } from "flowbite-svelte";
+  import { Img } from "$lib";
 </script>
 ```
 

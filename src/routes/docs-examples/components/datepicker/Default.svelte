@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Datepicker, P } from "flowbite-svelte";
+  import { Datepicker, P } from "$lib";
   let selectedDate = $state<Date | undefined>(undefined);
 </script>
 

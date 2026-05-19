@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BreadcrumbStepper, Button, P, Heading } from "flowbite-svelte";
+  import { BreadcrumbStepper, Button, P, Heading } from "$lib";
   import { UserCircleOutline, CogOutline, EyeOutline, CheckCircleOutline } from "flowbite-svelte-icons";
 
   let current = $state(1);

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PaginationItem } from "flowbite-svelte";
+  import { PaginationItem } from "$lib";
   const previous = () => {
     alert("Previous btn clicked. Make a call to your server to fetch data.");
   };

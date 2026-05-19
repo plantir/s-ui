@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AccordionItem, Accordion, Input, Textarea, Button, Label, A } from "flowbite-svelte";
+  import { AccordionItem, Accordion, Input, Textarea, Button, Label, A } from "$lib";
   import type { Snapshot } from "../../../$types";
   let name = $state("");
   let email = $state("");

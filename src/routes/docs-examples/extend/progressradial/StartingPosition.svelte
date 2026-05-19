@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Progressradial } from "flowbite-svelte";
+  import { Progressradial } from "$lib";
 </script>
 
 <Progressradial />

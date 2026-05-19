@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button } from "flowbite-svelte";
+  import { Button } from "$lib";
   const btn1 = () => {
     alert("You clicked btn1.");
   };

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BottomNav, BottomNavItem, Card, Listgroup, Avatar, type ListGroupItemType } from "flowbite-svelte";
+  import { BottomNav, BottomNavItem, Card, Listgroup, Avatar, type ListGroupItemType } from "$lib";
   import { ClockOutline, UsersGroupOutline, StarOutline } from "flowbite-svelte-icons";
   let list: ListGroupItemType[] = [
     {

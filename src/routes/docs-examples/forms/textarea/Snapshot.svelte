@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tabs, TabItem, Label, Button, Input, Textarea } from "flowbite-svelte";
+  import { Tabs, TabItem, Label, Button, Input, Textarea } from "$lib";
   import type { Snapshot } from "../../../$types";
   let name = $state("");
   let email = $state("");

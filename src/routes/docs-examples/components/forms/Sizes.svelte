@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Input } from "flowbite-svelte";
+  import { Label, Input } from "$lib";
 </script>
 
 <div class="mb-6">

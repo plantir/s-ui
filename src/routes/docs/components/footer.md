@@ -19,7 +19,7 @@ The footer is one of the most underestimated sections of a website being located
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "flowbite-svelte";
+  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "$lib";
 </script>
 ```
 

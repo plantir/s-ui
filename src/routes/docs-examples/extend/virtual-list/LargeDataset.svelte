@@ -1,6 +1,6 @@
 <!-- LargeDataset.svelte -->
 <script lang="ts">
-  import { VirtualList, Badge } from "flowbite-svelte";
+  import { VirtualList, Badge } from "$lib";
 
   interface Record {
     id: number;

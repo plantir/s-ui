@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ClipboardManager, Button, P } from "flowbite-svelte";
+  import { ClipboardManager, Button, P } from "$lib";
 
   let clipboardModal = $state(false);
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AccordionItem, useBreakpoints, P } from "flowbite-svelte";
+  import { AccordionItem, useBreakpoints, P } from "$lib";
   const breakpoints = useBreakpoints();
 </script>
 

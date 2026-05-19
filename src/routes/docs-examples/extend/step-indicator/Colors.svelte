@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { StepIndicator, type StepIndicatorProps, Radio, Label } from "flowbite-svelte";
+  import { StepIndicator, type StepIndicatorProps, Radio, Label } from "$lib";
 
   const colors = ["primary", "secondary", "gray", "red", "yellow", "green", "indigo", "purple", "pink", "blue"];
   let color: StepIndicatorProps["color"] = $state("green");

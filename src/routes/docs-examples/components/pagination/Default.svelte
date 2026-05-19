@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PaginationNav } from "flowbite-svelte";
+  import { PaginationNav } from "$lib";
   import { onMount } from "svelte";
 
   let currentPage = $state(1);

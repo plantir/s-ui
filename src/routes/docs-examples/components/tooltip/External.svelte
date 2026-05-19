@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tooltip, Button } from "flowbite-svelte";
+  import { Tooltip, Button } from "$lib";
   import type { Placement } from "@floating-ui/utils";
   let placement: Placement = "top";
   function onbeforetoggle(ev: Event) {

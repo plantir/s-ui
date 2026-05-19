@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VirtualList, Button } from "flowbite-svelte";
+  import { VirtualList, Button } from "$lib";
 
   const items = Array.from({ length: 5000 }, (_, i) => `Item ${i + 1}`);
   let scrollToFn: ((index: number) => void) | undefined;

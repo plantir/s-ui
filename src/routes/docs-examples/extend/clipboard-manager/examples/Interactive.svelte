@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ClipboardManager, type ClipboardItem } from "flowbite-svelte";
+  import { ClipboardManager, type ClipboardItem } from "$lib";
   let demoItems: ClipboardItem[] = [];
 </script>
 

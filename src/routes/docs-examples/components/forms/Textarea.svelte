@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Textarea } from "flowbite-svelte";
+  import { Textarea } from "$lib";
   let textareaprops = {
     id: "message",
     name: "message",

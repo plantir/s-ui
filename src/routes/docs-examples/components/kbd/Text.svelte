@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Kbd } from "flowbite-svelte";
+  import { Kbd } from "$lib";
 </script>
 
 <p class="text-body">

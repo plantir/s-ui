@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BreadcrumbStepper, Button, P, Heading } from "flowbite-svelte";
+  import { BreadcrumbStepper, Button, P, Heading } from "$lib";
 
   let current = $state(1);
   const steps = [

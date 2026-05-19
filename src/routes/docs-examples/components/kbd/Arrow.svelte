@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Kbd } from "flowbite-svelte";
+  import { Kbd } from "$lib";
   import { CaretUpSolid, CaretDownSolid, CaretRightSolid, CaretLeftSolid } from "flowbite-svelte-icons";
 </script>
 

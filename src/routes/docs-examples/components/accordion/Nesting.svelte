@@ -1,6 +1,6 @@
 <script lang="ts">
   import { P } from "$lib";
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "$lib";
 </script>
 
 <Accordion>

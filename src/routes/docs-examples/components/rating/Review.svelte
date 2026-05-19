@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Review } from "flowbite-svelte";
+  import { Review } from "$lib";
   import { LandmarkSolid, CalendarMonthSolid, UsersGroupOutline, ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
   let review = {
     name: "Jese Leos",

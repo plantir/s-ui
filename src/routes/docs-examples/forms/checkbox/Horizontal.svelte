@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "$lib";
 </script>
 
 <p class="text-heading mb-4 font-semibold">Identification</p>

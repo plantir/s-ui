@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VerticalStepper } from "flowbite-svelte";
+  import { VerticalStepper } from "$lib";
 </script>
 
 <VerticalStepper

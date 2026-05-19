@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Progressbar, Button } from "flowbite-svelte";
+  import { Progressbar, Button } from "$lib";
   import { sineOut } from "svelte/easing";
 
   let progress = "45";

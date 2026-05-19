@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Drawer, Button } from "flowbite-svelte";
+  import { Drawer, Button } from "$lib";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 

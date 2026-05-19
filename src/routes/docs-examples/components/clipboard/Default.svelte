@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Clipboard, Input, Label } from "flowbite-svelte";
+  import { Clipboard, Input, Label } from "$lib";
   import { CheckOutline } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite");

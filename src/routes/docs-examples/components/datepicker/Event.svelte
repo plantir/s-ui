@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Datepicker, type DateOrRange } from "flowbite-svelte";
+  import { Datepicker, type DateOrRange } from "$lib";
 
   function handleDateSelect(detail: DateOrRange) {
     console.log("Selected date:", detail);

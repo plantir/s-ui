@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Input, Label } from "flowbite-svelte";
+  import { Input, Label } from "$lib";
 </script>
 
 <form class="mx-auto max-w-sm">

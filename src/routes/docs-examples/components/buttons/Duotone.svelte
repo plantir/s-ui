@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { GradientButton } from "flowbite-svelte";
+  import { GradientButton } from "$lib";
 </script>
 
 <GradientButton color="purpleToBlue">Purple to Blue</GradientButton>

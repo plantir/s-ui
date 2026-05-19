@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card, Button } from "flowbite-svelte";
+  import { Card, Button } from "$lib";
   import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 

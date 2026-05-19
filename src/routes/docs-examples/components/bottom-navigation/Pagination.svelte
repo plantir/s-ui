@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "$lib";
   import { FileCirclePlusOutline, BookmarkOutline, AngleLeftOutline, AngleRightOutline, AdjustmentsVerticalOutline, UserCircleOutline } from "flowbite-svelte-icons";
   const navIconClass = "group-hover:text-fg-brand text-body mb-1 h-6 w-6";
 </script>

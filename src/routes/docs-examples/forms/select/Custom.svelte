@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Select, Label } from "flowbite-svelte";
+  import { Select, Label } from "$lib";
   let selected = $state();
   let countries = [
     { value: "us", name: "United States" },

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Rating, Thumbup, type RatingIconProps } from "flowbite-svelte";
+  import { Rating, Thumbup, type RatingIconProps } from "$lib";
   const thumbWrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) => Thumbup(anchor, { ..._props, ...props });
 </script>
 

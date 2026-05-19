@@ -30,7 +30,7 @@ Import a badge component in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Badge } from "flowbite-svelte";
+  import { Badge } from "$lib";
 </script>
 ```
 

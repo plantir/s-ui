@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "$lib";
 </script>
 
 <p class="text-heading mb-4 font-semibold">Identification</p>

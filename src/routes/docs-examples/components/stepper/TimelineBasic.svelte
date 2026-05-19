@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { TimelineStepper, Button, P, Heading } from "flowbite-svelte";
+  import { TimelineStepper, Button, P, Heading } from "$lib";
 
   let current = $state(1);
   const steps = [

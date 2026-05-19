@@ -49,7 +49,7 @@ Use this example to show a basic area chart.
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { Card, A, Button, Dropdown, DropdownItem } from "$lib";
   import { ChevronRightOutline, ChevronDownOutline } from "flowbite-svelte-icons";
 
   let options: ApexOptions = {
@@ -158,7 +158,7 @@ To create a double line chart check the example below.
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover } from "$lib";
   import { InfoCircleSolid, ChevronRightOutline, ChevronDownOutline, FileLinesSolid } from "flowbite-svelte-icons";
 
   let options: ApexOptions = {
@@ -302,7 +302,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { Card, A, Button, Dropdown, DropdownItem } from "$lib";
   import { UsersGroupOutline, ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   const options: ApexOptions = {
@@ -466,7 +466,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { Card, A, Button, Dropdown, DropdownItem } from "$lib";
   import { ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   const options: ApexOptions = {
@@ -611,7 +611,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover } from "$lib";
   import { InfoCircleSolid, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid, TrashBinSolid, DotsHorizontalOutline } from "flowbite-svelte-icons";
 
   const options: ApexOptions = {
@@ -723,7 +723,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "$lib";
   import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   const options: ApexOptions = {
@@ -860,7 +860,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "$lib";
   import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   let isOpen = false;
@@ -1013,7 +1013,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
   import { onMount, onDestroy } from "svelte";
-  import { Card } from "flowbite-svelte";
+  import { Card } from "$lib";
 
   const initialData = [6500, 6418, 6456, 6526, 6356, 6456];
   const alternateData = [5500, 5418, 5456, 4526, 4356, 3456];

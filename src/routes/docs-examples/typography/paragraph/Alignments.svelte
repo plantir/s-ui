@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P } from "flowbite-svelte";
+  import { P } from "$lib";
 
   const alignments = ["left", "center", "right"] as const;
   type Alignment = (typeof alignments)[number];

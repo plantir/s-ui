@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { DeviceMockup } from "flowbite-svelte";
+  import { DeviceMockup } from "$lib";
 </script>
 
 <DeviceMockup device="smartwatch">

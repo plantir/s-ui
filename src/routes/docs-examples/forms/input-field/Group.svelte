@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Input, Button, InputAddon, ButtonGroup, Checkbox } from "flowbite-svelte";
+  import { Label, Input, Button, InputAddon, ButtonGroup, Checkbox } from "$lib";
 </script>
 
 <div>

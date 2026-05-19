@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Checkbox, Listgroup } from "flowbite-svelte";
+  import { Checkbox, Listgroup } from "$lib";
   let choices = [
     { value: "svelte", label: "svelte" },
     { value: "vue", label: "Vue JS" },

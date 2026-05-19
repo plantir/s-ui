@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toast, P, Button, Heading } from "flowbite-svelte";
+  import { Toast, P, Button, Heading } from "$lib";
   import { fly } from "svelte/transition";
 
   type ToastColor = "green" | "red" | "yellow" | "blue";

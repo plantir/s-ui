@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Datepicker, P, Label, Select, Button } from "flowbite-svelte";
+  import { Datepicker, P, Label, Select, Button } from "$lib";
 
   let value = $state<Date | undefined>(undefined);
   let locale = $state("de");

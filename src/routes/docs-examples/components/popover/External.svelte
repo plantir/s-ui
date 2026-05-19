@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Popover, Button } from "flowbite-svelte";
+  import { Popover, Button } from "$lib";
 </script>
 
 <div id="ext-ref" class="rounded-base border-default my-4 border p-2">External reference</div>

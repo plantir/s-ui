@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FloatingLabelInput } from "flowbite-svelte";
+  import { FloatingLabelInput } from "$lib";
 </script>
 
 <div class="mb-6 grid items-end gap-6 md:grid-cols-3">

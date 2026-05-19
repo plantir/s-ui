@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { DetailedStepper, Button, P, Heading } from "flowbite-svelte";
+  import { DetailedStepper, Button, P, Heading } from "$lib";
   import { BellOutline, ClipboardOutline, CogOutline } from "flowbite-svelte-icons";
 
   let current = $state(1);

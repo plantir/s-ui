@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "$lib";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 

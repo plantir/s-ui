@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toast } from "flowbite-svelte";
+  import { Toast } from "$lib";
   import { CheckCircleSolid, ExclamationCircleSolid, FireOutline, CloseCircleSolid } from "flowbite-svelte-icons";
 </script>
 

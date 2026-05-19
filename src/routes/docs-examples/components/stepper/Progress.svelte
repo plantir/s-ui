@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ProgressStepper } from "flowbite-svelte";
+  import { ProgressStepper } from "$lib";
   import { CheckOutline, UserSolid, CreditCardSolid } from "flowbite-svelte-icons";
 </script>
 

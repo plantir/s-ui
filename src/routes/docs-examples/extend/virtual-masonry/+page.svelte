@@ -1,6 +1,6 @@
 <script lang="ts">
   import { VirtualMasonry, Heading, P } from "$lib";
-  import { Spinner } from "flowbite-svelte";
+  import { Spinner } from "$lib";
   import type { PageData } from "./$types";
 
   let { data }: { data: PageData } = $props();

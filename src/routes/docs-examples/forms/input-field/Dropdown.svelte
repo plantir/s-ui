@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Input, ButtonGroup, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { Input, ButtonGroup, Button, Dropdown, DropdownItem } from "$lib";
   import { ChevronDownOutline, SearchOutline } from "flowbite-svelte-icons";
 </script>
 

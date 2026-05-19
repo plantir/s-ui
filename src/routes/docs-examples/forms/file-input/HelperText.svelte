@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Fileupload, Label, Helper } from "flowbite-svelte";
+  import { Fileupload, Label, Helper } from "$lib";
 </script>
 
 <Label for="with_helper" class="pb-2">Upload file</Label>

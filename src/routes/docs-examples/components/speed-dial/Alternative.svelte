@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { SpeedDial, SpeedDialTrigger, Listgroup, ListgroupItem } from "flowbite-svelte";
+  import { SpeedDial, SpeedDialTrigger, Listgroup, ListgroupItem } from "$lib";
   import { PenSolid, ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 

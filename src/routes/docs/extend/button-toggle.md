@@ -19,7 +19,7 @@ description: Use the button toggle to toggle on/off with the appearance of a but
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
+  import { ButtonToggleGroup, ButtonToggle } from "$lib";
 </script>
 ```
 

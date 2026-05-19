@@ -18,7 +18,7 @@ thumbnailSize: w-64
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Video } from "flowbite-svelte";
+  import { Video } from "$lib";
 </script>
 ```
 

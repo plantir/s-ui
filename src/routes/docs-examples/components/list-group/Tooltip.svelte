@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Listgroup, ListgroupItem, Tooltip } from "flowbite-svelte";
+  import { Listgroup, ListgroupItem, Tooltip } from "$lib";
   import { BellOutline, ClockOutline, TrashBinOutline } from "flowbite-svelte-icons";
 </script>
 

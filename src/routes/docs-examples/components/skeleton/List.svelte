@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ListPlaceholder } from "flowbite-svelte";
+  import { ListPlaceholder } from "$lib";
 
   const sizes = ["sm", "md", "lg"] as const;
   type Size = (typeof sizes)[number];

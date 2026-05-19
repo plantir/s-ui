@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { MultiSelect } from "flowbite-svelte";
+  import { MultiSelect } from "$lib";
 
   let multiSelected: string[] = [];
   let countries: { value: string; name: string }[] = [

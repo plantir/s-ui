@@ -20,7 +20,7 @@ The spinner component can be used as a loading indicator which comes in multiple
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Spinner } from "flowbite-svelte";
+  import { Spinner } from "$lib";
 </script>
 ```
 

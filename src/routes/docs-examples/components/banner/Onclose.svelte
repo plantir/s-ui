@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { Banner, P, Button } from "flowbite-svelte";
+  import { Banner, P, Button } from "$lib";
 
   function useDismissableBanner(storageKey: string) {
     let open = $state(false);

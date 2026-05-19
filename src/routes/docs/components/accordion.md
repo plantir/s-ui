@@ -22,7 +22,7 @@ A popular use case would be the "Frequently Asked Questions" section of a websit
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "$lib";
 </script>
 ```
 

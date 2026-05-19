@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Popover, Button } from "flowbite-svelte";
+  import { Popover, Button } from "$lib";
   import { blur, fade, slide } from "svelte/transition";
 </script>
 

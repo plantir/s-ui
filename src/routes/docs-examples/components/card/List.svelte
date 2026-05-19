@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card, Listgroup, Avatar } from "flowbite-svelte";
+  import { Card, Listgroup, Avatar } from "$lib";
   let list = [
     {
       img: { src: "/images/people/profile-picture-1.jpg", alt: "Neil Sims" },

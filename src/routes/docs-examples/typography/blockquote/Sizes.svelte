@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Blockquote } from "flowbite-svelte";
+  import { Blockquote } from "$lib";
 
   const sizes = ["sm", "base", "lg", "xl", "2xl", "3xl"] as const;
   type Size = (typeof sizes)[number];

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "$lib";
   import { scale } from "svelte/transition";
 </script>
 

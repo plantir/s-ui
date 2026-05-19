@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Progressradial } from "flowbite-svelte";
+  import { Progressradial } from "$lib";
 </script>
 
 <Progressradial progress={65} labelOutside="default" classes={{ labelWrapper: "text-heading" }} />

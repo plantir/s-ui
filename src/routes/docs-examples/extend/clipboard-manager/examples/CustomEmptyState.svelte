@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ClipboardManager } from "flowbite-svelte";
+  import { ClipboardManager } from "$lib";
 </script>
 
 <div id="custom-empty-state">

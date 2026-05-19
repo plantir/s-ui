@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toolbar, ToolbarButton } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton } from "$lib";
   import { HomeOutline, EnvelopeOutline, ImageOutline } from "flowbite-svelte-icons";
 </script>
 

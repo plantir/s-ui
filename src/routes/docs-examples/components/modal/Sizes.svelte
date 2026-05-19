@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Modal, type ModalProps, P } from "flowbite-svelte";
+  import { Button, Modal, type ModalProps, P } from "$lib";
 
   let openModal = $state(false);
   let size: ModalProps["size"] = $state("md"); // Set default value

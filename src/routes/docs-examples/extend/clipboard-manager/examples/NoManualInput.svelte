@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ClipboardManager } from "flowbite-svelte";
+  import { ClipboardManager } from "$lib";
 </script>
 
 <div id="no-manual-input" class="lesson-content">

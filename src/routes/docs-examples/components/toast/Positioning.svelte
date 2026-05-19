@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toast } from "flowbite-svelte";
+  import { Toast } from "$lib";
 </script>
 
 <div class="relative h-56">

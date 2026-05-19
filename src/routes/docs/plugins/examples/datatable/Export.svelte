@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Table, exportJSON, exportCSV, exportTXT, exportSQL } from "@flowbite-svelte-plugins/datatable";
-  import { Button } from "flowbite-svelte";
+  import { Button } from "$lib";
   import items from "./data/sample.json";
 
   let dataTableInstance = $state<any>(null);

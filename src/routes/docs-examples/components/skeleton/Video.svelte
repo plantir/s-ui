@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VideoPlaceholder } from "flowbite-svelte";
+  import { VideoPlaceholder } from "$lib";
 
   const sizes = ["sm", "md", "lg", "xl", "2xl"] as const;
   type Size = (typeof sizes)[number];

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ImagePlaceholder } from "flowbite-svelte";
+  import { ImagePlaceholder } from "$lib";
 
   const sizes = ["sm", "md", "lg"] as const;
   type Size = (typeof sizes)[number];

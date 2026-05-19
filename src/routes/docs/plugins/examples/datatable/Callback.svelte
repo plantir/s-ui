@@ -2,7 +2,7 @@
   import { Table } from "@flowbite-svelte-plugins/datatable";
   import items from "./data/sample.json";
   import type { DataTable } from "@flowbite-svelte-plugins/datatable";
-  import { Spinner } from "flowbite-svelte";
+  import { Spinner } from "$lib";
 
   let isTableLoading = $state(true);
   let tableInstance: DataTable | null = $state(null);

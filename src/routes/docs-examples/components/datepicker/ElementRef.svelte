@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Datepicker, Button } from "flowbite-svelte";
+  import { Datepicker, Button } from "$lib";
 
   let datepickerRef: HTMLInputElement | undefined = $state();
   let selectedDate: Date | undefined = $state();

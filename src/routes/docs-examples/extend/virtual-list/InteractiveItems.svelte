@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VirtualList, Button, Checkbox } from "flowbite-svelte";
+  import { VirtualList, Button, Checkbox } from "$lib";
   import { TrashBinSolid } from "flowbite-svelte-icons";
 
   interface Task {

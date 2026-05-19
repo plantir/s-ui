@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Spinner, Button } from "flowbite-svelte";
+  import { Spinner, Button } from "$lib";
 </script>
 
 <div class="flex flex-wrap items-center gap-2">

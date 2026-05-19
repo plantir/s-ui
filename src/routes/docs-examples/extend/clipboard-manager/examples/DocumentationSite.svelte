@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ClipboardManager } from "flowbite-svelte";
+  import { ClipboardManager } from "$lib";
 
   let items = [{ id: 1, text: "npm install package", pinned: true, timestamp: Date.now() }];
 </script>

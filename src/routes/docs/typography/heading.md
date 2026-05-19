@@ -23,7 +23,7 @@ At least one unique `h1` tag should be available for each page on your website w
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Heading, P, A, Mark, Secondary } from "flowbite-svelte";
+  import { Heading, P, A, Mark, Secondary } from "$lib";
 </script>
 ```
 

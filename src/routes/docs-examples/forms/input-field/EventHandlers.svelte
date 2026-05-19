@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Input, P } from "flowbite-svelte";
+  import { Input, P } from "$lib";
   let value = $state("Custom Event Handlers");
 </script>
 

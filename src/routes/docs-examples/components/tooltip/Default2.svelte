@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tooltip, Button, P } from "flowbite-svelte";
+  import { Tooltip, Button, P } from "$lib";
 </script>
 
 <Button id="specific-button-anywhere-on-page">Default tooltip</Button>

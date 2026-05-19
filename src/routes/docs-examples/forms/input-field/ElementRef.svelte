@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Modal, Input, Label } from "flowbite-svelte";
+  import { Button, Modal, Input, Label } from "$lib";
   let defaultModal = $state(false);
   let elementRef = $state() as HTMLInputElement;
   const handleClick = () => {

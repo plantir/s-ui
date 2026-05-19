@@ -22,7 +22,7 @@ There are multiple examples that you can use including horizontal or vertical al
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { BreadcrumbStepper, DetailedStepper, ProgressStepper, Stepper, TimelineStepper, VerticalStepper } from "flowbite-svelte";
+  import { BreadcrumbStepper, DetailedStepper, ProgressStepper, Stepper, TimelineStepper, VerticalStepper } from "$lib";
 </script>
 ```
 

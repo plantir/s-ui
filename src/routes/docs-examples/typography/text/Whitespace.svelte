@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P } from "flowbite-svelte";
+  import { P } from "$lib";
 
   const modes = ["normal", "nowrap", "preline"] as const;
   type Whitespace = (typeof modes)[number];

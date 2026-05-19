@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Fileupload, Label } from "flowbite-svelte";
+  import { Fileupload, Label } from "$lib";
 </script>
 
 <Label class="pb-2" for="small_size">Small file input</Label>

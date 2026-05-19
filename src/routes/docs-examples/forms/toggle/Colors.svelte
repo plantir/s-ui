@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toggle } from "flowbite-svelte";
+  import { Toggle } from "$lib";
 </script>
 
 <Toggle color="red" checked>Red</Toggle>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "$lib";
   import React from "$icons/React.svelte";
   import Vue from "$icons/Vue.svelte";
   import Angular from "$icons/Angular.svelte";

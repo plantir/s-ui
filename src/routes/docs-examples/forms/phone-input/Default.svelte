@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PhoneInput, Label, Helper } from "flowbite-svelte";
+  import { PhoneInput, Label, Helper } from "$lib";
 </script>
 
 <form class="mx-auto max-w-sm">

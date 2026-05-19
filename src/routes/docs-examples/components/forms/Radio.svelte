@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Radio } from "flowbite-svelte";
+  import { Radio } from "$lib";
 </script>
 
 <Radio name="example">Default radio</Radio>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Progressbar } from "flowbite-svelte";
+  import { Progressbar } from "$lib";
 </script>
 
 <Progressbar progress="50" size="h-3" labelInside color="green" classes={{ label: "text-xs font-medium text-center leading-none rounded-full" }} class="my-4" labelOutside="Size h-3" />

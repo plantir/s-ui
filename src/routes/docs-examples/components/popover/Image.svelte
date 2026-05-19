@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Popover } from "flowbite-svelte";
+  import { Popover } from "$lib";
   import { ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 

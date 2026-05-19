@@ -21,7 +21,7 @@ You will also find more advanced search components on this page including dropdo
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Search } from "flowbite-svelte";
+  import { Search } from "$lib";
 </script>
 ```
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, DropdownDivider } from "$lib";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   import { page } from "$app/state";
   let activeUrl = $derived(page.url.pathname);

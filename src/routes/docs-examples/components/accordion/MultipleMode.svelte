@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Accordion, AccordionItem } from "flowbite-svelte";
+  import { Accordion, AccordionItem } from "$lib";
 </script>
 
 <Accordion multiple>

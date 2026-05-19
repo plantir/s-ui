@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ScoreRating } from "flowbite-svelte";
+  import { ScoreRating } from "$lib";
   let headerLabel = {
     desc1: "8.7",
     desc2: "Excellent",

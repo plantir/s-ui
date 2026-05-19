@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Indicator } from "flowbite-svelte";
+  import { Indicator } from "$lib";
   import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 

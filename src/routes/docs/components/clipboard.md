@@ -25,7 +25,7 @@ Import Clipboard in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Clipboard } from "flowbite-svelte";
+  import { Clipboard } from "$lib";
 </script>
 ```
 

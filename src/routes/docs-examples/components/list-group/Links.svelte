@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Listgroup } from "flowbite-svelte";
+  import { Listgroup } from "$lib";
   let links = [
     { name: "Accordions", href: "/docs/components/accordion", current: true },
     { name: "Alerts", href: "/docs/components/alert" },

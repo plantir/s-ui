@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { RatingComment } from "flowbite-svelte";
+  import { RatingComment } from "$lib";
   let comment = {
     id: "1",
     user: {

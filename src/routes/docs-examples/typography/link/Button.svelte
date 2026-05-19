@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { A } from "flowbite-svelte";
+  import { A } from "$lib";
   let show_full_link = $state(false);
 </script>
 

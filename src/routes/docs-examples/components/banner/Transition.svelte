@@ -1,7 +1,7 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
   import { quintOut } from "svelte/easing";
-  import { Banner, Skeleton, ImagePlaceholder, A } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder, A } from "$lib";
   import { BullhornSolid } from "flowbite-svelte-icons";
 
   const params = { delay: 250, duration: 500, easing: quintOut };

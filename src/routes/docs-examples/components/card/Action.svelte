@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card, Button } from "flowbite-svelte";
+  import { Card, Button } from "$lib";
 </script>
 
 <Card size="lg" class="p-4 text-center sm:p-8 md:p-10">

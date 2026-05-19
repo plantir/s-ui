@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Tags } from "flowbite-svelte";
+  import { Button, Tags } from "$lib";
   let tags: string[] = $state([]);
   const handleClick = () => {
     alert(`Submitted: ${tags}`);

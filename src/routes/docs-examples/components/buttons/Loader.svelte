@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Spinner } from "flowbite-svelte";
+  import { Button, Spinner } from "$lib";
 </script>
 
 <Button loading>Loading ...</Button>

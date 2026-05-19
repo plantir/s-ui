@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VirtualList } from "flowbite-svelte";
+  import { VirtualList } from "$lib";
 
   function getRandomLorem(minWords: number, maxWords: number) {
     const lorem = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua".split(" ");

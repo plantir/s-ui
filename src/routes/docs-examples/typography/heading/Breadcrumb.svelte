@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Heading, Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
+  import { Heading, Breadcrumb, BreadcrumbItem } from "$lib";
 </script>
 
 <Breadcrumb class="mb-4">

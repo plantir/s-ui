@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Alert, Button } from "flowbite-svelte";
+  import { Alert, Button } from "$lib";
   let alertStatus = $state(true);
 
   const closeAlert = () => {

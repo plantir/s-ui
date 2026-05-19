@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Stepper, Button, P, Heading } from "flowbite-svelte";
+  import { Stepper, Button, P, Heading } from "$lib";
   import { CheckOutline, UserCircleOutline, BadgeCheckOutline } from "flowbite-svelte-icons";
 
   let current = $state(1);

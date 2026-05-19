@@ -20,7 +20,7 @@ The indicator component can be used as a small element positioned absolutely rel
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Indicator } from "flowbite-svelte";
+  import { Indicator } from "$lib";
 </script>
 ```
 

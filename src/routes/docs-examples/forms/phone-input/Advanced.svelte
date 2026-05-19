@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PhoneInput, Label, Dropdown, DropdownItem, Button } from "flowbite-svelte";
+  import { PhoneInput, Label, Dropdown, DropdownItem, Button } from "$lib";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   import Usa from "$icons/Usa.svelte";
   import Germany from "$icons/Germany.svelte";

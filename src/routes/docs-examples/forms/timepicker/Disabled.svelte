@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Timepicker } from "flowbite-svelte";
+  import { Timepicker } from "$lib";
 </script>
 
 <Timepicker disabled />

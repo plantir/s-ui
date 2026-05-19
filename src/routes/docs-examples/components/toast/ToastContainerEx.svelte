@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toast, ToastContainer, P, Button, Heading } from "flowbite-svelte";
+  import { Toast, ToastContainer, P, Button, Heading } from "$lib";
   import { fly } from "svelte/transition";
   import { onDestroy } from "svelte";
 

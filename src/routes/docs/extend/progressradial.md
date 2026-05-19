@@ -21,7 +21,7 @@ Import the `Progressradial` component in a script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Progressradial } from "flowbite-svelte";
+  import { Progressradial } from "$lib";
 </script>
 ```
 

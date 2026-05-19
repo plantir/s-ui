@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Gallery } from "flowbite-svelte";
+  import { Gallery } from "$lib";
 </script>
 
 <Gallery class="grid-cols-2 gap-4">

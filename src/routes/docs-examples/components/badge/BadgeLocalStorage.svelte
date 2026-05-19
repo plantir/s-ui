@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Badge } from "$lib";
-  import { Button } from "flowbite-svelte";
+  import { Button } from "$lib";
   import { onMount } from "svelte";
 
   const STORAGE_KEY = "example-badge-hidden";

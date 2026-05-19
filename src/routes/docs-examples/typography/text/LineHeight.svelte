@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P } from "flowbite-svelte";
+  import { P } from "$lib";
 
   const heights = ["normal", "relaxed", "loose"] as const;
   type Height = (typeof heights)[number];

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Fileupload } from "flowbite-svelte";
+  import { Label, Fileupload } from "$lib";
 
   let fileuploadprops = {
     id: "user_avatar"

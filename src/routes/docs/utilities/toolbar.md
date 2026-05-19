@@ -18,7 +18,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton, ToolbarGroup } from "$lib";
 </script>
 ```
 

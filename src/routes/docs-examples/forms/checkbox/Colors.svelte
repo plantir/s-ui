@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Checkbox, Label } from "flowbite-svelte";
+  import { Checkbox, Label } from "$lib";
 </script>
 
 <div class="flex flex-col gap-4 sm:flex-row">

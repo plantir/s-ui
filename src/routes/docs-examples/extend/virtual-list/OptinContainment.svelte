@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VirtualList } from "flowbite-svelte";
+  import { VirtualList } from "$lib";
   interface Article {
     id: number;
     thumbnail: string;

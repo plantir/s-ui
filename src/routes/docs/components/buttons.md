@@ -32,7 +32,7 @@ Import a button component in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Button } from "flowbite-svelte";
+  import { Button } from "$lib";
 </script>
 ```
 

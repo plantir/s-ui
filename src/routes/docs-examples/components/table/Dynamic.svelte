@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Table, Button } from "flowbite-svelte";
+  import { Table, Button } from "$lib";
   type ItemType = {
     id: number;
     maker: string;

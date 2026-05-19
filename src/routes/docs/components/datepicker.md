@@ -19,7 +19,7 @@ The Datepicker component provides an interactive calendar interface for selectin
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Datepicker } from "flowbite-svelte";
+  import { Datepicker } from "$lib";
 </script>
 ```
 

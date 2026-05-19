@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FloatingLabelInput, Button } from "flowbite-svelte";
+  import { FloatingLabelInput, Button } from "$lib";
   let floatingRef: HTMLInputElement | undefined = $state();
 </script>
 

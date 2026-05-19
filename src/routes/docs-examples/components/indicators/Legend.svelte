@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Indicator } from "flowbite-svelte";
+  import { Indicator } from "$lib";
 </script>
 
 <span class="flex items-center"><Indicator size="sm" class="me-1.5 bg-orange-400" />Visitors</span>

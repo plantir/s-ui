@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge, type BadgeProps } from "flowbite-svelte";
+  import { Badge, type BadgeProps } from "$lib";
 
   setInterval(handleHover, 500);
 

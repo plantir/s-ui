@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Footer, FooterLinkGroup, FooterLink, ImagePlaceholder, TextPlaceholder, Skeleton, FooterCopyright } from "flowbite-svelte";
+  import { Footer, FooterLinkGroup, FooterLink, ImagePlaceholder, TextPlaceholder, Skeleton, FooterCopyright } from "$lib";
 </script>
 
 <div style="height:300px;" class="overflow-scroll pb-16">

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Hr } from "flowbite-svelte";
+  import { Hr } from "$lib";
 </script>
 
 <Hr classes={{ bg: "h-2 bg-gradient-to-r from-pink-500 to-indigo-500" }} />

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button } from "$lib";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let openNonModal = $state(false);

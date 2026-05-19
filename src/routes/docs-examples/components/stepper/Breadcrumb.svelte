@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BreadcrumbStepper } from "flowbite-svelte";
+  import { BreadcrumbStepper } from "$lib";
 </script>
 
 <BreadcrumbStepper

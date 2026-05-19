@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Group, GroupItem } from "flowbite-svelte";
+  import { Group, GroupItem } from "$lib";
   let groupTimelines = [
     {
       id: "group-1",

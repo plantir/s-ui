@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Range, Label } from "flowbite-svelte";
+  import { Range, Label } from "$lib";
   let minmaxValue = 5;
 </script>
 

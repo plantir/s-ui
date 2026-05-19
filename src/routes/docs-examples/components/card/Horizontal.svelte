@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card, Toggle } from "flowbite-svelte";
+  import { Card, Toggle } from "$lib";
   let hCard = $state(false);
 </script>
 

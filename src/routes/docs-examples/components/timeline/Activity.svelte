@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Activity, ActivityItem } from "flowbite-svelte";
+  import { Activity, ActivityItem } from "$lib";
   let activities = [
     {
       id: "activity-1",

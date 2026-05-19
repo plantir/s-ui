@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
+  import { ButtonToggleGroup, ButtonToggle } from "$lib";
 
   let singleValue = $state<string | null>("two");
   let multiValues = $state<string[]>(["one", "three"]);

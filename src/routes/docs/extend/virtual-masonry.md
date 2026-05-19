@@ -20,7 +20,7 @@ description: A virtualized Svelte component rendering an efficient masonry/Pinte
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { VirtualMasonry } from "flowbite-svelte";
+  import { VirtualMasonry } from "$lib";
 </script>
 ```
 

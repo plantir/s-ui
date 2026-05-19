@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Clipboard, Input, Label, Helper, Button, Tooltip, ButtonGroup } from "flowbite-svelte";
+  import { Clipboard, Input, Label, Helper, Button, Tooltip, ButtonGroup } from "$lib";
   import { CheckOutline, ClipboardCleanOutline } from "flowbite-svelte-icons";
 
   let value = $state("https://bit.ly/3U2SXcF");

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Radio, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Label } from "flowbite-svelte";
+  import { Radio, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Label } from "$lib";
 </script>
 
 <Table>

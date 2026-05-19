@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { StepIndicator, Button, Label, Input } from "flowbite-svelte";
+  import { StepIndicator, Button, Label, Input } from "$lib";
 
   let currentStep = $state(1);
   const steps = ["Personal Info", "Contact Details", "Address", "Review", "Complete"];

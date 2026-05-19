@@ -21,7 +21,7 @@ The list group component can be used to display a series of elements, buttons or
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Listgroup, ListgroupItem } from "flowbite-svelte";
+  import { Listgroup, ListgroupItem } from "$lib";
 </script>
 ```
 

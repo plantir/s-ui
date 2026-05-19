@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Carousel, Controls, CarouselIndicators } from "flowbite-svelte";
+  import { Carousel, Controls, CarouselIndicators } from "$lib";
   import images from "./imageData/images.json";
   import { scale } from "svelte/transition";
   import { quintOut } from "svelte/easing";

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Popover, Button } from "flowbite-svelte";
+  import { Popover, Button } from "$lib";
   import { DatabaseSolid, ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 

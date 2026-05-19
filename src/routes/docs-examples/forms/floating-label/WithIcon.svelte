@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FloatingLabelInput } from "flowbite-svelte";
+  import { FloatingLabelInput } from "$lib";
   import { EnvelopeOutline } from "flowbite-svelte-icons";
 </script>
 

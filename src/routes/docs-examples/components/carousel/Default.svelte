@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Carousel } from "flowbite-svelte";
+  import { Carousel } from "$lib";
   import images from "./imageData/images.json";
 </script>
 

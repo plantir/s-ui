@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge } from "flowbite-svelte";
+  import { Badge } from "$lib";
 </script>
 
 <div class="flex flex-wrap gap-2">

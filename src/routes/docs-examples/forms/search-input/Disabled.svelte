@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Search, Button } from "flowbite-svelte";
+  import { Search, Button } from "$lib";
 </script>
 
 <Search disabled>

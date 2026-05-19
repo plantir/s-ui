@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Textarea, Button } from "flowbite-svelte";
+  import { Textarea, Button } from "$lib";
 
   let textareaRef = $state() as HTMLTextAreaElement;
   let textContent = $state("This is some example text that will be selected when you click the button.");

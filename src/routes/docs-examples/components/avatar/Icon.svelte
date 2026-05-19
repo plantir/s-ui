@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Avatar } from "flowbite-svelte";
+  import { Avatar } from "$lib";
   import { BugOutline } from "flowbite-svelte-icons";
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FloatingLabelInput } from "flowbite-svelte";
+  import { FloatingLabelInput } from "$lib";
   const carMakers = [
     "Toyota",
     "Ford",

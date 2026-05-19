@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AdvancedRating, Rating } from "flowbite-svelte";
+  import { AdvancedRating, Rating } from "$lib";
 </script>
 
 <AdvancedRating

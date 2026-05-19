@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Checkbox } from "flowbite-svelte";
+  import { Button, Checkbox } from "$lib";
   let choices = [
     { value: "1", label: "One" },
     { value: "2", label: "Two" },

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card, Button, Rating, Badge } from "flowbite-svelte";
+  import { Card, Button, Rating, Badge } from "$lib";
 </script>
 
 <Card class="p-0">

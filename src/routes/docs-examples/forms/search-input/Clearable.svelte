@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Search } from "flowbite-svelte";
+  import { Search } from "$lib";
 </script>
 
 <Search size="md" clearable />

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Gallery } from "flowbite-svelte";
-  import type { ImgType } from "flowbite-svelte";
+  import { Gallery } from "$lib";
+  import type { ImgType } from "$lib";
 
   const image1 = {
     alt: "erbology",

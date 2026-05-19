@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Carousel, Controls, CarouselIndicators, Thumbnails } from "flowbite-svelte";
+  import { Carousel, Controls, CarouselIndicators, Thumbnails } from "$lib";
   import images from "./imageData/images.json";
 
   let index = $state(0);

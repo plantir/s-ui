@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Img, img, Radio, Label, type ImgProps } from "flowbite-svelte";
+  import { Img, img, Radio, Label, type ImgProps } from "$lib";
 
   const alignments = Object.keys(img.variants.align);
   let imgAlign: ImgProps["align"] = $state(undefined);

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { A, P } from "flowbite-svelte";
+  import { A, P } from "$lib";
 </script>
 
 <P>

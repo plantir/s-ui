@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type KanbanColumnType, KanbanBoard, Modal, Label, Input, Textarea, Button } from "flowbite-svelte";
+  import { type KanbanColumnType, KanbanBoard, Modal, Label, Input, Textarea, Button } from "$lib";
 
   let columns = $state<KanbanColumnType[]>([
     {

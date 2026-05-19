@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Input, Helper } from "flowbite-svelte";
+  import { Label, Input, Helper } from "$lib";
 </script>
 
 <Label class="mb-2 block">Your email</Label>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Blockquote, Rating } from "flowbite-svelte";
+  import { Blockquote, Rating } from "$lib";
 </script>
 
 <figure class="max-w-(--breakpoint-md)">

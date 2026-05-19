@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "$lib";
   import { HomeOutline, WalletOutline, AdjustmentsVerticalOutline, UserCircleOutline } from "flowbite-svelte-icons";
   import { page } from "$app/state";
   let activeUrl = $derived(page.url.pathname);

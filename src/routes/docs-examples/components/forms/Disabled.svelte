@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Input } from "flowbite-svelte";
+  import { Input } from "$lib";
 </script>
 
 <Input id="disabled-input" class="mb-6" disabled value="Disabled input" />

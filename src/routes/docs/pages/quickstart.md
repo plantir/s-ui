@@ -111,7 +111,7 @@ Now you are ready to go! Add the following to `src/routes/+page.svelte` and if y
 
 ```svelte example
 <script lang="ts">
-  import { Alert } from "flowbite-svelte";
+  import { Alert } from "$lib";
 </script>
 
 <div class="p-8">

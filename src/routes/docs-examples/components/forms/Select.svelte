@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Select } from "flowbite-svelte";
+  import { Label, Select } from "$lib";
   let selected: string = "";
 
   let countries: { value: string; name: string }[] = [

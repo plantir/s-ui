@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Search, ToolbarButton } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Search, ToolbarButton } from "$lib";
   import { SearchOutline } from "flowbite-svelte-icons";
   import { fade } from "svelte/transition";
 </script>

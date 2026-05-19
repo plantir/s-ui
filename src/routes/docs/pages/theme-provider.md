@@ -22,7 +22,7 @@ Wrap your components with ThemeProvider and pass a theme configuration object:
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ThemeProvider, Button, Card } from "flowbite-svelte";
+  import { ThemeProvider, Button, Card } from "$lib";
 
   const theme = {
     button: {
@@ -127,7 +127,7 @@ import type {
   ButtonTheme,
   CardTheme.
   // ...
-} from "flowbite-svelte";
+} from "$lib";
 ```
 
 ## Nested ThemeProvider and Component Classes
@@ -138,7 +138,7 @@ Component classes, when defined directly on a component, will always take preced
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ThemeProvider, Card, Heading, P } from "flowbite-svelte";
+  import { ThemeProvider, Card, Heading, P } from "$lib";
 
   const theme1a = {
     card: {

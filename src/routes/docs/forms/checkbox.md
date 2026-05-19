@@ -20,7 +20,7 @@ The checkbox component can be used to receive one or more selected options from 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Checkbox } from "flowbite-svelte";
+  import { Checkbox } from "$lib";
 </script>
 ```
 

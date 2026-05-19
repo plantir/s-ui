@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Checkbox, Helper } from "flowbite-svelte";
+  import { Checkbox, Helper } from "$lib";
 </script>
 
 <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>

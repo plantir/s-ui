@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ButtonGroup, RadioButton } from "flowbite-svelte";
+  import { ButtonGroup, RadioButton } from "$lib";
   let options = $state();
 </script>
 

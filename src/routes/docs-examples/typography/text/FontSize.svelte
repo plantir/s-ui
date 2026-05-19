@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P } from "flowbite-svelte";
+  import { P } from "$lib";
 </script>
 
 <P class="text-heading" size="xs">Aa</P>

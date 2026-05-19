@@ -21,7 +21,7 @@ In this case, you can overwrite the outer div class by adding the `class` prop. 
 
 ```svelte example
 <script lang="ts">
-  import { Alert } from "flowbite-svelte";
+  import { Alert } from "$lib";
 </script>
 
 <Alert class="bg-sky-500 text-white">Add a class to overwrite the default class!</Alert>
@@ -35,7 +35,7 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
 
 ```svelte example
 <script lang="ts">
-  import { Button } from "flowbite-svelte";
+  import { Button } from "$lib";
 </script>
 
 <Button class="bg-blue-500!">Blue Button</Button>
@@ -48,7 +48,7 @@ While the `class` prop can be used for the most outer tag, you can use the `clas
 
 ```svelte example class="flex flex-col relative"
 <script lang="ts">
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder } from "$lib";
 </script>
 
 <Skeleton class="py-4" />
@@ -67,7 +67,7 @@ Instead of introducing multiple props for a component's internal element classes
 
 ```svelte example class="flex flex-col relative"
 <script lang="ts">
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder } from "$lib";
 </script>
 
 <Skeleton class="py-4" />
@@ -93,7 +93,7 @@ Create a new file for your button component in the lib directory:
 ```svelte example hideOutput
 <script lang="ts">
   // src/lib/MyButton.svelte
-  import { Button } from "flowbite-svelte";
+  import { Button } from "$lib";
   let { children } = $props();
 </script>
 

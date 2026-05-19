@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Popover, Button, Avatar } from "flowbite-svelte";
+  import { Popover, Button, Avatar } from "$lib";
 </script>
 
 <Button>User profile</Button>

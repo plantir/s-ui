@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tags, Button } from "flowbite-svelte";
+  import { Tags, Button } from "$lib";
   let tags: string[] = $state([]);
 
   const available = ["svelte", "react", "vue", "angular", "javascript", "typescript", "flowbite", "flowbite-svelte", "tailwindcss"];

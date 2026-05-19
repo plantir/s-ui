@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Checkbox, Listgroup } from "flowbite-svelte";
+  import { Checkbox, Listgroup } from "$lib";
 </script>
 
 <p class="text-heading mb-4 font-semibold">Technology</p>

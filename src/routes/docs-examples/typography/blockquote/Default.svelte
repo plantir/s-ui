@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Blockquote } from "flowbite-svelte";
+  import { Blockquote } from "$lib";
 </script>
 
 <Blockquote size="xl">

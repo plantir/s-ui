@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Fileupload, Helper } from "flowbite-svelte";
+  import { Fileupload, Helper } from "$lib";
   let selectedFiles = $state<FileList | null>(null);
   let fileNames = $derived(
     selectedFiles

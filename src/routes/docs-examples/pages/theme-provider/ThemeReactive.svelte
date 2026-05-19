@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ThemeProvider, Button, Card, Alert } from "flowbite-svelte";
+  import { ThemeProvider, Button, Card, Alert } from "$lib";
 
   type ThemeColor = "purple" | "green" | "blue" | "red";
 

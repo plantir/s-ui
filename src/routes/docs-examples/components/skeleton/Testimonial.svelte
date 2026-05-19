@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { TestimonialPlaceholder } from "flowbite-svelte";
+  import { TestimonialPlaceholder } from "$lib";
 </script>
 
 <TestimonialPlaceholder />

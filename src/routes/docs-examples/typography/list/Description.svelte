@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { List, DescriptionList } from "flowbite-svelte";
+  import { List, DescriptionList } from "$lib";
 </script>
 
 <List tag="dl" class="divide-default text-heading divide-y">

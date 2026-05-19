@@ -22,7 +22,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Toggle } from "flowbite-svelte";
+  import { Toggle } from "$lib";
 </script>
 ```
 

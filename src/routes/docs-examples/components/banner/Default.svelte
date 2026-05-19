@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder } from "$lib";
   import { BullhornSolid } from "flowbite-svelte-icons";
 </script>
 

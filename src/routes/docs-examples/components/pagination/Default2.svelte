@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import { Pagination } from "flowbite-svelte";
+  import { Pagination } from "$lib";
   import { onMount } from "svelte";
 
   let isMobile = $state(false);

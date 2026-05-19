@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Datepicker } from "flowbite-svelte";
+  import { Datepicker } from "$lib";
 </script>
 
 <div class="mb-64 md:w-1/2">

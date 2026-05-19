@@ -27,7 +27,7 @@ Carousels help conserve screen space while presenting multiple pieces of content
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Carousel } from "flowbite-svelte";
+  import { Carousel } from "$lib";
   // ./imageData/+server.js has the following
   export const images = [
     {

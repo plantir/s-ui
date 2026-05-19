@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Select, Button } from "flowbite-svelte";
+  import { Select, Button } from "$lib";
 
   let selectRef = $state() as HTMLSelectElement;
   const options = [

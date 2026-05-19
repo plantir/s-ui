@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Input, ButtonGroup, InputAddon } from "flowbite-svelte";
+  import { Label, Input, ButtonGroup, InputAddon } from "$lib";
   import { EyeOutline, EyeSlashOutline } from "flowbite-svelte-icons";
   let show = $state(false);
   let show1 = $state(false);

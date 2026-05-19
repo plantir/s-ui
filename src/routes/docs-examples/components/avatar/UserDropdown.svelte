@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup } from "flowbite-svelte";
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup } from "$lib";
 </script>
 
 <Avatar id="user-drop" src="/images/people/profile-picture-5.jpg" class="cursor-pointer" dot={{ color: "success" }} />

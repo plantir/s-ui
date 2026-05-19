@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button } from "flowbite-svelte";
+  import { Button } from "$lib";
   let loading = $state(false);
 
   async function handleSubmit() {

@@ -21,7 +21,7 @@ The select input component can be used to gather information from users based on
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Select } from "flowbite-svelte";
+  import { Select } from "$lib";
 </script>
 ```
 
@@ -97,7 +97,7 @@ If you want custom options, put them directly inside the component and leave the
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { MultiSelect } from "flowbite-svelte";
+  import { MultiSelect } from "$lib";
 </script>
 ```
 

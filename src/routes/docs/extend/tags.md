@@ -23,7 +23,7 @@ Import the `Tags` component in a script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Tags } from "flowbite-svelte";
+  import { Tags } from "$lib";
 </script>
 ```
 

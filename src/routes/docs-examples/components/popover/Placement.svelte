@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Popover, Button, type PopoverProps } from "flowbite-svelte";
+  import { Popover, Button, type PopoverProps } from "$lib";
   let placement = $state("bottom");
 
   function onbeforetoggle(ev: Event) {

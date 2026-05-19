@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Listgroup } from "flowbite-svelte";
+  import { Listgroup } from "$lib";
   import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from "flowbite-svelte-icons";
   let icons = [
     { name: "Profile", Icon: UserCircleSolid },

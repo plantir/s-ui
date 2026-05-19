@@ -24,7 +24,7 @@ Import `Gallery` in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Gallery } from "flowbite-svelte";
+  import { Gallery } from "$lib";
 </script>
 ```
 

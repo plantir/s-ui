@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { List, Li, Span, Heading } from "flowbite-svelte";
+  import { List, Li, Span, Heading } from "$lib";
 </script>
 
 <Heading tag="h2" class="mb-2 text-lg font-semibold">Top students:</Heading>

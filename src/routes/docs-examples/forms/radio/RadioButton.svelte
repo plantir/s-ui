@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { RadioButton, ButtonGroup } from "flowbite-svelte";
+  import { RadioButton, ButtonGroup } from "$lib";
   import { ListMusicSolid, OrderedListOutline, ListOutline } from "flowbite-svelte-icons";
 
   let radioGroup = $state("notes");

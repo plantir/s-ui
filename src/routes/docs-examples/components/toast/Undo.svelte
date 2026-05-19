@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toast } from "flowbite-svelte";
+  import { Toast } from "$lib";
 </script>
 
 <Toast classes={{ content: "w-full text-sm font-normal flex items-center justify-between" }}>

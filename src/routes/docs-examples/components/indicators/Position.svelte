@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Indicator } from "flowbite-svelte";
+  import { Indicator } from "$lib";
 </script>
 
 <div class="rounded-base border-default bg-neutral-tertiary relative h-56 w-56 border">

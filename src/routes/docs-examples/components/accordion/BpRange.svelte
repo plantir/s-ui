@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AccordionItem, useMediaQuery, useBreakpoints, P } from "flowbite-svelte";
+  import { AccordionItem, useMediaQuery, useBreakpoints, P } from "$lib";
   const breakpoints = useBreakpoints();
 
   // Custom pixel range

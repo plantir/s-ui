@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Drawer, DrawerHandle, CardPlaceholder } from "flowbite-svelte";
+  import { Drawer, DrawerHandle, CardPlaceholder } from "$lib";
   import { AdjustmentsVerticalSolid, ChartPieSolid, ClipboardListSolid, GridPlusSolid, ReceiptSolid, TableRowSolid, UsersSolid } from "flowbite-svelte-icons";
 
   let open = $state(false);

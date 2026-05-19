@@ -22,7 +22,7 @@ Import and add the component to your layout:
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ThemeSelector } from "flowbite-svelte";
+  import { ThemeSelector } from "$lib";
 </script>
 
 <ThemeSelector />
@@ -46,7 +46,7 @@ Control themes programmatically using the exported functions:
 
 ```svelte
 <script>
-  import { loadTheme, getCurrentTheme, getSelectedTheme } from "flowbite-svelte";
+  import { loadTheme, getCurrentTheme, getSelectedTheme } from "$lib";
   
   // Switch to a specific theme
   function switchTheme() {
@@ -78,7 +78,7 @@ Control themes programmatically using the exported functions:
 
 ```svelte example hideOutput
 <script>
-  import { Navbar, NavBrand, NavUl, NavLi, DarkMode, ThemeSelector } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavUl, NavLi, DarkMode, ThemeSelector } from "$lib";
 </script>
 
 <Navbar>
@@ -98,7 +98,7 @@ Control themes programmatically using the exported functions:
 
 ```svelte example hideOutput
 <script>
-  import { Card, Heading, ThemeSelector } from "flowbite-svelte";
+  import { Card, Heading, ThemeSelector } from "$lib";
 </script>
 
 <Card>
@@ -166,7 +166,7 @@ The four `colors` values are Tailwind utility classes for the four color swatche
 ```svelte
 <!-- src/routes/+layout.svelte -->
 <script>
-  import { ThemeSelector } from "flowbite-svelte";
+  import { ThemeSelector } from "$lib";
 </script>
 
 <header>

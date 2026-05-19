@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Pagination } from "flowbite-svelte";
+  import { Pagination } from "$lib";
   import { ChevronLeftOutline, ChevronRightOutline } from "flowbite-svelte-icons";
   let pages = $state([
     { name: "1", href: "/docs/components/pagination?page=1", active: false },

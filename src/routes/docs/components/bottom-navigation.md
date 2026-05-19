@@ -29,7 +29,7 @@ Check out multiple examples of the bottom navigation component based on various 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { BottomNav, BottomNavItem } from "flowbite-svelte";
+  import { BottomNav, BottomNavItem } from "$lib";
 </script>
 ```
 

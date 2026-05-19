@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { List, Li, Heading } from "flowbite-svelte";
+  import { List, Li, Heading } from "$lib";
   import { CheckCircleSolid, CloseCircleSolid } from "flowbite-svelte-icons";
 </script>
 

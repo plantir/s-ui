@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup } from "$lib";
 </script>
 
 <Button pill id="avatar_with_name" class="p-1!">

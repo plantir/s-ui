@@ -23,7 +23,7 @@ On this page you will find all of the input types based on multiple variants, st
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Input, Label, Helper } from "flowbite-svelte";
+  import { Input, Label, Helper } from "$lib";
 </script>
 ```
 

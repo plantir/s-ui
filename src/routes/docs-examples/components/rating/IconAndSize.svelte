@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Rating, Heart, type RatingIconProps } from "flowbite-svelte";
+  import { Rating, Heart, type RatingIconProps } from "$lib";
   const heartWrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) => Heart(anchor, { ..._props, ...props });
 </script>
 

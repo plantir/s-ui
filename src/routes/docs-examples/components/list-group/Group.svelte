@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Listgroup } from "flowbite-svelte";
+  import { Listgroup } from "$lib";
   let buttons = [
     { name: "Profile", mycustomfield: "data1", current: true },
     { name: "Settings", mycustomfield: "data2" },

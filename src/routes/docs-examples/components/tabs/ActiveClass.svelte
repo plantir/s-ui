@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tabs, TabItem } from "flowbite-svelte";
+  import { Tabs, TabItem } from "$lib";
 </script>
 
 <Tabs classes={{ active: "p-4 text-white bg-blue-600 dark:bg-blue-500 rounded-t-base" }}>

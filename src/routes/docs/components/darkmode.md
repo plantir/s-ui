@@ -35,7 +35,7 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 ```svelte example
 <!-- src/routes/+layout.svelte -->
 <script lang="ts">
-  import { DarkMode } from "flowbite-svelte";
+  import { DarkMode } from "$lib";
 </script>
 
 <DarkMode />

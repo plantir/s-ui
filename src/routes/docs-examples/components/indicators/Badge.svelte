@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Indicator, Avatar, Badge } from "flowbite-svelte";
+  import { Indicator, Avatar, Badge } from "$lib";
 </script>
 
 <ul class="divide-default w-full max-w-sm divide-y">

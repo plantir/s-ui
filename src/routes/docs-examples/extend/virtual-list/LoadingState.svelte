@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VirtualList, Button, Spinner } from "flowbite-svelte";
+  import { VirtualList, Button, Spinner } from "$lib";
 
   let items: string[] = $state([]);
   let isLoading = $state(false);

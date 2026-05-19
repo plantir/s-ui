@@ -21,7 +21,7 @@ Import the `StepIndicator` component in a script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { StepIndicator } from "flowbite-svelte";
+  import { StepIndicator } from "$lib";
 </script>
 ```
 

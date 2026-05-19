@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { DarkMode } from "flowbite-svelte";
+  import { DarkMode } from "$lib";
   import { ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
 </script>
 

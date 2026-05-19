@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tabs, TabItem } from "flowbite-svelte";
+  import { Tabs, TabItem } from "$lib";
 </script>
 
 <Tabs tabStyle="pill">

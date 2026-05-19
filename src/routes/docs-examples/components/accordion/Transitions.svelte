@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AccordionItem, Accordion } from "flowbite-svelte";
+  import { AccordionItem, Accordion } from "$lib";
   import { blur, fade } from "svelte/transition";
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P, A } from "flowbite-svelte";
+  import { P, A } from "$lib";
 
   const styles = ["link", "bold", "underline", "italic"] as const;
   type Style = (typeof styles)[number];

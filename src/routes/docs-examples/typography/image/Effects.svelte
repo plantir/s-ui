@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Img, img, Radio, Label, type ImgProps } from "flowbite-svelte";
+  import { Img, img, Radio, Label, type ImgProps } from "$lib";
 
   const effects = Object.keys(img.variants.effect);
   let imgEffect: ImgProps["effect"] = $state(undefined);

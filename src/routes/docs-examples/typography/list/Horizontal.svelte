@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { List, Li, A } from "flowbite-svelte";
+  import { List, Li, A } from "$lib";
 </script>
 
 <List tag="dl" class="mb-6 flex flex-wrap items-center justify-center">

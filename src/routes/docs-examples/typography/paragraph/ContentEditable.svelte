@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P } from "flowbite-svelte";
+  import { P } from "$lib";
 </script>
 
 <P contenteditable>Track work across the enterprise through an open, collaborative platform.</P>

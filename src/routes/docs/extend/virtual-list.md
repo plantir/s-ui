@@ -19,7 +19,7 @@ description: A performant Svelte 5 virtual list component that efficiently rende
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { VirtualList } from "flowbite-svelte";
+  import { VirtualList } from "$lib";
 </script>
 ```
 

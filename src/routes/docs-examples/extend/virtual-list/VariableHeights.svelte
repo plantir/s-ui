@@ -1,6 +1,6 @@
 <!-- VariableHeights.svelte -->
 <script lang="ts">
-  import { VirtualList } from "flowbite-svelte";
+  import { VirtualList } from "$lib";
 
   interface Item {
     title: string;

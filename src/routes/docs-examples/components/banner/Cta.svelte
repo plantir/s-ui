@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
+  import { Banner, Skeleton, ImagePlaceholder } from "$lib";
 </script>
 
 <Skeleton class="py-4" />

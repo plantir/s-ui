@@ -31,7 +31,7 @@ Import Card in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Card } from "flowbite-svelte";
+  import { Card } from "$lib";
 </script>
 ```
 

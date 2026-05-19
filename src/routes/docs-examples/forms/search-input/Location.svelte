@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Search, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { Search, Button, Dropdown, DropdownItem } from "$lib";
   import { SearchOutline, ChevronDownOutline } from "flowbite-svelte-icons";
 
   const countries = [

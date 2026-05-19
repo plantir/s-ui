@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Listgroup } from "flowbite-svelte";
+  import { Listgroup } from "$lib";
   let simpleList = ["Profile", "Settings", "Messages", "Download"];
 </script>
 

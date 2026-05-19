@@ -23,7 +23,7 @@ The examples are built with the utility classes from Tailwind CSS and they are f
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { PhoneInput, Label, Helper } from "flowbite-svelte";
+  import { PhoneInput, Label, Helper } from "$lib";
 </script>
 ```
 

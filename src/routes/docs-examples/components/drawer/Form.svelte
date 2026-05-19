@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Avatar, Drawer, CardPlaceholder, Button, Label, Input, Textarea } from "flowbite-svelte";
+  import { Avatar, Drawer, CardPlaceholder, Button, Label, Input, Textarea } from "$lib";
   import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from "flowbite-svelte-icons";
 
   let open4 = $state(false);

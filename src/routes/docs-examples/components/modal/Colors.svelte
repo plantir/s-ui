@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Modal, type ButtonProps } from "flowbite-svelte";
+  import { Button, Modal, type ButtonProps } from "$lib";
 
   let openColor = $state(false);
   let color: ButtonProps["color"] = $state("brand");

@@ -23,7 +23,7 @@ Import the `Progressbar` component in a script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Progressbar } from "flowbite-svelte";
+  import { Progressbar } from "$lib";
 </script>
 ```
 

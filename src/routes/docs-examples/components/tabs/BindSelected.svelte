@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tabs, TabItem, Button, P } from "flowbite-svelte";
+  import { Tabs, TabItem, Button, P } from "$lib";
 
   let selectedKey = $state("settings");
 </script>

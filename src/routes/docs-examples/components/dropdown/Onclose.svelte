@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownItem } from "$lib";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   // onclose fires only when closing
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Input } from "flowbite-svelte";
+  import { Input } from "$lib";
   const carMakers = [
     "Toyota",
     "Ford",

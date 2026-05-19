@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type KanbanCardType, type KanbanColumnType, KanbanBoard, Heading, P } from "flowbite-svelte";
+  import { type KanbanCardType, type KanbanColumnType, KanbanBoard, Heading, P } from "$lib";
 
   let columns = $state<KanbanColumnType[]>([
     {

@@ -24,7 +24,7 @@ You can choose from multiple examples of mockups including phone, tablet, laptop
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { DeviceMockup } from "flowbite-svelte";
+  import { DeviceMockup } from "$lib";
 </script>
 ```
 

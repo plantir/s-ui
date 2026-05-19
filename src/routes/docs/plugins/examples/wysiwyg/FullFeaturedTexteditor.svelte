@@ -22,7 +22,7 @@
     YoutubeButtonGroup
   } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
+  import { Button } from "$lib";
 
   let editorInstance = $state<Editor | null>(null);
   let isEditable = $state(true);

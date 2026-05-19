@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte";
+  import { Button, Modal, Label, Input, Checkbox } from "$lib";
 
   let formModal = $state(false);
   let error = $state("");
