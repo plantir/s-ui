@@ -10,7 +10,7 @@ description: A keyboard-driven command palette component with fuzzy search, vim-
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
 
   const components = 'CommandPalette'
   // const relatedLinks = [''];
@@ -20,13 +20,13 @@ description: A keyboard-driven command palette component with fuzzy search, vim-
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { CommandPalette } from  'flowbite-svelte';
+  import { CommandPalette } from 's-ui';
 </script>
 ```
 
 ## Usage Examples
 
-See [examples](/docs-examples/extend/command-palette) and [code](https://github.com/themesberg/flowbite-svelte/tree/main/src/routes/docs-examples/extend/command-palette).
+See [examples](/docs-examples/extend/command-palette) and [code](https://github.com/themesberg/s-ui/tree/main/src/routes/docs-examples/extend/command-palette).
 
 
 ## Component data

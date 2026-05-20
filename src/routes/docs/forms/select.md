@@ -9,7 +9,7 @@ description: Get started with the select component to allow the user to choose f
 
 <script lang="ts">
 import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-import { Badge, Kbd  } from '$lib';
+import { Badge, Kbd  } from 's-ui';
 import { ArrowUpOutline, ArrowDownOutline } from 'flowbite-svelte-icons';
 const components = 'Select, MultiSelect'
 const dirName = "select"
@@ -21,7 +21,7 @@ The select input component can be used to gather information from users based on
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Select } from "$lib";
+  import { Select } from "s-ui";
 </script>
 ```
 
@@ -97,7 +97,7 @@ If you want custom options, put them directly inside the component and leave the
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { MultiSelect } from "$lib";
+  import { MultiSelect } from "s-ui";
 </script>
 ```
 

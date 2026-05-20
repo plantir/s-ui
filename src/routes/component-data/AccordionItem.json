@@ -1,18 +1,18 @@
 {
-  "name": "AccordionItem",
-  "type": {
-    "name": "AccordionItemProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L228"
-  },
-  "props": [
-    ["children", ""],
-    ["header", ""],
-    ["arrowup", ""],
-    ["arrowdown", ""],
-    ["open", "$bindable(false)"],
-    ["transition", "slide"],
-    ["transitionParams", ""],
-    ["class: className", ""],
-    ["classes", ""]
-  ]
+	"name": "AccordionItem",
+	"type": {
+		"name": "AccordionItemProps",
+		"link": "https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L228"
+	},
+	"props": [
+		["children", ""],
+		["header", ""],
+		["arrowup", ""],
+		["arrowdown", ""],
+		["open", "$bindable(false)"],
+		["transition", "slide"],
+		["transitionParams", ""],
+		["class: className", ""],
+		["classes", ""]
+	]
 }

@@ -9,7 +9,7 @@
 		NavUl,
 		Badge,
 		ThemeSelector
-	} from '$lib';
+	} from 's-ui';
 	import Tooltip from '$lib/tooltip/Tooltip.svelte';
 	import { onMount } from 'svelte';
 	import Discord from '../utils/icons/Discord.svelte';
@@ -24,7 +24,7 @@
 		(page.data as { npmVersion?: string }).npmVersion ?? import.meta.env.VITE_APP_VERSION
 	);
 
-	let logo = '/images/flowbite-svelte-icon-logo.svg';
+	let logo = '/images/s-ui-icon-logo.svg';
 	// let divClass = 'w-full ms-auto lg:block lg:w-auto order-1 lg:order-none';
 
 	let activeUrl = $derived(page.url.pathname);
@@ -96,7 +96,7 @@
 			<ToolbarLink
 				class="hidden rounded-sm p-1.5 hover:text-gray-900 xl:inline-block dark:hover:text-white"
 				name="View on GitHub"
-				href="https://github.com/themesberg/flowbite-svelte"
+				href="https://github.com/themesberg/s-ui"
 			>
 				<GitHub size="md" />
 			</ToolbarLink>
@@ -114,7 +114,7 @@
 			<Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
 			<ThemeSelector />
 		</div>
-		<a href="https://www.npmjs.com/package/flowbite-svelte" class="order-4 hidden 2xl:block">
+		<a href="https://www.npmjs.com/package/s-ui" class="order-4 hidden 2xl:block">
 			<Badge
 				large
 				class="ms-1 rounded-sm hover:bg-primary-600 hover:text-white xl:ms-4 dark:hover:bg-primary-800 dark:hover:text-white"

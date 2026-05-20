@@ -1,6 +1,13 @@
 <script lang="ts">
-  import { Textarea, Label } from "$lib";
+	import { Textarea, Label } from 's-ui';
 </script>
 
 <Label for="textarea-id" class="mb-2">Your message</Label>
-<Textarea clearable id="textarea-clearable" placeholder="Your message" rows={4} name="message" class="w-full" />
+<Textarea
+	clearable
+	id="textarea-clearable"
+	placeholder="Your message"
+	rows={4}
+	name="message"
+	class="w-full"
+/>

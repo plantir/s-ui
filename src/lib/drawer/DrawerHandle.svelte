@@ -34,9 +34,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L684)
+[DrawerHandleProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L684)
 ## Props
 @prop children
 @prop placement

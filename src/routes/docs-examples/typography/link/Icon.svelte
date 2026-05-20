@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { A, P } from "$lib";
-  import { ArrowRightOutline } from "flowbite-svelte-icons";
+	import { A, P } from 's-ui';
+	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <P>
-  500,000 people have made over a million apps with Glide.
-  <A href="/">
-    Read their stories
-    <ArrowRightOutline class="ms-2 h-6 w-6" />
-  </A>
+	500,000 people have made over a million apps with Glide.
+	<A href="/">
+		Read their stories
+		<ArrowRightOutline class="ms-2 h-6 w-6" />
+	</A>
 </P>

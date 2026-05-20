@@ -9,7 +9,7 @@ description: Use the phone number input component to set a phone number inside a
 
 <script lang="ts">
   import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso, LlmLink } from '../../utils'
-  import { A } from '$lib'
+  import { A } from 's-ui'
 
   const components = 'PhoneInput'
   const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label', '/docs/extend/tags' ]
@@ -23,7 +23,7 @@ The examples are built with the utility classes from Tailwind CSS and they are f
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { PhoneInput, Label, Helper } from "$lib";
+  import { PhoneInput, Label, Helper } from "s-ui";
 </script>
 ```
 

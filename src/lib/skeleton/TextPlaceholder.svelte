@@ -75,9 +75,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1558)
+[TextPlaceholderProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1558)
 ## Props
 @prop size = "sm"
 @prop class: className

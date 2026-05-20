@@ -15,13 +15,13 @@ When working with components, you may want to customize their default or specifi
 
 ## Understanding Props
 
-Each component has a props section where you can find information on how to customize classes. For example, let's refer to the [Alert component data section](https://next.flowbite-svelte.com/docs/components/alert#component-data).
+Each component has a props section where you can find information on how to customize classes. For example, let's refer to the [Alert component data section](https://next.s-ui.com/docs/components/alert#component-data).
 
 In this case, you can overwrite the outer div class by adding the `class` prop. Here's an example:
 
 ```svelte example
 <script lang="ts">
-  import { Alert } from "$lib";
+  import { Alert } from "s-ui";
 </script>
 
 <Alert class="bg-sky-500 text-white">Add a class to overwrite the default class!</Alert>
@@ -35,7 +35,7 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
 
 ```svelte example
 <script lang="ts">
-  import { Button } from "$lib";
+  import { Button } from "s-ui";
 </script>
 
 <Button class="bg-blue-500!">Blue Button</Button>
@@ -48,7 +48,7 @@ While the `class` prop can be used for the most outer tag, you can use the `clas
 
 ```svelte example class="flex flex-col relative"
 <script lang="ts">
-  import { Banner, Skeleton, ImagePlaceholder } from "$lib";
+  import { Banner, Skeleton, ImagePlaceholder } from "s-ui";
 </script>
 
 <Skeleton class="py-4" />
@@ -67,7 +67,7 @@ Instead of introducing multiple props for a component's internal element classes
 
 ```svelte example class="flex flex-col relative"
 <script lang="ts">
-  import { Banner, Skeleton, ImagePlaceholder } from "$lib";
+  import { Banner, Skeleton, ImagePlaceholder } from "s-ui";
 </script>
 
 <Skeleton class="py-4" />
@@ -84,16 +84,16 @@ We hope these instructions help you confidently customize component classes. Fee
 
 ## Global customization
 
-To customize the flowbite-svelte component globally, follow these steps:
+To customize the s-ui component globally, follow these steps:
 
-Start by creating your own component based on flowbite-svelte.
+Start by creating your own component based on s-ui.
 
 Create a new file for your button component in the lib directory:
 
 ```svelte example hideOutput
 <script lang="ts">
   // src/lib/MyButton.svelte
-  import { Button } from "$lib";
+  import { Button } from "s-ui";
   let { children } = $props();
 </script>
 
@@ -116,7 +116,7 @@ Use the custom button component in your project by adding the following code:
 <MyButton>My New Button</MyButton>
 ```
 
-With these steps, you can customize and use your own button component globally based on flowbite-svelte. Feel free to modify the styles and properties of the component according to your requirements.
+With these steps, you can customize and use your own button component globally based on s-ui. Feel free to modify the styles and properties of the component according to your requirements.
 
 ## LLM Link
 

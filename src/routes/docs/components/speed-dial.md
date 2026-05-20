@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A, Alert } from '$lib'  
+  import { P, A, Alert } from 's-ui'  
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -34,7 +34,7 @@ You can use any elment as `SpeedDial` trigger (see the [Custom main button](#cus
 
 ## Colors
 
-The Speed Dial components accommodate color options ("red" | "lime" | "green" | "teal" | "cyan" | "blue" | "purple" | "pink" | undefined), gradient, shadow, and outline styles. For further information, please refer to **[the Button component](https://flowbite-svelte.com/components/button)** documentation.
+The Speed Dial components accommodate color options ("red" | "lime" | "green" | "teal" | "cyan" | "blue" | "purple" | "pink" | undefined), gradient, shadow, and outline styles. For further information, please refer to **[the Button component](https://s-ui.com/components/button)** documentation.
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 {#include Colors.svelte}

@@ -1,23 +1,23 @@
 <script lang="ts">
-  import clsx from "clsx";
-  import { mark } from "./theme.js";
-  import type { MarkProps } from "$lib/types.js";
-  import { getTheme } from "$lib/theme/themeUtils";
+	import clsx from 'clsx';
+	import { mark } from './theme.js';
+	import type { MarkProps } from '$lib/types.js';
+	import { getTheme } from '$lib/theme/themeUtils';
 
-  let { children, class: className, ...restProps }: MarkProps = $props();
+	let { children, class: className, ...restProps }: MarkProps = $props();
 
-  const theme = $derived(getTheme("mark"));
+	const theme = $derived(getTheme('mark'));
 </script>
 
 <mark {...restProps} class={mark({ class: clsx(theme, className) })}>
-  {@render children()}
+	{@render children()}
 </mark>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[MarkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2124)
+[MarkProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L2124)
 ## Props
 @prop children
 @prop class: className

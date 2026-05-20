@@ -10,7 +10,7 @@ thumbnailSize: w-72
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
+  import { A, Heading, Breadcrumb, BreadcrumbItem } from 's-ui';
 
   const components = 'Heading, P, A, Mark, Secondary'
 </script>
@@ -23,7 +23,7 @@ At least one unique `h1` tag should be available for each page on your website w
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Heading, P, A, Mark, Secondary } from "$lib";
+  import { Heading, P, A, Mark, Secondary } from "s-ui";
 </script>
 ```
 

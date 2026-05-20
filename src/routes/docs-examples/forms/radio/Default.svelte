@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Radio } from "$lib";
-  let selectedValue = $state("2");
+	import { Radio } from 's-ui';
+	let selectedValue = $state('2');
 </script>
 
 <Radio name="example1" value="1" bind:group={selectedValue}>Default radio</Radio>

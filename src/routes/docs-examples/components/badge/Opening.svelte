@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Button } from '$lib';
+	import { Badge, Button } from 's-ui';
 	let openBadgeStatus = $state(false);
 	function openBadge() {
 		openBadgeStatus = true;

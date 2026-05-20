@@ -9,7 +9,7 @@ description: Get started with the CloseButton components to hide a target elemen
 
 <script lang="ts">
 	import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils';
-	import { A } from '$lib';
+	import { A } from 's-ui';
 
   const components = 'CloseButton'
 	const dirName = "utilities"

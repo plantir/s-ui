@@ -10,7 +10,7 @@ thumbnailSize: w-36
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink, Seealso } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = 'card'
   const relatedLinks = [
     '/docs/components/badge',
@@ -31,7 +31,7 @@ Import Card in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Card } from "$lib";
+  import { Card } from "s-ui";
 </script>
 ```
 

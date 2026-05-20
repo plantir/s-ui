@@ -10,7 +10,7 @@ thumbnailSize: w-48
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A, Alert } from '$lib'  
+  import { P, A, Alert } from 's-ui'  
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -22,7 +22,7 @@ Get started with multiple sizes, colors, and styles built with the utility class
 
 ```svelte example class="flex justify-center" hideOutput
 <script lang="ts">
-  import { Modal } from "$lib";
+  import { Modal } from "s-ui";
 </script>
 ```
 

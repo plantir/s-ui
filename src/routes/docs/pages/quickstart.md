@@ -8,7 +8,7 @@ description: Learn how to get started with the free and open-source Flowbite Sve
 ---
 
 <script lang="ts">
-  import { A, P, List, Li } from '$lib'
+  import { A, P, List, Li } from 's-ui'
   import { LlmLink } from '../../utils'
 </script>
 
@@ -57,7 +57,7 @@ pnpm dev
 Run the following command to install all Flowbite dependencies and libraries:
 
 ```sh
-pnpm i -D flowbite-svelte flowbite
+pnpm i -D s-ui flowbite
 ```
 
 ### Optional
@@ -80,22 +80,22 @@ The location of your main CSS file determines the correct path for `@source` dir
 
 ```css
 @import "tailwindcss";
-@import "../node_modules/flowbite-svelte/dist/theme-selector/themes/default.css";
+@import "../node_modules/s-ui/dist/theme-selector/themes/default.css";
 @plugin 'flowbite/plugin';
 @custom-variant dark (&:where(.dark, .dark *));
 /* ... */
-@source "../node_modules/flowbite-svelte/dist";
+@source "../node_modules/s-ui/dist";
 @source "../node_modules/flowbite-svelte-icons/dist";
 ```
 
 **If your CSS file is at `src/routes/+layout.css` (or equivalent):**
 ```css
 @import "tailwindcss";
-@import "../../node_modules/flowbite-svelte/dist/theme-selector/themes/default.css";
+@import "../../node_modules/s-ui/dist/theme-selector/themes/default.css";
 @plugin 'flowbite/plugin';
 @custom-variant dark (&:where(.dark, .dark *));
 /* ... */
-@source "../../node_modules/flowbite-svelte/dist";
+@source "../../node_modules/s-ui/dist";
 @source "../../node_modules/flowbite-svelte-icons/dist";
 ```
 
@@ -111,7 +111,7 @@ Now you are ready to go! Add the following to `src/routes/+page.svelte` and if y
 
 ```svelte example
 <script lang="ts">
-  import { Alert } from "$lib";
+  import { Alert } from "s-ui";
 </script>
 
 <div class="p-8">
@@ -127,7 +127,7 @@ Now you are ready to go! Add the following to `src/routes/+page.svelte` and if y
 You can use one of starter repo for a quick start.
 
 <List tag='ul' class='space-y-1 my-4'>
-<Li><A href='https://github.com/shinokada/flowbite-svelte-starter'>Flowbite-SvelteKit starter</A></Li>
+<Li><A href='https://github.com/shinokada/s-ui-starter'>s-uiKit starter</A></Li>
 <Li><A href='https://github.com/ZekyTheWolf/LIST-Starter'>Laravel, Inertia, Svelte, Typescript with Flowbite starter</A></Li>
 </List>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Progressradial } from "$lib";
+	import { Progressradial } from 's-ui';
 </script>
 
 <Progressradial size="w-20 h-20" />

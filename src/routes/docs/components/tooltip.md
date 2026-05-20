@@ -10,12 +10,12 @@ thumbnailSize: w-24
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, Seealso, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
   const relatedLinks = ['/docs/components/popover','/docs/components/speed-dial' ,'/docs/components/tooltip'];
 </script>
 
-flowbite-svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
+s-ui allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
 
 For interactive elements that need to display additional content on click, use the [popover](/docs/components/popover) component.
 
@@ -23,7 +23,7 @@ For interactive elements that need to display additional content on click, use t
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Tooltip } from "$lib";
+  import { Tooltip } from "s-ui";
 </script>
 ```
 

@@ -1,23 +1,33 @@
 <script lang="ts">
-  import { range } from "./theme.js";
-  import clsx from "clsx";
-  import type { RangeProps } from "$lib/types.js";
-  import { getTheme } from "$lib/theme/themeUtils";
+	import { range } from './theme.js';
+	import clsx from 'clsx';
+	import type { RangeProps } from '$lib/types.js';
+	import { getTheme } from '$lib/theme/themeUtils';
 
-  let { value = $bindable(), appearance = "none", color = "blue", size = "md", inputClass, class: className, ...restProps }: RangeProps = $props();
+	let {
+		value = $bindable(),
+		appearance = 'none',
+		color = 'blue',
+		size = 'md',
+		inputClass,
+		class: className,
+		...restProps
+	}: RangeProps = $props();
 
-  const theme = $derived(getTheme("range"));
-  // remove inputClass in next major version
-  const inputCls = $derived(range({ appearance, color, size, class: clsx(theme, inputClass, className) }));
+	const theme = $derived(getTheme('range'));
+	// remove inputClass in next major version
+	const inputCls = $derived(
+		range({ appearance, color, size, class: clsx(theme, inputClass, className) })
+	);
 </script>
 
 <input type="range" bind:value {...restProps} class={inputCls} />
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L934)
+[RangeProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L934)
 ## Props
 @prop value = $bindable()
 @prop appearance = "none"

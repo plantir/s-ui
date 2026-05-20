@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink, Seealso } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
   const relatedLinks = [
     '/docs/components/alert',
@@ -28,7 +28,7 @@ Explore the following examples based on various styles, sizes, and positionings 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Banner } from "$lib";
+  import { Banner } from "s-ui";
 </script>
 ```
 

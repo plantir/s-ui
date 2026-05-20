@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { Dropdown, DropdownItem } from "$lib";
-  import { DotsHorizontalOutline, DotsVerticalOutline } from "flowbite-svelte-icons";
+	import { Dropdown, DropdownItem } from 's-ui';
+	import { DotsHorizontalOutline, DotsVerticalOutline } from 'flowbite-svelte-icons';
 </script>
 
 <DotsHorizontalOutline class="dots-menu text-body" />
 <DotsVerticalOutline class="dots-menu text-body" />
 <Dropdown simple triggeredBy=".dots-menu">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
+	<DropdownItem>Dashboard</DropdownItem>
+	<DropdownItem>Settings</DropdownItem>
+	<DropdownItem>Earnings</DropdownItem>
+	<DropdownItem>Sign out</DropdownItem>
 </Dropdown>

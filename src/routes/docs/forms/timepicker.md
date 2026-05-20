@@ -18,7 +18,7 @@ The timepicker component can be used to allow the user to select a specific time
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Timepicker } from "$lib";
+  import { Timepicker } from "s-ui";
 </script>
 ```
 

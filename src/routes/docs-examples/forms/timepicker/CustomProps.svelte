@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, Timepicker } from "$lib";
+	import { Label, Timepicker } from 's-ui';
 </script>
 
 <Label for="appointment-time">Choose appointment time:</Label>

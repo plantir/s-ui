@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tooltip, Button } from "$lib";
+	import { Tooltip, Button } from 's-ui';
 </script>
 
 <Button>Tooltip left</Button>

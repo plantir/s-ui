@@ -1,25 +1,25 @@
 <script lang="ts">
-  import { helper } from "./theme.js";
-  import type { HelperProps } from "$lib/types.js";
-  import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+	import { helper } from './theme.js';
+	import type { HelperProps } from '$lib/types.js';
+	import clsx from 'clsx';
+	import { getTheme } from '$lib/theme/themeUtils';
 
-  let { children, class: className, color = "gray", ...restProps }: HelperProps = $props();
+	let { children, class: className, color = 'gray', ...restProps }: HelperProps = $props();
 
-  const theme = $derived(getTheme("helper"));
+	const theme = $derived(getTheme('helper'));
 
-  const base = $derived(helper({ color, class: clsx(theme, className) }));
+	const base = $derived(helper({ color, class: clsx(theme, className) }));
 </script>
 
 <p {...restProps} class={base}>
-  {@render children?.()}
+	{@render children?.()}
 </p>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[HelperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L849)
+[HelperProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L849)
 ## Props
 @prop children
 @prop class: className

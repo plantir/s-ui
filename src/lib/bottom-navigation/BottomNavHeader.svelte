@@ -1,30 +1,37 @@
 <script lang="ts">
-  import { bottomNavHeader } from "./theme";
-  import clsx from "clsx";
-  import type { BottomNavHeaderProps } from "$lib";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+	import { bottomNavHeader } from './theme';
+	import clsx from 'clsx';
+	import type { BottomNavHeaderProps } from 's-ui';
+	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
+	import { untrack } from 'svelte';
 
-  let { children, class: className, classes, outerClass, innerClass, ...restProps }: BottomNavHeaderProps = $props();
+	let {
+		children,
+		class: className,
+		classes,
+		outerClass,
+		innerClass,
+		...restProps
+	}: BottomNavHeaderProps = $props();
 
-  warnThemeDeprecation(
-    "BottomNavHeader",
-    untrack(() => ({ innerClass, outerClass })),
-    { innerClass: "inner", outerClass: "class" }
-  );
+	warnThemeDeprecation(
+		'BottomNavHeader',
+		untrack(() => ({ innerClass, outerClass })),
+		{ innerClass: 'inner', outerClass: 'class' }
+	);
 
-  const styling = $derived(classes ?? { innerDiv: innerClass });
+	const styling = $derived(classes ?? { innerDiv: innerClass });
 
-  // Theme context
-  const theme = $derived(getTheme("bottomNavHeader"));
+	// Theme context
+	const theme = $derived(getTheme('bottomNavHeader'));
 
-  const { innerDiv, base } = $derived(bottomNavHeader());
+	const { innerDiv, base } = $derived(bottomNavHeader());
 </script>
 
 <div {...restProps} class={base({ class: clsx(theme?.base, className ?? outerClass) })}>
-  <div class={innerDiv({ class: clsx(theme?.innerDiv, styling.innerDiv) })} role="group">
-    {@render children()}
-  </div>
+	<div class={innerDiv({ class: clsx(theme?.innerDiv, styling.innerDiv) })} role="group">
+		{@render children()}
+	</div>
 </div>
 
 <!--

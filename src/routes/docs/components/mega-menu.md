@@ -9,7 +9,7 @@ description: Use the mega menu component as a full-width dropdown inside the nav
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils';
-  import { P, A } from '$lib';
+  import { P, A } from 's-ui';
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -19,7 +19,7 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { MegaMenu } from "$lib";
+  import { MegaMenu } from "s-ui";
 </script>
 ```
 

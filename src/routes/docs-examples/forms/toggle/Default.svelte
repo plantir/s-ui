@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toggle } from "$lib";
+	import { Toggle } from 's-ui';
 </script>
 
 <Toggle>Toggle me</Toggle>

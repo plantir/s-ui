@@ -53,9 +53,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1536)
+[CardPlaceholderProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1536)
 ## Props
 @prop size = "sm"
 @prop class: className

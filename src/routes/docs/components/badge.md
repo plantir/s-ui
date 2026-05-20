@@ -10,7 +10,7 @@ thumbnailSize: w-28
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink, Seealso } from '../../utils'
-  import { P, A } from 'flowbite-svelte'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
   const relatedLinks = [
     '/docs/components/avatar',
@@ -30,7 +30,7 @@ Import a badge component in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Badge } from "$lib";
+  import { Badge } from "s-ui";
 </script>
 ```
 
@@ -145,7 +145,7 @@ This example demonstrates badges with transition effects, creating a smooth anim
 ```
 
 ## Persistent Dismissible Badge with Reset (localStorage)
-This example shows how to make a Flowbite-Svelte `<Badge>` stay hidden after dismissal using localStorage. When the user clicks the dismiss (×) button, the badge is hidden across page reloads. A Reset button is provided to clear the stored state and show the badge again. Suitable for announcements, notifications, or one-time hints.
+This example shows how to make a s-ui `<Badge>` stay hidden after dismissal using localStorage. When the user clicks the dismiss (×) button, the badge is hidden across page reloads. A Reset button is provided to clear the stored state and show the badge again. Suitable for announcements, notifications, or one-time hints.
 
 ```svelte example
 {#include BadgeLocalStorage.svelte}

@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Fileupload } from "$lib";
+	import { Fileupload } from 's-ui';
 </script>
 
 <Fileupload
-  id="event"
-  clearable
-  clearableOnClick={() => {
-    alert("Clicked close button!");
-  }}
+	id="event"
+	clearable
+	clearableOnClick={() => {
+		alert('Clicked close button!');
+	}}
 />

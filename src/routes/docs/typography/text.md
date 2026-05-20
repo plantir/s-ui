@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { A, Heading } from '$lib'
+  import { A, Heading } from 's-ui'
 
   const components = 'P, Span'
 

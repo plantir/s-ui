@@ -9,7 +9,7 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso, LlmLink } from '../../utils'
-  import { Badge, P, A } from '$lib'
+  import { Badge, P, A } from 's-ui'
   const dirName = 'buttongroup'
   const relatedLinks = [
     '/docs/extend/button-toggle',
@@ -20,13 +20,13 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
   ];
 </script>
 
-The button group component from flowbite-svelte can be used to stack together multiple buttons and links inside a single element.
+The button group component from s-ui can be used to stack together multiple buttons and links inside a single element.
 
 ## Setup
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ButtonGroup, Button } from "$lib";
+  import { ButtonGroup, Button } from "s-ui";
 </script>
 ```
 

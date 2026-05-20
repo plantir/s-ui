@@ -11,7 +11,7 @@ thumbnailSize: w-72
 <script lang="ts">
   import { page } from '$app/state';
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { Badge, Heading, P, A } from '$lib'
+  import { Badge, Heading, P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -23,7 +23,7 @@ Disclaimer: this sidebar component is based on this <A class="text-primary-700" 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from "$lib";
+  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from "s-ui";
 </script>
 ```
 

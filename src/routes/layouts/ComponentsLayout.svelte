@@ -8,7 +8,7 @@
 		uiHelpers,
 		SidebarButton,
 		SidebarDropdownWrapper
-	} from '$lib';
+	} from 's-ui';
 	import { getContext, type Snippet } from 'svelte';
 	import type { Writable } from 'svelte/store';
 	import Toc from '../utils/Toc.svelte';
@@ -73,7 +73,7 @@
 	});
 
 	afterNavigate(() => {
-		// this fixes https://github.com/themesberg/flowbite-svelte/issues/364
+		// this fixes https://github.com/themesberg/s-ui/issues/364
 		document.getElementById('svelte')?.scrollTo({ top: 0 });
 		closeSidebar();
 	});
@@ -185,7 +185,7 @@
 
 {#if noToc}
 	<main
-		class="max-w-8xl mx-auto min-w-0 flex-auto pb-40 lg:static lg:max-h-full lg:overflow-visible"
+		class="mx-auto max-w-8xl min-w-0 flex-auto pb-40 lg:static lg:max-h-full lg:overflow-visible"
 	>
 		{@render children()}
 	</main>

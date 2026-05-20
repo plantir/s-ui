@@ -24,9 +24,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L754)
+[FooterIconProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L754)
 ## Props
 @prop children
 @prop href

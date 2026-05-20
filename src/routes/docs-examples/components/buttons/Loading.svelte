@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Button } from "$lib";
-  let loading = $state(false);
+	import { Button } from 's-ui';
+	let loading = $state(false);
 
-  async function handleSubmit() {
-    loading = true;
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    loading = false;
-  }
+	async function handleSubmit() {
+		loading = true;
+		await new Promise((resolve) => setTimeout(resolve, 2000));
+		loading = false;
+	}
 </script>
 
 <Button class="w-32" onclick={handleSubmit} {loading}>Submit</Button>

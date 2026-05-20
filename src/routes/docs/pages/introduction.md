@@ -11,7 +11,7 @@ description: Learn more about the free and open-source Flowbite Svelte UI compon
   import { LlmLink } from '../../utils'
 </script>
 
-[Flowbite Svelte](https://github.com/themesberg/flowbite-svelte) is a free and open-source UI component library based on the core Flowbite components and built with native Svelte components and interactivity handling.
+[Flowbite Svelte](https://github.com/themesberg/s-ui) is a free and open-source UI component library based on the core Flowbite components and built with native Svelte components and interactivity handling.
 
 This library features hundreds of interactive elements such as navbars, dropdowns, modals, and sidebars all handled by Svelte and based on the utility classes from Tailwind CSS.
 
@@ -60,7 +60,7 @@ pnpm dev
 Run the following command to install all Flowbite dependencies and libraries:
 
 ```sh
-pnpm i -D flowbite-svelte flowbite
+pnpm i -D s-ui flowbite
 ```
 
 ### Optional
@@ -85,14 +85,14 @@ The location of your main CSS file determines the correct path for `@source` dir
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 @import "tailwindcss";
-@import "../../node_modules/flowbite-svelte/dist/theme-selector/themes/default.css";
+@import "../../node_modules/s-ui/dist/theme-selector/themes/default.css";
 
 @plugin "flowbite/plugin";
 @plugin "flowbite-typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@source "../../node_modules/flowbite-svelte/dist";
+@source "../../node_modules/s-ui/dist";
 @source "../../node_modules/flowbite-svelte-icons/dist";
 
 @layer base {
@@ -139,7 +139,7 @@ Flowbite Svelte is a free and open-source UI component library built with Svelte
 
 ## License
 
-Flowbite Svelte is a free and open-source UI component library licensed under the [MIT License](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE).
+Flowbite Svelte is a free and open-source UI component library licensed under the [MIT License](https://github.com/themesberg/s-ui/blob/main/LICENSE).
 
 ## LLM Link
 

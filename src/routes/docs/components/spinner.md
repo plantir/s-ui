@@ -10,7 +10,7 @@ thumbnailSize: w-48
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -20,7 +20,7 @@ The spinner component can be used as a loading indicator which comes in multiple
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Spinner } from "$lib";
+  import { Spinner } from "s-ui";
 </script>
 ```
 

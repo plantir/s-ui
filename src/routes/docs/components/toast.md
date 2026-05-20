@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -20,7 +20,7 @@ The toast component can be used to enhance your website’s interactivity by pus
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Toast } from "$lib";
+  import { Toast } from "s-ui";
 </script>
 ```
 

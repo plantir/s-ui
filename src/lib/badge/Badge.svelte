@@ -25,8 +25,6 @@
 		...restProps
 	}: BadgeProps = $props();
 
-	
-
 	const styling = $derived(classes ?? {});
 
 	// Theme context
@@ -62,21 +60,11 @@
 
 		{#if dismissable}
 			{#if icon}
-				<CloseButton
-					class="ms-1.5 -me-1.5"
-					{color}
-					{size}
-					ariaLabel="Remove badge"
-				>
+				<CloseButton class="ms-1.5 -me-1.5" {color} {size} ariaLabel="Remove badge">
 					{@render icon()}
 				</CloseButton>
 			{:else}
-				<CloseButton
-					class="ms-1.5 -me-1.5"
-					{color}
-					{size}
-					ariaLabel="Remove badge"
-				/>
+				<CloseButton class="ms-1.5 -me-1.5" {color} {size} ariaLabel="Remove badge" />
 			{/if}
 		{/if}
 	</div>
@@ -84,9 +72,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L244)
+[BadgeProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L244)
 ## Props
 @prop children
 @prop icon

@@ -1,25 +1,25 @@
 <script lang="ts">
-  import { AccordionItem, Accordion } from "$lib";
+	import { AccordionItem, Accordion } from 's-ui';
 </script>
 
 <Accordion transition="none">
-  <AccordionItem>
-    {#snippet header()}My Header 1{/snippet}
-    Content A
-  </AccordionItem>
-  <AccordionItem>
-    {#snippet header()}My Header 2{/snippet}
-    Content B
-  </AccordionItem>
+	<AccordionItem>
+		{#snippet header()}My Header 1{/snippet}
+		Content A
+	</AccordionItem>
+	<AccordionItem>
+		{#snippet header()}My Header 2{/snippet}
+		Content B
+	</AccordionItem>
 </Accordion>
 
 <Accordion>
-  <AccordionItem transition="none">
-    {#snippet header()}transition: "none"{/snippet}
-    Content C
-  </AccordionItem>
-  <AccordionItem>
-    {#snippet header()}transition: default{/snippet}
-    Content D
-  </AccordionItem>
+	<AccordionItem transition="none">
+		{#snippet header()}transition: "none"{/snippet}
+		Content C
+	</AccordionItem>
+	<AccordionItem>
+		{#snippet header()}transition: default{/snippet}
+		Content D
+	</AccordionItem>
 </Accordion>

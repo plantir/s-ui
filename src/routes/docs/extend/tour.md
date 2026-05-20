@@ -10,7 +10,7 @@ description: A guided product tour component that highlights elements, supports 
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
 
   const components = 'Tour'
   // const relatedLinks = [''];
@@ -20,13 +20,13 @@ description: A guided product tour component that highlights elements, supports 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Tour } from  'flowbite-svelte';
+  import { Tour } from 's-ui';
 </script>
 ```
 
 ## Usage Examples
 
-See [examples](/docs-examples/extend/tour) and [code](https://github.com/themesberg/flowbite-svelte/tree/main/src/routes/docs-examples/extend/tour).
+See [examples](/docs-examples/extend/tour) and [code](https://github.com/themesberg/s-ui/tree/main/src/routes/docs-examples/extend/tour).
 
 
 ## Component data

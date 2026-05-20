@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { P, Span } from "$lib";
+	import { P, Span } from 's-ui';
 </script>
 
-<P class="text-heading text-lg font-medium">The crypto <Span class="uppercase">identity</Span> primitive.</P>
+<P class="text-lg font-medium text-heading"
+	>The crypto <Span class="uppercase">identity</Span> primitive.</P
+>

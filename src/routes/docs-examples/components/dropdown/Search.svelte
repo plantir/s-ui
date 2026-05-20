@@ -1,28 +1,33 @@
 <script lang="ts">
-  import { Button, Dropdown, DropdownGroup, Checkbox, Search } from "$lib";
-  import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
-  let searchTerm = $state("");
-  const people = [
-    { name: "Robert Gouth", checked: false },
-    { name: "Jese Leos", checked: false },
-    { name: "Bonnie Green", checked: true }
-  ];
-  let filteredItems = $derived(people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1));
+	import { Button, Dropdown, DropdownGroup, Checkbox, Search } from 's-ui';
+	import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
+	let searchTerm = $state('');
+	const people = [
+		{ name: 'Robert Gouth', checked: false },
+		{ name: 'Jese Leos', checked: false },
+		{ name: 'Bonnie Green', checked: true }
+	];
+	let filteredItems = $derived(
+		people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1)
+	);
 </script>
 
 <Button>Dropdown search<ChevronDownOutline class="ms-2 h-6 w-6 text-white" /></Button>
 <Dropdown>
-  <div class="p-3">
-    <Search size="md" bind:value={searchTerm} />
-  </div>
-  <DropdownGroup class="h-24 overflow-y-auto">
-    {#each filteredItems as person (person.name)}
-      <li class="hover:bg-neutral-tertiary-medium rounded-sm p-2">
-        <Checkbox bind:checked={person.checked}>{person.name}</Checkbox>
-      </li>
-    {/each}
-  </DropdownGroup>
-  <a href="/" class="bg-neutral-tertiary text-fg-danger hover:bg-neutral-tertiary-medium -mb-1 flex items-center p-3 text-sm font-medium hover:underline">
-    <UserRemoveSolid class="text-fg-danger me-2 h-4 w-4" />Delete user
-  </a>
+	<div class="p-3">
+		<Search size="md" bind:value={searchTerm} />
+	</div>
+	<DropdownGroup class="h-24 overflow-y-auto">
+		{#each filteredItems as person (person.name)}
+			<li class="rounded-sm p-2 hover:bg-neutral-tertiary-medium">
+				<Checkbox bind:checked={person.checked}>{person.name}</Checkbox>
+			</li>
+		{/each}
+	</DropdownGroup>
+	<a
+		href="/"
+		class="-mb-1 flex items-center bg-neutral-tertiary p-3 text-sm font-medium text-fg-danger hover:bg-neutral-tertiary-medium hover:underline"
+	>
+		<UserRemoveSolid class="me-2 h-4 w-4 text-fg-danger" />Delete user
+	</a>
 </Dropdown>

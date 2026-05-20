@@ -64,7 +64,7 @@
 		SpeedDial,
 		SpeedDialButton,
 		isDark
-	} from '$lib';
+	} from 's-ui';
 	const wrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) =>
 		Heart(anchor, { ..._props, ...props });
 
@@ -83,9 +83,7 @@
 		AppleSolid,
 		FacebookSolid,
 		DiscordSolid,
-
 		DropboxSolid
-
 	} from 'flowbite-svelte-icons';
 	let menu = [
 		{ name: 'About us', href: '/about' },
@@ -181,12 +179,12 @@
 	const images = [
 		{
 			alt: 'Cosmic timetraveler',
-			src: 'https://flowbite-svelte.com/images/carousel/cosmic-timetraveler-pYyOZ8q7AII-unsplash.webp',
+			src: 'https://s-ui.com/images/carousel/cosmic-timetraveler-pYyOZ8q7AII-unsplash.webp',
 			title: 'cosmic-timetraveler-pYyOZ8q7AII-unsplash.com'
 		},
 		{
 			alt: 'Cosmic timetraveler',
-			src: 'https://flowbite-svelte.com/images/carousel/sergey-pesterev-tMvuB9se2uQ-unsplash.webp',
+			src: 'https://s-ui.com/images/carousel/sergey-pesterev-tMvuB9se2uQ-unsplash.webp',
 			title: 'cosmic-timetraveler-pYyOZ8q7AII-unsplash.com'
 		}
 	];
@@ -206,14 +204,14 @@
 				'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
 			date: 'just now',
 			alt: 'image alt here',
-			src: 'https://flowbite-svelte.com/images/profile-picture-2.webp'
+			src: 'https://s-ui.com/images/profile-picture-2.webp'
 		},
 		{
 			id: 'activity-2',
 			title: 'We don’t serve their kind here! What? Your droids. ',
 			date: '2 hours ago',
 			alt: 'image alt here',
-			src: 'https://flowbite-svelte.com/images/profile-picture-2.webp',
+			src: 'https://s-ui.com/images/profile-picture-2.webp',
 			text: 'The approach will not be easy. You are required to maneuver straight down this trench and skim the surface to this point. The target area is only two meters wide. '
 		},
 		{
@@ -221,7 +219,7 @@
 			title: 'They’ll have to wait outside. We don’t want them here. ',
 			date: '1 day ago',
 			alt: 'image alt here',
-			src: 'https://flowbite-svelte.com/images/profile-picture-3.webp'
+			src: 'https://s-ui.com/images/profile-picture-3.webp'
 		}
 	];
 	let groupTimelines = [
@@ -230,7 +228,7 @@
 			name: '<span class="font-medium">Laura Romeros</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
 			title:
 				'<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
-			src: 'https://flowbite-svelte.com/images/profile-picture-1.webp',
+			src: 'https://s-ui.com/images/profile-picture-1.webp',
 			alt: 'alt here',
 			href: '/',
 			isPrivate: true,
@@ -241,7 +239,7 @@
 			name: '<span class="font-medium">Jese Leos</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
 			title:
 				'<span class="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span class="font-medium text-gray-900 dark:text-white">Thomas Lean\'s</span> comment',
-			src: 'https://flowbite-svelte.com/images/profile-picture-2.webp',
+			src: 'https://s-ui.com/images/profile-picture-2.webp',
 			alt: 'alt here',
 			href: '/',
 			isPrivate: true,
@@ -292,11 +290,8 @@
 </script>
 
 <ThemeProvider {theme}>
-
-	<div class="h-screen flex items-center justify-center">
-		<Button size="xl" href="/docs/components/buttons">
-			See Docs
-		</Button>
+	<div class="flex h-screen items-center justify-center">
+		<Button size="xl" href="/docs/components/buttons">See Docs</Button>
 	</div>
 	<div class="flex flex-col gap-4 p-8 pb-24">
 		<div id="accordion">
@@ -318,7 +313,7 @@
 		</div>
 		<div id="alert">
 			<h1>AlertProps</h1>
-			<Alert >Hello my enemy</Alert>
+			<Alert>Hello my enemy</Alert>
 			<Alert color="blue" dismissable closeIcon={CloseButton}>Hello my friend</Alert>
 			<Alert color="gray" border={true}>
 				<div class="flex items-center gap-2">
@@ -749,11 +744,7 @@
 		<h1>navbar</h1>
 		<Navbar>
 			<NavBrand href="/">
-				<img
-					src="/images/flowbite-svelte-icon-logo.svg"
-					class="me-3 h-6 sm:h-9"
-					alt="Flowbite Logo"
-				/>
+				<img src="/images/s-ui-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
 				<span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
 					>Flowbite</span
 				>
@@ -917,7 +908,7 @@
 			with a complete audit trail for every change.
 		</P>
 		<h1>img</h1>
-		<Img src="https://flowbite-svelte.com/images/examples/image-1@2x.jpg" alt="default example 1" />
+		<Img src="https://s-ui.com/images/examples/image-1@2x.jpg" alt="default example 1" />
 		<h1>layout</h1>
 		<Layout>
 			<h1>Header</h1>
@@ -946,7 +937,7 @@
 		<h1>span</h1>
 		<P>this is a <Span gradient="blueToGreen" highlight="lime" underline>span</Span> text</P>
 		<h1>video</h1>
-		<Video src="https://flowbite-svelte.com/videos/flowbite.mp4" controls />
+		<Video src="https://s-ui.com/videos/flowbite.mp4" controls />
 		<h1>label</h1>
 		<Label color="primary">Label</Label>
 		<h1>checkbox</h1>
@@ -980,7 +971,9 @@
 		</div>
 
 		<ButtonGroup>
-			<CheckboxButton bind:group={checkbox_group} value="Apple"><AppleSolid class="h-6 w-6" />Apple</CheckboxButton>
+			<CheckboxButton bind:group={checkbox_group} value="Apple"
+				><AppleSolid class="h-6 w-6" />Apple</CheckboxButton
+			>
 			<CheckboxButton bind:group={checkbox_group} value="Facebook"
 				><FacebookSolid class="h-6 w-6" />Facebook</CheckboxButton
 			>

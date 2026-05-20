@@ -62,9 +62,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1596)
+[SpeedDialTriggerProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1596)
 ## Props
 @prop children
 @prop name = "Open actions menu"

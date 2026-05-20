@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Input } from "$lib";
+	import { Input } from 's-ui';
 </script>
 
 <Input
-  clearable
-  clearableOnClick={() => {
-    alert("Clicked close button!");
-  }}
-  class="my-4"
+	clearable
+	clearableOnClick={() => {
+		alert('Clicked close button!');
+	}}
+	class="my-4"
 />

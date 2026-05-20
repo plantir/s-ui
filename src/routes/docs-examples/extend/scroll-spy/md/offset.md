@@ -1,5 +1,5 @@
 <script>
-  import { ScrollSpy } from 'flowbite-svelte';
+  import { ScrollSpy } from 's-ui';
   
   const items = [
     { id: 'section-1', label: 'Section 1' },

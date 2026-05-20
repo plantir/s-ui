@@ -1,85 +1,107 @@
 <script lang="ts">
-  import type { BottomNavItemProps } from "$lib";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import clsx from "clsx";
-  import { getBottomNavContext } from "$lib/context";
-  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
-  import { bottomNavItem } from "./theme";
-  import { untrack } from "svelte";
+	import type { BottomNavItemProps } from 's-ui';
+	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
+	import clsx from 'clsx';
+	import { getBottomNavContext } from '$lib/context';
+	import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+	import { bottomNavItem } from './theme';
+	import { untrack } from 'svelte';
 
-  let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
+	let {
+		children,
+		btnName,
+		appBtnPosition = 'middle',
+		activeClass,
+		class: className,
+		classes,
+		btnClass,
+		spanClass,
+		active: manualActive,
+		...restProps
+	}: BottomNavItemProps = $props();
 
-  warnThemeDeprecation(
-    "BottomNavItem",
-    untrack(() => ({ spanClass, btnClass })),
-    { spanClass: "span", btnClass: "class" }
-  );
+	warnThemeDeprecation(
+		'BottomNavItem',
+		untrack(() => ({ spanClass, btnClass })),
+		{ spanClass: 'span', btnClass: 'class' }
+	);
 
-  const styling = $derived(classes ?? { span: spanClass });
+	const styling = $derived(classes ?? { span: spanClass });
 
-  // Theme context
-  const theme = $derived(getTheme("bottomNavItem"));
+	// Theme context
+	const theme = $derived(getTheme('bottomNavItem'));
 
-  const context = getBottomNavContext();
+	const context = getBottomNavContext();
 
-  let navUrl = $derived(context?.activeUrl || "");
+	let navUrl = $derived(context?.activeUrl || '');
 
-  const { base, span } = $derived(bottomNavItem({ navType: context?.navType, appBtnPosition }));
+	const { base, span } = $derived(bottomNavItem({ navType: context?.navType, appBtnPosition }));
 
-  // Determine active state based on manual prop or URL matching
-  let isActive = $derived.by(() => {
-    const href = restProps.href ?? "";
-    return manualActive !== undefined
-      ? !!manualActive
-      : navUrl
-        ? href === "/"
-          ? navUrl === "/"
-          : href && (navUrl === href || navUrl.startsWith(href + "/") || (href !== "/" && navUrl.replace(/^https?:\/\/[^/]+/, "").startsWith(href)))
-        : false;
-  });
+	// Determine active state based on manual prop or URL matching
+	let isActive = $derived.by(() => {
+		const href = restProps.href ?? '';
+		return manualActive !== undefined
+			? !!manualActive
+			: navUrl
+				? href === '/'
+					? navUrl === '/'
+					: href &&
+						(navUrl === href ||
+							navUrl.startsWith(href + '/') ||
+							(href !== '/' && navUrl.replace(/^https?:\/\/[^/]+/, '').startsWith(href)))
+				: false;
+	});
 
-  function getCommonClass() {
-    return base({ class: clsx(isActive && (activeClass ?? context?.activeClass), theme?.base, className ?? btnClass) });
-  }
+	function getCommonClass() {
+		return base({
+			class: clsx(
+				isActive && (activeClass ?? context?.activeClass),
+				theme?.base,
+				className ?? btnClass
+			)
+		});
+	}
 
-  function getSpanClass() {
-    return span({ class: clsx(isActive && (activeClass ?? context?.activeClass), theme?.span, styling.span) });
-  }
+	function getSpanClass() {
+		return span({
+			class: clsx(isActive && (activeClass ?? context?.activeClass), theme?.span, styling.span)
+		});
+	}
 
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  const commonProps: Record<string, any> = $derived({
-    "aria-label": btnName,
-    class: getCommonClass(),
-    ...restProps
-  });
+	/* eslint-disable  @typescript-eslint/no-explicit-any */
+	const commonProps: Record<string, any> = $derived({
+		'aria-label': btnName,
+		class: getCommonClass(),
+		...restProps
+	});
 
-  const anchorProps: HTMLAnchorAttributes = $derived({
-    ...commonProps
-  });
+	const anchorProps: HTMLAnchorAttributes = $derived({
+		...commonProps
+	});
 
-  const buttonProps: HTMLButtonAttributes = $derived({
-    ...commonProps,
-    type: "button" as const
-  });
+	const buttonProps: HTMLButtonAttributes = $derived({
+		...commonProps,
+		type: 'button' as const
+	});
 </script>
 
 {#if restProps.href === undefined}
-  <button {...buttonProps}>
-    {@render children()}
-    <span class={getSpanClass()}>{btnName}</span>
-  </button>
+	<button {...buttonProps}>
+		{@render children()}
+		<span class={getSpanClass()}>{btnName}</span>
+	</button>
 {:else}
-  <a {...anchorProps}>
-    {@render children()}
-    <span class={getSpanClass()}>{btnName}</span>
-  </a>
+	<a {...anchorProps}>
+		{@render children()}
+		<span class={getSpanClass()}>{btnName}</span>
+	</a>
 {/if}
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L280)
+[BottomNavItemProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L280)
 ## Props
 @prop children
 @prop btnName

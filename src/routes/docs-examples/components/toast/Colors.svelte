@@ -1,70 +1,75 @@
 <script lang="ts">
-  import { Toast } from "$lib";
-  import { CheckCircleSolid, ExclamationCircleSolid, FireOutline, CloseCircleSolid } from "flowbite-svelte-icons";
+	import { Toast } from 's-ui';
+	import {
+		CheckCircleSolid,
+		ExclamationCircleSolid,
+		FireOutline,
+		CloseCircleSolid
+	} from 'flowbite-svelte-icons';
 </script>
 
 <Toast color="success">
-  {#snippet icon()}
-    <CheckCircleSolid class="h-5 w-5" />
-    <span class="sr-only">Check icon</span>
-  {/snippet}
-  Item moved successfully.
+	{#snippet icon()}
+		<CheckCircleSolid class="h-5 w-5" />
+		<span class="sr-only">Check icon</span>
+	{/snippet}
+	Item moved successfully.
 </Toast>
 
 <Toast color="danger">
-  {#snippet icon()}
-    <CloseCircleSolid class="h-5 w-5" />
-    <span class="sr-only">Error icon</span>
-  {/snippet}
-  Item has been deleted.
+	{#snippet icon()}
+		<CloseCircleSolid class="h-5 w-5" />
+		<span class="sr-only">Error icon</span>
+	{/snippet}
+	Item has been deleted.
 </Toast>
 
 <Toast color="warning">
-  {#snippet icon()}
-    <ExclamationCircleSolid class="h-5 w-5" />
-    <span class="sr-only">Warning icon</span>
-  {/snippet}
-  Improve password difficulty.
+	{#snippet icon()}
+		<ExclamationCircleSolid class="h-5 w-5" />
+		<span class="sr-only">Warning icon</span>
+	{/snippet}
+	Improve password difficulty.
 </Toast>
 
 <Toast color="gray">
-  {#snippet icon()}
-    <FireOutline class="h-6 w-6" />
-  {/snippet}
-  Gray
+	{#snippet icon()}
+		<FireOutline class="h-6 w-6" />
+	{/snippet}
+	Gray
 </Toast>
 
 <Toast color="yellow">
-  {#snippet icon()}
-    <FireOutline class="h-6 w-6" />
-  {/snippet}
-  Yellow
+	{#snippet icon()}
+		<FireOutline class="h-6 w-6" />
+	{/snippet}
+	Yellow
 </Toast>
 
 <Toast color="blue">
-  {#snippet icon()}
-    <FireOutline class="h-6 w-6" />
-  {/snippet}
-  Blue
+	{#snippet icon()}
+		<FireOutline class="h-6 w-6" />
+	{/snippet}
+	Blue
 </Toast>
 
 <Toast color="indigo">
-  {#snippet icon()}
-    <FireOutline class="h-6 w-6" />
-  {/snippet}
-  Indigo
+	{#snippet icon()}
+		<FireOutline class="h-6 w-6" />
+	{/snippet}
+	Indigo
 </Toast>
 
 <Toast color="purple">
-  {#snippet icon()}
-    <FireOutline class="h-6 w-6" />
-  {/snippet}
-  Purple
+	{#snippet icon()}
+		<FireOutline class="h-6 w-6" />
+	{/snippet}
+	Purple
 </Toast>
 
 <Toast color={undefined} class="bg-pink-100 text-pink-500 dark:bg-pink-800 dark:text-pink-200">
-  {#snippet icon()}
-    <FireOutline class="h-6 w-6" />
-  {/snippet}
-  Customize your colors.
+	{#snippet icon()}
+		<FireOutline class="h-6 w-6" />
+	{/snippet}
+	Customize your colors.
 </Toast>

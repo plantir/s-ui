@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Checkbox } from "$lib";
+	import { Checkbox } from 's-ui';
 </script>
 
 <Checkbox>
-  I agree with the
-  <a href="/" class="text-fg-brand ms-1 hover:underline">terms and conditions</a>
-  .
+	I agree with the
+	<a href="/" class="ms-1 text-fg-brand hover:underline">terms and conditions</a>
+	.
 </Checkbox>

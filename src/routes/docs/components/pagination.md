@@ -10,7 +10,7 @@ thumbnailSize: w-48
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { Badge, Heading, P, A } from '$lib'
+  import { Badge, Heading, P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -20,7 +20,7 @@ The pagination component can be used to navigate across a series of content and 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { PaginationNav, Pagination, PaginationItem } from "$lib";
+  import { PaginationNav, Pagination, PaginationItem } from "s-ui";
 </script>
 ```
 

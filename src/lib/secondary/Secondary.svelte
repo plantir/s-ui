@@ -1,23 +1,23 @@
 <script lang="ts">
-  import clsx from "clsx";
-  import { secondary } from "./theme.js";
-  import type { SecondaryProps } from "$lib/types.js";
-  import { getTheme } from "$lib/theme/themeUtils";
+	import clsx from 'clsx';
+	import { secondary } from './theme.js';
+	import type { SecondaryProps } from '$lib/types.js';
+	import { getTheme } from '$lib/theme/themeUtils';
 
-  let { children, class: className, ...restProps }: SecondaryProps = $props();
+	let { children, class: className, ...restProps }: SecondaryProps = $props();
 
-  const theme = $derived(getTheme("secondary"));
+	const theme = $derived(getTheme('secondary'));
 </script>
 
 <small {...restProps} class={secondary({ class: clsx(theme, className) })}>
-  {@render children()}
+	{@render children()}
 </small>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[SecondaryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2137)
+[SecondaryProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L2137)
 ## Props
 @prop children
 @prop class: className

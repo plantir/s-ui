@@ -10,11 +10,11 @@ thumbnailSize: w-24
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
-In flowbite-svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Tailwind CSS:
+In s-ui, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Tailwind CSS:
 
 ```js example
 // app.css
@@ -35,7 +35,7 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 ```svelte example
 <!-- src/routes/+layout.svelte -->
 <script lang="ts">
-  import { DarkMode } from "$lib";
+  import { DarkMode } from "s-ui";
 </script>
 
 <DarkMode />

@@ -9,17 +9,17 @@ description: Use the Datepicker component to allow users to select a date or dat
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
-The Datepicker component provides an interactive calendar interface for selecting single dates or date ranges. It's fully integrated with flowbite-svelte's design system and offers various customization options.
+The Datepicker component provides an interactive calendar interface for selecting single dates or date ranges. It's fully integrated with s-ui's design system and offers various customization options.
 
 ## Setup
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Datepicker } from "$lib";
+  import { Datepicker } from "s-ui";
 </script>
 ```
 

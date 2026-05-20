@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Label, Datepicker } from "$lib";
-  let selectedDate = $state<Date | undefined>(undefined);
+	import { Label, Datepicker } from 's-ui';
+	let selectedDate = $state<Date | undefined>(undefined);
 </script>
 
 <Label class="mb-2 flex items-center font-bold italic">My Datepicker</Label>
-<Datepicker bind:value={selectedDate} inputProps={{ id: "my-datepicker" }} />
+<Datepicker bind:value={selectedDate} inputProps={{ id: 'my-datepicker' }} />

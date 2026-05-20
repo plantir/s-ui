@@ -1,23 +1,23 @@
 ---
 layout: componentLayout
-title: Flowbite-Svelte MCP Local Setup
+title: s-ui MCP Local Setup
 breadcrumb_title: Local Setup
 component_title: Local Setup
 dir: MCP
-description: Learn how to install and configure the Flowbite-Svelte MCP server locally on your machine for use with Claude Desktop and other MCP clients.
+description: Learn how to install and configure the s-ui MCP server locally on your machine for use with Claude Desktop and other MCP clients.
 ---
 
 ## Local Setup
 
-The local (or stdio) version of the Flowbite-Svelte MCP server runs directly on your machine. You'll need to clone the repository and build it locally before configuring it with your MCP client.
+The local (or stdio) version of the s-ui MCP server runs directly on your machine. You'll need to clone the repository and build it locally before configuring it with your MCP client.
 
 ### Installation
 
 ```bash
-git clone git@github.com:shinokada/flowbite-svelte-mcp.git
-cd flowbite-svelte-mcp
+git clone git@github.com:shinokada/s-ui-mcp.git
+cd s-ui-mcp
 pnpm install
-pnpm run copy:llm  # Fetch latest Flowbite-Svelte docs
+pnpm run copy:llm  # Fetch latest s-ui docs
 pnpm run build
 ```
 
@@ -34,9 +34,9 @@ Here's how to set it up in common MCP clients:
 ```json
 {
   "mcpServers": {
-    "flowbite-svelte": {
+    "s-ui": {
       "command": "node",
-      "args": ["/absolute/path/to/flowbite-svelte-mcp/build/server.js"]
+      "args": ["/absolute/path/to/s-ui-mcp/build/server.js"]
     }
   }
 }
@@ -50,8 +50,8 @@ Here's how to set it up in common MCP clients:
 
 After setup, test the installation by asking Claude:
 
-- "Search the flowbite-svelte docs for how to use an Accordion"
-- "What components are available in flowbite-svelte?"
+- "Search the s-ui docs for how to use an Accordion"
+- "What components are available in s-ui?"
 - "Show me how to use the Button component"
 
 ### Troubleshooting

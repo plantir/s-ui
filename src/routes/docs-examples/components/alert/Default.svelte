@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Alert } from '$lib';
+	import { Alert } from 's-ui';
 </script>
 
 <Alert color="primary">

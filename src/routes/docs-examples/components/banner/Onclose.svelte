@@ -1,57 +1,57 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { Banner, P, Button } from "$lib";
+	import { onMount } from 'svelte';
+	import { Banner, P, Button } from 's-ui';
 
-  function useDismissableBanner(storageKey: string) {
-    let open = $state(false);
-    let hasSeen = $state(false);
+	function useDismissableBanner(storageKey: string) {
+		let open = $state(false);
+		let hasSeen = $state(false);
 
-    onMount(() => {
-      const exists = localStorage.getItem(storageKey);
-      hasSeen = Boolean(exists);
-      open = !exists;
-    });
+		onMount(() => {
+			const exists = localStorage.getItem(storageKey);
+			hasSeen = Boolean(exists);
+			open = !exists;
+		});
 
-    function onclose(_event: MouseEvent) {
-      localStorage.setItem(storageKey, "true");
-      open = false;
-      hasSeen = true;
-    }
+		function onclose(_event: MouseEvent) {
+			localStorage.setItem(storageKey, 'true');
+			open = false;
+			hasSeen = true;
+		}
 
-    function reset() {
-      localStorage.removeItem(storageKey);
-      hasSeen = false;
-      open = true; // show banner again
-    }
+		function reset() {
+			localStorage.removeItem(storageKey);
+			hasSeen = false;
+			open = true; // show banner again
+		}
 
-    return {
-      get open() {
-        return open;
-      },
-      set open(value) {
-        open = value;
-      },
-      get hasSeen() {
-        return hasSeen;
-      },
-      onclose,
-      reset
-    };
-  }
+		return {
+			get open() {
+				return open;
+			},
+			set open(value) {
+				open = value;
+			},
+			get hasSeen() {
+				return hasSeen;
+			},
+			onclose,
+			reset
+		};
+	}
 
-  const banner = useDismissableBanner("announcement-example");
+	const banner = useDismissableBanner('announcement-example');
 </script>
 
 {#if banner.hasSeen}
-  <div class="text-body mb-3 flex items-center gap-3 text-sm">
-    <span>
-      Banner is hidden because you dismissed it earlier. Remove <code>announcement-example</code>
-      from localStorage to show it again or click the reset button.
-    </span>
-    <Button size="xs" onclick={banner.reset}>Reset</Button>
-  </div>
+	<div class="mb-3 flex items-center gap-3 text-sm text-body">
+		<span>
+			Banner is hidden because you dismissed it earlier. Remove <code>announcement-example</code>
+			from localStorage to show it again or click the reset button.
+		</span>
+		<Button size="xs" onclick={banner.reset}>Reset</Button>
+	</div>
 {/if}
 
 <Banner bind:open={banner.open} onclose={banner.onclose}>
-  <P>This keeps announcement banners hidden after dismissal across page refreshes!</P>
+	<P>This keeps announcement banners hidden after dismissal across page refreshes!</P>
 </Banner>

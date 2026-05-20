@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { A } from "$lib";
+	import { A } from 's-ui';
 </script>
 
 <A>Read more</A>

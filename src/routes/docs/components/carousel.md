@@ -27,7 +27,7 @@ Carousels help conserve screen space while presenting multiple pieces of content
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Carousel } from "$lib";
+  import { Carousel } from "s-ui";
   // ./imageData/+server.js has the following
   export const images = [
     {

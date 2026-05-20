@@ -1,14 +1,18 @@
 <script lang="ts">
-  import { AccordionItem, Accordion } from "$lib";
+	import { AccordionItem, Accordion } from 's-ui';
 </script>
 
 <Accordion flush>
-  <AccordionItem>
-    {#snippet header()}Header 2-1{/snippet}
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit ...</p>
-  </AccordionItem>
-  <AccordionItem>
-    {#snippet header()}Header 2-2{/snippet}
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit ...</p>
-  </AccordionItem>
+	<AccordionItem>
+		{#snippet header()}Header 2-1{/snippet}
+		<p class="mb-2 text-gray-500 dark:text-gray-400">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit ...
+		</p>
+	</AccordionItem>
+	<AccordionItem>
+		{#snippet header()}Header 2-2{/snippet}
+		<p class="mb-2 text-gray-500 dark:text-gray-400">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit ...
+		</p>
+	</AccordionItem>
 </Accordion>

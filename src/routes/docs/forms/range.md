@@ -19,7 +19,7 @@ The range component can be used as an input field to get a number from the user 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Range } from "$lib";
+  import { Range } from "s-ui";
 </script>
 ```
 

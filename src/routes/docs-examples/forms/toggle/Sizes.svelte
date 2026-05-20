@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Toggle } from "$lib";
-  const customSize = "w-16 h-10 after:top-1 after:start-[4px] after:h-8 after:w-8";
+	import { Toggle } from 's-ui';
+	const customSize = 'w-16 h-10 after:top-1 after:start-[4px] after:h-8 after:w-8';
 </script>
 
 <Toggle size="small">Small toggle</Toggle>

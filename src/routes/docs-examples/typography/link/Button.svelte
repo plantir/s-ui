@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { A } from "$lib";
-  let show_full_link = $state(false);
+	import { A } from 's-ui';
+	let show_full_link = $state(false);
 </script>
 
 <A asButton onclick={() => (show_full_link = !show_full_link)}>view full link</A>
 
 {#if show_full_link}
-  <p>The full link is now visible.</p>
+	<p>The full link is now visible.</p>
 {/if}

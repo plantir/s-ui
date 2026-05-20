@@ -17,9 +17,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1518)
+[SidebarGroupProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1518)
 ## Props
 @prop children
 @prop class: className = "space-y-2"

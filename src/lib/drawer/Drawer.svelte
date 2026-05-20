@@ -54,8 +54,12 @@
 		const w = width === 'full' ? vw : width === 'half' ? vw / 2 : 320;
 
 		return {
-			x: (useCache ? cachedOffset.x : undefined) ?? (placement === 'left' ? -w : placement === 'right' ? w : undefined),
-			y: (useCache ? cachedOffset.y : undefined) ?? (placement === 'top' ? -vh : placement === 'bottom' ? vh : undefined),
+			x:
+				(useCache ? cachedOffset.x : undefined) ??
+				(placement === 'left' ? -w : placement === 'right' ? w : undefined),
+			y:
+				(useCache ? cachedOffset.y : undefined) ??
+				(placement === 'top' ? -vh : placement === 'bottom' ? vh : undefined),
 			duration: 300,
 			easing: sineIn,
 			opacity: 1,
@@ -87,8 +91,18 @@
 		const rect = dlg.getBoundingClientRect();
 
 		cachedOffset = {
-			x: placement === 'left' ? rect.left : placement === 'right' ? rect.right - innerWidth : undefined,
-			y: placement === 'top' ? rect.top : placement === 'bottom' ? rect.bottom - innerHeight : undefined,
+			x:
+				placement === 'left'
+					? rect.left
+					: placement === 'right'
+						? rect.right - innerWidth
+						: undefined,
+			y:
+				placement === 'top'
+					? rect.top
+					: placement === 'bottom'
+						? rect.bottom - innerHeight
+						: undefined,
 			placement
 		};
 
@@ -144,9 +158,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L676)
+[DrawerProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L676)
 ## Props
 @prop children
 @prop open = $bindable(false)

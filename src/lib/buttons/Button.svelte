@@ -1,6 +1,6 @@
 <script lang="ts">
 	import clsx from 'clsx';
-	import { Spinner } from '$lib';
+	import { Spinner } from 's-ui';
 	import type { ButtonProps } from '../types.js';
 	import { getTheme } from '$lib/theme/themeUtils';
 	import { button } from './theme.js';
@@ -64,9 +64,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L344)
+[ButtonProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L344)
 ## Props
 @prop children
 @prop pill

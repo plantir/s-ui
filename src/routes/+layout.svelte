@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './layout.css';
-	import { Spinner } from '$lib';
+	import { Spinner } from 's-ui';
 	const { children } = $props();
 	import { onMount } from 'svelte';
 	let isLoaded = $state(false);

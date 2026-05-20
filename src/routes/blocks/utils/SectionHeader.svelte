@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Heading } from '$lib';
+	import { Heading } from 's-ui';
 	import CompoDescription from '../../utils/CompoDescription.svelte';
 
 	type Props = {

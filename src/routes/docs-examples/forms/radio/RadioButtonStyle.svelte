@@ -1,9 +1,22 @@
 <script lang="ts">
-  import { ButtonGroup, RadioButton } from "$lib";
-  let options = $state();
+	import { ButtonGroup, RadioButton } from 's-ui';
+	let options = $state();
 </script>
 
 <ButtonGroup>
-  <RadioButton outline checkedClass="outline-4 outline-amber-500" name="options" value="Option 1" bind:group={options}>Option 1</RadioButton>
-  <RadioButton color="success" outline checkedClass="outline-4 outline-blue-500" name="options" value="Option 2" bind:group={options}>Option 2</RadioButton>
+	<RadioButton
+		outline
+		checkedClass="outline-4 outline-amber-500"
+		name="options"
+		value="Option 1"
+		bind:group={options}>Option 1</RadioButton
+	>
+	<RadioButton
+		color="success"
+		outline
+		checkedClass="outline-4 outline-blue-500"
+		name="options"
+		value="Option 2"
+		bind:group={options}>Option 2</RadioButton
+	>
 </ButtonGroup>

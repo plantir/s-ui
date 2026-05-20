@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { Badge } from '$lib'
+  import { Badge } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -20,7 +20,7 @@ The timeline component can be used to show series of data in a chronological ord
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Timeline, TimelineItem, Activity, ActivityItem, Group, GroupItem } from "$lib";
+  import { Timeline, TimelineItem, Activity, ActivityItem, Group, GroupItem } from "s-ui";
 </script>
 ```
 

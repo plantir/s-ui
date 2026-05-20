@@ -1,5 +1,11 @@
 <script lang="ts">
-  import { PhoneInput } from "$lib";
+	import { PhoneInput } from 's-ui';
 </script>
 
-<PhoneInput aria-describedby="helper-text-explanation" id="phone-input" placeholder="123-456-7890" required classes={{ input: "border-blue-500", iconWrapper: "ps-4" }} />
+<PhoneInput
+	aria-describedby="helper-text-explanation"
+	id="phone-input"
+	placeholder="123-456-7890"
+	required
+	classes={{ input: 'border-blue-500', iconWrapper: 'ps-4' }}
+/>

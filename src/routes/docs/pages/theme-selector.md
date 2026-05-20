@@ -9,7 +9,7 @@ description: An interactive dropdown component that lets users switch between di
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, LlmLink } from '../../utils';
-  import { A, P, Heading } from '$lib';
+  import { A, P, Heading } from 's-ui';
 </script>
 
 ## Overview
@@ -22,7 +22,7 @@ Import and add the component to your layout:
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ThemeSelector } from "$lib";
+  import { ThemeSelector } from "s-ui";
 </script>
 
 <ThemeSelector />
@@ -46,7 +46,7 @@ Control themes programmatically using the exported functions:
 
 ```svelte
 <script>
-  import { loadTheme, getCurrentTheme, getSelectedTheme } from "$lib";
+  import { loadTheme, getCurrentTheme, getSelectedTheme } from "s-ui";
   
   // Switch to a specific theme
   function switchTheme() {
@@ -78,7 +78,7 @@ Control themes programmatically using the exported functions:
 
 ```svelte example hideOutput
 <script>
-  import { Navbar, NavBrand, NavUl, NavLi, DarkMode, ThemeSelector } from "$lib";
+  import { Navbar, NavBrand, NavUl, NavLi, DarkMode, ThemeSelector } from "s-ui";
 </script>
 
 <Navbar>
@@ -98,7 +98,7 @@ Control themes programmatically using the exported functions:
 
 ```svelte example hideOutput
 <script>
-  import { Card, Heading, ThemeSelector } from "$lib";
+  import { Card, Heading, ThemeSelector } from "s-ui";
 </script>
 
 <Card>
@@ -166,7 +166,7 @@ The four `colors` values are Tailwind utility classes for the four color swatche
 ```svelte
 <!-- src/routes/+layout.svelte -->
 <script>
-  import { ThemeSelector } from "$lib";
+  import { ThemeSelector } from "s-ui";
 </script>
 
 <header>
@@ -185,7 +185,7 @@ In your `src/routes/layout.css` (or equivalent), import a theme CSS file for bui
 **Option A — import directly from the library** (no customization, path may vary by project structure):
 
 ```css
-@import "../../node_modules/flowbite-svelte/src/lib/theme-selector/themes/default.css";
+@import "../../node_modules/s-ui/src/lib/theme-selector/themes/default.css";
 ```
 
 **Option B — copy to your project and customize** (recommended if you want to change brand colors):
@@ -197,7 +197,7 @@ In your `src/routes/layout.css` (or equivalent), import a theme CSS file for bui
 If your manifest includes a built-in theme id, also create `static/themes/<id>.css` for it. Separately, copy the build-time token file from the library as a starting point:
 
 ```sh
-cp node_modules/flowbite-svelte/src/lib/theme-selector/themes/default.css static/styles/mydefault.css
+cp node_modules/s-ui/src/lib/theme-selector/themes/default.css static/styles/mydefault.css
 ```
 
 Then edit `static/styles/mydefault.css` to set your own `--color-primary-*` values inside `@theme {}`. This controls what Tailwind utility classes like `bg-primary-500` resolve to at build time.
@@ -265,7 +265,7 @@ Requires modern browsers with localStorage and ES6+ support:
 1. **Place in main layout** for consistent availability across your app
 2. **Combine with DarkMode** component for complete appearance control
 3. **Test theme compatibility** with your custom components
-4. **Clear localStorage** to reset: `localStorage.removeItem("flowbite-svelte-theme")`
+4. **Clear localStorage** to reset: `localStorage.removeItem("s-ui-theme")`
 
 ## Related Components
 

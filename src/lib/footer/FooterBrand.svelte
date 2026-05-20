@@ -40,9 +40,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L733)
+[FooterBrandProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L733)
 ## Props
 @prop children
 @prop aClass

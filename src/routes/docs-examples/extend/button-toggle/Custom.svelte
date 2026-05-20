@@ -1,35 +1,35 @@
 <script lang="ts">
-  import { ButtonToggleGroup, ButtonToggle } from "$lib";
-  import { CheckCircleOutline, BadgeCheckOutline, FileCheckOutline } from "flowbite-svelte-icons";
+	import { ButtonToggleGroup, ButtonToggle } from 's-ui';
+	import { CheckCircleOutline, BadgeCheckOutline, FileCheckOutline } from 'flowbite-svelte-icons';
 
-  let singleValue = $state<string | null>(null);
+	let singleValue = $state<string | null>(null);
 
-  function handleSingleSelect(value: string | null | string[]) {
-    if (typeof value === "string" || value === null) {
-      singleValue = value;
-      console.log("Single selection:", value);
-    }
-  }
+	function handleSingleSelect(value: string | null | string[]) {
+		if (typeof value === 'string' || value === null) {
+			singleValue = value;
+			console.log('Single selection:', value);
+		}
+	}
 </script>
 
 <ButtonToggleGroup onSelect={handleSingleSelect} color="none">
-  <ButtonToggle value="one" selected={singleValue === "one"}>
-    {#snippet iconSlot()}
-      <CheckCircleOutline class="-mr-3 text-green-400" />
-    {/snippet}
-    One
-  </ButtonToggle>
-  <ButtonToggle value="two" selected={singleValue === "two"}>
-    {#snippet iconSlot()}
-      <BadgeCheckOutline class="-mr-3 text-red-400" />
-    {/snippet}
-    Two
-  </ButtonToggle>
-  <ButtonToggle value="three" selected={singleValue === "three"}>
-    {#snippet iconSlot()}
-      <FileCheckOutline class="-mr-3 text-purple-400" />
-    {/snippet}
-    Three
-  </ButtonToggle>
+	<ButtonToggle value="one" selected={singleValue === 'one'}>
+		{#snippet iconSlot()}
+			<CheckCircleOutline class="-mr-3 text-green-400" />
+		{/snippet}
+		One
+	</ButtonToggle>
+	<ButtonToggle value="two" selected={singleValue === 'two'}>
+		{#snippet iconSlot()}
+			<BadgeCheckOutline class="-mr-3 text-red-400" />
+		{/snippet}
+		Two
+	</ButtonToggle>
+	<ButtonToggle value="three" selected={singleValue === 'three'}>
+		{#snippet iconSlot()}
+			<FileCheckOutline class="-mr-3 text-purple-400" />
+		{/snippet}
+		Three
+	</ButtonToggle>
 </ButtonToggleGroup>
-<p class="text-heading mt-2">Selected: {singleValue || "None"}</p>
+<p class="mt-2 text-heading">Selected: {singleValue || 'None'}</p>

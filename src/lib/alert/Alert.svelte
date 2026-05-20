@@ -80,7 +80,7 @@
 {/if}
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
 [AlertProps]
 ## Props

@@ -30,9 +30,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L588)
+[DeviceMockupProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L588)
 ## Props
 @prop children
 @prop device = "default"

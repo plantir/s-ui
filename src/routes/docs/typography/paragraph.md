@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils';
-  import { Layout, P, A, Heading } from '$lib';
+  import { Layout, P, A, Heading } from 's-ui';
 
   const components = 'P, Layout'
 </script>

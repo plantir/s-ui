@@ -45,9 +45,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L593)
+[DesktopProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L593)
 ## Props
 @prop children
 @prop class: className

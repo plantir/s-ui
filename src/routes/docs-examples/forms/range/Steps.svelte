@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Range, Label } from "$lib";
-  let stepValue = 2.5;
+	import { Range, Label } from 's-ui';
+	let stepValue = 2.5;
 </script>
 
 <Label>Range steps</Label>

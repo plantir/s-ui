@@ -9,7 +9,7 @@ description: Use the accordion component to show hidden information based on the
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink, Seealso } from '../../utils'
-  import { P, A } from 'flowbite-svelte'; 
+  import { P, A } from 's-ui'; 
   const dirName = toKebabCase(component_title);
   const relatedLinks = ['/docs/components/tabs','/docs/components/dropdown','/docs/components/modal'];
 </script>
@@ -22,7 +22,7 @@ A popular use case would be the "Frequently Asked Questions" section of a websit
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { AccordionItem, Accordion } from "$lib";
+  import { AccordionItem, Accordion } from "s-ui";
 </script>
 ```
 

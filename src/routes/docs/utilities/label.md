@@ -9,7 +9,7 @@ description: The Label components are used throughout the library and you can us
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer, GitHubCompoLinks, LlmLink } from '../../utils';
-  import { A } from '$lib';
+  import { A } from 's-ui';
 
   const components = 'Label'
   let divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';

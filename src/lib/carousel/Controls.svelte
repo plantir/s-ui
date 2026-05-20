@@ -1,35 +1,47 @@
 <script lang="ts">
-  import type { ControlsProps } from "../types.js";
-  import ControlButton from "./ControlButton.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
-  import clsx from "clsx";
-  import { getCarouselContext } from "$lib/context";
+	import type { ControlsProps } from '../types.js';
+	import ControlButton from './ControlButton.svelte';
+	import { getTheme } from '$lib/theme/themeUtils';
+	import clsx from 'clsx';
+	import { getCarouselContext } from '$lib/context';
 
-  let { children, class: className, ...restProps }: ControlsProps = $props();
+	let { children, class: className, ...restProps }: ControlsProps = $props();
 
-  const theme = $derived(getTheme("controlButton"));
+	const theme = $derived(getTheme('controlButton'));
 
-  const _state = getCarouselContext();
+	const _state = getCarouselContext();
 
-  function changeSlide(forward: boolean) {
-    if (!_state) return;
-    _state.changeSlide(forward ? _state.index + 1 : _state.index - 1);
-  }
+	function changeSlide(forward: boolean) {
+		if (!_state) return;
+		_state.changeSlide(forward ? _state.index + 1 : _state.index - 1);
+	}
 </script>
 
 <!-- Slider controls -->
 {#if children}
-  {@render children(changeSlide)}
+	{@render children(changeSlide)}
 {:else}
-  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={clsx(theme, className)} {...restProps} />
-  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={clsx(theme, className)} {...restProps} />
+	<ControlButton
+		name="Previous"
+		forward={false}
+		onclick={() => changeSlide(false)}
+		class={clsx(theme, className)}
+		{...restProps}
+	/>
+	<ControlButton
+		name="Next"
+		forward={true}
+		onclick={() => changeSlide(true)}
+		class={clsx(theme, className)}
+		{...restProps}
+	/>
 {/if}
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L498)
+[ControlsProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L498)
 ## Props
 @prop children
 @prop class: className

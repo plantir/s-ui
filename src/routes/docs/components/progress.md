@@ -10,7 +10,7 @@ thumbnailSize: w-48
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, Seealso, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
   const relatedLinks = ['/docs/components/progress','/docs/extend/progressradial' ]
 </script>
@@ -23,7 +23,7 @@ Import the `Progressbar` component in a script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Progressbar } from "$lib";
+  import { Progressbar } from "s-ui";
 </script>
 ```
 

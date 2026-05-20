@@ -66,7 +66,7 @@ description: Use the datatable component to search, sort, filter and paginate ta
   // callback example can't be done since it is using $state()
   // mdsvex and mdsvexample are not allow to use runes.
   
-  import { Badge, P, Button, Heading, Span } from "$lib"
+  import { Badge, P, Button, Heading, Span } from "s-ui"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -74,7 +74,7 @@ The datatable component examples from Flowbite are open-source under the MIT Lic
 
 This page provides multiple examples of datatable components where you can search, sort, filter, and paginate table data up to thousands of entries.
 
-All examples are responsive, dark mode and RTL support included and by installing the Flowbite-Svelte-DataTable plugin the custom styles will automatically be applied to the datatable components using Tailwind CSS.
+All examples are responsive, dark mode and RTL support included and by installing the s-ui-DataTable plugin the custom styles will automatically be applied to the datatable components using Tailwind CSS.
 
 ## Installation
 
@@ -396,13 +396,13 @@ codeString={exampleRawModules['./examples/datatable/Callback.svelte']}
 
 ## Component data
 
-The component has the following props, type, and default values. See [types page](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/types.ts) for type information.
+The component has the following props, type, and default values. See [types page](https://github.com/shinokada/s-ui-plugins/blob/main/apps/s-ui-chart/src/lib/types.ts) for type information.
 
 <CompoAttributesViewer {components} plugin="datatable"/>
 
 ## References
 
-- [@flowbite-svelte-plugins/datatable](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-datatable/src/lib/Table.svelte)
+- [@flowbite-svelte-plugins/datatable](https://github.com/shinokada/s-ui-plugins/blob/main/apps/s-ui-datatable/src/lib/Table.svelte)
 
 ## LLM Link
 

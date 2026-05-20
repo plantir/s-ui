@@ -197,9 +197,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1632)
+[StepIndicatorProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1632)
 ## Props
 @prop steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"]
 @prop currentStep = $bindable(1)

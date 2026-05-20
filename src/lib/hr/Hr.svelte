@@ -1,54 +1,63 @@
 <script lang="ts">
-  import clsx from "clsx";
-  import { hr } from "./theme.js";
-  import type { HrProps } from "$lib/types.js";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+	import clsx from 'clsx';
+	import { hr } from './theme.js';
+	import type { HrProps } from '$lib/types.js';
+	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
+	import { untrack } from 'svelte';
 
-  let { children, divClass, innerDivClass, class: className, classes, divProps = {}, hrProps = {}, ...restProps }: HrProps = $props();
+	let {
+		children,
+		divClass,
+		innerDivClass,
+		class: className,
+		classes,
+		divProps = {},
+		hrProps = {},
+		...restProps
+	}: HrProps = $props();
 
-  warnThemeDeprecation(
-    "Hr",
-    untrack(() => ({ divClass, innerDivClass })),
-    {
-      divClass: "div",
-      innerDivClass: "content"
-    }
-  );
+	warnThemeDeprecation(
+		'Hr',
+		untrack(() => ({ divClass, innerDivClass })),
+		{
+			divClass: 'div',
+			innerDivClass: 'content'
+		}
+	);
 
-  const styling = $derived(
-    classes ?? {
-      div: divClass,
-      content: innerDivClass
-    }
-  );
+	const styling = $derived(
+		classes ?? {
+			div: divClass,
+			content: innerDivClass
+		}
+	);
 
-  const theme = $derived(getTheme("hr"));
-  const bg = $derived(classes?.bg ?? "bg-gray-200 dark:bg-gray-700");
+	const theme = $derived(getTheme('hr'));
+	const bg = $derived(classes?.bg ?? 'bg-gray-200 dark:bg-gray-700');
 
-  // for backward compatibility and ...restPorps will be removed and use only ..divProps and ...hrProps in future
-  const mergedDivProps = $derived({ ...restProps, ...divProps });
-  const mergedHrProps = $derived({ ...restProps, ...hrProps });
+	// for backward compatibility and ...restPorps will be removed and use only ..divProps and ...hrProps in future
+	const mergedDivProps = $derived({ ...restProps, ...divProps });
+	const mergedHrProps = $derived({ ...restProps, ...hrProps });
 
-  let { base, div, content } = $derived(hr({ withChildren: !!children }));
+	let { base, div, content } = $derived(hr({ withChildren: !!children }));
 </script>
 
 {#if children}
-  <div {...mergedDivProps} class={div({ class: clsx(theme?.div, styling.div) })}>
-    <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
-    <div class={content({ class: clsx(theme?.content, styling.content) })}>
-      {@render children()}
-    </div>
-  </div>
+	<div {...mergedDivProps} class={div({ class: clsx(theme?.div, styling.div) })}>
+		<hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
+		<div class={content({ class: clsx(theme?.content, styling.content) })}>
+			{@render children()}
+		</div>
+	</div>
 {:else}
-  <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
+	<hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
 {/if}
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1893)
+[HrProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1893)
 ## Props
 @prop children
 @prop divClass

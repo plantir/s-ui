@@ -1,51 +1,51 @@
 <script lang="ts">
-  import { Label, Input, Button, InputAddon, ButtonGroup, Checkbox } from "$lib";
+	import { Label, Input, Button, InputAddon, ButtonGroup, Checkbox } from 's-ui';
 </script>
 
 <div>
-  <Label class="mb-2" for="input-addon-sm">Small additional text</Label>
-  <ButtonGroup class="w-full">
-    <InputAddon>@</InputAddon>
-    <Input id="input-addon-sm" type="email" placeholder="john.doe@mail.com" />
-  </ButtonGroup>
+	<Label class="mb-2" for="input-addon-sm">Small additional text</Label>
+	<ButtonGroup class="w-full">
+		<InputAddon>@</InputAddon>
+		<Input id="input-addon-sm" type="email" placeholder="john.doe@mail.com" />
+	</ButtonGroup>
 </div>
 
 <div>
-  <Label class="mb-2" for="input-addon-md">Default additional text</Label>
-  <ButtonGroup class="w-full">
-    <Input id="input-addon-md" type="email" placeholder="john.doe@mail.com" />
-    <InputAddon>.com</InputAddon>
-  </ButtonGroup>
+	<Label class="mb-2" for="input-addon-md">Default additional text</Label>
+	<ButtonGroup class="w-full">
+		<Input id="input-addon-md" type="email" placeholder="john.doe@mail.com" />
+		<InputAddon>.com</InputAddon>
+	</ButtonGroup>
 </div>
 
 <div>
-  <Label class="mb-2" for="input-addon-lg">Large additional text</Label>
-  <ButtonGroup class="w-full">
-    <InputAddon>@</InputAddon>
-    <Input id="input-addon-lg" type="email" placeholder="john.doe@mail.com" />
-    <InputAddon>.com</InputAddon>
-  </ButtonGroup>
+	<Label class="mb-2" for="input-addon-lg">Large additional text</Label>
+	<ButtonGroup class="w-full">
+		<InputAddon>@</InputAddon>
+		<Input id="input-addon-lg" type="email" placeholder="john.doe@mail.com" />
+		<InputAddon>.com</InputAddon>
+	</ButtonGroup>
 </div>
 
 <div class="pt-8">
-  <Label for="input-addon-button" class="mb-2">Grouped with button</Label>
-  <ButtonGroup class="w-full">
-    <InputAddon>@</InputAddon>
-    <Input id="input-addon-button" type="email" placeholder="john.doe@mail.com" />
-    <Button>Search</Button>
-  </ButtonGroup>
+	<Label for="input-addon-button" class="mb-2">Grouped with button</Label>
+	<ButtonGroup class="w-full">
+		<InputAddon>@</InputAddon>
+		<Input id="input-addon-button" type="email" placeholder="john.doe@mail.com" />
+		<Button>Search</Button>
+	</ButtonGroup>
 </div>
 
 <div>
-  <Label for="input-addon-crazy" class="mb-2">Crazy example</Label>
-  <ButtonGroup class="w-full">
-    <InputAddon><Checkbox /></InputAddon>
-    <Button>Search</Button>
-    <InputAddon>http://</InputAddon>
-    <Input id="input-addon-crazy" type="email" placeholder="john.doe@mail.com" />
-    <InputAddon>@</InputAddon>
-    <InputAddon><Checkbox /></InputAddon>
-    <Button color="success">Send</Button>
-    <InputAddon>kg</InputAddon>
-  </ButtonGroup>
+	<Label for="input-addon-crazy" class="mb-2">Crazy example</Label>
+	<ButtonGroup class="w-full">
+		<InputAddon><Checkbox /></InputAddon>
+		<Button>Search</Button>
+		<InputAddon>http://</InputAddon>
+		<Input id="input-addon-crazy" type="email" placeholder="john.doe@mail.com" />
+		<InputAddon>@</InputAddon>
+		<InputAddon><Checkbox /></InputAddon>
+		<Button color="success">Send</Button>
+		<InputAddon>kg</InputAddon>
+	</ButtonGroup>
 </div>

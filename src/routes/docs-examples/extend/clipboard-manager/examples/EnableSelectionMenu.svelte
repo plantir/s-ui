@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ClipboardManager } from "$lib";
+	import { ClipboardManager } from 's-ui';
 </script>
 
 <ClipboardManager enableSelectionMenu={true} />

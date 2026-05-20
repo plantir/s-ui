@@ -10,7 +10,7 @@ thumbnailSize: w-40
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A, Heading } from '$lib'
+  import { P, A, Heading } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 

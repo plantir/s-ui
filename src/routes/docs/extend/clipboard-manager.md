@@ -10,7 +10,7 @@ description: A versatile clipboard manager component for saving, organizing, and
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
 
   const components = 'ClipboardManager'
   const relatedLinks = ['/docs/components/clipboard'];
@@ -20,13 +20,13 @@ description: A versatile clipboard manager component for saving, organizing, and
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ClipboardManager } from  'flowbite-svelte';
+  import { ClipboardManager } from 's-ui';
 </script>
 ```
 
 ## Usage Examples
 
-See [examples](/docs-examples/extend/clipboard-manager) and [code](https://github.com/themesberg/flowbite-svelte/tree/main/src/routes/docs-examples/extend/clipboard-manager).
+See [examples](/docs-examples/extend/clipboard-manager) and [code](https://github.com/themesberg/s-ui/tree/main/src/routes/docs-examples/extend/clipboard-manager).
 
 ## See also
 

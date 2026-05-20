@@ -1,17 +1,24 @@
 <script lang="ts">
-  import { Textarea, Button } from "$lib";
+	import { Textarea, Button } from 's-ui';
 
-  let textareaRef = $state() as HTMLTextAreaElement;
-  let textContent = $state("This is some example text that will be selected when you click the button.");
+	let textareaRef = $state() as HTMLTextAreaElement;
+	let textContent = $state(
+		'This is some example text that will be selected when you click the button.'
+	);
 </script>
 
-<Textarea bind:elementRef={textareaRef} bind:value={textContent} placeholder="Type something here..." class="w-full" />
+<Textarea
+	bind:elementRef={textareaRef}
+	bind:value={textContent}
+	placeholder="Type something here..."
+	class="w-full"
+/>
 <Button
-  class="mt-2"
-  onclick={() => {
-    textareaRef?.focus();
-    textareaRef?.setSelectionRange(0, textareaRef.value.length);
-  }}
+	class="mt-2"
+	onclick={() => {
+		textareaRef?.focus();
+		textareaRef?.setSelectionRange(0, textareaRef.value.length);
+	}}
 >
-  Select All Text
+	Select All Text
 </Button>

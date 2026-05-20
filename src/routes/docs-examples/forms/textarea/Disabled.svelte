@@ -1,5 +1,12 @@
 <script lang="ts">
-  import { Textarea } from "$lib";
+	import { Textarea } from 's-ui';
 </script>
 
-<Textarea disabled id="textarea-id" placeholder="Your message" rows={4} name="message" class="w-full" />
+<Textarea
+	disabled
+	id="textarea-id"
+	placeholder="Your message"
+	rows={4}
+	name="message"
+	class="w-full"
+/>

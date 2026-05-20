@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink, Seealso } from '../../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
   const relatedLinks = [
     '/docs/components/navbar',
@@ -28,7 +28,7 @@ Flowbite includes two styles of breadcrumb elements, one that has a transparent 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Breadcrumb, BreadcrumbItem } from "$lib";
+  import { Breadcrumb, BreadcrumbItem } from "s-ui";
 </script>
 ```
 

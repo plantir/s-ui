@@ -10,7 +10,7 @@ thumbnailSize: w-48
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A, Badge } from '$lib'
+  import { P, A, Badge } from 's-ui'
   const dirName = toKebabCase(component_title)
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 </script>
@@ -35,7 +35,7 @@ Get started with multiple variants and styles of these table components.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from "$lib";
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from "s-ui";
 </script>
 ```
 
@@ -85,7 +85,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 
 ## Sorting by column
 
-Please use [DataTable](https://flowbite-svelte.com/docs/plugins/datatables)
+Please use [DataTable](https://s-ui.com/docs/plugins/datatables)
 
 ## Table head
 
@@ -138,7 +138,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
 ## TableSearch
 
 Use the following example to search in a table.
-For more advanced usage, please see [this page](https://flowbite-svelte.com/docs/plugins/datatables).
+For more advanced usage, please see [this page](https://s-ui.com/docs/plugins/datatables).
 
 ```svelte example
 {#include Search.svelte}

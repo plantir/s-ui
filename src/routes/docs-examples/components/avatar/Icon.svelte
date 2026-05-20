@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Avatar } from "$lib";
-  import { BugOutline } from "flowbite-svelte-icons";
+	import { Avatar } from 's-ui';
+	import { BugOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Avatar>
-  <BugOutline />
+	<BugOutline />
 </Avatar>

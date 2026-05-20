@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -20,7 +20,7 @@ The indicator component can be used as a small element positioned absolutely rel
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Indicator } from "$lib";
+  import { Indicator } from "s-ui";
 </script>
 ```
 

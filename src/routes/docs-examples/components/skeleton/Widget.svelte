@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { WidgetPlaceholder } from "$lib";
+	import { WidgetPlaceholder } from 's-ui';
 </script>
 
 <WidgetPlaceholder />

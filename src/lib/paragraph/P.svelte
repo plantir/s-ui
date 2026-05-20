@@ -1,38 +1,51 @@
 <script lang="ts">
-  import clsx from "clsx";
-  import { paragraph } from "./theme.js";
-  import type { ParagraphProps } from "$lib/types.js";
-  import { getTheme } from "$lib/theme/themeUtils";
+	import clsx from 'clsx';
+	import { paragraph } from './theme.js';
+	import type { ParagraphProps } from '$lib/types.js';
+	import { getTheme } from '$lib/theme/themeUtils';
 
-  let {
-    children,
-    class: className = "text-gray-900 dark:text-white",
-    height = "normal",
-    align = "left",
-    justify = false,
-    italic,
-    firstUpper = false,
-    whitespace = "normal",
-    size = "base",
-    space = "normal",
-    weight = "normal",
-    ...restProps
-  }: ParagraphProps = $props();
+	let {
+		children,
+		class: className = 'text-gray-900 dark:text-white',
+		height = 'normal',
+		align = 'left',
+		justify = false,
+		italic,
+		firstUpper = false,
+		whitespace = 'normal',
+		size = 'base',
+		space = 'normal',
+		weight = 'normal',
+		...restProps
+	}: ParagraphProps = $props();
 
-  const theme = $derived(getTheme("paragraph"));
+	const theme = $derived(getTheme('paragraph'));
 
-  let classP = $derived(paragraph({ height, size, weight, space, align, justify, italic, firstUpper, whitespace, class: clsx(theme, className) }));
+	let classP = $derived(
+		paragraph({
+			height,
+			size,
+			weight,
+			space,
+			align,
+			justify,
+			italic,
+			firstUpper,
+			whitespace,
+			class: clsx(theme, className)
+		})
+	);
 </script>
 
 <p {...restProps} class={classP}>
-  {@render children()}
+	{@render children()}
 </p>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[ParagraphProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2129)
+[ParagraphProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L2129)
 ## Props
 @prop children
 @prop class: className = "text-gray-900 dark:text-white"

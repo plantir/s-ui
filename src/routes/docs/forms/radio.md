@@ -20,7 +20,7 @@ The radio component can be used to allow the user to choose a single option from
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Radio } from "$lib";
+  import { Radio } from "s-ui";
 </script>
 ```
 

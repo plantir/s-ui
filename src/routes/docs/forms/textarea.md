@@ -19,7 +19,7 @@ The textarea component is a multi-line text field input that can be used to rece
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Textarea } from "$lib";
+  import { Textarea } from "s-ui";
 </script>
 ```
 

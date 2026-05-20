@@ -10,7 +10,7 @@ description: A flexible Svelte 5 component for creating resizable split panes wi
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
 
   const components = 'SplitPane, Pane, Divider'
   // const relatedLinks = [''];
@@ -20,13 +20,13 @@ description: A flexible Svelte 5 component for creating resizable split panes wi
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { SplitPane, Pane } from  'flowbite-svelte';
+  import { SplitPane, Pane } from 's-ui';
 </script>
 ```
 
 ## Usage Examples
 
-See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/themesberg/flowbite-svelte/tree/main/src/routes/docs-examples/extend/split-pane).
+See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/themesberg/s-ui/tree/main/src/routes/docs-examples/extend/split-pane).
 
 
 ## Component data

@@ -1,39 +1,49 @@
 <script lang="ts">
-  import { indicator } from "./theme.js";
-  import clsx from "clsx";
-  import type { IndicatorProps } from "../types.js";
-  import { getTheme } from "$lib/theme/themeUtils";
+	import { indicator } from './theme.js';
+	import clsx from 'clsx';
+	import type { IndicatorProps } from '../types.js';
+	import { getTheme } from '$lib/theme/themeUtils';
 
-  let { children, color = "primary", cornerStyle = "circular", size = "md", border = false, placement, offset = true, class: className, ...restProps }: IndicatorProps = $props();
+	let {
+		children,
+		color = 'primary',
+		cornerStyle = 'circular',
+		size = 'md',
+		border = false,
+		placement,
+		offset = true,
+		class: className,
+		...restProps
+	}: IndicatorProps = $props();
 
-  const theme = $derived(getTheme("indicator"));
+	const theme = $derived(getTheme('indicator'));
 
-  let hasChildren = $derived(!!children);
-  const base = $derived(
-    indicator({
-      color,
-      size,
-      cornerStyle,
-      border,
-      placement,
-      offset,
-      hasChildren,
-      class: clsx(theme, className)
-    })
-  );
+	let hasChildren = $derived(!!children);
+	const base = $derived(
+		indicator({
+			color,
+			size,
+			cornerStyle,
+			border,
+			placement,
+			offset,
+			hasChildren,
+			class: clsx(theme, className)
+		})
+	);
 </script>
 
 <div {...restProps} class={base}>
-  {#if children}
-    {@render children()}
-  {/if}
+	{#if children}
+		{@render children()}
+	{/if}
 </div>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
+[IndicatorProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1099)
 ## Props
 @prop children
 @prop color = "primary"

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P } from "$lib";
+	import { P } from 's-ui';
 </script>
 
 <P space="tighter">Flowbite app will help you improve yourself by analysing your everyday life.</P>

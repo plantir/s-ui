@@ -1,46 +1,46 @@
 <script lang="ts">
-  import { PhoneInput, Label, Dropdown, DropdownItem, Helper, Button } from "$lib";
-  import { ChevronDownOutline } from "flowbite-svelte-icons";
-  import Usa from "$icons/Usa.svelte";
-  import Germany from "$icons/Germany.svelte";
-  import Italy from "$icons/Italy.svelte";
-  import China from "$icons/China.svelte";
+	import { PhoneInput, Label, Dropdown, DropdownItem, Helper, Button } from 's-ui';
+	import { ChevronDownOutline } from 'flowbite-svelte-icons';
+	import Usa from '$icons/Usa.svelte';
+	import Germany from '$icons/Germany.svelte';
+	import Italy from '$icons/Italy.svelte';
+	import China from '$icons/China.svelte';
 </script>
 
 <form class="mx-auto max-w-sm">
-  <div class="flex">
-    <button
-      id="states-button"
-      class="rounded-s-base border-default-medium bg-neutral-secondary-medium text-body hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-neutral-tertiary z-10 inline-flex shrink-0 items-center border border-r-0 px-4 py-2 text-center text-sm font-medium focus:ring-4 focus:outline-none"
-      type="button"
-    >
-      <Usa />
-      +1
-      <ChevronDownOutline class="ms-2 h-6 w-6" />
-    </button>
-    <Dropdown simple triggeredBy="#states-button">
-      <DropdownItem class="flex items-center">
-        <Usa />
-        United States (+1)
-      </DropdownItem>
-      <DropdownItem class="flex items-center">
-        <Germany />
-        Germany (+49)
-      </DropdownItem>
-      <DropdownItem class="flex items-center">
-        <Italy />
-        Italy (+39)
-      </DropdownItem>
-      <DropdownItem class="flex items-center">
-        <China />
-        China (+86)
-      </DropdownItem>
-    </Dropdown>
-    <Label for="phone-input" class="sr-only">Phone number:</Label>
-    <div class="relative w-full">
-      <PhoneInput phoneIcon={false} placeholder="123-456-7890" required phoneType="countryCode" />
-    </div>
-  </div>
-  <Helper class="mt-2 text-sm">We will send you an SMS with a verification code.</Helper>
-  <Button class="my-2 w-full text-sm">Send verification code</Button>
+	<div class="flex">
+		<button
+			id="states-button"
+			class="z-10 inline-flex shrink-0 items-center rounded-s-base border border-r-0 border-default-medium bg-neutral-secondary-medium px-4 py-2 text-center text-sm font-medium text-body hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary focus:outline-none"
+			type="button"
+		>
+			<Usa />
+			+1
+			<ChevronDownOutline class="ms-2 h-6 w-6" />
+		</button>
+		<Dropdown simple triggeredBy="#states-button">
+			<DropdownItem class="flex items-center">
+				<Usa />
+				United States (+1)
+			</DropdownItem>
+			<DropdownItem class="flex items-center">
+				<Germany />
+				Germany (+49)
+			</DropdownItem>
+			<DropdownItem class="flex items-center">
+				<Italy />
+				Italy (+39)
+			</DropdownItem>
+			<DropdownItem class="flex items-center">
+				<China />
+				China (+86)
+			</DropdownItem>
+		</Dropdown>
+		<Label for="phone-input" class="sr-only">Phone number:</Label>
+		<div class="relative w-full">
+			<PhoneInput phoneIcon={false} placeholder="123-456-7890" required phoneType="countryCode" />
+		</div>
+	</div>
+	<Helper class="mt-2 text-sm">We will send you an SMS with a verification code.</Helper>
+	<Button class="my-2 w-full text-sm">Send verification code</Button>
 </form>

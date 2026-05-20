@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { A, Heading, Span } from '$lib'
+  import { A, Heading, Span } from 's-ui'
 
   const components = 'Img'
 </script>
@@ -21,7 +21,7 @@ Get started with a collection of responsive image components coded with the util
 
 ```html
 <script lang="ts">
-  import { Img } from "$lib";
+  import { Img } from "s-ui";
 </script>
 ```
 

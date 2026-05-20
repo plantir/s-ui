@@ -69,9 +69,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1356)
+[RatingProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1356)
 ## Props
 @prop children
 @prop text

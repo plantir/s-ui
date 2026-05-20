@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { Select, Label } from "$lib";
-  let countries = [
-    { value: "us", name: "United States" },
-    { value: "ca", name: "Canada" },
-    { value: "fr", name: "France" }
-  ];
+	import { Select, Label } from 's-ui';
+	let countries = [
+		{ value: 'us', name: 'United States' },
+		{ value: 'ca', name: 'Canada' },
+		{ value: 'fr', name: 'France' }
+	];
 
-  let clearableSelected = $state("");
+	let clearableSelected = $state('');
 </script>
 
 <Label>
-  Select an option
-  <Select class="mt-2" items={countries} bind:value={clearableSelected} clearable />
+	Select an option
+	<Select class="mt-2" items={countries} bind:value={clearableSelected} clearable />
 </Label>

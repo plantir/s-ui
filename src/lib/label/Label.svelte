@@ -1,29 +1,35 @@
 <script lang="ts">
-  import { label } from "./theme.js";
-  import clsx from "clsx";
-  import type { LabelProps } from "$lib/types.js";
-  import { getTheme } from "$lib/theme/themeUtils";
+	import { label } from './theme.js';
+	import clsx from 'clsx';
+	import type { LabelProps } from '$lib/types.js';
+	import { getTheme } from '$lib/theme/themeUtils';
 
-  let { children, color = "gray", show = true, class: className, ...restProps }: LabelProps = $props();
+	let {
+		children,
+		color = 'gray',
+		show = true,
+		class: className,
+		...restProps
+	}: LabelProps = $props();
 
-  const theme = $derived(getTheme("label"));
+	const theme = $derived(getTheme('label'));
 
-  let base = $derived(label({ color, class: clsx(theme, className) }));
+	let base = $derived(label({ color, class: clsx(theme, className) }));
 </script>
 
 {#if show}
-  <label {...restProps} class={base}>
-    {@render children()}
-  </label>
+	<label {...restProps} class={base}>
+		{@render children()}
+	</label>
 {:else}
-  {@render children()}
+	{@render children()}
 {/if}
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L906)
+[LabelProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L906)
 ## Props
 @prop children
 @prop color = "gray"

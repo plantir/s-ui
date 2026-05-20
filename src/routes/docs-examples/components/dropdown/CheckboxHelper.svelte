@@ -1,20 +1,20 @@
 <script lang="ts">
-  import { Button, Dropdown, Checkbox, Helper } from "$lib";
-  import { ChevronDownOutline } from "flowbite-svelte-icons";
+	import { Button, Dropdown, Checkbox, Helper } from 's-ui';
+	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white" /></Button>
 <Dropdown simple class="w-60 space-y-1 p-3 text-sm">
-  <li class="hover:bg-neutral-tertiary-medium rounded-sm p-2">
-    <Checkbox>Enable notifications</Checkbox>
-    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-  </li>
-  <li class="hover:bg-neutral-tertiary-medium rounded-sm p-2">
-    <Checkbox checked>Enable 2FA auth</Checkbox>
-    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-  </li>
-  <li class="hover:bg-neutral-tertiary-medium rounded-sm p-2">
-    <Checkbox>Subscribe newsletter</Checkbox>
-    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-  </li>
+	<li class="rounded-sm p-2 hover:bg-neutral-tertiary-medium">
+		<Checkbox>Enable notifications</Checkbox>
+		<Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+	</li>
+	<li class="rounded-sm p-2 hover:bg-neutral-tertiary-medium">
+		<Checkbox checked>Enable 2FA auth</Checkbox>
+		<Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+	</li>
+	<li class="rounded-sm p-2 hover:bg-neutral-tertiary-medium">
+		<Checkbox>Subscribe newsletter</Checkbox>
+		<Helper class="ps-6">Some helpful instruction goes over here.</Helper>
+	</li>
 </Dropdown>

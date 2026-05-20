@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Breadcrumb, BreadcrumbItem } from "$lib";
+	import { Breadcrumb, BreadcrumbItem } from 's-ui';
 </script>
 
 <Breadcrumb aria-label="Default breadcrumb example">
-  <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
-  <BreadcrumbItem href="/">Projects</BreadcrumbItem>
-  <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
+	<BreadcrumbItem href="/" home>Home</BreadcrumbItem>
+	<BreadcrumbItem href="/">Projects</BreadcrumbItem>
+	<BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
 </Breadcrumb>

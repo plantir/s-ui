@@ -9,7 +9,7 @@ description: Use the step indicator component to show the progress of a process.
 
 <script lang="ts">
   import {  TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const components = 'StepIndicator'
 </script>
 
@@ -21,7 +21,7 @@ Import the `StepIndicator` component in a script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { StepIndicator } from "$lib";
+  import { StepIndicator } from "s-ui";
 </script>
 ```
 

@@ -1,30 +1,30 @@
 <script lang="ts">
-  import type { CheckIconProps } from "$lib/types.js";
-  import clsx from "clsx";
-  let { class: className, ...restProps }: CheckIconProps = $props();
+	import type { CheckIconProps } from '$lib/types.js';
+	import clsx from 'clsx';
+	let { class: className, ...restProps }: CheckIconProps = $props();
 </script>
 
 <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="16"
-  height="16"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  class={clsx(className)}
-  {...restProps}
+	xmlns="http://www.w3.org/2000/svg"
+	width="16"
+	height="16"
+	viewBox="0 0 24 24"
+	fill="none"
+	stroke="currentColor"
+	stroke-width="2"
+	stroke-linecap="round"
+	stroke-linejoin="round"
+	class={clsx(className)}
+	{...restProps}
 >
-  <polyline points="20 6 9 17 4 12"></polyline>
+	<polyline points="20 6 9 17 4 12"></polyline>
 </svg>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[CheckIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L458)
+[CheckIconProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L458)
 ## Props
 @prop class: className
 @prop ...restProps

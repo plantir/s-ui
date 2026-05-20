@@ -62,9 +62,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1224)
+[NavLiProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1224)
 ## Props
 @prop children
 @prop onclick

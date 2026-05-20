@@ -1,27 +1,36 @@
 <script lang="ts">
-  import type { VideoProps } from "$lib/types.js";
-  import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+	import type { VideoProps } from '$lib/types.js';
+	import clsx from 'clsx';
+	import { getTheme } from '$lib/theme/themeUtils';
 
-  let { children, type = "video/mp4", trackSrc, src, srclang = "en", label = "english_captions", class: classname, ...restProps }: VideoProps = $props();
+	let {
+		children,
+		type = 'video/mp4',
+		trackSrc,
+		src,
+		srclang = 'en',
+		label = 'english_captions',
+		class: classname,
+		...restProps
+	}: VideoProps = $props();
 
-  const theme = $derived(getTheme("span"));
+	const theme = $derived(getTheme('span'));
 </script>
 
 <video {...restProps} class={clsx(theme, classname)}>
-  <source {src} {type} />
-  {#if children}
-    {@render children()}
-  {/if}
-  <track src={trackSrc} kind="captions" {srclang} {label} />
-  Your browser does not support the video tag.
+	<source {src} {type} />
+	{#if children}
+		{@render children()}
+	{/if}
+	<track src={trackSrc} kind="captions" {srclang} {label} />
+	Your browser does not support the video tag.
 </video>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2151)
+[VideoProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L2151)
 ## Props
 @prop children
 @prop type = "video/mp4"

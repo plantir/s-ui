@@ -1,44 +1,53 @@
 <script lang="ts">
-  import { group } from "./theme.js";
-  import type { GroupProps } from "$lib/types.js";
-  import clsx from "clsx";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+	import { group } from './theme.js';
+	import type { GroupProps } from '$lib/types.js';
+	import clsx from 'clsx';
+	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
+	import { untrack } from 'svelte';
 
-  let { children, divClass, timeClass, date, olClass, class: className, classes, ...restProps }: GroupProps = $props();
+	let {
+		children,
+		divClass,
+		timeClass,
+		date,
+		olClass,
+		class: className,
+		classes,
+		...restProps
+	}: GroupProps = $props();
 
-  warnThemeDeprecation(
-    "Group",
-    untrack(() => ({ divClass, timeClass, olClass })),
-    {
-      divClass: "class",
-      timeClass: "time",
-      olClass: "ol"
-    }
-  );
+	warnThemeDeprecation(
+		'Group',
+		untrack(() => ({ divClass, timeClass, olClass })),
+		{
+			divClass: 'class',
+			timeClass: 'time',
+			olClass: 'ol'
+		}
+	);
 
-  const styling = $derived({
-    time: timeClass,
-    ol: olClass
-  });
+	const styling = $derived({
+		time: timeClass,
+		ol: olClass
+	});
 
-  const theme = $derived(getTheme("group"));
+	const theme = $derived(getTheme('group'));
 
-  const { div, time, ol } = $derived(group());
+	const { div, time, ol } = $derived(group());
 </script>
 
 <div class={div({ class: clsx(theme?.div, className ?? divClass) })}>
-  <time class={time({ class: clsx(theme?.time, styling.time) })}>{date}</time>
-  <ol {...restProps} class={ol({ class: clsx(theme?.ol, styling.ol) })}>
-    {@render children()}
-  </ol>
+	<time class={time({ class: clsx(theme?.time, styling.time) })}>{date}</time>
+	<ol {...restProps} class={ol({ class: clsx(theme?.ol, styling.ol) })}>
+		{@render children()}
+	</ol>
 </div>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1924)
+[GroupProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1924)
 ## Props
 @prop children
 @prop divClass

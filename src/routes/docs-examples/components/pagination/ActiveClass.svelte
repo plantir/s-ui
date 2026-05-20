@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { PaginationNav } from "$lib";
+	import { PaginationNav } from 's-ui';
 
-  let currentPage = $state(1);
-  const totalPages = 20;
+	let currentPage = $state(1);
+	const totalPages = 20;
 
-  function handlePageChange(page: number) {
-    currentPage = page;
-    // Additional logic here
-    console.log("Page changed to:", page);
-  }
+	function handlePageChange(page: number) {
+		currentPage = page;
+		// Additional logic here
+		console.log('Page changed to:', page);
+	}
 </script>
 
 <PaginationNav
-  {currentPage}
-  {totalPages}
-  onPageChange={handlePageChange}
-  classes={{
-    active: "bg-success-soft text-fg-success"
-  }}
+	{currentPage}
+	{totalPages}
+	onPageChange={handlePageChange}
+	classes={{
+		active: 'bg-success-soft text-fg-success'
+	}}
 />

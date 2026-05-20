@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Radio } from "$lib";
-  let inline2 = $state("third");
+	import { Radio } from 's-ui';
+	let inline2 = $state('third');
 </script>
 
 <Radio bind:group={inline2} inline value="first" class="me-2">Inline 1</Radio>

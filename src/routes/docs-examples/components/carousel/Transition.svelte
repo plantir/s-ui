@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { Carousel, Controls, CarouselIndicators } from "$lib";
-  import images from "./imageData/images.json";
-  import { scale } from "svelte/transition";
-  import { quintOut } from "svelte/easing";
+	import { Carousel, Controls, CarouselIndicators } from 's-ui';
+	import images from './imageData/images.json';
+	import { scale } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
-  const scaleAnimation = (node: HTMLElement) => scale(node, { duration: 500, easing: quintOut });
+	const scaleAnimation = (node: HTMLElement) => scale(node, { duration: 500, easing: quintOut });
 </script>
 
 <div class="max-w-4xl">
-  <Carousel {images} transition={scaleAnimation}>
-    <Controls />
-    <CarouselIndicators />
-  </Carousel>
+	<Carousel {images} transition={scaleAnimation}>
+		<Controls />
+		<CarouselIndicators />
+	</Carousel>
 </div>

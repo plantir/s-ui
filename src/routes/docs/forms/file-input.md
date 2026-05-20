@@ -10,7 +10,7 @@ thumbnailSize: w-48
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { Table } from '$lib'
+  import { Table } from 's-ui'
 
   const migration = [
     {v1: "close", v2: "closeIcon"},
@@ -25,7 +25,7 @@ The file input component can be used to upload one or more files from the device
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Fileupload } from "$lib";
+  import { Fileupload } from "s-ui";
 </script>
 ```
 

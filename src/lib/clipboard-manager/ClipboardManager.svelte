@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Modal } from '$lib';
+	import { Badge, Modal } from 's-ui';
 	import { formatDistanceToNow } from 'date-fns';
 	import { clipboardManager } from './theme.js';
 	import type { ClipboardItem, ClipboardManagerProps } from '$lib/types.js';

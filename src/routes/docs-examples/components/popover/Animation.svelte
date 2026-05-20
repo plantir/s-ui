@@ -1,11 +1,25 @@
 <script lang="ts">
-  import { Popover, Button } from "$lib";
-  import { blur, fade, slide } from "svelte/transition";
+	import { Popover, Button } from 's-ui';
+	import { blur, fade, slide } from 'svelte/transition';
 </script>
 
 <Button>Fade popover</Button>
-<Popover class="w-64 text-sm font-light" title="Popover title" transition={fade} transitionParams={{ duration: 1000 }}>And here's some amazing content. It's very engaging. Right?</Popover>
+<Popover
+	class="w-64 text-sm font-light"
+	title="Popover title"
+	transition={fade}
+	transitionParams={{ duration: 1000 }}
+	>And here's some amazing content. It's very engaging. Right?</Popover
+>
 <Button>Blur popover</Button>
-<Popover class="w-64 text-sm font-light" title="Popover title" transition={blur} transitionParams={{ duration: 1000 }}>And here's some amazing content. It's very engaging. Right?</Popover>
+<Popover
+	class="w-64 text-sm font-light"
+	title="Popover title"
+	transition={blur}
+	transitionParams={{ duration: 1000 }}
+	>And here's some amazing content. It's very engaging. Right?</Popover
+>
 <Button>Slide popover</Button>
-<Popover class="w-64 text-sm font-light" title="Popover title" transition={slide}>And here's some amazing content. It's very engaging. Right?</Popover>
+<Popover class="w-64 text-sm font-light" title="Popover title" transition={slide}
+	>And here's some amazing content. It's very engaging. Right?</Popover
+>

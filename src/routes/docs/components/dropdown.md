@@ -10,7 +10,7 @@ thumbnailSize: w-28
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { Badge, P, A } from '$lib'
+  import { Badge, P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -20,7 +20,7 @@ The dropdown component can be used to show a list of menu items when clicking on
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from "$lib";
+  import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from "s-ui";
 </script>
 ```
 

@@ -1,23 +1,23 @@
 <script lang="ts">
-  import { Alert, Button } from "$lib";
-  let alertStatus = $state(true);
+	import { Alert, Button } from 's-ui';
+	let alertStatus = $state(true);
 
-  const closeAlert = () => {
-    alertStatus = false;
-  };
+	const closeAlert = () => {
+		alertStatus = false;
+	};
 
-  const showAlert = () => {
-    alertStatus = true;
-  };
+	const showAlert = () => {
+		alertStatus = true;
+	};
 </script>
 
 {#if alertStatus}
-  <Alert dismissable onclick={closeAlert}>
-    <span class="font-medium">Info alert!</span>
-    You can close this alert by clicking the close button.
-  </Alert>
+	<Alert dismissable onclick={closeAlert}>
+		<span class="font-medium">Info alert!</span>
+		You can close this alert by clicking the close button.
+	</Alert>
 {:else}
-  <div class="mt-4">
-    <Button onclick={showAlert}>Show Alert Again</Button>
-  </div>
+	<div class="mt-4">
+		<Button onclick={showAlert}>Show Alert Again</Button>
+	</div>
 {/if}

@@ -11,7 +11,7 @@ thumbnailSize: w-72
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
   import { onMount } from 'svelte';
-  import { Toggle } from '$lib'
+  import { Toggle } from 's-ui'
 
   const components = 'Toggle'
 </script>
@@ -22,7 +22,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Toggle } from "$lib";
+  import { Toggle } from "s-ui";
 </script>
 ```
 

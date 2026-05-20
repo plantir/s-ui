@@ -15,9 +15,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L760)
+[FooterLinkGroupProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L760)
 ## Props
 @prop class: className
 @prop children

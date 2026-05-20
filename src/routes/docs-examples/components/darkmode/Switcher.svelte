@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { DarkMode } from "$lib";
+	import { DarkMode } from 's-ui';
 </script>
 
-<DarkMode class="text-fg-brand border-default border" />
+<DarkMode class="border border-default text-fg-brand" />

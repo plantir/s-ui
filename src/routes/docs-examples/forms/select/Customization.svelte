@@ -1,20 +1,26 @@
 <script lang="ts">
-  import { MultiSelect, Badge, type SelectOptionType } from "$lib";
+	import { MultiSelect, Badge, type SelectOptionType } from 's-ui';
 
-  let selected: string[] = [];
-  let countries: SelectOptionType<string>[] = [
-    { value: "us", name: "United States", color: "indigo" },
-    { value: "ca", name: "Canada", color: "green" },
-    { value: "fr", name: "France", color: "blue" },
-    { value: "jp", name: "Japan", color: "red" },
-    { value: "en", name: "England", color: "yellow" }
-  ];
+	let selected: string[] = [];
+	let countries: SelectOptionType<string>[] = [
+		{ value: 'us', name: 'United States', color: 'indigo' },
+		{ value: 'ca', name: 'Canada', color: 'green' },
+		{ value: 'fr', name: 'France', color: 'blue' },
+		{ value: 'jp', name: 'Japan', color: 'red' },
+		{ value: 'en', name: 'England', color: 'yellow' }
+	];
 </script>
 
 <MultiSelect items={countries} value={selected}>
-  {#snippet children({ item, clear })}
-    <Badge color={item.color} dismissable transitionParams={{ duration: 100 }} onclose={clear} class="mx-0.5">
-      {item.name}
-    </Badge>
-  {/snippet}
+	{#snippet children({ item, clear })}
+		<Badge
+			color={item.color}
+			dismissable
+			transitionParams={{ duration: 100 }}
+			onclose={clear}
+			class="mx-0.5"
+		>
+			{item.name}
+		</Badge>
+	{/snippet}
 </MultiSelect>

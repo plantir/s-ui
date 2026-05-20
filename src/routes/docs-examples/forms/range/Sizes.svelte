@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Range, Label } from "$lib";
+	import { Range, Label } from 's-ui';
 </script>
 
 <Label>Small range</Label>

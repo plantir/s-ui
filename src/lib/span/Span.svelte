@@ -1,40 +1,53 @@
 <script lang="ts">
-  import clsx from "clsx";
-  import { span } from "./theme.js";
-  import type { SpanProps } from "$lib/types.js";
-  import { getTheme } from "$lib/theme/themeUtils";
+	import clsx from 'clsx';
+	import { span } from './theme.js';
+	import type { SpanProps } from '$lib/types.js';
+	import { getTheme } from '$lib/theme/themeUtils';
 
-  let { children, class: className, italic, underline, linethrough, uppercase, gradient, highlight, decoration, decorationColor, decorationThickness, ...restProps }: SpanProps = $props();
+	let {
+		children,
+		class: className,
+		italic,
+		underline,
+		linethrough,
+		uppercase,
+		gradient,
+		highlight,
+		decoration,
+		decorationColor,
+		decorationThickness,
+		...restProps
+	}: SpanProps = $props();
 
-  const theme = $derived(getTheme("span"));
+	const theme = $derived(getTheme('span'));
 
-  let classSpan = $derived(
-    span({
-      italic,
-      underline,
-      linethrough,
-      uppercase,
-      gradient,
-      highlight,
-      decoration,
-      decorationColor,
-      decorationThickness,
-      class: clsx(theme, className)
-    })
-  );
+	let classSpan = $derived(
+		span({
+			italic,
+			underline,
+			linethrough,
+			uppercase,
+			gradient,
+			highlight,
+			decoration,
+			decorationColor,
+			decorationThickness,
+			class: clsx(theme, className)
+		})
+	);
 </script>
 
 <span {...restProps} class={classSpan}>
-  {#if children}
-    {@render children()}
-  {/if}
+	{#if children}
+		{@render children()}
+	{/if}
 </span>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[SpanProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2142)
+[SpanProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L2142)
 ## Props
 @prop children
 @prop class: className

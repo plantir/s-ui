@@ -10,7 +10,7 @@ description: A virtualized Svelte component rendering an efficient masonry/Pinte
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
 
   const components = 'VirtualMasonry'
   const relatedLinks = ['/docs/components/gallery']
@@ -20,13 +20,13 @@ description: A virtualized Svelte component rendering an efficient masonry/Pinte
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { VirtualMasonry } from "$lib";
+  import { VirtualMasonry } from "s-ui";
 </script>
 ```
 
 ## Usage Examples
 
-See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.com/themesberg/flowbite-svelte/tree/main/src/routes/docs-examples/extend/virtual-masonry).
+See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.com/themesberg/s-ui/tree/main/src/routes/docs-examples/extend/virtual-masonry).
 
 ## See also
 

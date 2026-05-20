@@ -122,9 +122,9 @@ The `current` prop is 1-based:
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1747)
+[TimelineStepperProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1747)
 ## Props
 @prop steps = []
 @prop class: className

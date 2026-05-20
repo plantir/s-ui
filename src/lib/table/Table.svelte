@@ -85,9 +85,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1782)
+[TableProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1782)
 ## Props
 @prop children
 @prop footerSlot

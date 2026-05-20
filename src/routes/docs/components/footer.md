@@ -9,7 +9,7 @@ description: Use the footer section at the bottom of every page to show valuable
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A, Footer } from '$lib'
+  import { P, A, Footer } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -19,7 +19,7 @@ The footer is one of the most underestimated sections of a website being located
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "$lib";
+  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "s-ui";
 </script>
 ```
 

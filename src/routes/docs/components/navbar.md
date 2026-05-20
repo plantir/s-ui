@@ -9,7 +9,7 @@ description: The navbar component can be used to show a list of navigation links
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { Badge, Heading, P, A } from '$lib';
+  import { Badge, Heading, P, A } from 's-ui';
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -19,7 +19,7 @@ Get started with the responsive navbar component from Flowbite to quickly set up
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "$lib";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "s-ui";
 </script>
 ```
 

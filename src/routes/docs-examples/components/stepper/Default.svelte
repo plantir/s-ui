@@ -1,46 +1,46 @@
 <script lang="ts">
-  import { Stepper } from "$lib";
-  import { CheckOutline } from "flowbite-svelte-icons";
+	import { Stepper } from 's-ui';
+	import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Stepper
-  steps={[
-    {
-      id: 1,
-      label: "Personal",
-      description: "Info",
-      status: "completed"
-    },
-    {
-      id: 2,
-      label: "Account",
-      description: "Info",
-      status: "current"
-    },
-    {
-      id: 3,
-      label: "Confirmation",
-      status: "pending"
-    }
-  ]}
+	steps={[
+		{
+			id: 1,
+			label: 'Personal',
+			description: 'Info',
+			status: 'completed'
+		},
+		{
+			id: 2,
+			label: 'Account',
+			description: 'Info',
+			status: 'current'
+		},
+		{
+			id: 3,
+			label: 'Confirmation',
+			status: 'pending'
+		}
+	]}
 />
 
 <Stepper
-  steps={[
-    {
-      label: "Personal",
-      description: "Info",
-      status: "completed",
-      icon: CheckOutline
-    },
-    {
-      label: "Account",
-      description: "Info",
-      status: "current"
-    },
-    {
-      label: "Confirmation",
-      status: "pending"
-    }
-  ]}
+	steps={[
+		{
+			label: 'Personal',
+			description: 'Info',
+			status: 'completed',
+			icon: CheckOutline
+		},
+		{
+			label: 'Account',
+			description: 'Info',
+			status: 'current'
+		},
+		{
+			label: 'Confirmation',
+			status: 'pending'
+		}
+	]}
 />

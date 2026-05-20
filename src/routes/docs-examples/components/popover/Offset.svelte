@@ -1,6 +1,8 @@
 <script lang="ts">
-  import { Popover, Button } from "$lib";
+	import { Popover, Button } from 's-ui';
 </script>
 
 <Button>Default popover</Button>
-<Popover offset={30} class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
+<Popover offset={30} class="w-64 text-sm font-light" title="Popover title"
+	>And here's some amazing content. It's very engaging. Right?</Popover
+>

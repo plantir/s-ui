@@ -8,7 +8,7 @@ description: Svelte Snapshot with Flowbite svelte
 ---
 
 <script lang="ts">
-  import { Input, Label, A } from '$lib';
+  import { Input, Label, A } from 's-ui';
 
   let formData = {
     first_name: '',

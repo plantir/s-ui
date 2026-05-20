@@ -10,7 +10,7 @@ thumbnailSize: w-40
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -20,7 +20,7 @@ The KBD (Keyboard) component can be used to indicate a textual user input from t
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Kbd } from "$lib";
+  import { Kbd } from "s-ui";
 </script>
 ```
 

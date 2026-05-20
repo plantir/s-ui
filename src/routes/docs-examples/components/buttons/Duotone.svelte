@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { GradientButton } from "$lib";
+	import { GradientButton } from 's-ui';
 </script>
 
 <GradientButton color="purpleToBlue">Purple to Blue</GradientButton>

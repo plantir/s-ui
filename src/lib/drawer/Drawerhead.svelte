@@ -58,9 +58,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L686)
+[DrawerheadProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L686)
 ## Props
 @prop closeIcon
 @prop children

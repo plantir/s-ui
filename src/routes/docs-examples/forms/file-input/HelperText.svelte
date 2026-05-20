@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Fileupload, Label, Helper } from "$lib";
+	import { Fileupload, Label, Helper } from 's-ui';
 </script>
 
 <Label for="with_helper" class="pb-2">Upload file</Label>

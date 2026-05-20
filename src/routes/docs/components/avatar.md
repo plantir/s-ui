@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink, Seealso } from '../../utils'
-  import { P, A } from 'flowbite-svelte'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
   const relatedLinks = [
     '/docs/components/badge',
@@ -30,7 +30,7 @@ Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `Dropdow
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, Tooltip } from "$lib";
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, Tooltip } from "s-ui";
 </script>
 ```
 

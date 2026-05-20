@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Star } from "$lib";
+	import { Star } from 's-ui';
 </script>
 
 <Star size={30} iconIndex={0} fillPercent={0} />

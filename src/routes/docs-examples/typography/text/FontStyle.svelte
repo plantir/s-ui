@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { P } from "$lib";
+	import { P } from 's-ui';
 </script>
 
-<P class="text-heading text-lg font-medium" italic>The crypto identity primitive.</P>
+<P class="text-lg font-medium text-heading" italic>The crypto identity primitive.</P>
 
-<P class="text-heading text-lg font-medium">The crypto identity primitive.</P>
+<P class="text-lg font-medium text-heading">The crypto identity primitive.</P>

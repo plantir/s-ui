@@ -4,7 +4,7 @@ title: Svelte Charts - Flowbite
 breadcrumb_title: Svelte Charts
 component_title: Charts
 dir: components
-description: Use the chart and graph components from flowbite-svelte built with Tailwind CSS and ApexCharts to choose from line, area, bar, column, pie, and radial charts
+description: Use the chart and graph components from s-ui built with Tailwind CSS and ApexCharts to choose from line, area, bar, column, pie, and radial charts
 ---
 
 <script lang="ts">
@@ -13,7 +13,7 @@ description: Use the chart and graph components from flowbite-svelte built with 
   import componentData2 from '../../component-data/Card.json'
   const components = 'Chart'
 
-  import { Badge, P } from "$lib"
+  import { Badge, P } from "s-ui"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -24,7 +24,7 @@ description: Use the chart and graph components from flowbite-svelte built with 
       <span class="sr-only">Info Circle</span>
     </span>
     <span>
-      Flowbite-Svelte Chart component will be deprecated in the next version. Please use @flowbite-svelte-plugins/chart.
+      s-ui Chart component will be deprecated in the next version. Please use @flowbite-svelte-plugins/chart.
     </span>
   </P>
 </Badge>
@@ -49,7 +49,7 @@ Use this example to show a basic area chart.
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem } from "$lib";
+  import { Card, A, Button, Dropdown, DropdownItem } from "s-ui";
   import { ChevronRightOutline, ChevronDownOutline } from "flowbite-svelte-icons";
 
   let options: ApexOptions = {
@@ -158,7 +158,7 @@ To create a double line chart check the example below.
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem, Popover } from "$lib";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover } from "s-ui";
   import { InfoCircleSolid, ChevronRightOutline, ChevronDownOutline, FileLinesSolid } from "flowbite-svelte-icons";
 
   let options: ApexOptions = {
@@ -302,7 +302,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem } from "$lib";
+  import { Card, A, Button, Dropdown, DropdownItem } from "s-ui";
   import { UsersGroupOutline, ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   const options: ApexOptions = {
@@ -466,7 +466,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem } from "$lib";
+  import { Card, A, Button, Dropdown, DropdownItem } from "s-ui";
   import { ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   const options: ApexOptions = {
@@ -611,7 +611,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem, Popover } from "$lib";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover } from "s-ui";
   import { InfoCircleSolid, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid, TrashBinSolid, DotsHorizontalOutline } from "flowbite-svelte-icons";
 
   const options: ApexOptions = {
@@ -723,7 +723,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "$lib";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "s-ui";
   import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   const options: ApexOptions = {
@@ -860,7 +860,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
 <script lang="ts">
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
-  import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "$lib";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "s-ui";
   import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   let isOpen = false;
@@ -1013,7 +1013,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
   import type { ApexOptions } from "apexcharts";
   import { Chart } from "@flowbite-svelte-plugins/chart";
   import { onMount, onDestroy } from "svelte";
-  import { Card } from "$lib";
+  import { Card } from "s-ui";
 
   const initialData = [6500, 6418, 6456, 6526, 6356, 6456];
   const alternateData = [5500, 5418, 5456, 4526, 4356, 3456];
@@ -1082,13 +1082,13 @@ To create a radial chart with multiple data entries you need to set the type: "r
 
 ## Component data
 
-The component has the following props, type, and default values. See [types page](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/types.ts) for type information.
+The component has the following props, type, and default values. See [types page](https://github.com/shinokada/s-ui-plugins/blob/main/apps/s-ui-chart/src/lib/types.ts) for type information.
 
 <CompoAttributesViewer {components} plugin="chart"/>
 
 ## References
 
-- [@flowbite-svelte-plugins/chart](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/Chart.svelte)
+- [@flowbite-svelte-plugins/chart](https://github.com/shinokada/s-ui-plugins/blob/main/apps/s-ui-chart/src/lib/Chart.svelte)
 
 ## LLM Link
 

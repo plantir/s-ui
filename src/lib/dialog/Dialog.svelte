@@ -181,9 +181,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[DialogProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L662)
+[DialogProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L662)
 ## Props
 @prop children
 @prop onaction = ()

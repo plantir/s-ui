@@ -82,9 +82,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1129)
+[ListgroupProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1129)
 ## Props
 @prop children
 @prop items

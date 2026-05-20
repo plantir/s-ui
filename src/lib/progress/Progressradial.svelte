@@ -110,9 +110,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1327)
+[ProgressradialProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1327)
 ## Props
 @prop progress = 45
 @prop radius = 42

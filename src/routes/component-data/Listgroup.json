@@ -1,18 +1,18 @@
 {
-  "name": "Listgroup",
-  "type": {
-    "name": "ListgroupProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1036"
-  },
-  "props": [
-    ["children", ""],
-    ["items", ""],
-    ["active", ""],
-    ["onclick", ""],
-    ["horizontal", ""],
-    ["rounded", ""],
-    ["border", ""],
-    ["class: className", ""],
-    ["classes", ""]
-  ]
+	"name": "Listgroup",
+	"type": {
+		"name": "ListgroupProps",
+		"link": "https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1036"
+	},
+	"props": [
+		["children", ""],
+		["items", ""],
+		["active", ""],
+		["onclick", ""],
+		["horizontal", ""],
+		["rounded", ""],
+		["border", ""],
+		["class: className", ""],
+		["classes", ""]
+	]
 }

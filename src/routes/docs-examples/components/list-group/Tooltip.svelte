@@ -1,27 +1,27 @@
 <script lang="ts">
-  import { Listgroup, ListgroupItem, Tooltip } from "$lib";
-  import { BellOutline, ClockOutline, TrashBinOutline } from "flowbite-svelte-icons";
+	import { Listgroup, ListgroupItem, Tooltip } from 's-ui';
+	import { BellOutline, ClockOutline, TrashBinOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Listgroup horizontal active>
-  <ListgroupItem>
-    <BellOutline />
-  </ListgroupItem>
-  <Tooltip>Tooltip bell</Tooltip>
-  <ListgroupItem>
-    <ClockOutline />
-  </ListgroupItem>
-  <Tooltip>Tooltip clock</Tooltip>
-  <ListgroupItem id="trash">
-    <TrashBinOutline />
-  </ListgroupItem>
+	<ListgroupItem>
+		<BellOutline />
+	</ListgroupItem>
+	<Tooltip>Tooltip bell</Tooltip>
+	<ListgroupItem>
+		<ClockOutline />
+	</ListgroupItem>
+	<Tooltip>Tooltip clock</Tooltip>
+	<ListgroupItem id="trash">
+		<TrashBinOutline />
+	</ListgroupItem>
 </Listgroup>
 <Tooltip triggeredBy="#trash">Tooltip trash</Tooltip>
 
 <Listgroup horizontal active>
-  <ListgroupItem id="profile">Profile</ListgroupItem>
-  <ListgroupItem id="settings">Settings</ListgroupItem>
-  <ListgroupItem id="message">Messages</ListgroupItem>
+	<ListgroupItem id="profile">Profile</ListgroupItem>
+	<ListgroupItem id="settings">Settings</ListgroupItem>
+	<ListgroupItem id="message">Messages</ListgroupItem>
 </Listgroup>
 <Tooltip triggeredBy="#profile">Tooltip profile</Tooltip>
 <Tooltip triggeredBy="#settings">Tooltip settings</Tooltip>

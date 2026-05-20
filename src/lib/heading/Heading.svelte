@@ -1,25 +1,25 @@
 <script lang="ts">
-  import clsx from "clsx";
-  import { heading } from "./theme.js";
-  import type { HeadingProps } from "$lib/types.js";
-  import { getTheme } from "$lib/theme/themeUtils";
+	import clsx from 'clsx';
+	import { heading } from './theme.js';
+	import type { HeadingProps } from '$lib/types.js';
+	import { getTheme } from '$lib/theme/themeUtils';
 
-  let { children, tag = "h1", class: className, ...restProps }: HeadingProps = $props();
+	let { children, tag = 'h1', class: className, ...restProps }: HeadingProps = $props();
 
-  const theme = $derived(getTheme("heading"));
+	const theme = $derived(getTheme('heading'));
 
-  let headingCls = $derived(heading({ tag, class: clsx(theme, className) }));
+	let headingCls = $derived(heading({ tag, class: clsx(theme, className) }));
 </script>
 
 <svelte:element this={tag} {...restProps} class={headingCls}>
-  {@render children()}
+	{@render children()}
 </svelte:element>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2050)
+[HeadingProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L2050)
 ## Props
 @prop children
 @prop tag = "h1"

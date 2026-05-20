@@ -1,49 +1,55 @@
 <script lang="ts">
-  import { Search, Button, Dropdown, DropdownItem } from "$lib";
-  import { SearchOutline, ChevronDownOutline } from "flowbite-svelte-icons";
+	import { Search, Button, Dropdown, DropdownItem } from 's-ui';
+	import { SearchOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
 
-  const items = [
-    {
-      label: "All categories"
-    },
-    {
-      label: "Mockups"
-    },
-    {
-      label: "Templates"
-    },
-    {
-      label: "Design"
-    },
-    {
-      label: "Logos"
-    }
-  ];
+	const items = [
+		{
+			label: 'All categories'
+		},
+		{
+			label: 'Mockups'
+		},
+		{
+			label: 'Templates'
+		},
+		{
+			label: 'Design'
+		},
+		{
+			label: 'Logos'
+		}
+	];
 
-  let selectCategory = $state("All categories");
+	let selectCategory = $state('All categories');
 </script>
 
 <form class="flex">
-  <div class="relative">
-    <Button class="bg-brand hover:bg-brand-strong rounded-e-none border border-e-0 border-transparent whitespace-nowrap text-white">
-      {selectCategory}
-      <ChevronDownOutline class="ms-2.5 h-6 w-6" />
-    </Button>
-    <Dropdown simple class="w-40">
-      {#each items as { label } (label)}
-        <DropdownItem
-          onclick={() => {
-            selectCategory = label;
-          }}
-          class={selectCategory === label ? "underline" : ""}
-        >
-          {label}
-        </DropdownItem>
-      {/each}
-    </Dropdown>
-  </div>
-  <Search size="lg" classes={{ input: "rounded-none py-2.5" }} placeholder="Search Mockups, Logos, Design Templates..." />
-  <Button class="rounded-s-none p-2!">
-    <SearchOutline class="h-6 w-6" />
-  </Button>
+	<div class="relative">
+		<Button
+			class="rounded-e-none border border-e-0 border-transparent bg-brand whitespace-nowrap text-white hover:bg-brand-strong"
+		>
+			{selectCategory}
+			<ChevronDownOutline class="ms-2.5 h-6 w-6" />
+		</Button>
+		<Dropdown simple class="w-40">
+			{#each items as { label } (label)}
+				<DropdownItem
+					onclick={() => {
+						selectCategory = label;
+					}}
+					class={selectCategory === label ? 'underline' : ''}
+				>
+					{label}
+				</DropdownItem>
+			{/each}
+		</Dropdown>
+	</div>
+	<Search
+		size="lg"
+		classes={{ input: 'rounded-none py-2.5' }}
+		placeholder="Search Mockups, Logos, Design Templates..."
+	/>
+	<Button class="rounded-s-none p-2!">
+		<SearchOutline class="h-6 w-6" />
+	</Button>
 </form>

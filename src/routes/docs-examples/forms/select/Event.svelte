@@ -1,25 +1,25 @@
 <script lang="ts">
-  import { Select, Label } from "$lib";
-  let countries = [
-    { value: "us", name: "United States" },
-    { value: "ca", name: "Canada" },
-    { value: "fr", name: "France" }
-  ];
-  let eventSelected = $state("");
+	import { Select, Label } from 's-ui';
+	let countries = [
+		{ value: 'us', name: 'United States' },
+		{ value: 'ca', name: 'Canada' },
+		{ value: 'fr', name: 'France' }
+	];
+	let eventSelected = $state('');
 </script>
 
 <Label>
-  Select an option
-  <Select
-    class="mt-2"
-    items={countries}
-    bind:value={eventSelected}
-    clearable
-    onClear={() => {
-      alert("Clicked clear button!");
-    }}
-    onchange={() => {
-      console.log("Changed select value:");
-    }}
-  />
+	Select an option
+	<Select
+		class="mt-2"
+		items={countries}
+		bind:value={eventSelected}
+		clearable
+		onClear={() => {
+			alert('Clicked clear button!');
+		}}
+		onchange={() => {
+			console.log('Changed select value:');
+		}}
+	/>
 </Label>

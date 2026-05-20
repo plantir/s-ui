@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Indicator } from "$lib";
+	import { Indicator } from 's-ui';
 </script>
 
 <Indicator />

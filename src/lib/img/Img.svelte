@@ -1,68 +1,80 @@
 <script lang="ts">
-  import clsx from "clsx";
-  import { img } from "./theme.js";
-  import type { ImgProps } from "$lib/types.js";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+	import clsx from 'clsx';
+	import { img } from './theme.js';
+	import type { ImgProps } from '$lib/types.js';
+	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
+	import { untrack } from 'svelte';
 
-  let { children, size, effect: imgEffect, align, caption, class: className, classes, figClass, captionClass, href, ...restProps }: ImgProps = $props();
+	let {
+		children,
+		size,
+		effect: imgEffect,
+		align,
+		caption,
+		class: className,
+		classes,
+		figClass,
+		captionClass,
+		href,
+		...restProps
+	}: ImgProps = $props();
 
-  warnThemeDeprecation(
-    "Img",
-    untrack(() => ({ figClass, captionClass })),
-    {
-      figClass: "figure",
-      captionClass: "caption"
-    }
-  );
+	warnThemeDeprecation(
+		'Img',
+		untrack(() => ({ figClass, captionClass })),
+		{
+			figClass: 'figure',
+			captionClass: 'caption'
+		}
+	);
 
-  const styling = $derived({
-    figure: figClass || classes?.figure,
-    caption: captionClass || classes?.caption
-  });
+	const styling = $derived({
+		figure: figClass || classes?.figure,
+		caption: captionClass || classes?.caption
+	});
 
-  const theme = $derived(getTheme("img"));
+	const theme = $derived(getTheme('img'));
 
-  let { base, figure, caption: figureCaption } = $derived(img({ size, effect: imgEffect, align }));
+	let { base, figure, caption: figureCaption } = $derived(img({ size, effect: imgEffect, align }));
 
-  // Determine if using slot or traditional props
-  const useSlot = $derived(!!children);
-  // Compute the final class string to pass to children
-  const imgClass = $derived(base({ class: clsx(theme?.base, className) }));
+	// Determine if using slot or traditional props
+	const useSlot = $derived(!!children);
+	// Compute the final class string to pass to children
+	const imgClass = $derived(base({ class: clsx(theme?.base, className) }));
 </script>
 
 {#snippet imageSlot()}
-  {#if caption}
-    <figure class={figure({ class: clsx(theme?.figure, styling.figure) })}>
-      {#if useSlot}
-        {@render children?.({ class: imgClass, restProps })}
-      {:else}
-        <img {...restProps} class={imgClass} />
-      {/if}
-      <figcaption class={figureCaption({ class: clsx(theme?.caption, styling.caption) })}>
-        {@html caption}
-      </figcaption>
-    </figure>
-  {:else if useSlot}
-    {@render children?.({ class: imgClass, restProps })}
-  {:else}
-    <img {...restProps} class={imgClass} />
-  {/if}
+	{#if caption}
+		<figure class={figure({ class: clsx(theme?.figure, styling.figure) })}>
+			{#if useSlot}
+				{@render children?.({ class: imgClass, restProps })}
+			{:else}
+				<img {...restProps} class={imgClass} />
+			{/if}
+			<figcaption class={figureCaption({ class: clsx(theme?.caption, styling.caption) })}>
+				{@html caption}
+			</figcaption>
+		</figure>
+	{:else if useSlot}
+		{@render children?.({ class: imgClass, restProps })}
+	{:else}
+		<img {...restProps} class={imgClass} />
+	{/if}
 {/snippet}
 
 {#if href}
-  <a {href}>
-    {@render imageSlot()}
-  </a>
+	<a {href}>
+		{@render imageSlot()}
+	</a>
 {:else}
-  {@render imageSlot()}
+	{@render imageSlot()}
 {/if}
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[ImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2081)
+[ImgProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L2081)
 ## Props
 @prop children
 @prop size

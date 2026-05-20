@@ -10,7 +10,7 @@ thumbnailSize: w-24
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso, LlmLink } from '../../utils'
-  import { Badge, P, A } from '$lib'
+  import { Badge, P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
  
   const relatedLinks = [
@@ -24,7 +24,7 @@ thumbnailSize: w-24
 
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
 
-flowbite-svelte provides a large variety of styles and sizes for the button component including outlined buttons, multiple colors, sizes, buttons with icons, and more.
+s-ui provides a large variety of styles and sizes for the button component including outlined buttons, multiple colors, sizes, buttons with icons, and more.
 
 ## Setup
 
@@ -32,7 +32,7 @@ Import a button component in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Button } from "$lib";
+  import { Button } from "s-ui";
 </script>
 ```
 

@@ -1,8 +1,19 @@
 <script lang="ts">
-  import { Progressradial, Button } from "$lib";
-  import { sineOut } from "svelte/easing";
-  let progress = $state(45);
+	import { Progressradial, Button } from 's-ui';
+	import { sineOut } from 'svelte/easing';
+	let progress = $state(45);
 </script>
 
-<Progressradial {progress} animate precision={1} labelOutside="Animation" labelInside tweenDuration={1000} easing={sineOut} classes={{ labelWrapper: "text-heading", label: "text-heading" }} />
-<Button onclick={() => (progress = Math.round(Math.random() * 100))} class="mx-auto mt-8 w-24">Randomize</Button>
+<Progressradial
+	{progress}
+	animate
+	precision={1}
+	labelOutside="Animation"
+	labelInside
+	tweenDuration={1000}
+	easing={sineOut}
+	classes={{ labelWrapper: 'text-heading', label: 'text-heading' }}
+/>
+<Button onclick={() => (progress = Math.round(Math.random() * 100))} class="mx-auto mt-8 w-24"
+	>Randomize</Button
+>

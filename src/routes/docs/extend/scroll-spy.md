@@ -10,7 +10,7 @@ description: A navigation component that tracks scroll position and highlights t
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
 
   const components = 'ScrollSpy'
   // const relatedLinks = [''];
@@ -20,13 +20,13 @@ description: A navigation component that tracks scroll position and highlights t
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ScrollSpy } from  'flowbite-svelte';
+  import { ScrollSpy } from 's-ui';
 </script>
 ```
 
 ## Usage Examples
 
-See [examples](/docs-examples/extend/scroll-spy) and [code](https://github.com/themesberg/flowbite-svelte/tree/main/src/routes/docs-examples/extend/scroll-spy).
+See [examples](/docs-examples/extend/scroll-spy) and [code](https://github.com/themesberg/s-ui/tree/main/src/routes/docs-examples/extend/scroll-spy).
 
 
 ## Component data

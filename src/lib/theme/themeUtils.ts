@@ -1,4 +1,4 @@
-import type { ThemeConfig } from '$lib';
+import type { ThemeConfig } from 's-ui';
 import { getThemeContext } from '$lib/context';
 import { BROWSER, DEV } from 'esm-env';
 import { writable } from 'svelte/store';

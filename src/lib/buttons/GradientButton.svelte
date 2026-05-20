@@ -1,37 +1,63 @@
 <script lang="ts">
-  import { gradientButton } from "./theme.js";
-  import clsx from "clsx";
-  import type { GradientButtonProps } from "../types.js";
-  import Button from "./Button.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
-  import { getButtonGroupContext } from "$lib/context";
+	import { gradientButton } from './theme.js';
+	import clsx from 'clsx';
+	import type { GradientButtonProps } from '../types.js';
+	import Button from './Button.svelte';
+	import { getTheme } from '$lib/theme/themeUtils';
+	import { getButtonGroupContext } from '$lib/context';
 
-  const group = getButtonGroupContext()?.size;
+	const group = getButtonGroupContext()?.size;
 
-  let { children, outline, pill, color = "blue", shadow, class: className, href, disabled, size, btnClass, ...restProps }: GradientButtonProps = $props();
+	let {
+		children,
+		outline,
+		pill,
+		color = 'blue',
+		shadow,
+		class: className,
+		href,
+		disabled,
+		size,
+		btnClass,
+		...restProps
+	}: GradientButtonProps = $props();
 
-  const theme = $derived(getTheme("gradientButton"));
+	const theme = $derived(getTheme('gradientButton'));
 
-  const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled, size, group: !!group }));
+	const { base, outlineWrapper } = $derived(
+		gradientButton({ color, outline, pill, shadow, disabled, size, group: !!group })
+	);
 </script>
 
 {#if outline}
-  <div class={base({ class: clsx(theme?.base, className) })}>
-    <Button {...restProps} class={outlineWrapper({ class: clsx(theme?.outlineWrapper, btnClass) })} {disabled} {href} {size}>
-      {@render children?.()}
-    </Button>
-  </div>
+	<div class={base({ class: clsx(theme?.base, className) })}>
+		<Button
+			{...restProps}
+			class={outlineWrapper({ class: clsx(theme?.outlineWrapper, btnClass) })}
+			{disabled}
+			{href}
+			{size}
+		>
+			{@render children?.()}
+		</Button>
+	</div>
 {:else}
-  <Button {...restProps} class={base({ class: clsx(theme?.base, className) })} {disabled} {href} {size}>
-    {@render children?.()}
-  </Button>
+	<Button
+		{...restProps}
+		class={base({ class: clsx(theme?.base, className) })}
+		{disabled}
+		{href}
+		{size}
+	>
+		{@render children?.()}
+	</Button>
 {/if}
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L340)
+[GradientButtonProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L340)
 ## Props
 @prop children
 @prop outline

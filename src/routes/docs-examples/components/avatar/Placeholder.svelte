@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Avatar } from "$lib";
+	import { Avatar } from 's-ui';
 </script>
 
 <Avatar />

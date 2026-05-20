@@ -4,12 +4,12 @@ breadcrumb_title: ThemeProvider - Flowbite Svelte
 title: ThemeProvider - Flowbite Svelte
 component_title: ThemeProvider
 dir: Pages
-description: The ThemeProvider component allows you to customize the styling of Flowbite-Svelte components by providing theme configurations through Svelte's context system. This enables consistent theming across your application and easy customization of component appearances.
+description: The ThemeProvider component allows you to customize the styling of s-ui components by providing theme configurations through Svelte's context system. This enables consistent theming across your application and easy customization of component appearances.
 ---
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, LlmLink } from '../../utils';
-  import { A, Img, P } from '$lib';
+  import { A, Img, P } from 's-ui';
 </script>
 
 ## How It Works
@@ -22,7 +22,7 @@ Wrap your components with ThemeProvider and pass a theme configuration object:
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ThemeProvider, Button, Card } from "$lib";
+  import { ThemeProvider, Button, Card } from "s-ui";
 
   const theme = {
     button: {
@@ -45,7 +45,7 @@ Wrap your components with ThemeProvider and pass a theme configuration object:
 
 ## Theme Configuration
 
-The theme configuration object allows you to customize individual components. Each component key corresponds to a Flowbite-Svelte component, and the value defines the styling overrides.
+The theme configuration object allows you to customize individual components. Each component key corresponds to a s-ui component, and the value defines the styling overrides.
 
 ## Component Theme Structure
 
@@ -127,7 +127,7 @@ import type {
   ButtonTheme,
   CardTheme.
   // ...
-} from "$lib";
+} from "s-ui";
 ```
 
 ## Nested ThemeProvider and Component Classes
@@ -138,7 +138,7 @@ Component classes, when defined directly on a component, will always take preced
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ThemeProvider, Card, Heading, P } from "$lib";
+  import { ThemeProvider, Card, Heading, P } from "s-ui";
 
   const theme1a = {
     card: {

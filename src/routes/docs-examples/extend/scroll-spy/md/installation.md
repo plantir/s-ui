@@ -1,1 +1,1 @@
-pnpm i -D flowbite-svelte flowbite
+pnpm i -D s-ui flowbite

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Label, Timepicker } from "$lib";
-  import { ClockOutline } from "flowbite-svelte-icons";
+	import { Label, Timepicker } from 's-ui';
+	import { ClockOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Label>Select Time (Flowbite Icon):</Label>

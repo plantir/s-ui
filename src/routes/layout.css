@@ -856,3 +856,44 @@
 		border: 2px solid rgb(150, 238, 206);
 	}
 }
+
+@layer components {
+	#mainContent > pre {
+		margin-inline: auto;
+		margin-block: calc(var(--spacing) * 4);
+		border-radius: var(--radius-xl);
+		border-style: var(--tw-border-style);
+		border-width: 1px;
+		border-color: var(--color-gray-200);
+		background-color: var(--color-gray-50);
+		--tw-gradient-position: to right;
+		width: 100%;
+		overflow: auto;
+	}
+
+	@supports (background-image: linear-gradient(in lab, red, red)) {
+		#mainContent > pre {
+			--tw-gradient-position: to right in oklab;
+		}
+	}
+
+	#mainContent > pre {
+		background-image: linear-gradient(var(--tw-gradient-stops));
+		padding: calc(var(--spacing) * 2);
+		font-size: var(--text-sm);
+		line-height: var(--tw-leading, var(--text-sm--line-height));
+		color: var(--color-gray-600);
+	}
+
+	@media (min-width: 40rem) {
+		#mainContent > pre {
+			padding: calc(var(--spacing) * 6);
+		}
+	}
+
+	#mainContent > pre:where(.dark, .dark *) {
+		border-color: var(--color-gray-700);
+		background-color: var(--color-gray-900);
+		color: var(--color-gray-400);
+	}
+}

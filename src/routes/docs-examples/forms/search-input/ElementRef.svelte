@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { Search, Button } from "$lib";
-  let searchRef: HTMLInputElement | undefined = $state();
-  let elementTxt = $state("This text has NOT been updated.");
+	import { Search, Button } from 's-ui';
+	let searchRef: HTMLInputElement | undefined = $state();
+	let elementTxt = $state('This text has NOT been updated.');
 </script>
 
 <form id="example-form">
-  <Search bind:value={elementTxt} bind:elementRef={searchRef} />
-  <Button
-    class="mt-2"
-    onclick={() => {
-      searchRef?.setRangeText("ALREADY", 14, 17, "select");
-      searchRef?.select();
-    }}
-  >
-    Update text
-  </Button>
+	<Search bind:value={elementTxt} bind:elementRef={searchRef} />
+	<Button
+		class="mt-2"
+		onclick={() => {
+			searchRef?.setRangeText('ALREADY', 14, 17, 'select');
+			searchRef?.select();
+		}}
+	>
+		Update text
+	</Button>
 </form>

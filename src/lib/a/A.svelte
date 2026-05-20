@@ -1,49 +1,57 @@
 <script lang="ts">
-  import clsx from "clsx";
-  import { anchor } from "./theme.js";
-  import type { AnchorProps } from "$lib/types.js";
-  import { getTheme } from "$lib/theme/themeUtils";
+	import clsx from 'clsx';
+	import { anchor } from './theme.js';
+	import type { AnchorProps } from '$lib/types.js';
+	import { getTheme } from '$lib/theme/themeUtils';
 
-  let { children, color = "primary", asButton = false, onclick, href = "#", class: className, ...restProps }: AnchorProps = $props();
+	let {
+		children,
+		color = 'primary',
+		asButton = false,
+		onclick,
+		href = '#',
+		class: className,
+		...restProps
+	}: AnchorProps = $props();
 
-  const theme = $derived(getTheme("anchor"));
+	const theme = $derived(getTheme('anchor'));
 
-  let linkCls = $derived(anchor({ color, class: clsx(theme, className) }));
+	let linkCls = $derived(anchor({ color, class: clsx(theme, className) }));
 
-  // Handle click events when in button mode
-  function handleClick(event: MouseEvent) {
-    if (asButton) {
-      event.preventDefault(); // Prevent default anchor behavior
-    }
-    // Forward the onclick handler if provided
-    if (onclick) {
-      onclick(event);
-    }
-  }
+	// Handle click events when in button mode
+	function handleClick(event: MouseEvent) {
+		if (asButton) {
+			event.preventDefault(); // Prevent default anchor behavior
+		}
+		// Forward the onclick handler if provided
+		if (onclick) {
+			onclick(event);
+		}
+	}
 
-  let buttonProps = $derived(() => {
-    const { href, target, rel, download, ...filtered } = restProps;
-    return filtered;
-  });
+	let buttonProps = $derived(() => {
+		const { href, target, rel, download, ...filtered } = restProps;
+		return filtered;
+	});
 </script>
 
 {#if asButton}
-  <!-- Render as a button that looks like a link -->
-  <button type="button" class={linkCls} onclick={handleClick} {...buttonProps}>
-    {@render children()}
-  </button>
+	<!-- Render as a button that looks like a link -->
+	<button type="button" class={linkCls} onclick={handleClick} {...buttonProps}>
+		{@render children()}
+	</button>
 {:else}
-  <!-- Standard anchor behavior -->
-  <a {href} class={linkCls} onclick={handleClick} {...restProps}>
-    {@render children()}
-  </a>
+	<!-- Standard anchor behavior -->
+	<a {href} class={linkCls} onclick={handleClick} {...restProps}>
+		{@render children()}
+	</a>
 {/if}
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[AnchorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2005)
+[AnchorProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L2005)
 ## Props
 @prop children
 @prop color = "primary"

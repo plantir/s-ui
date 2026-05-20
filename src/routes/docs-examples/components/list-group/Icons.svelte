@@ -1,12 +1,17 @@
 <script lang="ts">
-  import { Listgroup } from "$lib";
-  import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from "flowbite-svelte-icons";
-  let icons = [
-    { name: "Profile", Icon: UserCircleSolid },
-    { name: "Settings", Icon: AdjustmentsHorizontalSolid },
-    { name: "Messages", Icon: MessagesSolid },
-    { name: "Download", Icon: DownloadSolid }
-  ];
+	import { Listgroup } from 's-ui';
+	import {
+		AdjustmentsHorizontalSolid,
+		DownloadSolid,
+		MessagesSolid,
+		UserCircleSolid
+	} from 'flowbite-svelte-icons';
+	let icons = [
+		{ name: 'Profile', Icon: UserCircleSolid },
+		{ name: 'Settings', Icon: AdjustmentsHorizontalSolid },
+		{ name: 'Messages', Icon: MessagesSolid },
+		{ name: 'Download', Icon: DownloadSolid }
+	];
 </script>
 
 <Listgroup active items={icons} class="w-48" onclick={console.log} />

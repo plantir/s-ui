@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { Listgroup } from "$lib";
-  let buttons = [
-    { name: "Profile", mycustomfield: "data1", current: true },
-    { name: "Settings", mycustomfield: "data2" },
-    { name: "Messages", mycustomfield: "data3" },
-    { name: "Download", mycustomfield: "data4", disabled: true, attrs: { type: "submit" } }
-  ];
+	import { Listgroup } from 's-ui';
+	let buttons = [
+		{ name: 'Profile', mycustomfield: 'data1', current: true },
+		{ name: 'Settings', mycustomfield: 'data2' },
+		{ name: 'Messages', mycustomfield: 'data3' },
+		{ name: 'Download', mycustomfield: 'data4', disabled: true, attrs: { type: 'submit' } }
+	];
 </script>
 
-<Listgroup active items={buttons} horizontal onclick={(e) => alert(Object.entries(e?.detail ?? {}))}></Listgroup>
+<Listgroup active items={buttons} horizontal onclick={(e) => alert(Object.entries(e?.detail ?? {}))}
+></Listgroup>

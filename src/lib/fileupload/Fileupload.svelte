@@ -1,62 +1,75 @@
 <script lang="ts">
-  import { fileupload } from "./theme.js";
-  import clsx from "clsx";
-  import type { FileuploadProps } from "$lib/types.js";
-  import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { createDismissableContext } from "$lib/utils/dismissable";
-  import { untrack } from "svelte";
+	import { fileupload } from './theme.js';
+	import clsx from 'clsx';
+	import type { FileuploadProps } from '$lib/types.js';
+	import CloseButton from '$lib/utils/CloseButton.svelte';
+	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
+	import { createDismissableContext } from '$lib/utils/dismissable';
+	import { untrack } from 'svelte';
 
-  let {
-    files = $bindable(),
-    size = "md",
-    clearable = false,
-    elementRef = $bindable(),
-    class: className,
-    classes,
-    clearableSvgClass,
-    clearableColor = "none",
-    clearableClass,
-    clearableOnClick,
-    wrapperClass,
-    ...restProps
-  }: FileuploadProps = $props();
+	let {
+		files = $bindable(),
+		size = 'md',
+		clearable = false,
+		elementRef = $bindable(),
+		class: className,
+		classes,
+		clearableSvgClass,
+		clearableColor = 'none',
+		clearableClass,
+		clearableOnClick,
+		wrapperClass,
+		...restProps
+	}: FileuploadProps = $props();
 
-  warnThemeDeprecation(
-    "Fileupload",
-    untrack(() => ({ wrapperClass, clearableClass, clearableSvgClass })),
-    { wrapperClass: "wrapper", clearableClass: "close", clearableSvgClass: "svg" }
-  );
+	warnThemeDeprecation(
+		'Fileupload',
+		untrack(() => ({ wrapperClass, clearableClass, clearableSvgClass })),
+		{ wrapperClass: 'wrapper', clearableClass: 'close', clearableSvgClass: 'svg' }
+	);
 
-  const styling = $derived(classes ?? { wrapper: wrapperClass, close: clearableClass, svg: clearableSvgClass });
+	const styling = $derived(
+		classes ?? { wrapper: wrapperClass, close: clearableClass, svg: clearableSvgClass }
+	);
 
-  const theme = $derived(getTheme("fileupload"));
+	const theme = $derived(getTheme('fileupload'));
 
-  const { base, wrapper, close } = fileupload();
+	const { base, wrapper, close } = fileupload();
 
-  const clearAll = () => {
-    if (elementRef) {
-      elementRef.value = "";
-      files = undefined;
-    }
-    if (clearableOnClick) clearableOnClick();
-  };
+	const clearAll = () => {
+		if (elementRef) {
+			elementRef.value = '';
+			files = undefined;
+		}
+		if (clearableOnClick) clearableOnClick();
+	};
 
-  createDismissableContext(clearAll);
+	createDismissableContext(clearAll);
 </script>
 
 <div class={wrapper({ class: clsx(theme?.wrapper, styling.wrapper) })}>
-  <input type="file" bind:files bind:this={elementRef} {...restProps} class={base({ size, class: clsx(theme?.base, className) })} />
-  {#if files && files.length > 0 && clearable}
-    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear selected files" svgClass={clsx(styling.svg)} />
-  {/if}
+	<input
+		type="file"
+		bind:files
+		bind:this={elementRef}
+		{...restProps}
+		class={base({ size, class: clsx(theme?.base, className) })}
+	/>
+	{#if files && files.length > 0 && clearable}
+		<CloseButton
+			class={close({ class: clsx(theme?.close, styling.close) })}
+			color={clearableColor}
+			aria-label="Clear selected files"
+			svgClass={clsx(styling.svg)}
+		/>
+	{/if}
 </div>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L811)
+[FileuploadProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L811)
 ## Props
 @prop files = $bindable()
 @prop size = "md"

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Range, Label } from "$lib";
-  let minmaxValue = 5;
+	import { Range, Label } from 's-ui';
+	let minmaxValue = 5;
 </script>
 
 <Label>Min-max range</Label>

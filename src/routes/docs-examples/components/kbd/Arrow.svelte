@@ -1,21 +1,26 @@
 <script lang="ts">
-  import { Kbd } from "$lib";
-  import { CaretUpSolid, CaretDownSolid, CaretRightSolid, CaretLeftSolid } from "flowbite-svelte-icons";
+	import { Kbd } from 's-ui';
+	import {
+		CaretUpSolid,
+		CaretDownSolid,
+		CaretRightSolid,
+		CaretLeftSolid
+	} from 'flowbite-svelte-icons';
 </script>
 
 <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
-  <CaretUpSolid />
-  <span class="sr-only">Arrow key up</span>
+	<CaretUpSolid />
+	<span class="sr-only">Arrow key up</span>
 </Kbd>
 <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
-  <CaretDownSolid />
-  <span class="sr-only">Arrow key down</span>
+	<CaretDownSolid />
+	<span class="sr-only">Arrow key down</span>
 </Kbd>
 <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
-  <CaretLeftSolid />
-  <span class="sr-only">Arrow key left</span>
+	<CaretLeftSolid />
+	<span class="sr-only">Arrow key left</span>
 </Kbd>
 <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
-  <CaretRightSolid />
-  <span class="sr-only">Arrow key right</span>
+	<CaretRightSolid />
+	<span class="sr-only">Arrow key right</span>
 </Kbd>

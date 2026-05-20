@@ -1,42 +1,50 @@
 <script lang="ts">
-  import { list } from "./theme.js";
-  import type { ListProps } from "$lib/types.js";
-  import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
-  import { setListContext } from "$lib/context";
+	import { list } from './theme.js';
+	import type { ListProps } from '$lib/types.js';
+	import clsx from 'clsx';
+	import { getTheme } from '$lib/theme/themeUtils';
+	import { setListContext } from '$lib/context';
 
-  let { children, tag = "ul", isContenteditable = false, position = "inside", ctxClass, class: className, ...restProps }: ListProps = $props();
+	let {
+		children,
+		tag = 'ul',
+		isContenteditable = false,
+		position = 'inside',
+		ctxClass,
+		class: className,
+		...restProps
+	}: ListProps = $props();
 
-  const theme = $derived(getTheme("list"));
+	const theme = $derived(getTheme('list'));
 
-  let contextClass = $derived(ctxClass || "");
+	let contextClass = $derived(ctxClass || '');
 
-  // Create context object
-  const ctx = {
-    get ctxClass() {
-      return contextClass;
-    }
-  };
+	// Create context object
+	const ctx = {
+		get ctxClass() {
+			return contextClass;
+		}
+	};
 
-  // Set context during initialization
-  setListContext(ctx);
+	// Set context during initialization
+	setListContext(ctx);
 
-  $effect(() => {
-    contextClass = ctxClass || "";
-  });
+	$effect(() => {
+		contextClass = ctxClass || '';
+	});
 
-  let classList = $derived(list({ position, tag, class: clsx(theme, className) }));
+	let classList = $derived(list({ position, tag, class: clsx(theme, className) }));
 </script>
 
 <svelte:element this={tag} {...restProps} class={classList} contenteditable={isContenteditable}>
-  {@render children()}
+	{@render children()}
 </svelte:element>
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2110)
+[ListProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L2110)
 ## Props
 @prop children
 @prop tag = "ul"

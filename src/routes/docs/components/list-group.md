@@ -10,7 +10,7 @@ thumbnailSize: w-36
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso, LlmLink } from '../../utils'
-  import { Badge, Heading, P, A } from '$lib'
+  import { Badge, Heading, P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
   const relatedLinks = ['/docs/extend/button-toggle','/docs/components/button-group' ,'/docs/components/list-group','/docs/forms/radio#radiobutton' , '/docs/forms/checkbox#checkboxbutton'];
 </script>
@@ -21,7 +21,7 @@ The list group component can be used to display a series of elements, buttons or
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Listgroup, ListgroupItem } from "$lib";
+  import { Listgroup, ListgroupItem } from "s-ui";
 </script>
 ```
 

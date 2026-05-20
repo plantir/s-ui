@@ -38,9 +38,9 @@
 
 <!--
 @component
-[Go to docs](https://flowbite-svelte.com/)
+[Go to docs](https://s-ui.com/)
 ## Type
-[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L764)
+[FooterLinkProps](https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L764)
 ## Props
 @prop children
 @prop liClass

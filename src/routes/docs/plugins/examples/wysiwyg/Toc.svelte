@@ -1,7 +1,11 @@
 <script lang="ts">
-  import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  const bookContent = `
+	import {
+		UndoRedoButtonGroup,
+		TextEditor,
+		ToolbarRowWrapper
+	} from '@flowbite-svelte-plugins/texteditor';
+	import type { Editor } from '@tiptap/core';
+	const bookContent = `
   <h1>Text editor</h1><p>A text editor is a type of computer program that edits plain text. Such programs are sometimes known as "notepad" software (e.g. Windows Notepad). Text editors are provided with operating systems and software development packages, and can be used to change files such as configuration files, documentation files and programming language source code.</p>
   <h2>Plain text and rich text</h2>
   <p>There are important differences between plain text (created and edited by text editors) and rich text (such as that created by word processors or desktop publishing software).</p><p>Plain text exclusively consists of character representation. Each character is represented by a fixed-length sequence of one, two, or four bytes, or as a variable-length sequence of one to four bytes, in accordance to specific character encoding conventions, such as ASCII, ISO/IEC 2022, Shift JIS, UTF-8, or UTF-16.</p>
@@ -16,11 +20,17 @@
   <p>Most word processors can read and write files in plain text format, allowing them to open files saved from text editors. Saving these files from a word processor, however, requires ensuring the file is written in plain text format, and that any text encoding or BOM settings won't obscure the file for its intended use. Non-WYSIWYG word processors, such as WordStar, are more easily pressed into service as text editors, and in fact were commonly used as such during the 1980s.</p>
 `;
 
-  let editorInstance = $state<Editor | null>(null);
+	let editorInstance = $state<Editor | null>(null);
 </script>
 
-<TextEditor bind:editor={editorInstance} content={bookContent} toc floatingMenu={{ headingsOnly: true }} contentprops={{ id: "toc-ex" }}>
-  <ToolbarRowWrapper>
-    <UndoRedoButtonGroup editor={editorInstance} />
-  </ToolbarRowWrapper>
+<TextEditor
+	bind:editor={editorInstance}
+	content={bookContent}
+	toc
+	floatingMenu={{ headingsOnly: true }}
+	contentprops={{ id: 'toc-ex' }}
+>
+	<ToolbarRowWrapper>
+		<UndoRedoButtonGroup editor={editorInstance} />
+	</ToolbarRowWrapper>
 </TextEditor>

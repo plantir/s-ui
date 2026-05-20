@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { A } from '$lib'
+  import { A } from 's-ui'
   
   const components = 'A'
 </script>
@@ -23,7 +23,7 @@ Hyperlinks are a great way to reduce bounce rate of the current page and encoura
 
 ```html
 <script lang="ts">
-  import { A } from "$lib";
+  import { A } from "s-ui";
 </script>
 ```
 

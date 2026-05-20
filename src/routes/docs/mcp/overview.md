@@ -1,34 +1,34 @@
 ---
 layout: componentLayout
-title: Flowbite-Svelte MCP Overview
+title: s-ui MCP Overview
 breadcrumb_title: Overview
 component_title: Overview
 dir: MCP
-description: The Flowbite-Svelte MCP (Model Context Protocol) server helps your LLM or agent write better Flowbite-Svelte code by providing component documentation and usage examples.
+description: The s-ui MCP (Model Context Protocol) server helps your LLM or agent write better s-ui code by providing component documentation and usage examples.
 ---
 
 ## Overview
 
-The Flowbite-Svelte MCP (__Model Context Protocol__) server can help your LLM or agent of choice write better Flowbite-Svelte code. It works by providing comprehensive component documentation, usage examples, and best practices for all Flowbite-Svelte components.
+The s-ui MCP (__Model Context Protocol__) server can help your LLM or agent of choice write better s-ui code. It works by providing comprehensive component documentation, usage examples, and best practices for all s-ui components.
 
 ## Usage
 
 To get the most out of the MCP server we recommend including the following prompt in your `AGENTS.md` (or `CLAUDE.md`, if using Claude Code. Or `GEMINI.md`, if using Gemini). Place this file in the __root of your project directory__ so it's automatically loaded by your AI coding assistant. This will tell the LLM which tools are available and when it's appropriate to use them.
 
 ```md
-You are able to use the Flowbite-Svelte MCP server, where you have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
+You are able to use the s-ui MCP server, where you have access to comprehensive s-ui component documentation. Here's how to use the available tools effectively:
 
 ## Available MCP Tools:
 
 ### 1. findComponent
 
 Use this FIRST to discover components by name or category. Returns component information including the documentation path.
-When asked about Flowbite-Svelte components, ALWAYS use this tool to locate the correct component before fetching documentation.
+When asked about s-ui components, ALWAYS use this tool to locate the correct component before fetching documentation.
 Example queries: 'Button', 'CardPlaceholder', 'form checkbox'
 
 ### 2. getComponentList
 
-Lists all available Flowbite-Svelte components with their categories.
+Lists all available s-ui components with their categories.
 Use this to discover what components are available or to help users explore component options.
 
 ### 3. getComponentDoc
@@ -38,13 +38,13 @@ After calling findComponent, use this tool to fetch the complete documentation i
 
 ### 4. searchDocs
 
-Performs full-text search across all Flowbite-Svelte documentation.
+Performs full-text search across all s-ui documentation.
 Use this when you need to find specific information that might span multiple components or when the user asks about features or patterns.
 ```
 
-## CLAUDE.md for Svelte and Flowbite-Svelte
+## CLAUDE.md for Svelte and s-ui
 
-Use the following example for Svelte and Flowbite-Svelte:
+Use the following example for Svelte and s-ui:
 ```md
 # Claude MCP Server Documentation
 
@@ -78,20 +78,20 @@ You have access to comprehensive Svelte 5 and SvelteKit documentation. Here's ho
 - After completing the code, ask the user if they want a playground link
 - NEVER call this if code was written to files in their project
 
-### Flowbite-Svelte MCP Server
+### s-ui MCP Server
 
-You have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
+You have access to comprehensive s-ui component documentation. Here's how to use the available tools effectively:
 
 #### Available Tools:
 
 **1. findComponent**
 - Use this FIRST to discover components by name or category
 - Returns component information including the documentation path
-- When asked about Flowbite-Svelte components, ALWAYS use this tool to locate the correct component before fetching documentation
+- When asked about s-ui components, ALWAYS use this tool to locate the correct component before fetching documentation
 - Example queries: 'Button', 'CardPlaceholder', 'form checkbox'
 
 **2. getComponentList**
-- Lists all available Flowbite-Svelte components with their categories
+- Lists all available s-ui components with their categories
 - Use this to discover what components are available or to help users explore component options
 
 **3. getComponentDoc**
@@ -100,25 +100,25 @@ You have access to comprehensive Flowbite-Svelte component documentation. Here's
 - After calling findComponent, use this tool to fetch complete documentation including usage examples, props, and best practices
 
 **4. searchDocs**
-- Performs full-text search across all Flowbite-Svelte documentation
+- Performs full-text search across all s-ui documentation
 - Use this when you need to find specific information that might span multiple components or when the user asks about features or patterns
 
 ## Workflow Guidelines
 
-### When building Svelte components with Flowbite-Svelte:
+### When building Svelte components with s-ui:
 
 1. **Start with Svelte documentation**: Use `list-sections` to understand which Svelte concepts are needed
 2. **Fetch relevant Svelte docs**: Use `get-documentation` to get all necessary Svelte sections
-3. **Find Flowbite-Svelte components**: Use `findComponent` to locate the UI components needed
+3. **Find s-ui components**: Use `findComponent` to locate the UI components needed
 4. **Get component details**: Use `getComponentDoc` to fetch usage examples and props
-5. **Write the code**: Combine Svelte patterns with Flowbite-Svelte components
+5. **Write the code**: Combine Svelte patterns with s-ui components
 6. **Validate the code**: Use `svelte-autofixer` to check for issues
 7. **Offer playground**: Ask if the user wants a playground link (only if not writing to files)
 
 ### Best Practices:
 
 - Always prioritize Svelte 5 runes and modern patterns
-- Use Flowbite-Svelte components for consistent UI design
+- Use s-ui components for consistent UI design
 - Validate all code with svelte-autofixer before delivering
 - Keep documentation lookups efficient by fetching multiple sections at once
 ```

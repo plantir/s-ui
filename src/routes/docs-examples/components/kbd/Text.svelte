@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Kbd } from "$lib";
+	import { Kbd } from 's-ui';
 </script>
 
 <p class="text-body">
-  Please press <Kbd>Ctrl</Kbd> + <Kbd>Shift</Kbd> + <Kbd>R</Kbd> to re-render an MDN page.
+	Please press <Kbd>Ctrl</Kbd> + <Kbd>Shift</Kbd> + <Kbd>R</Kbd> to re-render an MDN page.
 </p>

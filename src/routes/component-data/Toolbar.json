@@ -1,15 +1,15 @@
 {
-  "name": "Toolbar",
-  "type": {
-    "name": "ToolbarProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1133"
-  },
-  "props": [
-    ["children", ""],
-    ["end", ""],
-    ["color", ""],
-    ["embedded", ""],
-    ["class: className", ""],
-    ["classes", ""]
-  ]
+	"name": "Toolbar",
+	"type": {
+		"name": "ToolbarProps",
+		"link": "https://github.com/themesberg/s-ui/blob/main/src/lib/types.ts#L1133"
+	},
+	"props": [
+		["children", ""],
+		["end", ""],
+		["color", ""],
+		["embedded", ""],
+		["class: className", ""],
+		["classes", ""]
+	]
 }

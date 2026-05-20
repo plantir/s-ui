@@ -20,7 +20,7 @@ Get started with a collection of list components built with Tailwind CSS for ord
 
 ```html
 <script lang="ts">
-  import { List, Li } from "$lib";
+  import { List, Li } from "s-ui";
 </script>
 ```
 

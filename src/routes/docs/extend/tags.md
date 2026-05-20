@@ -9,7 +9,7 @@ description: A customizable tag input component that allows users to enter multi
 
 <script lang="ts">
   import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const components = 'Tags'
   const dirName = "forms/tags"
   const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label' ]
@@ -23,7 +23,7 @@ Import the `Tags` component in a script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Tags } from "$lib";
+  import { Tags } from "s-ui";
 </script>
 ```
 

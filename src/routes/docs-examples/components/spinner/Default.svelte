@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Spinner } from "$lib";
+	import { Spinner } from 's-ui';
 </script>
 
 <Spinner />

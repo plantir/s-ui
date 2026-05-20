@@ -37,7 +37,7 @@ The following example shows how to add navigation using the key blocks:
 ```svelte example hideOutput
 <script lang="ts">
   import { page } from "$app/state";
-  import { Navbar, NavLi, NavUl } from "$lib";
+  import { Navbar, NavLi, NavUl } from "s-ui";
   let { children } = $props();
   let activeUrl = $derived(page.url.pathname);
 </script>

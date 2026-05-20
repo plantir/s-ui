@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button } from "$lib";
-  import { EnvelopeSolid } from "flowbite-svelte-icons";
+	import { Button } from 's-ui';
+	import { EnvelopeSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Button size="xs"><EnvelopeSolid class="me-2 h-4 w-4" />Extra small</Button>

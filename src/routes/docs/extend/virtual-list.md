@@ -9,7 +9,7 @@ description: A performant Svelte 5 virtual list component that efficiently rende
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
 
   const components = 'VirtualList'
   const relatedLinks = ['/docs/components/list-group'];
@@ -19,7 +19,7 @@ description: A performant Svelte 5 virtual list component that efficiently rende
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { VirtualList } from "$lib";
+  import { VirtualList } from "s-ui";
 </script>
 ```
 

@@ -6,7 +6,7 @@ const dev = import.meta.env.DEV;
 const getInitialTheme = (): string => {
   if (browser) {
     try {
-      const stored = localStorage.getItem("flowbite-svelte-theme");
+      const stored = localStorage.getItem("s-ui-theme");
       if (stored) return stored;
     } catch (e) {
       // console.warn("localStorage not available:", e);
@@ -80,7 +80,7 @@ export function loadTheme(themeId: string, loadFromStatic = false): void {
 
   // Save to localStorage
   try {
-    localStorage.setItem("flowbite-svelte-theme", themeId);
+    localStorage.setItem("s-ui-theme", themeId);
   } catch (e) {
     console.warn("Could not save theme:", e);
   }

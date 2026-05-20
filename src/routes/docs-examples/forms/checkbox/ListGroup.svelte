@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Checkbox, Listgroup } from "$lib";
+	import { Checkbox, Listgroup } from 's-ui';
 </script>
 
-<p class="text-heading mb-4 font-semibold">Technology</p>
+<p class="mb-4 font-semibold text-heading">Technology</p>
 <Listgroup class="w-48">
-  <li><Checkbox classes={{ label: "p-3" }}>svelte</Checkbox></li>
-  <li><Checkbox classes={{ label: "p-3" }}>Vue JS</Checkbox></li>
-  <li><Checkbox classes={{ label: "p-3" }}>React</Checkbox></li>
-  <li><Checkbox classes={{ label: "p-3" }}>Angular</Checkbox></li>
+	<li><Checkbox classes={{ label: 'p-3' }}>svelte</Checkbox></li>
+	<li><Checkbox classes={{ label: 'p-3' }}>Vue JS</Checkbox></li>
+	<li><Checkbox classes={{ label: 'p-3' }}>React</Checkbox></li>
+	<li><Checkbox classes={{ label: 'p-3' }}>Angular</Checkbox></li>
 </Listgroup>

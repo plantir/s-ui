@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Radio } from "$lib";
+	import { Radio } from 's-ui';
 </script>
 
 <Radio name="example">Default radio</Radio>

@@ -10,7 +10,7 @@ thumbnailSize: w-36
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = 'clipboard'
 
 </script>
@@ -25,7 +25,7 @@ Import Clipboard in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Clipboard } from "$lib";
+  import { Clipboard } from "s-ui";
 </script>
 ```
 

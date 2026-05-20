@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Button } from "$lib";
-  const btn1 = () => {
-    alert("You clicked btn1.");
-  };
-  const btn2 = () => {
-    alert("You touched btn2.");
-  };
+	import { Button } from 's-ui';
+	const btn1 = () => {
+		alert('You clicked btn1.');
+	};
+	const btn2 = () => {
+		alert('You touched btn2.');
+	};
 </script>
 
 <Button onclick={btn1}>Button 1</Button>

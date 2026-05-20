@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -24,7 +24,7 @@ Let's import all necessary components in the script tag. We import a heart, thum
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Rating, AdvancedRating, ScoreRating } from "$lib";
+  import { Rating, AdvancedRating, ScoreRating } from "s-ui";
 </script>
 ```
 

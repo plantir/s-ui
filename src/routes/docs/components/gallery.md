@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from '$lib'
+  import { P, A } from 's-ui'
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -24,7 +24,7 @@ Import `Gallery` in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Gallery } from "$lib";
+  import { Gallery } from "s-ui";
 </script>
 ```
 

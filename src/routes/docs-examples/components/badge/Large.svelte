@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge } from '$lib';
+	import { Badge } from 's-ui';
 </script>
 
 <Badge large>Primary</Badge>
