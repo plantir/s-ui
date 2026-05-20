@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { Badge } from "$lib";
+	import { Badge } from '$lib';
 </script>
 
-<Badge dismissable border>Brand</Badge>
-<Badge dismissable border color="alternative">Alternative</Badge>
+<Badge dismissable border>Primary</Badge>
+<Badge dismissable border color="secondary">Secondary</Badge>
 <Badge dismissable border color="gray">Gray</Badge>
-<Badge dismissable border color="danger">Danger</Badge>
-<Badge dismissable border color="success">Success</Badge>
-<Badge dismissable border color="warning">Warning</Badge>
+<Badge dismissable border color="red">Red</Badge>
+<Badge dismissable border color="green">Green</Badge>
+<Badge dismissable border color="yellow">Yellow</Badge>

@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Badge, type BadgeProps } from "$lib";
+	import { Badge, type BadgeProps } from '$lib';
 
-  setInterval(handleHover, 500);
+	setInterval(handleHover, 500);
 
-  let color: BadgeProps["color"] = $state("brand");
-  function handleHover() {
-    color = color === "brand" ? "alternative" : "brand";
-  }
+	let color: BadgeProps['color'] = $state('primary');
+	function handleHover() {
+		color = color === 'primary' ? 'secondary' : 'primary';
+	}
 </script>
 
 <Badge large {color}>Blinking badge</Badge>

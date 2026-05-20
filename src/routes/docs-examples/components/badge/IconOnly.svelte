@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { Badge } from "$lib";
-  import { CheckOutline } from "flowbite-svelte-icons";
+	import { Badge } from '$lib';
+	import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Badge color="gray" large class="p-1! font-semibold!">
-  <CheckOutline class="h-3 w-3" />
-  <span class="sr-only">Icon description</span>
+	<CheckOutline class="h-3 w-3" />
+	<span class="sr-only">Icon description</span>
 </Badge>
 <Badge rounded large class="p-1! font-semibold!">
-  <CheckOutline class="text-fg-brand h-3 w-3" />
-  <span class="sr-only">Icon description</span>
+	<CheckOutline class="h-3 w-3 text-fg-brand" />
+	<span class="sr-only">Icon description</span>
 </Badge>

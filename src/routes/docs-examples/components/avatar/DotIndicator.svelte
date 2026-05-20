@@ -1,10 +1,21 @@
 <script lang="ts">
-  import { Avatar } from "$lib";
+	import { Avatar } from '$lib';
 </script>
 
-<Avatar src="/images/people/profile-picture-5.jpg" dot={{ color: "danger" }} />
-<Avatar src="/images/people/profile-picture-5.jpg" dot={{ placement: "top-right", color: "warning" }} cornerStyle="rounded" />
-<Avatar src="/images/people/profile-picture-5.jpg" dot={{ placement: "bottom-right", color: "success" }} />
-<Avatar src="/images/people/profile-picture-5.jpg" dot={{ placement: "bottom-right" }} cornerStyle="rounded" />
+<Avatar src="/images/people/profile-picture-5.jpg" dot={{ color: 'red' }} />
+<Avatar
+	src="/images/people/profile-picture-5.jpg"
+	dot={{ placement: 'top-right', color: 'orange' }}
+	cornerStyle="rounded"
+/>
+<Avatar
+	src="/images/people/profile-picture-5.jpg"
+	dot={{ placement: 'bottom-right', color: 'green' }}
+/>
+<Avatar
+	src="/images/people/profile-picture-5.jpg"
+	dot={{ placement: 'bottom-right', color: 'primary' }}
+	cornerStyle="rounded"
+/>
 
-<Avatar dot={{}} />
+<Avatar dot={{ color: 'secondary' }} />

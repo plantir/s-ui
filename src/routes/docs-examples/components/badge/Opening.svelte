@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Badge, Button } from "$lib";
-  let openBadgeStatus = $state(false);
-  function openBadge() {
-    openBadgeStatus = true;
-  }
+	import { Badge, Button } from '$lib';
+	let openBadgeStatus = $state(false);
+	function openBadge() {
+		openBadgeStatus = true;
+	}
 </script>
 
 <Button onclick={openBadge}>Open badge</Button>
