@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, Tooltip } from 's-ui';
+	import { Avatar, Tooltip } from "$lib/index";
 </script>
 
 <Avatar data-name="Jese Leos" src="/images/people/profile-picture-5.jpg" />

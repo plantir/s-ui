@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PaginationItem } from 's-ui';
+	import { PaginationItem } from "$lib/index";
 	import { ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
 	const previous = () => {
 		alert('Previous btn clicked. Make a call to your server to fetch data.');

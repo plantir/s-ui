@@ -10,7 +10,7 @@ description: A keyboard-driven command palette component with fuzzy search, vim-
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
 
   const components = 'CommandPalette'
   // const relatedLinks = [''];
@@ -20,7 +20,7 @@ description: A keyboard-driven command palette component with fuzzy search, vim-
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { CommandPalette } from 's-ui';
+  import { CommandPalette } from "$lib/index";
 </script>
 ```
 

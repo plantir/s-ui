@@ -10,7 +10,7 @@ thumbnailSize: w-36
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { A } from 's-ui';
+  import { A } from "$lib/index";
   const components = 'A, Blockquote, DescriptionList, Heading, Hr, Img, Layout, Li, List, Mark, P, Secondary, Span';
 </script>
 

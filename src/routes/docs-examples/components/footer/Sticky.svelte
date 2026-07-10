@@ -7,7 +7,7 @@
 		TextPlaceholder,
 		Skeleton,
 		FooterCopyright
-	} from 's-ui';
+	} from "$lib/index";
 </script>
 
 <div style="height:300px;" class="overflow-scroll pb-16">

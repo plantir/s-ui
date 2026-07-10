@@ -19,7 +19,7 @@ description: Use the wysiwyg text editor component from s-ui-Plugins to create a
     eager: true
   });
   
-  import { Badge, P, Button, Accordion, AccordionItem, A } from "s-ui"
+  import { Badge, P, Button, Accordion, AccordionItem, A } from "$lib/index"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 
   const textEditor = __TEXTEDITOR__;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tags, Button } from 's-ui';
+	import { Tags, Button } from "$lib/index";
 	let tags: string[] = $state([]);
 
 	const available = [

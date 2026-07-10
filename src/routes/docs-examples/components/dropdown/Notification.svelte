@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Dropdown, DropdownItem, DropdownGroup, Avatar } from 's-ui';
+	import { Dropdown, DropdownItem, DropdownGroup, Avatar } from "$lib/index";
 	import { BellSolid, EyeSolid } from 'flowbite-svelte-icons';
 </script>
 

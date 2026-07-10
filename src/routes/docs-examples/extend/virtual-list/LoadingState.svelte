@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { VirtualList, Button, Spinner } from 's-ui';
+	import { VirtualList, Button, Spinner } from "$lib/index";
 
 	let items: string[] = $state([]);
 	let isLoading = $state(false);

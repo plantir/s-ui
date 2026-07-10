@@ -9,7 +9,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 <script lang="ts">
 	import { CompoAttributesViewer, GitHubCompoLinks, LlmLink } from '../../utils';
-  import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Heading, A } from 's-ui'
+  import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Heading, A } from "$lib/index"
 
   const components = 'Toolbar, ToolbarButton, ToolbarGroup'
 </script>
@@ -18,7 +18,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Toolbar, ToolbarButton, ToolbarGroup } from "s-ui";
+  import { Toolbar, ToolbarButton, ToolbarGroup } from "$lib/index";
 </script>
 ```
 

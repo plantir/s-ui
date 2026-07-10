@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, Clipboard, Input, Label, Tooltip, Button } from 's-ui';
+	import { Card, Clipboard, Input, Label, Tooltip, Button } from "$lib/index";
 	import { CheckOutline, ClipboardCleanOutline } from 'flowbite-svelte-icons';
 
 	let acc_id = $state('756593826');

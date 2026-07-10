@@ -7,7 +7,7 @@
 		Indicator,
 		CarouselIndicators,
 		Thumbnails
-	} from 's-ui';
+	} from "$lib/index";
 	import { CaretRightOutline } from 'flowbite-svelte-icons';
 	import images from './imageData/images.json';
 	let index = $state(0);

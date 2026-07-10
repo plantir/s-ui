@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tags } from 's-ui';
+	import { Tags } from "$lib/index";
 	let tags: string[] = $state([]);
 </script>
 

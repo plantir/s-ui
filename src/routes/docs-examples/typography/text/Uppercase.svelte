@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { P, Span } from 's-ui';
+	import { P, Span } from "$lib/index";
 </script>
 
 <P class="text-lg font-medium text-heading"

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toggle } from 's-ui';
+	import { Toggle } from "$lib/index";
 </script>
 
 <Toggle color="red" checked>Red</Toggle>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type KanbanCardType, type KanbanColumnType, KanbanBoard, Heading, P } from 's-ui';
+	import { type KanbanCardType, type KanbanColumnType, KanbanBoard, Heading, P } from "$lib/index";
 
 	let columns = $state<KanbanColumnType[]>([
 		{

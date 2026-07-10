@@ -3,7 +3,7 @@
 	import Footer from '$lib/footer/Footer.svelte';
 	import FooterBrand from '$lib/footer/FooterBrand.svelte';
 	import FooterCopyright from '$lib/footer/FooterCopyright.svelte';
-	import { FooterLink, FooterLinkGroup } from 's-ui';
+	import { FooterLink, FooterLinkGroup } from '$lib/index';
 	let logo = '/images/s-ui-icon-logo.svg';
 
 	let isHomePage: boolean = $state(false);

@@ -9,7 +9,7 @@
 		NavUl,
 		Badge,
 		ThemeSelector
-	} from 's-ui';
+	} from '$lib/index';
 	import Tooltip from '$lib/tooltip/Tooltip.svelte';
 	import { onMount } from 'svelte';
 	import Discord from '../utils/icons/Discord.svelte';

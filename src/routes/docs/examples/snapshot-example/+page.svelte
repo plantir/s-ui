@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snapshot } from '@sveltejs/kit';
-	import { Input, Label, Button, Checkbox, A, Heading } from 's-ui';
+	import { Input, Label, Button, Checkbox, A, Heading } from "$lib/index";
 	let formData = $state({
 		first_name: '',
 		last_name: '',

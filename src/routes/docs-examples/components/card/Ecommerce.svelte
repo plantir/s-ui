@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, Button, Rating, Badge } from 's-ui';
+	import { Card, Button, Rating, Badge } from "$lib/index";
 </script>
 
 <Card class="p-0">

@@ -7,9 +7,9 @@
 	} from 'svelte-rune-highlight';
 	import 'highlight.js/styles/github-dark.css';
 	import type { Component } from 'svelte';
-	import { Table } from 's-ui';
+	import { Table } from "$lib/index";
 	import { clipboardManagerProps } from './clipboardManagerProps';
-	import { List, Li, P, Heading } from 's-ui';
+	import { List, Li, P, Heading } from "$lib/index";
 
 	const componentModules = import.meta.glob('./examples/*.svelte', {
 		eager: true

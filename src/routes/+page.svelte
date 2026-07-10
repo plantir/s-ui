@@ -64,7 +64,7 @@
 		SpeedDial,
 		SpeedDialButton,
 		isDark
-	} from 's-ui';
+	} from "$lib/index";
 	const wrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) =>
 		Heart(anchor, { ..._props, ...props });
 

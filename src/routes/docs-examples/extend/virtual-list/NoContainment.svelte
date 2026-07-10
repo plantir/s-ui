@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { VirtualList } from 's-ui';
+	import { VirtualList } from "$lib/index";
 	const items = Array.from({ length: 5000 }, (_, i) => `Item ${i + 1}`);
 </script>
 

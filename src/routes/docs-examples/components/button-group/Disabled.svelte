@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ButtonGroup, Button } from 's-ui';
+	import { ButtonGroup, Button } from "$lib/index";
 </script>
 
 <div class="flex flex-col gap-4">

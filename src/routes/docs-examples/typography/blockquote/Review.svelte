@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Blockquote, Rating } from 's-ui';
+	import { Blockquote, Rating } from "$lib/index";
 </script>
 
 <figure class="max-w-(--breakpoint-md)">

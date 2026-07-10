@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input, Label, Button } from 's-ui';
+	import { Input, Label, Button } from "$lib/index";
 	import { PlusOutline, MinusOutline } from 'flowbite-svelte-icons';
 	let counterInput: number = $state(12);
 	$effect(() => {

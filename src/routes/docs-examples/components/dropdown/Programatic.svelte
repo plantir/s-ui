@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Dropdown, DropdownItem, P } from 's-ui';
+	import { Button, Dropdown, DropdownItem, P } from "$lib/index";
 	import { ChevronDownOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
 	let isOpen = $state(false);
 </script>

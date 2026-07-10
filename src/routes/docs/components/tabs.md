@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { Badge, P, A } from 's-ui'
+  import { Badge, P, A } from "$lib/index"
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -20,7 +20,7 @@ The tabs component can be used either as an extra navigational hierarchy complem
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Tabs, TabItem } from "s-ui";
+  import { Tabs, TabItem } from "$lib/index";
 </script>
 ```
 

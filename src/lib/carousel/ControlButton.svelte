@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { controlButton } from './theme.js';
 	import clsx from 'clsx';
-	import type { ControlButtonProps } from 's-ui';
+	import type { ControlButtonProps } from '$lib/types.js';
 	import { getTheme } from '$lib/theme/themeUtils';
 
 	let {

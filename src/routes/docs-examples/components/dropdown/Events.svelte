@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Dropdown, DropdownItem } from 's-ui';
+	import { Button, Dropdown, DropdownItem } from "$lib/index";
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 	const handleClick = (e: MouseEvent) => {
 		e.preventDefault();

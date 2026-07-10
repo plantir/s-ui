@@ -8,7 +8,7 @@
 		Dropdown,
 		DropdownItem,
 		DropdownDivider
-	} from 's-ui';
+	} from "$lib/index";
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 	import { page } from '$app/state';
 	let activeUrl = $derived(page.url.pathname);

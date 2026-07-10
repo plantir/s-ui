@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Timepicker } from 's-ui';
+	import { Timepicker } from "$lib/index";
 </script>
 
 <Timepicker disabled />

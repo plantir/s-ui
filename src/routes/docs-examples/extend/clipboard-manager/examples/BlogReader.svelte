@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ClipboardManager } from 's-ui';
+	import { ClipboardManager } from "$lib/index";
 </script>
 
 <article class="mx-auto max-w-4xl">

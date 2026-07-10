@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 's-ui';
+	import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "$lib/index";
 	import {
 		HomeOutline,
 		WalletOutline,

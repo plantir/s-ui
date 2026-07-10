@@ -1,6 +1,6 @@
 <script lang="ts" generics="T">
 	import clsx from 'clsx';
-	import type { RadioButtonProps } from 's-ui';
+	import type { RadioButtonProps } from '$lib/types.js';
 	import Button from '$lib/buttons/Button.svelte';
 	import { radioButton } from './theme';
 	import { getTheme } from '$lib/theme/themeUtils';

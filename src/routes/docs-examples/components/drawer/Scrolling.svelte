@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Drawer, Button } from 's-ui';
+	import { Drawer, Button } from "$lib/index";
 	import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
 	let openHidden = $state(false);
 </script>

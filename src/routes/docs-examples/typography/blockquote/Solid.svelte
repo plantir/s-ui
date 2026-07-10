@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Blockquote, P } from 's-ui';
+	import { Blockquote, P } from "$lib/index";
 </script>
 
 <P class="text-body">

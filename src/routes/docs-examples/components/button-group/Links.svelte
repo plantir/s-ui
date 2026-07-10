@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ButtonGroup, Button } from 's-ui';
+	import { ButtonGroup, Button } from "$lib/index";
 </script>
 
 <ButtonGroup class="*:ring-primary-700!">

@@ -8,7 +8,7 @@
 		TableBodyCell,
 		Label,
 		TableBodyRow
-	} from 's-ui';
+	} from "$lib/index";
 </script>
 
 <Table>

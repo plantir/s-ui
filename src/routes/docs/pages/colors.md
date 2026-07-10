@@ -9,7 +9,7 @@ description: Customize your project and the color of the components from Flowbit
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, LlmLink } from '../../utils';
-  import { A, Img, P } from 's-ui';
+  import { A, Img, P } from "$lib/index";
 </script>
 
 ## Override the brand colors

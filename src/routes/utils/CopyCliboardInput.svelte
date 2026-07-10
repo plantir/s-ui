@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input, Tooltip } from 's-ui';
+	import { Input, Tooltip } from "$lib/index";
 	import Check from './icons/Check.svelte';
 	import Clipboard from './icons/Clipboard.svelte';
 

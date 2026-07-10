@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toast } from 's-ui';
+	import { Toast } from "$lib/index";
 </script>
 
 <Toast classes={{ content: 'w-full text-sm font-normal flex items-center justify-between' }}>

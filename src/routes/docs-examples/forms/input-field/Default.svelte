@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input, Label, Button, Checkbox, A } from 's-ui';
+	import { Input, Label, Button, Checkbox, A } from "$lib/index";
 </script>
 
 <form>

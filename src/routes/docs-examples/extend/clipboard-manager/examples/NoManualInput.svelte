@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ClipboardManager } from 's-ui';
+	import { ClipboardManager } from "$lib/index";
 </script>
 
 <div id="no-manual-input" class="lesson-content">

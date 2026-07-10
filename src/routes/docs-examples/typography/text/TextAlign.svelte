@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { P } from 's-ui';
+	import { P } from "$lib/index";
 
 	const alignments = ['left', 'center', 'right', 'justify'] as const;
 	type Alignment = (typeof alignments)[number];

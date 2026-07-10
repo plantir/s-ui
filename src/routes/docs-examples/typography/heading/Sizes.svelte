@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Heading } from 's-ui';
+	import { Heading } from "$lib/index";
 
 	const tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const;
 	type Tag = (typeof tags)[number];

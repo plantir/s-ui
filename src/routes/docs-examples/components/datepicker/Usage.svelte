@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Datepicker, P, Label, Select, Button } from 's-ui';
+	import { Datepicker, P, Label, Select, Button } from "$lib/index";
 
 	let value = $state<Date | undefined>(undefined);
 	let locale = $state('de');

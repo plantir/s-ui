@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal } from 's-ui';
+	import { Button, Modal } from "$lib/index";
 	import { ExclamationCircleOutline } from 'flowbite-svelte-icons';
 	import { slide } from 'svelte/transition';
 	let popupModal = $state(false);

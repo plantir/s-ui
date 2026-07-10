@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StepIndicator, type StepIndicatorProps, Radio, Label } from 's-ui';
+	import { StepIndicator, type StepIndicatorProps, Radio, Label } from "$lib/index";
 
 	const colors = [
 		'primary',

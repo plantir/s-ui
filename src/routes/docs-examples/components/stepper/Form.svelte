@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ProgressStepper, Label, Input, Button } from 's-ui';
+	import { ProgressStepper, Label, Input, Button } from "$lib/index";
 	import { HomeOutline, CartOutline, DollarOutline, TruckOutline } from 'flowbite-svelte-icons';
 
 	let current = $state(2);

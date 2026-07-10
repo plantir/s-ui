@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { List, Li, Heading } from 's-ui';
+	import { List, Li, Heading } from "$lib/index";
 	import { CheckCircleSolid, CloseCircleSolid } from 'flowbite-svelte-icons';
 </script>
 

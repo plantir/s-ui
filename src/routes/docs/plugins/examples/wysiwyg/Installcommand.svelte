@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Clipboard } from 's-ui';
+	import { Clipboard } from "$lib/index";
 	import { CheckOutline, ClipboardCleanSolid } from 'flowbite-svelte-icons';
 	const tiptapVersion = __TIPTAP__;
 	let value = $state('');

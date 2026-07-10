@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from 's-ui';
+	import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "$lib/index";
 	import {
 		FileCirclePlusOutline,
 		BookmarkOutline,

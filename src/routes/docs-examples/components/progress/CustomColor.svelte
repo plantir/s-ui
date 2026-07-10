@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Progressbar } from 's-ui';
+	import { Progressbar } from "$lib/index";
 </script>
 
 <div class="space-y-4">

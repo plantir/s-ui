@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Search, Button } from 's-ui';
+	import { Search, Button } from "$lib/index";
 	let searchRef: HTMLInputElement | undefined = $state();
 	let elementTxt = $state('This text has NOT been updated.');
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Dropdown, Radio, Helper } from 's-ui';
+	import { Button, Dropdown, Radio, Helper } from "$lib/index";
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 	let group3 = $state(2);
 </script>

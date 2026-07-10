@@ -6,7 +6,7 @@
 		SidebarWrapper,
 		SidebarDropdownItem,
 		SidebarDropdownWrapper
-	} from 's-ui';
+	} from "$lib/index";
 	import {
 		ChartPieSolid,
 		CartSolid,

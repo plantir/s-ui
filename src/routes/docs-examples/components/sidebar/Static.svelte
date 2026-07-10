@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from 's-ui';
+	import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from "$lib/index";
 	import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from 'flowbite-svelte-icons';
 	import PlusPlaceholder from '$utils/PlusPlaceholder.svelte';
 	import { page } from '$app/state';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Checkbox, Label } from 's-ui';
+	import { Checkbox, Label } from "$lib/index";
 </script>
 
 <div class="flex flex-col gap-4 sm:flex-row">

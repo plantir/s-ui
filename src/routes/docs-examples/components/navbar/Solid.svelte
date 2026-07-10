@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 's-ui';
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "$lib/index";
 </script>
 
 <Navbar class="bg-primary-100 dark:bg-primary-700">

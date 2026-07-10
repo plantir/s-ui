@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FloatingLabelInput, Helper } from 's-ui';
+	import { FloatingLabelInput, Helper } from "$lib/index";
 </script>
 
 <!-- Success messages -->

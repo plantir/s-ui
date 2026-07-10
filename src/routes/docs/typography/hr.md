@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { A } from 's-ui';
+  import { A } from "$lib/index";
 
   const components = 'Hr'
 </script>
@@ -21,7 +21,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 
 ```html
 <script lang="ts">
-  import { Hr } from "s-ui";
+  import { Hr } from "$lib/index";
 </script>
 ```
 

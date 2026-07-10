@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toast, P, Button, Heading } from 's-ui';
+	import { Toast, P, Button, Heading } from "$lib/index";
 	import { fly } from 'svelte/transition';
 
 	type ToastColor = 'green' | 'red' | 'yellow' | 'blue';

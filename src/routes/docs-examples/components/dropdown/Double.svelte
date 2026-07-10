@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Dropdown, DropdownItem } from 's-ui';
+	import { Button, Dropdown, DropdownItem } from "$lib/index";
 	import type { Placement } from '@floating-ui/dom';
 	import { ChevronDownOutline, ChevronUpOutline } from 'flowbite-svelte-icons';
 	let placement: Placement | undefined = $state('left');

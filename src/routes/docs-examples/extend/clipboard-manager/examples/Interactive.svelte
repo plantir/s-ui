@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ClipboardManager, type ClipboardItem } from 's-ui';
+	import { ClipboardManager, type ClipboardItem } from "$lib/index";
 	let demoItems: ClipboardItem[] = [];
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tooltip, Button } from 's-ui';
+	import { Tooltip, Button } from "$lib/index";
 </script>
 
 <Button>Green tooltip</Button>

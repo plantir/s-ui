@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label, Datepicker } from 's-ui';
+	import { Label, Datepicker } from "$lib/index";
 	let selectedDate = $state<Date | undefined>(undefined);
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Checkbox } from 's-ui';
+	import { Checkbox } from "$lib/index";
 </script>
 
 <Checkbox disabled>Disabled checkbox</Checkbox>

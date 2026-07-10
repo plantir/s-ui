@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BottomNav, BottomNavItem, Card, Listgroup, Avatar, type ListGroupItemType } from 's-ui';
+	import { BottomNav, BottomNavItem, Card, Listgroup, Avatar, type ListGroupItemType } from "$lib/index";
 	import { ClockOutline, UsersGroupOutline, StarOutline } from 'flowbite-svelte-icons';
 	let list: ListGroupItemType[] = [
 		{

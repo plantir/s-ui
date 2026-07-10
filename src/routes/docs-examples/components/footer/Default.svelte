@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from 's-ui';
+	import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from "$lib/index";
 </script>
 
 <Footer>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Skeleton } from 's-ui';
+	import { Skeleton } from "$lib/index";
 
 	const sizes = ['sm', 'md', 'lg', 'xl', '2xl'] as const;
 	type Size = (typeof sizes)[number];

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Rating, Thumbup, type RatingIconProps } from 's-ui';
+	import { Rating, Thumbup, type RatingIconProps } from "$lib/index";
 	const thumbWrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) =>
 		Thumbup(anchor, { ..._props, ...props });
 </script>

@@ -1,6 +1,6 @@
 <!-- App.svelte -->
 <script lang="ts">
-	import { Tour, type TourStep, Button, Avatar } from 's-ui';
+	import { Tour, type TourStep, Button, Avatar } from "$lib/index";
 	import {
 		FireOutline,
 		BellRingOutline,

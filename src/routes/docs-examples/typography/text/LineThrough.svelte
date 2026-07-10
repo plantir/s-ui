@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Span } from 's-ui';
+	import { Span } from "$lib/index";
 </script>
 
 <Span class="text-lg font-medium text-heading line-through">$109</Span><Span

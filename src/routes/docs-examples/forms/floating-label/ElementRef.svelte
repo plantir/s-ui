@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FloatingLabelInput, Button } from 's-ui';
+	import { FloatingLabelInput, Button } from "$lib/index";
 	let floatingRef: HTMLInputElement | undefined = $state();
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Heading, P, Span } from 's-ui';
+	import { Heading, P, Span } from "$lib/index";
 </script>
 
 <Heading tag="h1" class="mb-4 text-3xl font-extrabold  md:text-5xl lg:text-6xl">

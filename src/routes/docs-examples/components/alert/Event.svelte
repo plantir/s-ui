@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Alert, Button } from 's-ui';
+	import { Alert, Button } from "$lib/index";
 	let alertStatus = $state(true);
 
 	const closeAlert = () => {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Datepicker, Button } from 's-ui';
+	import { Datepicker, Button } from "$lib/index";
 
 	let datepickerRef: HTMLInputElement | undefined = $state();
 	let selectedDate: Date | undefined = $state();

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Group, GroupItem } from 's-ui';
+	import { Group, GroupItem } from "$lib/index";
 	let groupTimelines = [
 		{
 			id: 'group-1',

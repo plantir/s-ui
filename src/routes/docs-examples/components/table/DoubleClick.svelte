@@ -8,7 +8,7 @@
 		TableHeadCell,
 		ImagePlaceholder,
 		Modal
-	} from 's-ui';
+	} from "$lib/index";
 	import { slide } from 'svelte/transition';
 	type ItemType = {
 		name: string;

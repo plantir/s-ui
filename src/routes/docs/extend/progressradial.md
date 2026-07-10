@@ -9,7 +9,7 @@ description: Use the progress radial component to show the progress of a process
 
 <script lang="ts">
   import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
   const components = 'Progressradial'
   const dirName = "progress"
   const relatedLinks = ['/docs/components/progress','/docs/extend/progressradial' ]
@@ -21,7 +21,7 @@ Import the `Progressradial` component in a script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Progressradial } from "s-ui";
+  import { Progressradial } from "$lib/index";
 </script>
 ```
 

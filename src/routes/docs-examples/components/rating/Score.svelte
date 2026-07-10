@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ScoreRating } from 's-ui';
+	import { ScoreRating } from "$lib/index";
 	let headerLabel = {
 		desc1: '8.7',
 		desc2: 'Excellent',

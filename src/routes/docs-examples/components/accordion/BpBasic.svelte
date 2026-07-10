@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AccordionItem, useMediaQuery, P } from 's-ui';
+	import { AccordionItem, useMediaQuery, P } from "$lib/index";
 	const isMdAndUp = useMediaQuery('(min-width: 768px)');
 </script>
 

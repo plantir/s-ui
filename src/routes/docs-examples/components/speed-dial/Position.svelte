@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from 's-ui';
+	import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "$lib/index";
 	import type { Placement } from '@floating-ui/dom';
 	import {
 		ShareNodesSolid,

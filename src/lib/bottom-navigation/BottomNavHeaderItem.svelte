@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { bottomNavHeaderItem } from './theme';
 	import clsx from 'clsx';
-	import type { BottomNavHeaderItemProps } from 's-ui';
+	import type { BottomNavHeaderItemProps } from '$lib/types.js';
 	import { getTheme } from '$lib/theme/themeUtils';
 
 	let { itemName, active, class: className, ...restProps }: BottomNavHeaderItemProps = $props();

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Dropzone } from 's-ui';
+	import { Dropzone } from "$lib/index";
 
 	let filesInDropzone: FileList | null = $state(null);
 

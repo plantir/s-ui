@@ -23,13 +23,13 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			/** Docs/examples import `s-ui`; devDependency was an older npm release without `ThemeSelector`. */
-			's-ui': path.resolve(dirname, 'src/lib/index.ts'),
+			'resaa-s-ui': path.resolve(dirname, 'src/lib/index.ts'),
 			'flowbite-svelte': path.resolve(dirname, 'src/lib/index.ts'),
 		}
 	},
 	optimizeDeps: {
 		/** Otherwise Vite can still pre-bundle `node_modules/s-ui` and ignore this alias. */
-		exclude: ['s-ui','flowbite-svelte']
+		exclude: ['resaa-s-ui','flowbite-svelte']
 	},
 	// mdsvexamples must run after Svelte compiles `.md` so its `transform` + `ast.parse` see JS (terminal: Unexpected token '<').
 	plugins: [tailwindcss(), sveltekit(), mdsvexamples],

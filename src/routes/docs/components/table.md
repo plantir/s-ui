@@ -10,7 +10,7 @@ thumbnailSize: w-48
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A, Badge } from 's-ui'
+  import { P, A, Badge } from "$lib/index"
   const dirName = toKebabCase(component_title)
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 </script>
@@ -35,7 +35,7 @@ Get started with multiple variants and styles of these table components.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from "s-ui";
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from "$lib/index";
 </script>
 ```
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { List, Li } from 's-ui';
+	import { List, Li } from "$lib/index";
 </script>
 
 <List tag="ol">

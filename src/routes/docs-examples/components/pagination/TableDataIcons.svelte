@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PaginationNav } from 's-ui';
+	import { PaginationNav } from "$lib/index";
 	import { ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
 
 	let currentPage = $state(1);

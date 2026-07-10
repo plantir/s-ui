@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Carousel, Controls, CarouselIndicators } from 's-ui';
+	import { Carousel, Controls, CarouselIndicators } from "$lib/index";
 	import images from './imageData/images.json';
 	import type { HTMLImgAttributes } from 'svelte/elements';
 

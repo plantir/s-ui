@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Review } from 's-ui';
+	import { Review } from "$lib/index";
 	import {
 		LandmarkSolid,
 		CalendarMonthSolid,

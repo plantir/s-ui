@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Search, ToolbarButton } from 's-ui';
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Search, ToolbarButton } from "$lib/index";
 	import { SearchOutline } from 'flowbite-svelte-icons';
 	import { fade } from 'svelte/transition';
 </script>

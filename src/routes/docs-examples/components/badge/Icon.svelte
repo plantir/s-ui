@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge } from 's-ui';
+	import { Badge } from "$lib/index";
 	import { ClockSolid } from 'flowbite-svelte-icons';
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DetailedStepper, P, Heading } from 's-ui';
+	import { DetailedStepper, P, Heading } from "$lib/index";
 	import { BellOutline, ClipboardOutline, CogOutline } from 'flowbite-svelte-icons';
 </script>
 

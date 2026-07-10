@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Clipboard, Input, Tooltip, Modal, Button, Label } from 's-ui';
+	import { Clipboard, Input, Tooltip, Modal, Button, Label } from "$lib/index";
 	import { CheckOutline, ClipboardCleanOutline, ShareNodesOutline } from 'flowbite-svelte-icons';
 
 	let value = $state('npm install s-ui');

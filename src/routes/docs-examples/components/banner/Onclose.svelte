@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { Banner, P, Button } from 's-ui';
+	import { Banner, P, Button } from "$lib/index";
 
 	function useDismissableBanner(storageKey: string) {
 		let open = $state(false);

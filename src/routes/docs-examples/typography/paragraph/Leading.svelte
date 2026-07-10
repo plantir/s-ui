@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { P } from 's-ui';
+	import { P } from "$lib/index";
 </script>
 
 <P class="mb-3 md:text-xl" size="lg"

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { bottomNavHeader } from './theme';
 	import clsx from 'clsx';
-	import type { BottomNavHeaderProps } from 's-ui';
+	import type { BottomNavHeaderProps } from '$lib/types.js';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import { untrack } from 'svelte';
 

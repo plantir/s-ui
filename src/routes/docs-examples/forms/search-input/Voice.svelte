@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Search, Button } from 's-ui';
+	import { Search, Button } from "$lib/index";
 	import { MicrophoneSolid, SearchOutline } from 'flowbite-svelte-icons';
 	function handleVoiceBtn() {
 		alert('You clicked voice button');

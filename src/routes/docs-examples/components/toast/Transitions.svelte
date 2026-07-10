@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toast } from 's-ui';
+	import { Toast } from "$lib/index";
 	import { slide, scale } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import { CheckCircleSolid } from 'flowbite-svelte-icons';

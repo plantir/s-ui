@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input } from 's-ui';
+	import { Input } from "$lib/index";
 </script>
 
 <Input class="mb-6" disabled value="Disabled input" />

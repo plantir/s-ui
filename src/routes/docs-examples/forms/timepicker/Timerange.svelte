@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label, Timepicker, P } from 's-ui';
+	import { Label, Timepicker, P } from "$lib/index";
 
 	let selectedTimerangeDropdown = $state({ time: '09:00', endTime: '17:00' });
 

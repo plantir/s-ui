@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, Label, Input, Checkbox } from 's-ui';
+	import { Button, Modal, Label, Input, Checkbox } from "$lib/index";
 	let open = $state(false);
 	let checked = $state(false);
 </script>

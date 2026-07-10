@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Checkbox, Listgroup } from 's-ui';
+	import { Checkbox, Listgroup } from "$lib/index";
 	let choices = [
 		{ value: 'svelte', label: 'svelte' },
 		{ value: 'vue', label: 'Vue JS' },

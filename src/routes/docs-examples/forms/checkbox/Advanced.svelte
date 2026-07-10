@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Checkbox } from 's-ui';
+	import { Checkbox } from "$lib/index";
 	import React from '$icons/React.svelte';
 	import Vue from '$icons/Vue.svelte';
 	import Angular from '$icons/Angular.svelte';

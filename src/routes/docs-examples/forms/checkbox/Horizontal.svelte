@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Checkbox } from 's-ui';
+	import { Checkbox } from "$lib/index";
 </script>
 
 <p class="mb-4 font-semibold text-heading">Identification</p>

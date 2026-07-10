@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ButtonToggleGroup, ButtonToggle } from 's-ui';
+	import { ButtonToggleGroup, ButtonToggle } from "$lib/index";
 	import { CheckCircleOutline, BadgeCheckOutline, FileCheckOutline } from 'flowbite-svelte-icons';
 
 	let singleValue = $state<string | null>(null);

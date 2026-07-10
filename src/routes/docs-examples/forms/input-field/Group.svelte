@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label, Input, Button, InputAddon, ButtonGroup, Checkbox } from 's-ui';
+	import { Label, Input, Button, InputAddon, ButtonGroup, Checkbox } from "$lib/index";
 </script>
 
 <div>

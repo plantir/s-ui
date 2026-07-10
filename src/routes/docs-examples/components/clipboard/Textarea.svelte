@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Clipboard, Textarea } from 's-ui';
+	import { Clipboard, Textarea } from "$lib/index";
 	import { CheckOutline, ClipboardCleanOutline } from 'flowbite-svelte-icons';
 
 	let value = $state('');

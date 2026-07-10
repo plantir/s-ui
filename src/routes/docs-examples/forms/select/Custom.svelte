@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Select, Label } from 's-ui';
+	import { Select, Label } from "$lib/index";
 	let selected = $state();
 	let countries = [
 		{ value: 'us', name: 'United States' },

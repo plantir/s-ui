@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { P } from 's-ui';
+	import { P } from "$lib/index";
 
 	const heights = ['normal', 'relaxed', 'loose'] as const;
 	type Height = (typeof heights)[number];

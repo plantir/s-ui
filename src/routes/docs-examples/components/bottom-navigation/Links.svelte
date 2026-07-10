@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 's-ui';
+	import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "$lib/index";
 	import {
 		HomeOutline,
 		WalletOutline,

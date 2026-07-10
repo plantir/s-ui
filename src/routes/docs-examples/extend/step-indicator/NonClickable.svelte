@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StepIndicator } from 's-ui';
+	import { StepIndicator } from "$lib/index";
 
 	let currentStep = $state(3);
 	const steps = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];

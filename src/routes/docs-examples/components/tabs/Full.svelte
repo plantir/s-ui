@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tabs, TabItem } from 's-ui';
+	import { Tabs, TabItem } from "$lib/index";
 </script>
 
 <Tabs

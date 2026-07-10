@@ -10,7 +10,7 @@
 		DropdownItem,
 		DropdownHeader,
 		DropdownGroup
-	} from 's-ui';
+	} from "$lib/index";
 </script>
 
 <Navbar>

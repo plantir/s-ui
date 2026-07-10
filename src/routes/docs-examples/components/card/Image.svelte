@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, Button, Toggle } from 's-ui';
+	import { Card, Button, Toggle } from "$lib/index";
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 	let vCard = $state(false);
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Dropdown, Toggle } from 's-ui';
+	import { Button, Dropdown, Toggle } from "$lib/index";
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 </script>
 

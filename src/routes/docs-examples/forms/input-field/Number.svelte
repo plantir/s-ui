@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input, Label } from 's-ui';
+	import { Input, Label } from "$lib/index";
 	let value = $state(5);
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Button } from 's-ui';
+	import { Badge, Button } from "$lib/index";
 </script>
 
 <Button>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { avatar } from './theme';
 	import clsx from 'clsx';
-	import { type AvatarProps } from 's-ui';
+	import type { AvatarProps } from '$lib/types.js';
 	import Indicator from '$lib/indicator/Indicator.svelte';
 	import { getTheme } from '$lib/theme/themeUtils';
 

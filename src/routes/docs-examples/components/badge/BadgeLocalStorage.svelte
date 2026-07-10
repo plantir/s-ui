@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Badge } from 's-ui';
-	import { Button } from 's-ui';
+	import { Badge } from "$lib/index";
+	import { Button } from "$lib/index";
 	import { onMount } from 'svelte';
 
 	const STORAGE_KEY = 'example-badge-hidden';

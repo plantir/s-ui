@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Li, List, Heading } from 's-ui';
+	import { Li, List, Heading } from "$lib/index";
 </script>
 
 <Heading tag="h2" class="mb-2 text-lg font-semibold">Password requirements</Heading>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Toggle } from 's-ui';
+	import { Button, Toggle } from "$lib/index";
 	let isDisabled = $state(false);
 	let checked: boolean = $state(false);
 	const handleClick = () => {

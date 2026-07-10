@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar } from 's-ui';
+	import { Avatar } from "$lib/index";
 </script>
 
 <div class="mb-5 flex">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { P, A } from 's-ui';
+	import { P, A } from "$lib/index";
 
 	const styles = ['link', 'bold', 'underline', 'italic'] as const;
 	type Style = (typeof styles)[number];

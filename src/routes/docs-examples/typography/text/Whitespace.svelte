@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { P } from 's-ui';
+	import { P } from "$lib/index";
 
 	const modes = ['normal', 'nowrap', 'preline'] as const;
 	type Whitespace = (typeof modes)[number];

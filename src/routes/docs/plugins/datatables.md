@@ -66,7 +66,7 @@ description: Use the datatable component to search, sort, filter and paginate ta
   // callback example can't be done since it is using $state()
   // mdsvex and mdsvexample are not allow to use runes.
   
-  import { Badge, P, Button, Heading, Span } from "s-ui"
+  import { Badge, P, Button, Heading, Span } from "$lib/index"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 </script>
 

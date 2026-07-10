@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ClipboardManager } from 's-ui';
+	import { ClipboardManager } from "$lib/index";
 
 	let snippets = [
 		{ id: 1, text: 'console.log()', pinned: true, timestamp: Date.now() - 20 * 60 * 1000 },

@@ -9,7 +9,7 @@ description: Use the button toggle to toggle on/off with the appearance of a but
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
 
   const components = 'ButtonToggle, ButtonToggleGroup'
   const relatedLinks = ['/docs/extend/button-toggle','/docs/components/button-group' ,'/docs/components/list-group','/docs/forms/radio#radiobutton' , '/docs/forms/checkbox#checkboxbutton'];
@@ -19,7 +19,7 @@ description: Use the button toggle to toggle on/off with the appearance of a but
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ButtonToggleGroup, ButtonToggle } from "s-ui";
+  import { ButtonToggleGroup, ButtonToggle } from "$lib/index";
 </script>
 ```
 

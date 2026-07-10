@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DeviceMockup } from 's-ui';
+	import { DeviceMockup } from "$lib/index";
 </script>
 
 <DeviceMockup device="desktop">

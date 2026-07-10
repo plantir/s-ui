@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Timeline, TimelineItem, Button } from 's-ui';
+	import { Timeline, TimelineItem, Button } from "$lib/index";
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 

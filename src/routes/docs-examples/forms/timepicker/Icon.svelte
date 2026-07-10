@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label, Timepicker } from 's-ui';
+	import { Label, Timepicker } from "$lib/index";
 	import { ClockOutline } from 'flowbite-svelte-icons';
 </script>
 

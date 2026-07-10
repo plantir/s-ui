@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Dropdown, DropdownItem } from 's-ui';
+	import { Button, Dropdown, DropdownItem } from "$lib/index";
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 	import { page } from '$app/state';
 	let activeUrl = $derived(page.url.pathname);

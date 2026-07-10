@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Drawer, DrawerHandle, CardPlaceholder } from 's-ui';
+	import { Drawer, DrawerHandle, CardPlaceholder } from "$lib/index";
 	import {
 		AdjustmentsVerticalSolid,
 		ChartPieSolid,

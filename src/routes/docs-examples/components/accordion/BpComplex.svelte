@@ -6,7 +6,7 @@
 		useMediaQuery,
 		useBreakpoints,
 		useCurrentBreakpoint
-	} from 's-ui';
+	} from "$lib/index";
 
 	// Different approaches to responsive behavior
 	const isMdAndUp = useMediaQuery('(min-width: 768px)');

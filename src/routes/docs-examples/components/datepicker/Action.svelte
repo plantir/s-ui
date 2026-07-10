@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Datepicker, P, type DateOrRange } from 's-ui';
+	import { Datepicker, P, type DateOrRange } from "$lib/index";
 	let selectedDate = $state<Date | undefined>(undefined);
 	let lastAction = $state<string | undefined>();
 

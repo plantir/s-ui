@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tabs, TabItem } from 's-ui';
+	import { Tabs, TabItem } from "$lib/index";
 </script>
 
 <Tabs classes={{ active: 'p-4 text-white bg-blue-600 dark:bg-blue-500 rounded-t-base' }}>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Spinner, VirtualMasonry, Heading } from 's-ui';
+	import { Spinner, VirtualMasonry, Heading } from "$lib/index";
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();

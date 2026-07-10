@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Hr, P } from 's-ui';
+	import { Hr, P } from "$lib/index";
 </script>
 
 <P>

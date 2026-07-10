@@ -8,7 +8,7 @@
 		ImagePlaceholder,
 		Skeleton,
 		TextPlaceholder
-	} from 's-ui';
+	} from "$lib/index";
 </script>
 
 <div class="relative px-8">

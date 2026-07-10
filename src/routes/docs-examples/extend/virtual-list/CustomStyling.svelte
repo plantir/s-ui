@@ -1,6 +1,6 @@
 <!-- CustomStyling.svelte -->
 <script lang="ts">
-	import { VirtualList } from 's-ui';
+	import { VirtualList } from "$lib/index";
 
 	interface User {
 		id: number;

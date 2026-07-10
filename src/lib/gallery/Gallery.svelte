@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { gallery } from './theme';
 	import clsx from 'clsx';
-	import type { GalleryProps, ImgType } from 's-ui';
+	import type { GalleryProps, ImgType } from '$lib/types.js';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import { untrack } from 'svelte';
 

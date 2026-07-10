@@ -6,7 +6,7 @@
 		SidebarDropdownWrapper,
 		SidebarButton,
 		uiHelpers
-	} from 's-ui';
+	} from "$lib/index";
 	import {
 		ChartOutline,
 		GridSolid,

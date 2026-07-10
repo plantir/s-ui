@@ -6,7 +6,7 @@
 		exportTXT,
 		exportSQL
 	} from '@flowbite-svelte-plugins/datatable';
-	import { Button } from 's-ui';
+	import { Button } from "$lib/index";
 	import items from './data/sample.json';
 
 	let dataTableInstance = $state<any>(null);

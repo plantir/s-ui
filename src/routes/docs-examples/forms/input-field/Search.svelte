@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input, Label, Button } from 's-ui';
+	import { Input, Label, Button } from "$lib/index";
 	import { SearchOutline } from 'flowbite-svelte-icons';
 </script>
 

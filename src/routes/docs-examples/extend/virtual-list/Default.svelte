@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { VirtualList } from 's-ui';
+	import { VirtualList } from "$lib/index";
 
 	function getRandomLorem(minWords: number, maxWords: number) {
 		const lorem =

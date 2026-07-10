@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { Pagination } from 's-ui';
+	import { Pagination } from "$lib/index";
 	import { onMount } from 'svelte';
 
 	let isMobile = $state(false);

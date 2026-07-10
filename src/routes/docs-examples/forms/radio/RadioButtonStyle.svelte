@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ButtonGroup, RadioButton } from 's-ui';
+	import { ButtonGroup, RadioButton } from "$lib/index";
 	let options = $state();
 </script>
 

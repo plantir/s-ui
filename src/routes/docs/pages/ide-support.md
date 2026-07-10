@@ -8,7 +8,7 @@ description: The Flowbite Svelte components support component documentation.
 ---
 
 <script lang="ts">
-  import { Img } from 's-ui';
+  import { Img } from "$lib/index";
   import { LlmLink } from '../../utils';
 </script>
 

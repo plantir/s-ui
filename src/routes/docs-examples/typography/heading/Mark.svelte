@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Heading, P, Mark } from 's-ui';
+	import { Heading, P, Mark } from "$lib/index";
 </script>
 
 <Heading tag="h1" class="mb-4">Regain <Mark>control</Mark> over your days</Heading>

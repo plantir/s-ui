@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Popover, Button } from 's-ui';
+	import { Popover, Button } from "$lib/index";
 </script>
 
 <Button id="hover">Hover popover</Button>

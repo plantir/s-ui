@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { FormatButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
 	import type { Editor } from '@tiptap/core';
-	import { Button } from 's-ui';
+	import { Button } from "$lib/index";
 
 	let editorInstance = $state<Editor | null>(null);
 

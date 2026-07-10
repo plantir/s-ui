@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AccordionItem, Accordion } from 's-ui';
+	import { AccordionItem, Accordion } from "$lib/index";
 </script>
 
 <Accordion

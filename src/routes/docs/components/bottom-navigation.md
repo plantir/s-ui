@@ -10,7 +10,7 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink, Seealso } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
 
   const dirName = toKebabCase(component_title)
   const relatedLinks = [
@@ -29,7 +29,7 @@ Check out multiple examples of the bottom navigation component based on various 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { BottomNav, BottomNavItem } from "s-ui";
+  import { BottomNav, BottomNavItem } from "$lib/index";
 </script>
 ```
 

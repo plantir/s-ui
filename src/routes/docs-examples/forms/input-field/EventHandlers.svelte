@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input, P } from 's-ui';
+	import { Input, P } from "$lib/index";
 	let value = $state('Custom Event Handlers');
 </script>
 

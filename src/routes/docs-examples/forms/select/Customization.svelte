@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MultiSelect, Badge, type SelectOptionType } from 's-ui';
+	import { MultiSelect, Badge, type SelectOptionType } from "$lib/index";
 
 	let selected: string[] = [];
 	let countries: SelectOptionType<string>[] = [

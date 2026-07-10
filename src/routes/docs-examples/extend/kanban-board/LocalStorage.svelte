@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type KanbanCardType, type KanbanColumnType, KanbanBoard, Button } from 's-ui';
+	import { type KanbanCardType, type KanbanColumnType, KanbanBoard, Button } from "$lib/index";
 	import { onMount } from 'svelte';
 
 	const STORAGE_KEY = 'my-kanban-board';

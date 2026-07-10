@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AdvancedRating, Rating, Thumbup } from 's-ui';
+	import { AdvancedRating, Rating, Thumbup } from "$lib/index";
 </script>
 
 <AdvancedRating

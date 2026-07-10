@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label, Fileupload } from 's-ui';
+	import { Label, Fileupload } from "$lib/index";
 
 	let fileuploadprops = {
 		id: 'user_avatar'

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Listgroup, ListgroupItem, Avatar } from 's-ui';
+	import { Listgroup, ListgroupItem, Avatar } from "$lib/index";
 	import { TrashBinSolid } from 'flowbite-svelte-icons';
 </script>
 

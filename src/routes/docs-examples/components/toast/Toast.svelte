@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toast, Avatar, Button } from 's-ui';
+	import { Toast, Avatar, Button } from "$lib/index";
 </script>
 
 <Toast align={false} color={undefined}>

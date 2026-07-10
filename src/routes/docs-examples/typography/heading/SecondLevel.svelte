@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Heading, P, A } from 's-ui';
+	import { Heading, P, A } from "$lib/index";
 	import { ChevronRightOutline } from 'flowbite-svelte-icons';
 </script>
 

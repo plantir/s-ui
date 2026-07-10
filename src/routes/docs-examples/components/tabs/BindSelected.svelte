@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tabs, TabItem, Button, P } from 's-ui';
+	import { Tabs, TabItem, Button, P } from "$lib/index";
 
 	let selectedKey = $state('settings');
 </script>

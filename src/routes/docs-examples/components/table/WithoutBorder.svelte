@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 's-ui';
+	import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "$lib/index";
 </script>
 
 <Table border={false}>

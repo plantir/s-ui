@@ -8,7 +8,7 @@
 		SidebarDropdownWrapper,
 		SidebarGroup,
 		SidebarItem
-	} from 's-ui';
+	} from "$lib/index";
 	import {
 		ChartPieSolid,
 		CartSolid,

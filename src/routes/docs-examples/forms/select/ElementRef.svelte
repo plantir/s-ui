@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Select, Button } from 's-ui';
+	import { Select, Button } from "$lib/index";
 
 	let selectRef = $state() as HTMLSelectElement;
 	const options = [

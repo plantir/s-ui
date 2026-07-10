@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Radio } from 's-ui';
+	import { Radio } from "$lib/index";
 	let inline2 = $state('third');
 </script>
 

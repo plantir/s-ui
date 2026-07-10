@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label, Select } from 's-ui';
+	import { Label, Select } from "$lib/index";
 	let selected: string = '';
 
 	let countries: { value: string; name: string }[] = [

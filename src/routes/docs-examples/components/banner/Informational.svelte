@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Banner, Skeleton, ImagePlaceholder, Button } from 's-ui';
+	import { Banner, Skeleton, ImagePlaceholder, Button } from "$lib/index";
 	import { BookOpenOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 

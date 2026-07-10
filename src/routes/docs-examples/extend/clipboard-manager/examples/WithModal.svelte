@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ClipboardManager, Button, P } from 's-ui';
+	import { ClipboardManager, Button, P } from "$lib/index";
 
 	let clipboardModal = $state(false);
 </script>

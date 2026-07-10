@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BreadcrumbStepper, Button, P, Heading } from 's-ui';
+	import { BreadcrumbStepper, Button, P, Heading } from "$lib/index";
 	import {
 		UserCircleOutline,
 		CogOutline,

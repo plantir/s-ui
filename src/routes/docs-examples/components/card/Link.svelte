@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card } from 's-ui';
+	import { Card } from "$lib/index";
 	import { GiftBoxSolid, ArrowUpRightFromSquareOutline } from 'flowbite-svelte-icons';
 </script>
 

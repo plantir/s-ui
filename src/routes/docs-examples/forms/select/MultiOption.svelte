@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MultiSelect } from 's-ui';
+	import { MultiSelect } from "$lib/index";
 
 	let selected: string[] = [];
 	let countries = [

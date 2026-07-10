@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { AccordionItemProps, ParamsType } from 's-ui';
+	import type { AccordionItemProps, ParamsType } from '$lib/types.js';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import { useSingleSelection } from '$lib/utils/singleselection.svelte';
 	import clsx from 'clsx';

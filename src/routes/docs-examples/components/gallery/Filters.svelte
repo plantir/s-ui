@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Gallery, Button } from 's-ui';
+	import { Gallery, Button } from "$lib/index";
 
 	const images = [
 		{

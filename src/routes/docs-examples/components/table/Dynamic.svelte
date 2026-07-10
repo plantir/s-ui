@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Table, Button } from 's-ui';
+	import { Table, Button } from "$lib/index";
 	type ItemType = {
 		id: number;
 		maker: string;

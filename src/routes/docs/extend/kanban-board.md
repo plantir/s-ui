@@ -10,7 +10,7 @@ description: A fully responsive, drag-and-drop Kanban board component built with
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
 
   const dirName = 'kanban'
   const components = 'KanbanBoard'
@@ -21,7 +21,7 @@ description: A fully responsive, drag-and-drop Kanban board component built with
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { type KanbanCardType, type KanbanColumnType, KanbanBoard } from 's-ui';
+  import { type KanbanCardType, type KanbanColumnType, KanbanBoard } from "$lib/index";
 </script>
 ```
 ## Default Kanban Board

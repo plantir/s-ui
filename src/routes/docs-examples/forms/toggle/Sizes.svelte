@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toggle } from 's-ui';
+	import { Toggle } from "$lib/index";
 	const customSize = 'w-16 h-10 after:top-1 after:start-[4px] after:h-8 after:w-8';
 </script>
 

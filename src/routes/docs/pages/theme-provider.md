@@ -9,7 +9,7 @@ description: The ThemeProvider component allows you to customize the styling of 
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, LlmLink } from '../../utils';
-  import { A, Img, P } from 's-ui';
+  import { A, Img, P } from "$lib/index";
 </script>
 
 ## How It Works
@@ -22,7 +22,7 @@ Wrap your components with ThemeProvider and pass a theme configuration object:
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ThemeProvider, Button, Card } from "s-ui";
+  import { ThemeProvider, Button, Card } from "$lib/index";
 
   const theme = {
     button: {
@@ -127,7 +127,7 @@ import type {
   ButtonTheme,
   CardTheme.
   // ...
-} from "s-ui";
+} from "$lib/index";
 ```
 
 ## Nested ThemeProvider and Component Classes
@@ -138,7 +138,7 @@ Component classes, when defined directly on a component, will always take preced
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ThemeProvider, Card, Heading, P } from "s-ui";
+  import { ThemeProvider, Card, Heading, P } from "$lib/index";
 
   const theme1a = {
     card: {
