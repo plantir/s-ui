@@ -6,6 +6,7 @@
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import { createDismissableContext } from '$lib/utils/dismissable';
 	import { untrack } from 'svelte';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -36,7 +37,14 @@
 
 	const theme = $derived(getTheme('search'));
 
-	const { base, content, icon, close, input: inputCls, left } = $derived(search({ size }));
+	const {
+		base,
+		content,
+		icon,
+		close,
+		input: inputCls,
+		left
+	} = $derived(search({ size, theme: getCurrentThemeVariant() }));
 
 	const clearAll = () => {
 		if (elementRef) {

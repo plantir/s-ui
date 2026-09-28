@@ -4,6 +4,7 @@
 	import type { HrProps } from '$lib/types.js';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import { untrack } from 'svelte';
+	import { getCurrentTheme } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -11,6 +12,7 @@
 		innerDivClass,
 		class: className,
 		classes,
+		vertical = false,
 		divProps = {},
 		hrProps = {},
 		...restProps
@@ -39,7 +41,9 @@
 	const mergedDivProps = $derived({ ...restProps, ...divProps });
 	const mergedHrProps = $derived({ ...restProps, ...hrProps });
 
-	let { base, div, content } = $derived(hr({ withChildren: !!children }));
+	let { base, div, content } = $derived(
+		hr({ withChildren: !!children, theme: getCurrentTheme(), vertical })
+	);
 </script>
 
 {#if children}

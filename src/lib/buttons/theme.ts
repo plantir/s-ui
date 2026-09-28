@@ -152,6 +152,28 @@ export const button = tv({
 				outline:
 					'text-rose-700 border-rose-700 hover:bg-rose-800 dark:border-rose-400 dark:text-rose-400 dark:hover:bg-rose-500',
 				shadow: 'shadow-rose-500/50 dark:shadow-rose-800/80'
+			},
+			warning: {
+				base: 'text-white bg-yellow-400 hover:bg-yellow-500 focus-within:ring-yellow-300 dark:focus-within:ring-yellow-900',
+				outline:
+					'text-yellow-400 border-yellow-400 hover:bg-yellow-500 dark:border-yellow-300 dark:text-yellow-300 dark:hover:bg-yellow-400',
+				shadow: 'shadow-yellow-500/50 dark:shadow-yellow-800/80'
+			},
+			success: {
+				base: 'text-white bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700 focus-within:ring-green-300 dark:focus-within:ring-green-800',
+				outline:
+					'text-green-700 border-green-700 hover:bg-green-800 dark:border-green-500 dark:text-green-500 dark:hover:bg-green-600',
+				shadow: 'shadow-green-500/50 dark:shadow-green-800/80'
+			},
+			danger: {
+				base: 'text-white bg-red-700 hover:bg-red-800 dark:bg-red-600 dark:hover:bg-red-700 focus-within:ring-red-300 dark:focus-within:ring-red-900',
+				outline:
+					'text-red-700 border-red-700 hover:bg-red-800 dark:border-red-500 dark:text-red-500 dark:hover:bg-red-600',
+				shadow: 'shadow-red-500/50 dark:shadow-red-800/80'
+			},
+			transparent: {
+				base: "bg-transparent hover:bg-neutral-secondary-medium focus-within:ring-0 dark:focus-within:ring-0",
+				outline:'hover:bg-neutral-secondary-medium hover:text-heading'
 			}
 		},
 		size: {
@@ -176,9 +198,34 @@ export const button = tv({
 		checked: {
 			true: '',
 			false: ''
+		},
+		theme: {
+			fluent: '',
+			default: '',
 		}
 	},
-	compoundVariants: [],
+	compoundVariants: [
+		{
+			theme: 'fluent',
+			class: {
+				base: 'py-1'
+			}
+		},
+		{
+			theme: 'fluent',
+			color:'transparent',
+			class: {
+				base: 'hover:bg-transparent hover:text-primary-600'
+			}
+		},
+		{
+			theme: 'fluent',
+			pill: false,
+			class: {
+				base: 'rounded'
+			}
+		},
+	],
 	defaultVariants: {
 		pill: false
 	}

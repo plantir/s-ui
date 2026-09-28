@@ -99,8 +99,151 @@ export const toast = tv({
     align: {
       true: { base: "items-center" },
       false: { base: "items-start" }
+    },
+    theme: {
+      fluent: {
+        base: "px-4 py-1 h-max min-h-8",
+        close: 'text-gray-500 bg-transparent hover:bg-transparent hover:text-primary-500 p-0'
+      },
+      default: {}
     }
-  }
+  },
+  compoundVariants: [
+    {
+      theme: "fluent",
+      color: "primary",
+      class: {
+        base: "bg-primary-100 border border-primary-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "gray",
+      class: {
+        base: "bg-gray-100 border border-gray-600"
+      }
+    },
+   
+    {
+      theme: "fluent",
+      color: "red",
+      class: {
+        base: "bg-red-100 border border-red-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "orange",
+      class: {
+        base: "bg-orange-100 border border-orange-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "amber",
+      class: {
+        base: "bg-amber-100 border border-amber-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "yellow",
+      class: {
+        base: "bg-yellow-100 border border-yellow-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "lime",
+      class: {
+        base: "bg-lime-100 border border-lime-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "green",
+      class: {
+        base: "bg-green-100 border border-green-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "emerald",
+      class: {
+        base: "bg-emerald-100 border border-emerald-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "teal",
+      class: {
+        base: "bg-teal-100 border border-teal-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "cyan",
+      class: {
+        base: "bg-cyan-100 border border-cyan-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "sky",
+      class: {
+        base: "bg-sky-100 border border-sky-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "blue",
+      class: {
+        base: "bg-blue-100 border border-blue-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "indigo",
+      class: {
+        base: "bg-indigo-100 border border-indigo-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "violet",
+      class: {
+        base: "bg-violet-100 border border-violet-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "purple",
+      class: {
+        base: "bg-purple-100 border border-purple-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "fuchsia",
+      class: {
+        base: "bg-fuchsia-100 border border-fuchsia-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "pink",
+      class: {
+        base: "bg-pink-100 border border-pink-600"
+      }
+    },
+    {
+      theme: "fluent",
+      color: "rose",
+      class: {
+        base: "bg-rose-100 border border-rose-600"
+      }
+    }
+  ]
 });
 
 export const toastContainer = tv({

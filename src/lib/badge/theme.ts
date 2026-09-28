@@ -1,6 +1,6 @@
 import { tv, type VariantProps } from 'tailwind-variants';
 
-export type BadgeVariants = VariantProps<typeof badge> 
+export type BadgeVariants = VariantProps<typeof badge>
 
 export const badge = tv({
 	slots: {
@@ -8,6 +8,10 @@ export const badge = tv({
 		base: 'font-medium inline-flex items-center justify-center px-2.5 py-0.5'
 	},
 	variants: {
+		theme: {
+			fluent: '',
+			default: ''
+		},
 		color: {
 			// primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
 			primary: {
@@ -255,7 +259,249 @@ export const badge = tv({
 			href: true,
 			color: 'rose',
 			class: 'hover:bg-rose-200'
-		}
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'primary',
+			class: 'bg-transparent text-primary-400 border-primary-400 dark:border-primary-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'secondary',
+			class:
+				'bg-transparent text-secondary-400 border-secondary-400 dark:border-secondary-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'gray',
+			class: 'bg-transparent text-gray-400 border-gray-400 dark:border-gray-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'red',
+			class: 'bg-transparent text-red-400 border-red-400 dark:border-red-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'orange',
+			class: 'bg-transparent text-orange-400 border-orange-400 dark:border-orange-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'amber',
+			class: 'bg-transparent text-amber-400 border-amber-400 dark:border-amber-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'yellow',
+			class: 'bg-transparent text-yellow-300 border-yellow-300 dark:border-yellow-300'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'lime',
+			class: 'bg-transparent text-lime-400 border-lime-400 dark:border-lime-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'green',
+			class: 'bg-transparent text-green-400 border-green-400 dark:border-green-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'emerald',
+			class: 'bg-transparent text-emerald-400 border-emerald-400 dark:border-emerald-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'teal',
+			class: 'bg-transparent text-teal-400 border-teal-400 dark:border-teal-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'cyan',
+			class: 'bg-transparent text-cyan-400 border-cyan-400 dark:border-cyan-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'sky',
+			class: 'bg-transparent text-sky-400 border-sky-400 dark:border-sky-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'blue',
+			class: 'bg-transparent text-blue-400 border-blue-400 dark:border-blue-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'indigo',
+			class: 'bg-transparent text-indigo-400 border-indigo-400 dark:border-indigo-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'violet',
+			class: 'bg-transparent text-violet-400 border-violet-400 dark:border-violet-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'purple',
+			class: 'bg-transparent text-purple-400 border-purple-400 dark:border-purple-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'fuchsia',
+			class: 'bg-transparent text-fuchsia-400 border-fuchsia-400 dark:border-fuchsia-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'pink',
+			class: 'bg-transparent text-pink-400 border-pink-400 dark:border-pink-400'
+		},
+		{
+			border: true,
+			theme: 'fluent',
+			color: 'rose',
+			class: 'bg-transparent text-rose-400 border-rose-400 dark:border-rose-400'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'primary',
+			class: 'bg-primary-600 dark:bg-primary-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'secondary',
+			class:
+				'bg-secondary-600 dark:bg-secondary-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'gray',
+			class: 'bg-gray-600 dark:bg-gray-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'red',
+			class: 'bg-red-600 dark:bg-red-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'orange',
+			class: 'bg-orange-600 dark:bg-orange-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'amber',
+			class: 'bg-amber-600 dark:bg-amber-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'yellow',
+			class: 'bg-yellow-300 dark:bg-yellow-300 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'lime',
+			class: 'bg-lime-600 dark:bg-lime-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'green',
+			class: 'bg-green-600 dark:bg-green-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'emerald',
+			class: 'bg-emerald-600 dark:bg-emerald-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'teal',
+			class: 'bg-teal-600 dark:bg-teal-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'cyan',
+			class: 'bg-cyan-600 dark:bg-cyan-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'sky',
+			class: 'bg-sky-600 dark:bg-sky-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'blue',
+			class: 'bg-blue-600 dark:bg-blue-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'indigo',
+			class: 'bg-indigo-600 dark:bg-indigo-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'violet',
+			class: 'bg-violet-600 dark:bg-violet-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'purple',
+			class: 'bg-purple-600 dark:bg-purple-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'fuchsia',
+			class: 'bg-fuchsia-600 dark:bg-fuchsia-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'pink',
+			class: 'bg-pink-600 dark:bg-pink-600 text-white'
+		},
+		{
+			border: false,
+			theme: 'fluent',
+			color: 'rose',
+			class: 'bg-rose-600 dark:bg-rose-600 text-white'
+		},
 	],
 	defaultVariants: {
 		color: 'primary',

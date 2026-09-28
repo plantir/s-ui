@@ -5,13 +5,13 @@
 	import { Tween } from 'svelte/motion';
 	import { progressbar } from './theme.js';
 	import { getTheme } from '$lib/theme/themeUtils';
-
+	import { getCurrentTheme } from '$lib/theme-selector/themeStore.svelte.js';
 	let {
 		progress = '45',
 		precision = 0,
 		tweenDuration = 400,
 		animate = false,
-		size = 'h-2.5',
+		size = 'md',
 		labelInside = false,
 		labelOutside = '',
 		easing = cubicOut,
@@ -39,7 +39,9 @@
 	} = $derived(
 		progressbar({
 			color,
-			labelInside
+			labelInside,
+			size,
+			theme: getCurrentTheme()
 		})
 	);
 

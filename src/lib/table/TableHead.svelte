@@ -5,6 +5,7 @@
 	import type { TableHeadProps, HeadItemType } from '$lib/types.js';
 	import clsx from 'clsx';
 	import { getTheme } from '$lib/theme/themeUtils';
+	import { getCurrentTheme } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -31,6 +32,7 @@
 			color: compoColor,
 			border: compoBorder,
 			striped: compoStriped,
+			theme: getCurrentTheme() as 'fluent' | 'default',
 			class: clsx(theme, className)
 		})
 	);

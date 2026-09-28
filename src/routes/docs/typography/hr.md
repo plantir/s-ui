@@ -30,6 +30,11 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 ```svelte example
 {#include Default.svelte}
 ```
+## Vertical HR
+
+```svelte example
+{#include Vertical.svelte}
+```
 
 ## Trimmed
 

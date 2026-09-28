@@ -7,6 +7,7 @@
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import { createDismissableContext } from '$lib/utils/dismissable';
 	import { untrack } from 'svelte';
+	import { getCurrentTheme } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -43,7 +44,12 @@
 
 	const theme = $derived(getTheme('toast'));
 
-	const { base, icon: iconVariants, content, close } = $derived(toast({ color, position, align }));
+	const {
+		base,
+		icon: iconVariants,
+		content,
+		close
+	} = $derived(toast({ color, position, align, theme: getCurrentTheme() }));
 
 	let ref: HTMLDivElement | undefined = $state(undefined);
 

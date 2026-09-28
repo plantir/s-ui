@@ -3,13 +3,15 @@
 	import { tableHeadCell } from './theme.js';
 	import type { TableHeadCellProps } from '$lib/types.js';
 	import { getTheme } from '$lib/theme/themeUtils';
+	import { getCurrentTheme } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let { children, class: className, ...restProps }: TableHeadCellProps = $props();
 
 	const theme = $derived(getTheme('tableHeadCell'));
+	let base = $derived(tableHeadCell({ theme: getCurrentTheme() as 'fluent' | 'default', class: clsx(theme, className) }));
 </script>
 
-<th {...restProps} class={tableHeadCell({ class: clsx(theme, className) })}>
+<th {...restProps} class={base}>
 	{#if children}
 		{@render children()}
 	{/if}

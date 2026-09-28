@@ -5,6 +5,7 @@
   import Label from "$lib/label/Label.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { untrack } from "svelte";
+	import { getCurrentTheme } from "$lib/theme-selector/themeStore.svelte.js";
 
   let {
     children,
@@ -35,7 +36,7 @@
 
   const theme = $derived(getTheme("checkbox"));
 
-  const { base, div: divStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabled ?? false }));
+  const { base, div: divStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabled ?? false, theme: getCurrentTheme() }));
 
   $effect(() => {
     if (value !== undefined && Array.isArray(group)) {

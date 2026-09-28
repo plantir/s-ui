@@ -78,6 +78,10 @@ export const tableBodyRow = tv({
     },
     border: {
       true: "border-b last:border-b-0"
+    },
+    theme: {
+      fluent: "border-(color:--colorNeutralStroke2)",
+      default: ""
     }
   },
   compoundVariants: [
@@ -300,7 +304,6 @@ export const tableHead = tv({
   variants: {
     color: {
       // default, primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
-
       default: "text-gray-700 dark:text-gray-400 bg-gray-50 dark:bg-gray-700",
       primary: "text-white dark:text-white bg-primary-700 dark:bg-primary-700",
       secondary: "text-white dark:text-white bg-secondary-700 dark:bg-secondary-700",
@@ -330,9 +333,18 @@ export const tableHead = tv({
     striped: {
       true: "",
       false: ""
+    },
+    theme: {
+      fluent: "border-b border-(color:--colorNeutralStroke2)",
+      default: ""
     }
   },
   compoundVariants: [
+    {
+      color: "default",
+      theme: "fluent",
+      class: 'bg-transparent dark:bg-gray-700'
+    },
     {
       color: "default",
       border: true,
@@ -382,11 +394,31 @@ export const tableHead = tv({
 });
 
 export const tableBodyCell = tv({
-  base: "px-6 py-4 whitespace-nowrap font-medium"
+  slots: {
+    base: "px-6 py-4 whitespace-nowrap font-medium"
+  },
+  variants: {
+    theme: {
+      fluent: {
+        base: "px-4 py-3"
+      },
+      default: {
+      }
+    }
+  }
 });
 
 export const tableHeadCell = tv({
-  base: "px-6 py-3"
+  base: "px-6 py-3",
+  variants: {
+    theme: {
+      fluent: {
+        base: "px-4 py-3"
+      },
+      default: {
+      }
+    }
+  }
 });
 
 export const tableSearch = tv({

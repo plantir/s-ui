@@ -1,6 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
-export type DialogVariants = VariantProps<typeof dialog> ;
+export type DialogVariants = VariantProps<typeof dialog>;
 
 export const dialog = tv({
   slots: {
@@ -9,6 +9,12 @@ export const dialog = tv({
     close: "absolute top-2.5 end-2.5"
   },
   variants: {
+    theme: {
+      fluent: {
+        base: 'text-primary',
+      },
+      default: ''
+    }
     // position: {
     //     fixed: { base: "fixed" },
     //     absolute: { base: "absolute" }

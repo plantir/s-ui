@@ -148,6 +148,7 @@ import type { ThemeSelectorVariants, themeSelector } from './theme-selector/them
 import type { CommandPaletteVariants, commandPalette } from './command-palette/theme.js';
 import type { VirtualMasonryVariants, virtualMasonry } from './virtual-masonry/theme.js';
 import type { VirtualListVariants, virtualList } from './virtuallist/theme.js';
+import type { HrVariants } from './hr/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -1112,7 +1113,7 @@ export interface ProgressbarProps extends ProgressbarVariants, Omit<HTMLAttribut
 	precision?: number;
 	tweenDuration?: number;
 	animate?: boolean;
-	size?: string;
+	size?: 'sm' | 'md' | 'lg' | 'xl';
 	classes?: Classes<typeof progressbar>;
 	labelInside?: boolean;
 	labelOutside?: string;
@@ -2386,7 +2387,7 @@ export interface CommandPaletteProps extends CommandPaletteVariants, Omit<Dialog
 	emptyMessage?: string;
 	shortcutKey?: string;
 	vim?: boolean;
-	classes?:Classes<typeof commandPalette>;
+	classes?: Classes<typeof commandPalette>;
 }
 
 export interface VirtualMasonryProps<T = unknown> extends VirtualMasonryVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
@@ -2401,10 +2402,10 @@ export interface VirtualMasonryProps<T = unknown> extends VirtualMasonryVariants
 	contained?: boolean;
 	ariaLabel?: string;
 	class?: ClassValue | null;
-	classes?:Classes<typeof virtualMasonry>;
-  }
+	classes?: Classes<typeof virtualMasonry>;
+}
 
-  export interface VirtualListProps<T = unknown> extends VirtualListVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+export interface VirtualListProps<T = unknown> extends VirtualListVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
 	children: Snippet<[item: T, index: number]>;
 	items?: T[];
 	minItemHeight?: number;
@@ -2415,5 +2416,17 @@ export interface VirtualMasonryProps<T = unknown> extends VirtualMasonryVariants
 	contained?: boolean;
 	ariaLabel?: string;
 	class?: ClassValue | null;
-	classes?:Classes<typeof virtualList>;
-  }
+	classes?: Classes<typeof virtualList>;
+}
+
+// hr
+export interface HrProps extends HrVariants, HTMLAttributes<HTMLElement> {
+	children?: Snippet;
+	divClass?: ClassValue;
+	iconDivClass?: ClassValue;
+	textSpanClass?: ClassValue;
+	innerDivClass?: ClassValue;
+	vertical?: boolean;
+	divProps?: HTMLAttributes<HTMLDivElement>;
+	hrProps?: HTMLAttributes<HTMLHRElement>;
+}
