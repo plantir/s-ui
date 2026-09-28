@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PhoneInput, Label, Helper } from 's-ui';
+	import { PhoneInput, Label, Helper } from "$lib/index";
 </script>
 
 <form class="mx-auto max-w-sm">

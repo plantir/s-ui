@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { P } from 's-ui';
+	import { P } from "$lib/index";
 </script>
 
 <P class="text-heading" size="4xl" weight="thin">Aa</P>

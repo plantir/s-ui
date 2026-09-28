@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MultiSelect } from 's-ui';
+	import { MultiSelect } from "$lib/index";
 
 	let placeholder = 'placeholder text';
 	let selected: string[] = [];

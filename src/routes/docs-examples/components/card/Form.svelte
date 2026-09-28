@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, Button, Label, Input, Checkbox } from 's-ui';
+	import { Card, Button, Label, Input, Checkbox } from "$lib/index";
 </script>
 
 <Card class="p-4 sm:p-6 md:p-8">

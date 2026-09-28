@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { P } from 's-ui';
+	import { P } from "$lib/index";
 </script>
 
 <P contenteditable>Track work across the enterprise through an open, collaborative platform.</P>

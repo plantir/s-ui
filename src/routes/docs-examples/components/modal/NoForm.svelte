@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, Input, P } from 's-ui';
+	import { Button, Modal, Input, P } from "$lib/index";
 	let open = $state(false);
 </script>
 

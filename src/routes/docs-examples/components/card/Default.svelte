@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card } from 's-ui';
+	import { Card } from "$lib/index";
 </script>
 
 <Card hoverable href="/cards" class="p-4 sm:p-6 md:p-8">

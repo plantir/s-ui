@@ -7,7 +7,7 @@
 		TableBody,
 		TableBodyCell,
 		TableBodyRow
-	} from 's-ui';
+	} from "$lib/index";
 	import {
 		CaretUpSolid,
 		CaretDownSolid,

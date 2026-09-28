@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Spinner } from 's-ui';
+	import { Button, Spinner } from "$lib/index";
 </script>
 
 <Button loading>Loading ...</Button>

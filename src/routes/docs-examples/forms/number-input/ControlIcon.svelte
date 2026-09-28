@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input, Label, P, Button, ButtonGroup } from 's-ui';
+	import { Input, Label, P, Button, ButtonGroup } from "$lib/index";
 	import { PlusOutline, MinusOutline, HomeOutline } from 'flowbite-svelte-icons';
 	let bedroom: number = $state(3);
 	$effect(() => {

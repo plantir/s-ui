@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, Input, Label } from 's-ui';
+	import { Button, Modal, Input, Label } from "$lib/index";
 	let defaultModal = $state(false);
 	let elementRef = $state() as HTMLInputElement;
 	const handleClick = () => {

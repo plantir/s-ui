@@ -1,6 +1,6 @@
 <script lang="ts">
 	import clsx from 'clsx';
-	import { Spinner } from 's-ui';
+	import { Spinner } from '$lib/spinner';
 	import type { ButtonProps } from '../types.js';
 	import { getTheme } from '$lib/theme/themeUtils';
 	import { button } from './theme.js';

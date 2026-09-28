@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Timeline, TimelineItem, P } from 's-ui';
+	import { Timeline, TimelineItem, P } from "$lib/index";
 	import { CalendarWeekSolid, CheckCircleSolid, ClockSolid } from 'flowbite-svelte-icons';
 	import dayjs from 'dayjs';
 

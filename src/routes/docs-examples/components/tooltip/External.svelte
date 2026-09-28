@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tooltip, Button } from 's-ui';
+	import { Tooltip, Button } from "$lib/index";
 	import type { Placement } from '@floating-ui/utils';
 	let placement: Placement = 'top';
 	function onbeforetoggle(ev: Event) {

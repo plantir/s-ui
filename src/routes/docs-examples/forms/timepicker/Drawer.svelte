@@ -11,7 +11,7 @@
 		P,
 		Heading,
 		Span
-	} from 's-ui';
+	} from "$lib/index";
 	import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
 
 	let open = $state(false);

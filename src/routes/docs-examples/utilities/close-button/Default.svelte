@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CloseButton } from 's-ui';
+	import { CloseButton } from "$lib/index";
 	let visible = $state(true);
 </script>
 

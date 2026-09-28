@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toast } from 's-ui';
+	import { Toast } from "$lib/index";
 </script>
 
 <Toast onclick={() => alert('Toast clicked')} onclose={() => alert('Toast closing')}

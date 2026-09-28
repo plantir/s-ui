@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Popover, Button } from 's-ui';
+	import { Popover, Button } from "$lib/index";
 	import { blur, fade, slide } from 'svelte/transition';
 </script>
 

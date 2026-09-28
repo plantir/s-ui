@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from 's-ui';
+	import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "$lib/index";
 	import {
 		PaperClipOutline,
 		MapPinAltSolid,

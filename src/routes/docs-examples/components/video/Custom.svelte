@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Video } from 's-ui';
+	import { Video } from "$lib/index";
 </script>
 
 <Video

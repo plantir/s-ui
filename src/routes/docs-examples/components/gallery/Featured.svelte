@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Gallery } from 's-ui';
-	import type { ImgType } from 's-ui';
+	import { Gallery } from "$lib/index";
+	import type { ImgType } from "$lib/index";
 
 	const image1 = {
 		alt: 'erbology',

@@ -10,7 +10,7 @@ description: A virtualized Svelte component rendering an efficient masonry/Pinte
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
 
   const components = 'VirtualMasonry'
   const relatedLinks = ['/docs/components/gallery']
@@ -20,7 +20,7 @@ description: A virtualized Svelte component rendering an efficient masonry/Pinte
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { VirtualMasonry } from "s-ui";
+  import { VirtualMasonry } from "$lib/index";
 </script>
 ```
 

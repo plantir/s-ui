@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Radio } from 's-ui';
+	import { Radio } from "$lib/index";
 	let colors = $state('bg-brand');
 </script>
 

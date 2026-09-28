@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Popover, Button, type PopoverProps } from 's-ui';
+	import { Popover, Button, type PopoverProps } from "$lib/index";
 	let placement = $state('bottom');
 
 	function onbeforetoggle(ev: Event) {

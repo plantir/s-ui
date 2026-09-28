@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Table } from '@flowbite-svelte-plugins/datatable';
-	import { P, Heading } from 's-ui';
+	import { P, Heading } from "$lib/index";
 	import items from './data/sample.json';
 </script>
 

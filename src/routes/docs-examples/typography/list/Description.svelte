@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { List, DescriptionList } from 's-ui';
+	import { List, DescriptionList } from "$lib/index";
 </script>
 
 <List tag="dl" class="divide-y divide-default text-heading">

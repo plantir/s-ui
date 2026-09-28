@@ -8,7 +8,7 @@
 		uiHelpers,
 		SidebarButton,
 		SidebarDropdownWrapper
-	} from 's-ui';
+	} from '$lib/index';
 	import { getContext, type Snippet } from 'svelte';
 	import type { Writable } from 'svelte/store';
 	import Toc from '../utils/Toc.svelte';

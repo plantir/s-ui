@@ -44,5 +44,5 @@ export function copyToClipboard(text: string): Promise<void> {
 }
 
 export function replaceLibImport(componentString: string): string {
-  return componentString.replace(/from ["']\$lib["']/g, "from 's-ui'").replace(/from ["']\$lib\//g, "from 's-ui/");
+  return componentString.replace(/from ["']\$lib["']/g, "from '$lib/index'").replace(/from ["']\$lib\//g, "from '$lib/index/");
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Drawer, Button, A } from 's-ui';
+	import { Drawer, Button, A } from "$lib/index";
 	import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
 	import { sineIn } from 'svelte/easing';
 

@@ -1,6 +1,6 @@
 <!-- LargeDataset.svelte -->
 <script lang="ts">
-	import { VirtualList, Badge } from 's-ui';
+	import { VirtualList, Badge } from "$lib/index";
 
 	interface Record {
 		id: number;

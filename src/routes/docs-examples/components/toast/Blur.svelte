@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toast } from 's-ui';
+	import { Toast } from "$lib/index";
 	import { blur } from 'svelte/transition';
 	import { BellOutline } from 'flowbite-svelte-icons';
 </script>

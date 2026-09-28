@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, SidebarCta, uiHelpers } from 's-ui';
+	import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, SidebarCta, uiHelpers } from "$lib/index";
 	import {
 		ChartOutline,
 		GridSolid,

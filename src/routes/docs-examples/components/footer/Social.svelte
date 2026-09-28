@@ -6,7 +6,7 @@
 		FooterLink,
 		FooterBrand,
 		FooterIcon
-	} from 's-ui';
+	} from "$lib/index";
 	import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from 'flowbite-svelte-icons';
 	import Dribble from '$icons/Dribble.svelte';
 </script>

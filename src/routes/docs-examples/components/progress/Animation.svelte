@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Progressbar, Button } from 's-ui';
+	import { Progressbar, Button } from "$lib/index";
 	import { sineOut } from 'svelte/easing';
 
 	let progress = '45';

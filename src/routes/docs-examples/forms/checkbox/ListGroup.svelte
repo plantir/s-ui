@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Checkbox, Listgroup } from 's-ui';
+	import { Checkbox, Listgroup } from "$lib/index";
 </script>
 
 <p class="mb-4 font-semibold text-heading">Technology</p>

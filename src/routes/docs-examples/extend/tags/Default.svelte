@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Tags } from 's-ui';
+	import { Button, Tags } from "$lib/index";
 	let tags: string[] = $state([]);
 	const handleClick = () => {
 		alert(`Submitted: ${tags}`);

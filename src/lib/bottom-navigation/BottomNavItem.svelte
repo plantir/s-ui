@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { BottomNavItemProps } from 's-ui';
+	import type { BottomNavItemProps } from '$lib/types.js';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import clsx from 'clsx';
 	import { getBottomNavContext } from '$lib/context';

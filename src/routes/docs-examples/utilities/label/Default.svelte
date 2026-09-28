@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label, Checkbox } from 's-ui';
+	import { Label, Checkbox } from "$lib/index";
 </script>
 
 <Label color="red" class="mt-4 flex items-center font-bold italic">

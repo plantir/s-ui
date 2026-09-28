@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label, Input } from 's-ui';
+	import { Label, Input } from "$lib/index";
 </script>
 
 <div class="mb-6">

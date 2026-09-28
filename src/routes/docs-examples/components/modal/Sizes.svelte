@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, type ModalProps, P } from 's-ui';
+	import { Button, Modal, type ModalProps, P } from "$lib/index";
 
 	let openModal = $state(false);
 	let size: ModalProps['size'] = $state('md'); // Set default value

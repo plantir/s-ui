@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup } from 's-ui';
+	import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup } from "$lib/index";
 </script>
 
 <Avatar

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PaginationNav } from 's-ui';
+	import { PaginationNav } from "$lib/index";
 	import { onMount } from 'svelte';
 
 	let currentPage = $state(1);

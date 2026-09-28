@@ -10,7 +10,7 @@ thumbnailSize: w-36
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -24,7 +24,7 @@ You can choose from multiple examples of mockups including phone, tablet, laptop
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { DeviceMockup } from "s-ui";
+  import { DeviceMockup } from "$lib/index";
 </script>
 ```
 

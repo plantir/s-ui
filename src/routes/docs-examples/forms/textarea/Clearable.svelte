@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Textarea, Label } from 's-ui';
+	import { Textarea, Label } from "$lib/index";
 </script>
 
 <Label for="textarea-id" class="mb-2">Your message</Label>

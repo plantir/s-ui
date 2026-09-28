@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Heading, P, Button } from 's-ui';
+	import { Heading, P, Button } from "$lib/index";
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 

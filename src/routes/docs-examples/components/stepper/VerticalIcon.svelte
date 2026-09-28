@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { VerticalStepper, Button, P, Heading } from 's-ui';
+	import { VerticalStepper, Button, P, Heading } from "$lib/index";
 	import {
 		UserCircleOutline,
 		ApiKeyOutline,

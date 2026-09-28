@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tooltip, Button, P } from 's-ui';
+	import { Tooltip, Button, P } from "$lib/index";
 </script>
 
 <Button id="specific-button-anywhere-on-page">Default tooltip</Button>

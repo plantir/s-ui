@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Spinner, Button } from 's-ui';
+	import { Spinner, Button } from "$lib/index";
 </script>
 
 <div class="flex flex-wrap items-center gap-2">

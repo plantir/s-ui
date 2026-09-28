@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, P } from 's-ui';
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, P } from "$lib/index";
 </script>
 
 <Navbar closeOnClickOutside={false}>

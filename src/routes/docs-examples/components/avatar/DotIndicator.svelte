@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar } from 's-ui';
+	import { Avatar } from "$lib/index";
 </script>
 
 <Avatar src="/images/people/profile-picture-5.jpg" dot={{ color: 'red' }} />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Breadcrumb, BreadcrumbItem } from 's-ui';
+	import { Breadcrumb, BreadcrumbItem } from "$lib/index";
 	import { HomeOutline, ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
 </script>
 

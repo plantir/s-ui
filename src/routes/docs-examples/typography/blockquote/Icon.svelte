@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Blockquote } from 's-ui';
+	import { Blockquote } from "$lib/index";
 	import { QuoteSolid } from 'flowbite-svelte-icons';
 </script>
 

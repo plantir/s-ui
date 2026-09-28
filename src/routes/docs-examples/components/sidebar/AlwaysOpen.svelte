@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Sidebar, SidebarGroup, SidebarItem, uiHelpers } from 's-ui';
+	import { Sidebar, SidebarGroup, SidebarItem, uiHelpers } from "$lib/index";
 	import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from 'flowbite-svelte-icons';
 	import { page } from '$app/state';
 	let activeUrl = $state(page.url.pathname);

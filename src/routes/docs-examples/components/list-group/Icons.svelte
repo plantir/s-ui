@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Listgroup } from 's-ui';
+	import { Listgroup } from "$lib/index";
 	import {
 		AdjustmentsHorizontalSolid,
 		DownloadSolid,

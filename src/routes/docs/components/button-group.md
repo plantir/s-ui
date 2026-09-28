@@ -9,7 +9,7 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso, LlmLink } from '../../utils'
-  import { Badge, P, A } from 's-ui'
+  import { Badge, P, A } from "$lib/index"
   const dirName = 'buttongroup'
   const relatedLinks = [
     '/docs/extend/button-toggle',
@@ -26,7 +26,7 @@ The button group component from s-ui can be used to stack together multiple butt
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ButtonGroup, Button } from "s-ui";
+  import { ButtonGroup, Button } from "$lib/index";
 </script>
 ```
 

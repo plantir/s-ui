@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, SpeedDial, SpeedDialButton, Rating } from 's-ui';
+	import { Button, SpeedDial, SpeedDialButton, Rating } from "$lib/index";
 	import {
 		ShareNodesSolid,
 		PrinterSolid,

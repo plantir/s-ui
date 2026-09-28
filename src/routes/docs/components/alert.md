@@ -24,7 +24,7 @@ The alert component provides contextual feedback messages for user actions. Use 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Alert } from "s-ui";
+  import { Alert } from "$lib/index";
 </script>
 ```
 

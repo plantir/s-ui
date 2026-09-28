@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BreadcrumbStepper } from 's-ui';
+	import { BreadcrumbStepper } from "$lib/index";
 </script>
 
 <BreadcrumbStepper

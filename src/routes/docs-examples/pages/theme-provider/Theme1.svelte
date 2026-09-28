@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ThemeProvider, Heading, P, Card } from 's-ui';
+	import { ThemeProvider, Heading, P, Card } from "$lib/index";
 
 	const theme1a = {
 		card: {

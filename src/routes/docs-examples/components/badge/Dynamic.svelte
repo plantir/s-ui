@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, type BadgeProps } from 's-ui';
+	import { Badge, type BadgeProps } from "$lib/index";
 
 	setInterval(handleHover, 500);
 

@@ -10,7 +10,7 @@ thumbnailSize: w-24
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, Seealso, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
   const dirName = toKebabCase(component_title)
   const relatedLinks = ['/docs/components/popover','/docs/components/speed-dial' ,'/docs/components/tooltip'];
 </script>
@@ -23,7 +23,7 @@ For interactive elements that need to display additional content on click, use t
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Tooltip } from "s-ui";
+  import { Tooltip } from "$lib/index";
 </script>
 ```
 

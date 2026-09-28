@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card } from 's-ui';
+	import { Card } from "$lib/index";
 </script>
 
 <div class="flex justify-center">

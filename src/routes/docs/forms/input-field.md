@@ -9,7 +9,7 @@ description: Get started with a collection of input fields built with Tailwind C
 
 <script lang="ts">
   import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso, LlmLink } from '../../utils'
-  import { A } from 's-ui'
+  import { A } from "$lib/index"
 
   const components = 'Input, InputAddon'
   const relatedLinks = ['/docs/forms/floating-label', '/docs/extend/tags' ]
@@ -23,7 +23,7 @@ On this page you will find all of the input types based on multiple variants, st
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Input, Label, Helper } from "s-ui";
+  import { Input, Label, Helper } from "$lib/index";
 </script>
 ```
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TimelineStepper } from 's-ui';
+	import { TimelineStepper } from "$lib/index";
 </script>
 
 <TimelineStepper

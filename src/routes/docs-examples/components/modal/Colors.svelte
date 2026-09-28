@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, type ButtonProps } from 's-ui';
+	import { Button, Modal, type ButtonProps } from "$lib/index";
 
 	let openColor = $state(false);
 	let color: ButtonProps['color'] = $state('brand');

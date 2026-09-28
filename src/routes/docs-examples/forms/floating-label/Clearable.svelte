@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FloatingLabelInput } from 's-ui';
+	import { FloatingLabelInput } from "$lib/index";
 </script>
 
 <div id="exampleWrapper" class="grid w-full items-end gap-6 md:grid-cols-3">

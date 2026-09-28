@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Search, Button } from 's-ui';
+	import { Search, Button } from "$lib/index";
 </script>
 
 <Search>

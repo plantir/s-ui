@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ImagePlaceholder } from 's-ui';
+	import { ImagePlaceholder } from "$lib/index";
 
 	const sizes = ['sm', 'md', 'lg'] as const;
 	type Size = (typeof sizes)[number];

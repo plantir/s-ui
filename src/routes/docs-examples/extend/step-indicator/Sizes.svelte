@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StepIndicator, type StepIndicatorProps, Radio, Label } from 's-ui';
+	import { StepIndicator, type StepIndicatorProps, Radio, Label } from "$lib/index";
 	const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
 	let size: StepIndicatorProps['size'] = $state('xs');
 	let currentStep = 2;

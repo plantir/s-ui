@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Kbd } from 's-ui';
+	import { Kbd } from "$lib/index";
 </script>
 
 <Kbd>1</Kbd>

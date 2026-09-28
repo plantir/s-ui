@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Popover, Button, Avatar } from 's-ui';
+	import { Popover, Button, Avatar } from "$lib/index";
 	import {
 		GlobeOutline,
 		HeartSolid,

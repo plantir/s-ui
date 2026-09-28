@@ -6,7 +6,7 @@
 		TableHead,
 		TableHeadCell,
 		TableSearch
-	} from 's-ui';
+	} from "$lib/index";
 	let searchTerm = $state('');
 	let items = [
 		{ id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },

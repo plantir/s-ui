@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Timeline, TimelineItem } from 's-ui';
+	import { Timeline, TimelineItem } from "$lib/index";
 	import { CalendarWeekSolid } from 'flowbite-svelte-icons';
 </script>
 

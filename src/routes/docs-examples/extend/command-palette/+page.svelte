@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CommandPalette, Toggle } from 's-ui';
+	import { CommandPalette, Toggle } from "$lib/index";
 	import { goto } from '$app/navigation';
 
 	let paletteOpen = $state(false);

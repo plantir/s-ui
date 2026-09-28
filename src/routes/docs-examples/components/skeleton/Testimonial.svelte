@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TestimonialPlaceholder } from 's-ui';
+	import { TestimonialPlaceholder } from "$lib/index";
 </script>
 
 <TestimonialPlaceholder />

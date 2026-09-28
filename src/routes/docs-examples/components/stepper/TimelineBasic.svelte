@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TimelineStepper, Button, P, Heading } from 's-ui';
+	import { TimelineStepper, Button, P, Heading } from "$lib/index";
 
 	let current = $state(1);
 	const steps = [

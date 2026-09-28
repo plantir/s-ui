@@ -5,7 +5,7 @@
 		UndoRedoButtonGroup,
 		BubbleMenu
 	} from '@flowbite-svelte-plugins/texteditor';
-	import { Button } from 's-ui';
+	import { Button } from "$lib/index";
 	import type { Editor } from '@tiptap/core';
 
 	let editorInstance = $state<Editor | null>(null);

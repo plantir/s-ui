@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input, Label, P } from 's-ui';
+	import { Input, Label, P } from "$lib/index";
 	import { MapPinAltSolid } from 'flowbite-svelte-icons';
 	const zipPattern = '^\\d{5}(-\\d{4})?$';
 </script>

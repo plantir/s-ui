@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { VirtualList, Button, Checkbox } from 's-ui';
+	import { VirtualList, Button, Checkbox } from "$lib/index";
 	import { TrashBinSolid } from 'flowbite-svelte-icons';
 
 	interface Task {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Banner, Skeleton, ImagePlaceholder, Input, Label, Button } from 's-ui';
+	import { Banner, Skeleton, ImagePlaceholder, Input, Label, Button } from "$lib/index";
 </script>
 
 <Skeleton class="py-4" />

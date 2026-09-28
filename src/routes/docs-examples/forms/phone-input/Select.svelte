@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label, ButtonGroup, Select, Clipboard, Tooltip, Helper, A } from 's-ui';
+	import { Label, ButtonGroup, Select, Clipboard, Tooltip, Helper, A } from "$lib/index";
 	import { CheckOutline, ClipboardCleanSolid } from 'flowbite-svelte-icons';
 	let selected = $state('+1 234 456 7890');
 	const phonenumbers = [

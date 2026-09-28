@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Pagination } from 's-ui';
+	import { Pagination } from "$lib/index";
 	import { ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
 	let helper = { start: 1, end: 10, total: 100 };
 

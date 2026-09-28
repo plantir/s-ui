@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Fileupload, Helper } from 's-ui';
+	import { Fileupload, Helper } from "$lib/index";
 	let selectedFiles = $state<FileList | null>(null);
 	let fileNames = $derived(
 		selectedFiles

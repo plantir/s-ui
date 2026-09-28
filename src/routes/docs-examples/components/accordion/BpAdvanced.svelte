@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AccordionItem, useCurrentBreakpoint, useBreakpoints, P } from 's-ui';
+	import { AccordionItem, useCurrentBreakpoint, useBreakpoints, P } from "$lib/index";
 	const breakpoints = useBreakpoints();
 	const getCurrentBreakpoint = useCurrentBreakpoint();
 	const currentBp = $derived(getCurrentBreakpoint());

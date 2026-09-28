@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Listgroup } from 's-ui';
+	import { Listgroup } from "$lib/index";
 	let links = [
 		{ name: 'Accordions', href: '/docs/components/accordion', current: true },
 		{ name: 'Alerts', href: '/docs/components/alert' },

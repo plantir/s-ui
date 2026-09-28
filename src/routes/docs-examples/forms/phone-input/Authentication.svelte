@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PhoneInput, Label, Dropdown, DropdownItem, Button, Input, Checkbox, A } from 's-ui';
+	import { PhoneInput, Label, Dropdown, DropdownItem, Button, Input, Checkbox, A } from "$lib/index";
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 	import Usa from '$icons/Usa.svelte';
 	import Germany from '$icons/Germany.svelte';

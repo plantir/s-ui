@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Table } from 's-ui';
+	import { Table } from "$lib/index";
 	let items = [
 		{ id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
 		{ id: 2, maker: 'Ford', type: 'CDE', make: 2018 },

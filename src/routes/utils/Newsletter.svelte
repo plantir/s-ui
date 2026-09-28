@@ -1,6 +1,6 @@
 <script lang="ts">
 	// import { browser } from "$app/environment";
-	import { ButtonGroup, Button, Input } from 's-ui';
+	import { ButtonGroup, Button, Input } from '$lib/index';
 	import Mail from '../utils/icons/Mail.svelte';
 	// import data from "./data.json";
 	// import { onMount } from "svelte";

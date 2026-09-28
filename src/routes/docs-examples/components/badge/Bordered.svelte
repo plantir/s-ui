@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge } from 's-ui';
+	import { Badge } from "$lib/index";
 </script>
 
 <div class="flex flex-wrap gap-2">

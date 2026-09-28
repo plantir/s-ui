@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, Label, Datepicker, Timepicker, Heading, P, type DateOrRange } from 's-ui';
+	import { Button, Modal, Label, Datepicker, Timepicker, Heading, P, type DateOrRange } from "$lib/index";
 	import { ClockSolid } from 'flowbite-svelte-icons';
 
 	let open = $state(false);

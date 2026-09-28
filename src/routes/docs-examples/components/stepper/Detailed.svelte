@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DetailedStepper } from 's-ui';
+	import { DetailedStepper } from "$lib/index";
 </script>
 
 <DetailedStepper

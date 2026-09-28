@@ -10,7 +10,7 @@ description: A navigation component that tracks scroll position and highlights t
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
 
   const components = 'ScrollSpy'
   // const relatedLinks = [''];
@@ -20,7 +20,7 @@ description: A navigation component that tracks scroll position and highlights t
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ScrollSpy } from 's-ui';
+  import { ScrollSpy } from "$lib/index";
 </script>
 ```
 

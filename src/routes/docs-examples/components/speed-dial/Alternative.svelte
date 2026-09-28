@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SpeedDial, SpeedDialTrigger, Listgroup, ListgroupItem } from 's-ui';
+	import { SpeedDial, SpeedDialTrigger, Listgroup, ListgroupItem } from "$lib/index";
 	import {
 		PenSolid,
 		ShareNodesSolid,

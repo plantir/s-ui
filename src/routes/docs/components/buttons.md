@@ -10,7 +10,7 @@ thumbnailSize: w-24
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso, LlmLink } from '../../utils'
-  import { Badge, P, A } from 's-ui'
+  import { Badge, P, A } from "$lib/index"
   const dirName = toKebabCase(component_title)
  
   const relatedLinks = [
@@ -32,7 +32,7 @@ Import a button component in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Button } from "s-ui";
+  import { Button } from "$lib/index";
 </script>
 ```
 

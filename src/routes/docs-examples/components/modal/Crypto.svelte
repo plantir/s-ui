@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, P } from 's-ui';
+	import { Button, Modal, P } from "$lib/index";
 	import MetaMask from '$icons/MetaMask.svelte';
 	import CoinbaseWallet from '$icons/CoinbaseWallet.svelte';
 	import OperaWallet from '$icons/OperaWallet.svelte';

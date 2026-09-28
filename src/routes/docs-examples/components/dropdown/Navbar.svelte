@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Dropdown, DropdownItem, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from 's-ui';
+	import { Dropdown, DropdownItem, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from "$lib/index";
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 </script>
 

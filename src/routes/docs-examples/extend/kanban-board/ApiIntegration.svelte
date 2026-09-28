@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type KanbanCardType, type KanbanColumnType, KanbanBoard } from 's-ui';
+	import { type KanbanCardType, type KanbanColumnType, KanbanBoard } from "$lib/index";
 	import { onMount } from 'svelte';
 
 	let columns = $state<KanbanColumnType[]>([]);

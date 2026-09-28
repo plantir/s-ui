@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Carousel, CarouselIndicators } from 's-ui';
+	import { Carousel, CarouselIndicators } from "$lib/index";
 	import images from './imageData/images.json';
 </script>
 

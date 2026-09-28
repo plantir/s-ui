@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ButtonGroup, Button } from 's-ui';
+	import { ButtonGroup, Button } from "$lib/index";
 	import {
 		UserCircleSolid,
 		AdjustmentsVerticalOutline,

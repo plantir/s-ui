@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type KanbanColumnType, KanbanBoard, Modal, Label, Input, Textarea, Button } from 's-ui';
+	import { type KanbanColumnType, KanbanBoard, Modal, Label, Input, Textarea, Button } from "$lib/index";
 
 	let columns = $state<KanbanColumnType[]>([
 		{

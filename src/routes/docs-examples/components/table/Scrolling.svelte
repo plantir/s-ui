@@ -7,7 +7,7 @@
 		TableHead,
 		TableHeadCell,
 		Checkbox
-	} from 's-ui';
+	} from "$lib/index";
 </script>
 
 <Table>

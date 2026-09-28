@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Search, Button, P } from 's-ui';
+	import { Search, Button, P } from "$lib/index";
 
 	let value = $state('');
 

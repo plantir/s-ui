@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StepIndicator, Button, Label, Input } from 's-ui';
+	import { StepIndicator, Button, Label, Input } from "$lib/index";
 
 	let currentStep = $state(1);
 	const steps = ['Personal Info', 'Contact Details', 'Address', 'Review', 'Complete'];

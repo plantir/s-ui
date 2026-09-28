@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { VerticalStepper } from 's-ui';
+	import { VerticalStepper } from "$lib/index";
 </script>
 
 <VerticalStepper

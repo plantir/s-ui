@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AccordionItem, Accordion, Input, Textarea, Button, Label, A } from 's-ui';
+	import { AccordionItem, Accordion, Input, Textarea, Button, Label, A } from "$lib/index";
 	import type { Snapshot } from '../../../$types';
 	let name = $state('');
 	let email = $state('');

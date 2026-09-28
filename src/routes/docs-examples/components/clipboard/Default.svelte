@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Clipboard, Input, Label } from 's-ui';
+	import { Clipboard, Input, Label } from "$lib/index";
 	import { CheckOutline } from 'flowbite-svelte-icons';
 
 	let value = $state('npm install flowbite');

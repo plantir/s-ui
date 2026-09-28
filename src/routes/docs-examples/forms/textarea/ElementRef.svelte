@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Textarea, Button } from 's-ui';
+	import { Textarea, Button } from "$lib/index";
 
 	let textareaRef = $state() as HTMLTextAreaElement;
 	let textContent = $state(

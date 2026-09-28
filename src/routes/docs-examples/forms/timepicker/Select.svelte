@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label, Timepicker, P } from 's-ui';
+	import { Label, Timepicker, P } from "$lib/index";
 
 	let selectedTimeWithTimezone = $state({ time: '12:00', timezone: 'UTC' });
 	const timezones = [

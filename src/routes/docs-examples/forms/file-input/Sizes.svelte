@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Fileupload, Label } from 's-ui';
+	import { Fileupload, Label } from "$lib/index";
 </script>
 
 <Label class="pb-2" for="small_size">Small file input</Label>

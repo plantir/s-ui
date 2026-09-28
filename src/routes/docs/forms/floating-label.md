@@ -23,7 +23,7 @@ On this page you will find a three different input field styles including a stan
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { FloatingLabelInput, Helper } from "s-ui";
+  import { FloatingLabelInput, Helper } from "$lib/index";
 </script>
 ```
 

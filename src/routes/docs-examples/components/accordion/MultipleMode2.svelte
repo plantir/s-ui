@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AccordionItem, Accordion, Button, P } from 's-ui';
+	import { AccordionItem, Accordion, Button, P } from "$lib/index";
 	const items = $state([false, false, false]);
 
 	const open_all = () => items.forEach((_, i) => (items[i] = true));

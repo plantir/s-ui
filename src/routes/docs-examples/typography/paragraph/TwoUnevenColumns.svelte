@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { P, Layout } from 's-ui';
+	import { P, Layout } from "$lib/index";
 </script>
 
 <P class="mb-3">

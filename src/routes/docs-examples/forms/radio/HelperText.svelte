@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Radio, Helper } from 's-ui';
+	import { Radio, Helper } from "$lib/index";
 </script>
 
 <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>

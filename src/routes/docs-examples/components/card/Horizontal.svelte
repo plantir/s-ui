@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, Toggle } from 's-ui';
+	import { Card, Toggle } from "$lib/index";
 	let hCard = $state(false);
 </script>
 

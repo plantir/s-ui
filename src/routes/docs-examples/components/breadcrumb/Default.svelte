@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Breadcrumb, BreadcrumbItem } from 's-ui';
+	import { Breadcrumb, BreadcrumbItem } from "$lib/index";
 </script>
 
 <Breadcrumb aria-label="Default breadcrumb example">

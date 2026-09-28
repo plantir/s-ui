@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Gallery } from 's-ui';
+	import { Gallery } from "$lib/index";
 	const images = [
 		{ alt: 'shoes', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg' },
 		{ alt: 'small bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg' },

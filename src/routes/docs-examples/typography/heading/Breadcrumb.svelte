@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Heading, Breadcrumb, BreadcrumbItem } from 's-ui';
+	import { Heading, Breadcrumb, BreadcrumbItem } from "$lib/index";
 </script>
 
 <Breadcrumb class="mb-4">

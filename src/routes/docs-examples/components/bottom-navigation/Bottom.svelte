@@ -7,7 +7,7 @@
 		Tooltip,
 		Skeleton,
 		ImagePlaceholder
-	} from 's-ui';
+	} from "$lib/index";
 	import {
 		HomeOutline,
 		BookmarkOutline,

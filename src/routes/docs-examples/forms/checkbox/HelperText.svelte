@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Checkbox, Helper } from 's-ui';
+	import { Checkbox, Helper } from "$lib/index";
 </script>
 
 <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>

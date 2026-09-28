@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Heading, Secondary } from 's-ui';
+	import { Heading, Secondary } from "$lib/index";
 </script>
 
 <Heading tag="h1" class="text-5xl font-extrabold">

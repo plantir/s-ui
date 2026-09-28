@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input, Label, Helper } from 's-ui';
+	import { Input, Label, Helper } from "$lib/index";
 </script>
 
 <Label class="flex flex-col gap-2">

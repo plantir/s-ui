@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Indicator, Avatar, Badge } from 's-ui';
+	import { Indicator, Avatar, Badge } from "$lib/index";
 </script>
 
 <ul class="w-full max-w-sm divide-y divide-default">

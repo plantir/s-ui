@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Blockquote } from 's-ui';
+	import { Blockquote } from "$lib/index";
 
 	const alignments = ['left', 'center', 'right'] as const;
 	type Alignment = (typeof alignments)[number];

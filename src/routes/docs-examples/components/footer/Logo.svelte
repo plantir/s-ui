@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Footer, FooterCopyright, FooterLinkGroup, FooterBrand, FooterLink } from 's-ui';
+	import { Footer, FooterCopyright, FooterLinkGroup, FooterBrand, FooterLink } from "$lib/index";
 </script>
 
 <Footer footerType="logo">

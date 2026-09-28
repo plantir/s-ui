@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { A } from 's-ui';
+	import { A } from "$lib/index";
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 	import Figma from '$icons/Figma.svelte';
 </script>

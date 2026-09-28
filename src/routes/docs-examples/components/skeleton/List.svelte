@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ListPlaceholder } from 's-ui';
+	import { ListPlaceholder } from "$lib/index";
 
 	const sizes = ['sm', 'md', 'lg'] as const;
 	type Size = (typeof sizes)[number];

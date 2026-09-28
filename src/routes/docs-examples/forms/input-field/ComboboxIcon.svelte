@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input } from 's-ui';
+	import { Input } from "$lib/index";
 	import { EnvelopeSolid } from 'flowbite-svelte-icons';
 	const fakeEmails = [
 		'alex.jones@example.com',

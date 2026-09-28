@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ScrollSpy, Radio, P, Heading, Alert } from 's-ui';
+	import { ScrollSpy, Radio, P, Heading, Alert } from "$lib/index";
 	import type { ScrollSpyItem } from '$lib/types';
 	import { HighlightSvelte } from 'svelte-rune-highlight';
 	import 'highlight.js/styles/github-dark.css';

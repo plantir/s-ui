@@ -10,7 +10,7 @@ description: A guided product tour component that highlights elements, supports 
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
 
   const components = 'Tour'
   // const relatedLinks = [''];
@@ -20,7 +20,7 @@ description: A guided product tour component that highlights elements, supports 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Tour } from 's-ui';
+  import { Tour } from "$lib/index";
 </script>
 ```
 

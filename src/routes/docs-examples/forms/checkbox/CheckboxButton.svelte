@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ButtonGroup, CheckboxButton } from 's-ui';
+	import { ButtonGroup, CheckboxButton } from "$lib/index";
 	import { AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
 	let group = $state([]);
 </script>

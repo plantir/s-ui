@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, P } from 's-ui';
+	import { Button, Modal, P } from "$lib/index";
 
 	type ModalPlacementType =
 		| 'top-left'

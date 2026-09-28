@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Search, Button, Dropdown, DropdownItem } from 's-ui';
+	import { Search, Button, Dropdown, DropdownItem } from "$lib/index";
 	import { SearchOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
 
 	const items = [

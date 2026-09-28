@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { List, Li, Span } from 's-ui';
+	import { List, Li, Span } from "$lib/index";
 	import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 

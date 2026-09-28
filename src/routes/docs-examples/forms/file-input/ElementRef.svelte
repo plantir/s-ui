@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Fileupload } from 's-ui';
+	import { Fileupload } from "$lib/index";
 </script>
 
 <Fileupload

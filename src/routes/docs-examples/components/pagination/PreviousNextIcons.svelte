@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PaginationNav, P } from 's-ui';
+	import { PaginationNav, P } from "$lib/index";
 	import { ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
 	let currentPage = $state(1);
 	const totalPages = 20;

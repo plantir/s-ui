@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Blockquote } from 's-ui';
+	import { Blockquote } from "$lib/index";
 
 	const sizes = ['sm', 'base', 'lg', 'xl', '2xl', '3xl'] as const;
 	type Size = (typeof sizes)[number];

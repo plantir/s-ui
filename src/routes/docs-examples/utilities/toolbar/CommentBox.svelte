@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toolbar, ToolbarButton, Textarea, Button } from 's-ui';
+	import { Toolbar, ToolbarButton, Textarea, Button } from "$lib/index";
 	import { PaperClipOutline, MapPinAltSolid, ImageOutline } from 'flowbite-svelte-icons';
 </script>
 

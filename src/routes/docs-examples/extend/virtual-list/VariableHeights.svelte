@@ -1,6 +1,6 @@
 <!-- VariableHeights.svelte -->
 <script lang="ts">
-	import { VirtualList } from 's-ui';
+	import { VirtualList } from "$lib/index";
 
 	interface Item {
 		title: string;

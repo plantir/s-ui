@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 's-ui';
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "$lib/index";
 	import { scale } from 'svelte/transition';
 </script>
 

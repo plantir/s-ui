@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from 's-ui';
+	import { Button } from "$lib/index";
 	let loading = $state(false);
 
 	async function handleSubmit() {

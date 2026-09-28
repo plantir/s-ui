@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Stepper } from 's-ui';
+	import { Stepper } from "$lib/index";
 	import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 

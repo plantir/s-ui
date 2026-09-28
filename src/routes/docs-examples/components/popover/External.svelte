@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Popover, Button } from 's-ui';
+	import { Popover, Button } from "$lib/index";
 </script>
 
 <div id="ext-ref" class="my-4 rounded-base border border-default p-2">External reference</div>

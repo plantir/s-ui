@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 's-ui';
+	import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "$lib/index";
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 	let menu = [
 		{ name: 'About us', href: '/about' },

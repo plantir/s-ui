@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { List, Li, Heading } from 's-ui';
+	import { List, Li, Heading } from "$lib/index";
 </script>
 
 <Heading tag="h5">List disc</Heading>

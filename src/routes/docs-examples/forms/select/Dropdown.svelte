@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Select, Button, ButtonGroup, Dropdown, DropdownItem } from 's-ui';
+	import { Select, Button, ButtonGroup, Dropdown, DropdownItem } from "$lib/index";
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 	import Usa from '$icons/Usa.svelte';
 	import Germany from '$icons/Germany.svelte';

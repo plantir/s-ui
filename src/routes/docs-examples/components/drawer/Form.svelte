@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, Drawer, CardPlaceholder, Button, Label, Input, Textarea } from 's-ui';
+	import { Avatar, Drawer, CardPlaceholder, Button, Label, Input, Textarea } from "$lib/index";
 	import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from 'flowbite-svelte-icons';
 
 	let open4 = $state(false);

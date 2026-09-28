@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Datepicker, type DateOrRange } from 's-ui';
+	import { Datepicker, type DateOrRange } from "$lib/index";
 
 	function handleDateSelect(detail: DateOrRange) {
 		console.log('Selected date:', detail);

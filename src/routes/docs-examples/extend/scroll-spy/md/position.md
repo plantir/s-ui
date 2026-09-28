@@ -1,5 +1,5 @@
 <script>
-  import { ScrollSpy } from 's-ui';
+  import { ScrollSpy } from "$lib/index";
   
   const items = [
     { id: 'section-1', label: 'Section 1' },

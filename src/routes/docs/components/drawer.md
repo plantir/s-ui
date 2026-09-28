@@ -9,7 +9,7 @@ description: The Drawer component can be used as a hidden off-canvas sidebar for
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { Heading, P, A } from 's-ui';
+  import { Heading, P, A } from "$lib/index";
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -19,7 +19,7 @@ Use the Drawer component (or “off-canvas”) to show a fixed element relative 
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Drawer, CardPlaceholder, Button } from "s-ui";
+  import { Drawer, CardPlaceholder, Button } from "$lib/index";
   import { sineIn } from "svelte/easing";
 </script>
 ```

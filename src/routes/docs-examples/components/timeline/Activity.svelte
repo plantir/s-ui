@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Activity, ActivityItem } from 's-ui';
+	import { Activity, ActivityItem } from "$lib/index";
 	let activities = [
 		{
 			id: 'activity-1',

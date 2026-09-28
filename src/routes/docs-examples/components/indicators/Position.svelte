@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Indicator } from 's-ui';
+	import { Indicator } from "$lib/index";
 </script>
 
 <div class="relative h-56 w-56 rounded-base border border-default bg-neutral-tertiary">

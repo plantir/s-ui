@@ -9,7 +9,7 @@ description: Use the Datepicker component to allow users to select a date or dat
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -19,7 +19,7 @@ The Datepicker component provides an interactive calendar interface for selectin
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Datepicker } from "s-ui";
+  import { Datepicker } from "$lib/index";
 </script>
 ```
 

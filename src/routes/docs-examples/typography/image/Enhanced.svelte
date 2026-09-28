@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Img } from 's-ui';
+	import { Img } from "$lib/index";
 </script>
 
 <Img caption="Default enhanced image" size="md" align="center">

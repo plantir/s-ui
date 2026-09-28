@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Hr, P, Blockquote } from 's-ui';
+	import { Hr, P, Blockquote } from "$lib/index";
 </script>
 
 <P>

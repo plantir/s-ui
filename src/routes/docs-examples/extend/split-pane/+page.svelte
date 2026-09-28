@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SplitPane, Pane, SidebarGroup, SidebarItem } from 's-ui';
+	import { SplitPane, Pane, SidebarGroup, SidebarItem } from "$lib/index";
 	import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from 'flowbite-svelte-icons';
 
 	let basicSizes = $state<number[]>([]);

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Listgroup } from 's-ui';
+	import { Listgroup } from "$lib/index";
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1', current: true },
 		{ name: 'Settings', mycustomfield: 'data2' },

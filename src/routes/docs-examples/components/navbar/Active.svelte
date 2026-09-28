@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 's-ui';
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "$lib/index";
 	let activeUrl = $derived(page.url.pathname);
 </script>
 

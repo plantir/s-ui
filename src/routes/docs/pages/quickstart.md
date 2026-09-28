@@ -8,7 +8,7 @@ description: Learn how to get started with the free and open-source Flowbite Sve
 ---
 
 <script lang="ts">
-  import { A, P, List, Li } from 's-ui'
+  import { A, P, List, Li } from "$lib/index"
   import { LlmLink } from '../../utils'
 </script>
 
@@ -111,7 +111,7 @@ Now you are ready to go! Add the following to `src/routes/+page.svelte` and if y
 
 ```svelte example
 <script lang="ts">
-  import { Alert } from "s-ui";
+  import { Alert } from "$lib/index";
 </script>
 
 <div class="p-8">

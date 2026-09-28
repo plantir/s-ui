@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toast, ToastContainer, P, Button, Heading } from 's-ui';
+	import { Toast, ToastContainer, P, Button, Heading } from "$lib/index";
 	import { fly } from 'svelte/transition';
 	import { onDestroy } from 'svelte';
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Dropdown, DropdownGroup, Checkbox, Search } from 's-ui';
+	import { Button, Dropdown, DropdownGroup, Checkbox, Search } from "$lib/index";
 	import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
 	let searchTerm = $state('');
 	const people = [

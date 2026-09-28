@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { PaginationItem } from 's-ui';
+	import { PaginationItem } from '$lib/index';
 	import ArrowLeft from './icons/ArrowLeft.svelte';
 	import ArrowRight from './icons/ArrowRight.svelte';
 

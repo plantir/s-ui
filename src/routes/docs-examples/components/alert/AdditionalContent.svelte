@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Alert, Button } from 's-ui';
+	import { Alert, Button } from "$lib/index";
 	import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
 </script>
 

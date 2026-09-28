@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Gallery } from 's-ui';
+	import { Gallery } from "$lib/index";
 </script>
 
 <Gallery class="grid-cols-2 gap-4">

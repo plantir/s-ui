@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ThemeProvider, Button, Card, Alert } from 's-ui';
+	import { ThemeProvider, Button, Card, Alert } from "$lib/index";
 
 	type ThemeColor = 'purple' | 'green' | 'blue' | 'red';
 

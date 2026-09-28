@@ -8,7 +8,7 @@
 		AccordionItem,
 		Avatar,
 		Input
-	} from 's-ui';
+	} from "$lib/index";
 	import { CalendarMonthSolid, ClockSolid, MapPinSolid } from 'flowbite-svelte-icons';
 
 	let selectedDate = $state(new Date('2024-06-30'));

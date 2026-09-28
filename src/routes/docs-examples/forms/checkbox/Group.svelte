@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Checkbox } from 's-ui';
+	import { Button, Checkbox } from "$lib/index";
 	let choices = [
 		{ value: '1', label: 'One' },
 		{ value: '2', label: 'Two' },

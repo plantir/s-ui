@@ -9,7 +9,7 @@ description: An interactive dropdown component that lets users switch between di
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, LlmLink } from '../../utils';
-  import { A, P, Heading } from 's-ui';
+  import { A, P, Heading } from '$lib/index';
 </script>
 
 ## Overview
@@ -22,7 +22,7 @@ Import and add the component to your layout:
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ThemeSelector } from "s-ui";
+  import { ThemeSelector } from "$lib/index";
 </script>
 
 <ThemeSelector />
@@ -46,7 +46,7 @@ Control themes programmatically using the exported functions:
 
 ```svelte
 <script>
-  import { loadTheme, getCurrentTheme, getSelectedTheme } from "s-ui";
+  import { loadTheme, getCurrentTheme, getSelectedTheme } from "$lib/index";
   
   // Switch to a specific theme
   function switchTheme() {
@@ -78,7 +78,7 @@ Control themes programmatically using the exported functions:
 
 ```svelte example hideOutput
 <script>
-  import { Navbar, NavBrand, NavUl, NavLi, DarkMode, ThemeSelector } from "s-ui";
+  import { Navbar, NavBrand, NavUl, NavLi, DarkMode, ThemeSelector } from "$lib/index";
 </script>
 
 <Navbar>
@@ -98,7 +98,7 @@ Control themes programmatically using the exported functions:
 
 ```svelte example hideOutput
 <script>
-  import { Card, Heading, ThemeSelector } from "s-ui";
+  import { Card, Heading, ThemeSelector } from "$lib/index";
 </script>
 
 <Card>
@@ -166,7 +166,7 @@ The four `colors` values are Tailwind utility classes for the four color swatche
 ```svelte
 <!-- src/routes/+layout.svelte -->
 <script>
-  import { ThemeSelector } from "s-ui";
+  import { ThemeSelector } from "$lib/index";
 </script>
 
 <header>

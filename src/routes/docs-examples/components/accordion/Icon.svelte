@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AccordionItem, Accordion } from 's-ui';
+	import { AccordionItem, Accordion } from "$lib/index";
 	import { CartSolid, CogOutline } from 'flowbite-svelte-icons';
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Progressradial, Button } from 's-ui';
+	import { Progressradial, Button } from "$lib/index";
 	import { sineOut } from 'svelte/easing';
 	let progress = $state(45);
 </script>

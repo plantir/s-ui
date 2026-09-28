@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { List, Li, A } from 's-ui';
+	import { List, Li, A } from "$lib/index";
 </script>
 
 <List tag="dl" class="mb-6 flex flex-wrap items-center justify-center">

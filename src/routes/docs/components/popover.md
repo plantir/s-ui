@@ -9,7 +9,7 @@ description: Use the popover component to show detailed information inside a pop
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -21,7 +21,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Popover } from "s-ui";
+  import { Popover } from "$lib/index";
 </script>
 ```
 

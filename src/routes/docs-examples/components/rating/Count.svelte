@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Rating } from 's-ui';
+	import { Rating } from "$lib/index";
 </script>
 
 <Rating count rating={4.95} id="example-4">

@@ -10,7 +10,7 @@ thumbnailSize: w-24
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
   const dirName = toKebabCase(component_title)
 </script>
 
@@ -35,7 +35,7 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 ```svelte example
 <!-- src/routes/+layout.svelte -->
 <script lang="ts">
-  import { DarkMode } from "s-ui";
+  import { DarkMode } from "$lib/index";
 </script>
 
 <DarkMode />

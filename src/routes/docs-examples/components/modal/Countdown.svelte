@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, P, A } from 's-ui';
+	import { Button, Modal, P, A } from "$lib/index";
 	import { createCountdown } from '$utils/countdown.svelte.ts';
 
 	const adCountdown = createCountdown(4);

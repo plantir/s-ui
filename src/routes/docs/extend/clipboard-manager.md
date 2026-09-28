@@ -10,7 +10,7 @@ description: A versatile clipboard manager component for saving, organizing, and
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
-  import { P, A } from 's-ui'
+  import { P, A } from "$lib/index"
 
   const components = 'ClipboardManager'
   const relatedLinks = ['/docs/components/clipboard'];
@@ -20,7 +20,7 @@ description: A versatile clipboard manager component for saving, organizing, and
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { ClipboardManager } from 's-ui';
+  import { ClipboardManager } from "$lib/index";
 </script>
 ```
 

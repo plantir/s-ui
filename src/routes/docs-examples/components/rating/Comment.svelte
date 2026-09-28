@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { RatingComment } from 's-ui';
+	import { RatingComment } from "$lib/index";
 	let comment = {
 		id: '1',
 		user: {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ButtonGroup, Button, GradientButton } from 's-ui';
+	import { ButtonGroup, Button, GradientButton } from "$lib/index";
 </script>
 
 <div class="text-heading">

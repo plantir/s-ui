@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ClipboardManager } from 's-ui';
+	import { ClipboardManager } from "$lib/index";
 
 	let items = [{ id: 1, text: 'npm install package', pinned: true, timestamp: Date.now() }];
 </script>

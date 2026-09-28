@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AccordionItem, useMediaQuery, useBreakpoints, P } from 's-ui';
+	import { AccordionItem, useMediaQuery, useBreakpoints, P } from "$lib/index";
 	const breakpoints = useBreakpoints();
 
 	// Custom pixel range

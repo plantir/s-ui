@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Rating, Heart, type RatingIconProps } from 's-ui';
+	import { Rating, Heart, type RatingIconProps } from "$lib/index";
 	const heartWrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) =>
 		Heart(anchor, { ..._props, ...props });
 </script>
