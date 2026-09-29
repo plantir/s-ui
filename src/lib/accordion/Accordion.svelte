@@ -6,7 +6,7 @@
 	import { accordion } from './theme';
 	import { createSingleSelectionContext } from '$lib/utils/singleselection.svelte';
 	import { untrack } from 'svelte';
-	import { getCurrentTheme } from '$lib/theme-selector';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -45,7 +45,11 @@
 	createSingleSelectionContext(untrack(() => multiple));
 
 	const base = $derived(
-		accordion({ flush, class: clsx(theme, className), theme: getCurrentTheme() })
+		accordion({
+			flush,
+			class: clsx(theme, className),
+			theme: getCurrentThemeVariant()
+		})
 	);
 </script>
 

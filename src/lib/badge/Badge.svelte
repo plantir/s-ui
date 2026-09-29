@@ -6,7 +6,7 @@
 	import { fade } from 'svelte/transition';
 	import { badge } from './theme';
 	import { createDismissableContext } from '$lib/utils/dismissable';
-	import { getCurrentTheme } from '$lib/theme-selector/themeStore.svelte.js';
+	import { getCurrentTheme, getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -32,7 +32,7 @@
 	const theme = $derived(getTheme('badge'));
 
 	const { base, linkClass } = $derived(
-		badge({ color, size, rounded, border, theme: getCurrentTheme() })
+		badge({ color, size, rounded, border, theme: getCurrentThemeVariant() })
 	);
 
 	let ref: HTMLDivElement | undefined = $state(undefined);

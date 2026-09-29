@@ -5,7 +5,7 @@
 	import { Tween } from 'svelte/motion';
 	import { progressbar } from './theme.js';
 	import { getTheme } from '$lib/theme/themeUtils';
-	import { getCurrentTheme } from '$lib/theme-selector/themeStore.svelte.js';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 	let {
 		progress = '45',
 		precision = 0,
@@ -41,7 +41,7 @@
 			color,
 			labelInside,
 			size,
-			theme: getCurrentTheme()
+			theme: getCurrentThemeVariant()
 		})
 	);
 
@@ -58,17 +58,17 @@
 		>
 	</div>
 {/if}
-<div {...restProps} class={base({ class: clsx(size, theme?.base, className) })}>
+<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
 	{#if labelInside}
 		<div
-			class={labelInsideCls({ class: clsx(size, theme?.label, classes?.label) })}
+			class={labelInsideCls({ class: clsx(theme?.label, classes?.label) })}
 			style="width: {_progress.current}%"
 		>
 			{_progress.current.toFixed(precision)}%
 		</div>
 	{:else}
 		<div
-			class={inside({ class: clsx(size, theme?.inside, classes?.label) })}
+			class={inside({ class: clsx(theme?.inside, classes?.label) })}
 			style="width: {_progress.current}%"
 		></div>
 	{/if}

@@ -7,7 +7,7 @@
 	import { slide } from 'svelte/transition';
 	import { accordionItem } from './theme';
 	import { untrack } from 'svelte';
-	import { getCurrentTheme } from '$lib/theme-selector';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte';
 
 	let {
 		children,
@@ -76,7 +76,7 @@
 	};
 
 	const { base, button, content, active, inactive } = $derived(
-		accordionItem({ flush: ctx?.flush, open, theme: getCurrentTheme() })
+		accordionItem({ flush: ctx?.flush, open, theme: getCurrentThemeVariant() })
 	);
 
 	let buttonClass = $derived(

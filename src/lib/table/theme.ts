@@ -394,16 +394,11 @@ export const tableHead = tv({
 });
 
 export const tableBodyCell = tv({
-  slots: {
-    base: "px-6 py-4 whitespace-nowrap font-medium"
-  },
+  base: "px-6 py-4 whitespace-nowrap font-medium",
   variants: {
     theme: {
-      fluent: {
-        base: "px-4 py-3"
-      },
-      default: {
-      }
+      fluent: "px-4 py-3",
+      default: ""
     }
   }
 });

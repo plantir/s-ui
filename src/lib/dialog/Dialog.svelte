@@ -7,7 +7,7 @@
 	import { sineIn } from 'svelte/easing';
 	import { fade } from 'svelte/transition';
 	import { dialog } from './theme.js';
-	import { getCurrentTheme } from '$lib/theme-selector/themeStore.svelte.js';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -32,7 +32,7 @@
 
 	const paramsOptions = $derived(transitionParams ?? { duration: 100, easing: sineIn });
 
-	let { base, form: formCls, close: closeCls } = $derived(dialog({ theme: getCurrentTheme() }));
+	let { base, form: formCls, close: closeCls } = $derived(dialog({ theme: getCurrentThemeVariant() }));
 
 	const close = () => (open = false);
 

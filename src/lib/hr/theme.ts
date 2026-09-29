@@ -31,7 +31,7 @@ export const hr = tv({
 				// parent's height is indefinite; `h-full` covers parents with a
 				// definite height; `min-h-[64px]` is the fallback for non-flex
 				// parents where percentage heights cannot resolve.
-				base: 'w-px h-auto self-stretch my-4 mx-8 min-h-[64px]',
+				base: 'w-px h-auto self-stretch my-4 mx-8 min-h-[64px] aria-orientation-vertical',
 				// Wrapper stretches like the bare line does, same non-flex fallback
 				div: 'relative flex w-auto h-auto self-stretch items-center justify-center my-4 mx-8 min-h-[64px]',
 				// Content stays in flow (static) and is centered by the flex wrapper;

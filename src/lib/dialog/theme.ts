@@ -11,7 +11,7 @@ export const dialog = tv({
   variants: {
     theme: {
       fluent: {
-        base: 'text-primary',
+        base: '',
       },
       default: ''
     }

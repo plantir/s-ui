@@ -5,7 +5,7 @@
 	import { getTheme } from '$lib/theme/themeUtils';
 	import { button } from './theme.js';
 	import { getButtonGroupContext } from '$lib/context';
-	import { getCurrentTheme } from '$lib/theme-selector/themeStore.svelte.js';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	const groupCtx = getButtonGroupContext();
 	const group = groupCtx?.size;
@@ -38,7 +38,14 @@
 		shadow: shadow_,
 		spinner
 	} = $derived(
-		button({ color: actualColor, size: actualSize, disabled: isDisabled, pill, group: !!group, theme: getCurrentTheme() })
+		button({
+			color: actualColor,
+			size: actualSize,
+			disabled: isDisabled,
+			pill,
+			group: !!group,
+			theme: getCurrentThemeVariant()
+		})
 	);
 
 	let btnCls = $derived(

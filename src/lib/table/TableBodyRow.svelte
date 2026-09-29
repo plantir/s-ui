@@ -4,7 +4,7 @@
 	import type { TableBodyRowProps } from '$lib/types.js';
 	import clsx from 'clsx';
 	import { getTheme } from '$lib/theme/themeUtils';
-	import { getCurrentTheme } from '$lib/theme-selector/themeStore.svelte.js';
+	import {  getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -31,7 +31,7 @@
 			hoverable: compoHoverable,
 			striped: compoStriped,
 			border: compoBorder,
-			theme: getCurrentTheme() as 'fluent' | 'default',
+			theme: getCurrentThemeVariant(),
 			class: clsx(theme, className)
 		})
 	);

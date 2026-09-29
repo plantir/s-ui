@@ -55,12 +55,8 @@ export const select = tv({
 			underline: false,
 			class: {
 				select: [
-					// Fluent UI: side borders use NeutralStroke1, bottom border uses
-					// NeutralStrokeAccessible for contrast, switching to brand on focus
 					'border-(color:--colorNeutralStroke1) border-b-(color:--colorNeutralStrokeAccessible)',
 					'focus:border-(color:--colorNeutralStroke1)',
-					'dark:border-(color:--colorNeutralStroke1) dark:border-b-(color:--colorNeutralStrokeAccessible)',
-					'dark:focus:border-(color:--colorNeutralStroke1) dark:focus:border-b-primary-600'
 				]
 			}
 		},

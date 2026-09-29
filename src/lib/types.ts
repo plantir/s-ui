@@ -2423,10 +2423,10 @@ export interface VirtualListProps<T = unknown> extends VirtualListVariants, Omit
 export interface HrProps extends HrVariants, HTMLAttributes<HTMLElement> {
 	children?: Snippet;
 	divClass?: ClassValue;
-	iconDivClass?: ClassValue;
-	textSpanClass?: ClassValue;
 	innerDivClass?: ClassValue;
 	vertical?: boolean;
 	divProps?: HTMLAttributes<HTMLDivElement>;
 	hrProps?: HTMLAttributes<HTMLHRElement>;
+	// iconDivClass?: ClassValue;
+	// textSpanClass?: ClassValue;
 }

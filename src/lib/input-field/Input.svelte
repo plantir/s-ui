@@ -97,8 +97,6 @@
 
 	// Fluent theme renders the focus underline via :after on the wrapper, so the
 	// wrapper must exist even for a plain input (input elements have no ::after)
-	let isFluent = $derived(getCurrentThemeVariant() === 'fluent');
-
 	// svelte-ignore non_reactive_update
 	let dummyFocusDiv: HTMLDivElement;
 
@@ -299,7 +297,7 @@
 	<div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
 {/if}
 
-{#if isCombobox || right || left || clearable || isFluent}
+<!-- {#if isCombobox || right || left || clearable} -->
 	<div class={base({ class: clsx(theme?.base, styling.div) })}>
 		{#if left}
 			<div class={leftCls({ class: clsx(theme?.left, styling.left) })}>
@@ -330,9 +328,9 @@
 			</div>
 		{/if}
 	</div>
-{:else}
+<!-- {:else}
 	{@render inputContent(false)}
-{/if}
+{/if} -->
 
 {#snippet inputContent(wrapped: boolean)}
 	{#if children}
@@ -346,7 +344,7 @@
 			onfocus={handleFocus}
 			onblur={handleBlur}
 			onkeydown={handleKeydown}
-			class={[wrapped || (!isFluent && base()), inputCls({ class: clsx(theme?.input, className) })]}
+			class={[wrapped || base(), inputCls({ class: clsx(theme?.input, className) })]}
 		/>
 		{#if value !== undefined && value !== '' && clearable}
 			<CloseButton

@@ -4,6 +4,7 @@
 	import type { ClipboardProps } from '../types.js';
 	import { clipboard } from './theme.js';
 	import { getTheme } from '$lib/theme/themeUtils';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -43,13 +44,12 @@
 			success = false;
 		}, 2000);
 	};
+	let base = $derived(
+		clipboard({ embedded, class: clsx(theme, className), theme: getCurrentThemeVariant() })
+	);
 </script>
 
-<Button
-	onclick={copyToClipboard}
-	{...restProps}
-	class={clipboard({ embedded, class: clsx(theme, className) })}
->
+<Button onclick={copyToClipboard} {...restProps} class={base}>
 	{@render children?.(success)}
 </Button>
 
