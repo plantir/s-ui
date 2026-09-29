@@ -6,6 +6,7 @@
 	import { accordion } from './theme';
 	import { createSingleSelectionContext } from '$lib/utils/singleselection.svelte';
 	import { untrack } from 'svelte';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -43,7 +44,13 @@
 	// Use untrack to explicitly capture only the initial value
 	createSingleSelectionContext(untrack(() => multiple));
 
-	const base = $derived(accordion({ flush, class: clsx(theme, className) }));
+	const base = $derived(
+		accordion({
+			flush,
+			class: clsx(theme, className),
+			theme: getCurrentThemeVariant()
+		})
+	);
 </script>
 
 <div {...restProps} class={base}>

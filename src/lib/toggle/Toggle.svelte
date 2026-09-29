@@ -5,6 +5,7 @@
 	import Label from '$lib/label/Label.svelte';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import { untrack } from 'svelte';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -32,7 +33,7 @@
 	const theme = $derived(getTheme('toggle'));
 
 	const { input, label, span } = $derived(
-		toggle({ color, checked, size, disabled, off_state_label: !!offLabel })
+		toggle({ color, checked, size, disabled, off_state_label: !!offLabel, theme:getCurrentThemeVariant() })
 	);
 </script>
 

@@ -67,6 +67,14 @@ export const card = tv({
     hasImage: {
       true: "",
       false: ""
+    },
+    theme: {
+      fluent: {
+        base: 'rounded'
+      },
+      default: {
+        base: ''
+      }
     }
   },
   compoundVariants: [

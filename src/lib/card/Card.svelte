@@ -4,6 +4,7 @@
 	import clsx from 'clsx';
 	import { card } from './theme.js';
 	import { untrack } from 'svelte';
+	import {  getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -36,7 +37,8 @@
 			shadow,
 			horizontal,
 			reverse,
-			href: !!restProps.href
+			href: !!restProps.href,
+			theme: getCurrentThemeVariant()
 		})
 	);
 </script>

@@ -1,102 +1,125 @@
-import { themeConfigs, type FlowbiteTheme, type ThemeId } from "./themes.js";
+import { themeConfigs, type FlowbiteTheme, type ThemeId } from './themes.js';
 
-const browser = typeof window !== "undefined";
+const browser = typeof window !== 'undefined';
 const dev = import.meta.env.DEV;
 
 const getInitialTheme = (): string => {
-  if (browser) {
-    try {
-      const stored = localStorage.getItem("s-ui-theme");
-      if (stored) return stored;
-    } catch (e) {
-      // console.warn("localStorage not available:", e);
-      return "default";
-    }
-  }
-  return "default";
+	if (browser) {
+		try {
+			const stored = localStorage.getItem('s-ui-theme');
+			if (stored) return stored;
+		} catch {
+			// localStorage not available
+			return 'default';
+		}
+	}
+	return 'default';
 };
 
 // Using $state rune for reactive global state
 let currentTheme = $state<string>(getInitialTheme());
 
 // Using $derived for computed value
-const selectedTheme = $derived<FlowbiteTheme | undefined>(themeConfigs.find((t) => t.id === currentTheme));
+const selectedTheme = $derived<FlowbiteTheme | undefined>(
+	themeConfigs.find((t) => t.id === currentTheme)
+);
 
 export function loadTheme(themeId: string, loadFromStatic = false): void {
-  if (!browser) return;
+	if (!browser) return;
 
-  const theme = themeConfigs.find((t) => t.id === themeId);
-  if (!theme && !loadFromStatic) {
-    console.error(`Theme ${themeId} not found`);
-    return;
-  }
+	const theme = themeConfigs.find((t) => t.id === themeId);
+	if (!theme && !loadFromStatic) {
+		console.error(`Theme ${themeId} not found`);
+		return;
+	}
 
-  if (dev) console.log(`Loading theme: ${themeId}, loadFromStatic: ${loadFromStatic}`);
+	if (dev) console.log(`Loading theme: ${themeId}, loadFromStatic: ${loadFromStatic}`);
 
-  // Remove ALL existing theme links
-  const existingLinks = document.querySelectorAll("#dynamic-theme-css, #initial-theme-css, #dynamic-theme-font");
-  existingLinks.forEach((link) => link.remove());
+	// Remove ALL existing theme links
+	const existingLinks = document.querySelectorAll(
+		'#dynamic-theme-css, #initial-theme-css, #dynamic-theme-font'
+	);
+	existingLinks.forEach((link) => link.remove());
 
-  // Add font only for known built-in themes
-  if (theme) {
-    const fontLink = document.createElement("link");
-    fontLink.id = "dynamic-theme-font";
-    fontLink.rel = "stylesheet";
-    fontLink.href = theme.fontUrl;
-    fontLink.onerror = () => {
-      console.warn(`Failed to load font for theme ${themeId}`);
-    };
-    document.head.appendChild(fontLink);
-  }
+	// Add font only for known built-in themes
+	if (theme) {
+		const fontLink = document.createElement('link');
+		fontLink.id = 'dynamic-theme-font';
+		fontLink.rel = 'stylesheet';
+		fontLink.href = theme.fontUrl;
+		fontLink.onerror = () => {
+			console.warn(`Failed to load font for theme ${themeId}`);
+		};
+		document.head.appendChild(fontLink);
+	}
 
-  // Add new theme CSS
-  const themeLink = document.createElement("link");
-  themeLink.id = "dynamic-theme-css";
-  themeLink.rel = "stylesheet";
-  // Use static path if loadFromStatic is true, otherwise use bundled path
-  const themePath = loadFromStatic ? `/themes/${themeId}.css` : theme!.cssPath;
-  themeLink.href = themePath;
+	// Add new theme CSS
+	const themeLink = document.createElement('link');
+	themeLink.id = 'dynamic-theme-css';
+	themeLink.rel = 'stylesheet';
+	// Use static path if loadFromStatic is true, otherwise use bundled path
+	const themePath = loadFromStatic ? `/themes/${themeId}.css` : theme!.cssPath;
+	themeLink.href = themePath;
 
-  // if (dev) console.log(`Loading theme CSS from: ${themePath}, loadFromStatic=${loadFromStatic}`);
+	// if (dev) console.log(`Loading theme CSS from: ${themePath}, loadFromStatic=${loadFromStatic}`);
 
-  // Add onload handler
-  themeLink.onload = () => {
-    // if (dev) console.log(`✓ Theme ${themeId} loaded successfully`);
-    // Reading offsetHeight triggers synchronous layout recalculation
-    void document.body.offsetHeight;
-    // Also trigger recalculation by temporarily modifying a style
-    const html = document.documentElement;
-    const originalTransition = html.style.transition;
-    html.style.transition = "none";
-    void html.offsetHeight;
-    html.style.transition = originalTransition;
-  };
+	// Add onload handler
+	themeLink.onload = () => {
+		// if (dev) console.log(`✓ Theme ${themeId} loaded successfully`);
+		// Reading offsetHeight triggers synchronous layout recalculation
+		void document.body.offsetHeight;
+		// Also trigger recalculation by temporarily modifying a style
+		const html = document.documentElement;
+		const originalTransition = html.style.transition;
+		html.style.transition = 'none';
+		void html.offsetHeight;
+		html.style.transition = originalTransition;
+	};
 
-  themeLink.onerror = () => {
-    console.error(`✗ Failed to load theme ${themeId} from ${themePath}`);
-  };
+	themeLink.onerror = () => {
+		console.error(`✗ Failed to load theme ${themeId} from ${themePath}`);
+	};
 
-  document.head.appendChild(themeLink);
+	document.head.appendChild(themeLink);
 
-  // Save to localStorage
-  try {
-    localStorage.setItem("s-ui-theme", themeId);
-  } catch (e) {
-    console.warn("Could not save theme:", e);
-  }
+	// Save to localStorage
+	try {
+		localStorage.setItem('s-ui-theme', themeId);
+	} catch (e) {
+		console.warn('Could not save theme:', e);
+	}
 
-  // Update state
-  currentTheme = themeId;
-  if (dev) console.log(`Theme state updated to: ${currentTheme}`);
+	// Update state
+	currentTheme = themeId;
+	if (dev) console.log(`Theme state updated to: ${currentTheme}`);
+}
+
+// Apply the saved theme on startup so reloading keeps the selected theme's CSS.
+// "default" is already bundled in the app CSS, so it needs no runtime link.
+if (browser) {
+	const initial = getInitialTheme();
+	if (initial !== 'default') {
+		// Known themes load from bundled CSS; unknown (custom) themes fall back to /themes/<id>.css
+		loadTheme(initial, !themeConfigs.some((t) => t.id === initial));
+	}
 }
 
 // Export getter functions to access the state
 export function getCurrentTheme(): string {
-  return currentTheme;
+	return currentTheme;
+}
+
+/**
+ * Returns the current theme narrowed to the variant keys used by tailwind-variants
+ * theme props (e.g. `theme: 'fluent' | 'default'`). Unknown or custom themes fall
+ * back to 'default' so variant styling still applies.
+ */
+export function getCurrentThemeVariant(): 'fluent' | 'default' {
+	return currentTheme === 'fluent' ? 'fluent' : 'default';
 }
 
 export function getSelectedTheme(): FlowbiteTheme | undefined {
-  return selectedTheme;
+	return selectedTheme;
 }
 
 export { themeConfigs };

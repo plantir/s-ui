@@ -1,4 +1,4 @@
-import type { ThemeConfig } from './index';
+import type { ThemeConfig } from './index.js';
 import { getThemeContext } from '$lib/context';
 import { BROWSER, DEV } from 'esm-env';
 import { writable } from 'svelte/store';
@@ -6,13 +6,13 @@ import { writable } from 'svelte/store';
 function getInitialDarkMode(): boolean {
 	if (!BROWSER) return false;
 	let _isDark = false;
-  if('THEME_PREFERENCE_KEY' in localStorage){
-    if (localStorage.getItem('THEME_PREFERENCE_KEY') === 'dark') {
-      _isDark = true;
-    }
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    _isDark = true;
-  }
+	if ('THEME_PREFERENCE_KEY' in localStorage) {
+		if (localStorage.getItem('THEME_PREFERENCE_KEY') === 'dark') {
+			_isDark = true;
+		}
+	} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		_isDark = true;
+	}
 	return _isDark;
 }
 

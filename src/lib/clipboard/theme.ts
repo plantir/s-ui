@@ -8,6 +8,10 @@ export const clipboard = tv({
     embedded: {
       true: "px-1 py-1 focus-within:ring-0 bg-transparent hover:bg-transparent text-inherit",
       false: ""
+    },
+    theme: {
+      fluent: '',
+      default: '',
     }
   },
   defaultVariants: {

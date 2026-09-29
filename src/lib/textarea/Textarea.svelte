@@ -6,6 +6,7 @@
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import { createDismissableContext } from '$lib/utils/dismissable';
 	import { untrack } from 'svelte';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		header,
@@ -83,7 +84,7 @@
 		footer: footerCls,
 		addon: addonCls,
 		close
-	} = $derived(textarea({ wrapped, hasHeader, hasFooter }));
+	} = $derived(textarea({ wrapped, hasHeader, hasFooter, theme: getCurrentThemeVariant() }));
 
 	const clearAll = () => {
 		if (elementRef) {

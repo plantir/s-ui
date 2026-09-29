@@ -8,7 +8,7 @@ export const progressbar = tv({
   slots: {
     base: "w-full bg-gray-200 rounded-full dark:bg-gray-700",
     label: "text-primary-100 text-xs font-medium text-center leading-none rounded-full",
-    inside: "rounded-full",
+    inside: "rounded-full h-full",
     outside: "mb-1 flex justify-between",
     span: "text-base font-medium dark:text-white",
     progressCls: "text-sm font-medium dark:text-white"
@@ -96,6 +96,26 @@ export const progressbar = tv({
         inside: "bg-rose-600 dark:bg-rose-500"
       }
     },
+    size: {
+      sm: {
+        base: "h-1.5",
+      },
+      md: {
+        base: "h-2.5",
+      },
+      lg: {
+        base: "h-3.5",
+      },
+      xl: {
+        base: "h-4.5",
+      },
+    },
+    theme: {
+      fluent: {
+
+      },
+      default: ''
+    },
     labelInside: {
       true: "",
       false: ""
@@ -106,12 +126,40 @@ export const progressbar = tv({
       labelInside: true,
       class: {
         base: "text-primary-100 text-xs font-medium text-center leading-none rounded-full",
-        label: "p-0.5"
+        label: "p-0.5 flex items-center justify-center"
       }
     },
     {
       labelInside: false,
       class: { base: "rounded-full" }
+    },
+    {
+      theme: 'fluent',
+      size: 'sm',
+      class: {
+        base: 'h-0.5'
+      }
+    },
+    {
+      theme: 'fluent',
+      size: 'md',
+      class: {
+        base: 'h-1'
+      }
+    },
+    {
+      theme: 'fluent',
+      size: 'lg',
+      class: {
+        base: 'h-1.5'
+      }
+    },
+    {
+      theme: 'fluent',
+      size: 'xl',
+      class: {
+        base: 'h-2'
+      }
     }
   ],
   defaultVariants: {

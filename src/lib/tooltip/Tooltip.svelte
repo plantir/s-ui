@@ -3,6 +3,7 @@
 	import Popper from '../utils/Popper.svelte';
 	import { tooltip } from './theme';
 	import type { TooltipProps, TriggeredToggleEvent } from '$lib/types';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte';
 
 	let {
 		type = 'dark',
@@ -17,7 +18,7 @@
 		...restProps
 	}: TooltipProps = $props();
 
-	const base = $derived(tooltip({ color, type, class: clsx(className) }));
+	const base = $derived(tooltip({ color, type, theme: getCurrentThemeVariant(), class: clsx(className) }));
 	function onbeforetoggle(ev: TriggeredToggleEvent) {
 		// block all focusable elements inside the tooltip
 		if (ev.target instanceof HTMLElement) {
