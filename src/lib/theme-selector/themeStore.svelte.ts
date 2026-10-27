@@ -1,25 +1,22 @@
 import { themeConfigs, type FlowbiteTheme, type ThemeId } from './themes.js';
 
 const browser = typeof window !== 'undefined';
-const dev = import.meta.env.DEV;
 
-const getInitialTheme = (): string => {
-	if (browser) {
-		try {
-			const stored = localStorage.getItem('s-ui-theme');
-			if (stored) return stored;
-		} catch {
-			// localStorage not available
-			return 'default';
-		}
+const getStoredTheme = (): string => {
+	if (!browser) return 'default';
+	try {
+		const stored = localStorage.getItem('s-ui-theme');
+		if (stored) return stored;
+	} catch {
+		// localStorage not available
 	}
 	return 'default';
 };
 
-// Using $state rune for reactive global state
-let currentTheme = $state<string>(getInitialTheme());
+// Always start as 'default' so SSR and the first client render match.
+// initTheme() (or loadTheme()) applies a stored theme after mount.
+let currentTheme = $state<string>('default');
 
-// Using $derived for computed value
 const selectedTheme = $derived<FlowbiteTheme | undefined>(
 	themeConfigs.find((t) => t.id === currentTheme)
 );
@@ -32,8 +29,6 @@ export function loadTheme(themeId: string, loadFromStatic = false): void {
 		console.error(`Theme ${themeId} not found`);
 		return;
 	}
-
-	if (dev) console.log(`Loading theme: ${themeId}, loadFromStatic: ${loadFromStatic}`);
 
 	// Remove ALL existing theme links
 	const existingLinks = document.querySelectorAll(
@@ -57,18 +52,12 @@ export function loadTheme(themeId: string, loadFromStatic = false): void {
 	const themeLink = document.createElement('link');
 	themeLink.id = 'dynamic-theme-css';
 	themeLink.rel = 'stylesheet';
-	// Use static path if loadFromStatic is true, otherwise use bundled path
 	const themePath = loadFromStatic ? `/themes/${themeId}.css` : theme!.cssPath;
 	themeLink.href = themePath;
 
-	// if (dev) console.log(`Loading theme CSS from: ${themePath}, loadFromStatic=${loadFromStatic}`);
-
-	// Add onload handler
 	themeLink.onload = () => {
-		// if (dev) console.log(`✓ Theme ${themeId} loaded successfully`);
 		// Reading offsetHeight triggers synchronous layout recalculation
 		void document.body.offsetHeight;
-		// Also trigger recalculation by temporarily modifying a style
 		const html = document.documentElement;
 		const originalTransition = html.style.transition;
 		html.style.transition = 'none';
@@ -77,34 +66,44 @@ export function loadTheme(themeId: string, loadFromStatic = false): void {
 	};
 
 	themeLink.onerror = () => {
-		console.error(`✗ Failed to load theme ${themeId} from ${themePath}`);
+		console.error(`Failed to load theme ${themeId} from ${themePath}`);
 	};
 
 	document.head.appendChild(themeLink);
 
-	// Save to localStorage
 	try {
 		localStorage.setItem('s-ui-theme', themeId);
 	} catch (e) {
 		console.warn('Could not save theme:', e);
 	}
 
-	// Update state
 	currentTheme = themeId;
-	if (dev) console.log(`Theme state updated to: ${currentTheme}`);
 }
 
-// Apply the saved theme on startup so reloading keeps the selected theme's CSS.
-// "default" is already bundled in the app CSS, so it needs no runtime link.
-if (browser) {
-	const initial = getInitialTheme();
-	if (initial !== 'default') {
-		// Known themes load from bundled CSS; unknown (custom) themes fall back to /themes/<id>.css
-		loadTheme(initial, !themeConfigs.some((t) => t.id === initial));
+/**
+ * Apply a saved theme. Call from ThemeSelector (onMount) or the app root layout.
+ * Safe to call on the server — it is a no-op there.
+ */
+export function initTheme(loadFromStatic = false): void {
+	if (!browser) return;
+	const initial = getStoredTheme();
+	if (initial === 'default') {
+		currentTheme = 'default';
+		return;
 	}
+	loadTheme(initial, loadFromStatic || !themeConfigs.some((t) => t.id === initial));
 }
 
-// Export getter functions to access the state
+/**
+ * Blocking boot snippet for `<svelte:head>` / `app.html`.
+ * Loads the stored theme stylesheet before first paint to reduce token flash.
+ * Does not change component variant classes (those update after initTheme()).
+ */
+export function getThemeBootScript(): string {
+	const map = Object.fromEntries(themeConfigs.map((t) => [t.id, t.cssPath]));
+	return `(function(){try{var t=localStorage.getItem('s-ui-theme');if(!t||t==='default')return;if(document.getElementById('dynamic-theme-css'))return;var href=${JSON.stringify(map)}[t];if(!href)href='/themes/'+t+'.css';var l=document.createElement('link');l.id='dynamic-theme-css';l.rel='stylesheet';l.href=href;document.head.appendChild(l);}catch(e){}})();`;
+}
+
 export function getCurrentTheme(): string {
 	return currentTheme;
 }

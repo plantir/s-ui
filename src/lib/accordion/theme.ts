@@ -79,10 +79,12 @@ export const accordionItem = tv({
 		{
 			theme: 'fluent',
 			class: {
-				button: 'p-2 border-b-0 border-s-0 border-e-0 group-first:border-t-0 flex-row-reverse justify-end gap-2',
+				button:
+					'p-2 border-b-0 border-s-0 border-e-0 group-first:border-t-0 flex-row-reverse justify-end gap-2',
 				content: 'p-2 border-b-0 border-s-0 border-e-0',
-				active: "bg-transparent focus:ring-0 focus:ring-offset-0 ",
-				inactive: "hover:bg-transparent dark:hover:bg-transparent"
+				active:
+					'bg-transparent focus:ring-0 focus:ring-offset-0 focus-visible:ring-2 focus-visible:ring-primary-600',
+				inactive: 'hover:bg-transparent dark:hover:bg-transparent'
 			}
 		}
 	],

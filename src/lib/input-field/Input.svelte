@@ -95,10 +95,9 @@
 	// tinted if put in component having its own background
 	let background: boolean = getContext('background');
 
-	// Fluent theme renders the focus underline via :after on the wrapper, so the
-	// wrapper must exist even for a plain input (input elements have no ::after)
 	// svelte-ignore non_reactive_update
 	let dummyFocusDiv: HTMLDivElement;
+	const isFluent = $derived(getCurrentThemeVariant() === 'fluent');
 
 	let group = $derived(getButtonGroupContext());
 	let isGroup = $derived(!!group);
@@ -182,7 +181,7 @@
 		}
 	});
 
-	function defaultHandleInput(_event: Event) {
+	function defaultHandleInput() {
 		// Ensure value is treated as a string to safely check its length
 		const currentValueAsString = String(value || '');
 		if (currentValueAsString.length > 0) {
@@ -246,7 +245,7 @@
 		if (resolvedOnInput) {
 			resolvedOnInput(event);
 		}
-		defaultHandleInput(event);
+		defaultHandleInput();
 	}
 
 	function handleFocus(event: FocusEvent) {
@@ -297,7 +296,7 @@
 	<div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
 {/if}
 
-<!-- {#if isCombobox || right || left || clearable} -->
+{#if isCombobox || right || left || clearable || isFluent}
 	<div class={base({ class: clsx(theme?.base, styling.div) })}>
 		{#if left}
 			<div class={leftCls({ class: clsx(theme?.left, styling.left) })}>
@@ -328,9 +327,9 @@
 			</div>
 		{/if}
 	</div>
-<!-- {:else}
+{:else}
 	{@render inputContent(false)}
-{/if} -->
+{/if}
 
 {#snippet inputContent(wrapped: boolean)}
 	{#if children}

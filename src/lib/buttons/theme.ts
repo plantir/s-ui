@@ -154,7 +154,7 @@ export const button = tv({
 				shadow: 'shadow-rose-500/50 dark:shadow-rose-800/80'
 			},
 			warning: {
-				base: 'text-white bg-yellow-400 hover:bg-yellow-500 focus-within:ring-yellow-300 dark:focus-within:ring-yellow-900',
+				base: 'text-gray-900 bg-yellow-400 hover:bg-yellow-500 focus-within:ring-yellow-300 dark:focus-within:ring-yellow-900',
 				outline:
 					'text-yellow-400 border-yellow-400 hover:bg-yellow-500 dark:border-yellow-300 dark:text-yellow-300 dark:hover:bg-yellow-400',
 				shadow: 'shadow-yellow-500/50 dark:shadow-yellow-800/80'
@@ -172,7 +172,7 @@ export const button = tv({
 				shadow: 'shadow-red-500/50 dark:shadow-red-800/80'
 			},
 			transparent: {
-				base: "bg-transparent hover:bg-neutral-secondary-medium focus-within:ring-0 dark:focus-within:ring-0",
+				base: 'bg-transparent hover:bg-neutral-secondary-medium focus-within:ring-0 dark:focus-within:ring-0 focus-visible:ring-2 focus-visible:ring-primary-600',
 				outline:'hover:bg-neutral-secondary-medium hover:text-heading'
 			}
 		},

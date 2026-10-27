@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { getCurrentTheme, themeConfigs, loadTheme } from './themeStore.svelte';
+	import {
+		getCurrentTheme,
+		themeConfigs,
+		loadTheme,
+		initTheme,
+		getThemeBootScript
+	} from './themeStore.svelte';
 	import type { ThemeSelectorProps } from '$lib/types.js';
 	import { Button, Dropdown, DropdownItem } from '$lib/index';
 	import ThemeIcon from './ThemeIcon.svelte';
@@ -38,6 +44,7 @@
 	type ManifestEntry = string | { id: string; name?: string; colors?: string[] };
 
 	onMount(async () => {
+		initTheme(loadFromStatic);
 		if (!loadFromStatic) return;
 		try {
 			const res = await fetch('/themes/manifest.json');
@@ -89,6 +96,11 @@
 
 	let isOpen = $state(false);
 </script>
+
+<svelte:head>
+	<!-- svelte-ignore html_static_attribute hydration_html_changed -->
+	{@html `<script>${getThemeBootScript()}</script>`}
+</svelte:head>
 
 <div data-scope="theme-selector" data-part="base" {...restProps}>
 	<Button
