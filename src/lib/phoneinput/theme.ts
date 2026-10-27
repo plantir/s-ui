@@ -1,5 +1,6 @@
 import { tv, type VariantProps } from 'tailwind-variants';
 import type { Classes } from '$lib/theme/themeUtils';
+import { fluentControlBorder, fluentFocusUnderline } from '$lib/theme/fluent.js';
 
 export type PhoneInputVariants = VariantProps<typeof phoneInput> & Classes<typeof phoneInput>;
 
@@ -44,30 +45,25 @@ export const phoneInput = tv({
 			theme: 'fluent',
 			phoneType: 'default',
 			class: {
-				wrapper:
-					'after:content-[""] after:absolute after:bottom-0 after:start-0 after:w-full after:h-0.5 after:bg-primary-600 after:rounded-b after:scale-x-0 after:origin-center after:transition-transform after:duration-200 focus-within:after:scale-x-100',
-				input: [
-					// Fluent UI: side borders NeutralStroke1, bottom NeutralStrokeAccessible
-					'border-(color:--colorNeutralStroke1) border-b-(color:--colorNeutralStrokeAccessible)',
-					'focus:border-(color:--colorNeutralStroke1)',
-					'dark:border-(color:--colorNeutralStroke1) dark:border-b-(color:--colorNeutralStrokeAccessible)',
-					'dark:focus:border-(color:--colorNeutralStroke1)'
-				]
+				wrapper: fluentFocusUnderline,
+				input: [...fluentControlBorder]
 			}
 		},
 		{
 			theme: 'fluent',
 			phoneType: 'countryCode',
 			class: {
-				wrapper:
-					'after:content-[""] after:absolute after:bottom-0 after:start-0 after:w-full after:h-0.5 after:bg-primary-600 after:rounded-b after:scale-x-0 after:origin-center after:transition-transform after:duration-200 focus-within:after:scale-x-100',
-				input: [
-					// Fluent UI: side borders NeutralStroke1, bottom NeutralStrokeAccessible
-					'border-(color:--colorNeutralStroke1) border-b-(color:--colorNeutralStrokeAccessible)',
-					'focus:border-(color:--colorNeutralStroke1)',
-					'dark:border-(color:--colorNeutralStroke1) dark:border-b-(color:--colorNeutralStrokeAccessible)',
-					'dark:focus:border-(color:--colorNeutralStroke1)'
-				]
+				wrapper: fluentFocusUnderline,
+				input: [...fluentControlBorder]
+			}
+		},
+		{
+			theme: 'fluent',
+			phoneType: 'floating',
+			class: {
+				wrapper: fluentFocusUnderline,
+				floatingInput: [...fluentControlBorder, 'rounded-none border-0 border-b focus:ring-0'],
+				label: 'peer-focus:text-primary-600 peer-focus:dark:text-primary-500'
 			}
 		}
 	]

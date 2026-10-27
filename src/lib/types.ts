@@ -1,7 +1,7 @@
 import type { Component, Snippet } from 'svelte';
-import type { fade, fly, scale, slide } from "svelte/transition";
-import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
-import type { Writable } from "svelte/store";
+import type { fade, fly, scale, slide } from 'svelte/transition';
+import type { Coords, Middleware, Placement, Strategy } from '@floating-ui/dom';
+import type { Writable } from 'svelte/store';
 import type {
 	ClassValue,
 	HTMLAnchorAttributes,
@@ -42,8 +42,8 @@ export type ParamsType =
 	| SlideParams
 	| ScaleParams
 	| undefined;
-import type { Day } from "date-fns";
-import type { AccordionVariants, AccordionItemVariants } from './accordion/theme.js';
+import type { Day } from 'date-fns';
+import type { AccordionVariants, AccordionItemVariants, accordionItem } from './accordion/theme.js';
 import type { AlertVariants } from './alert/theme.js';
 import type { AvatarVariants } from './avatar/theme.js';
 import type { badge, BadgeVariants } from './badge/theme.js';
@@ -75,27 +75,106 @@ import type { VariantProps } from 'tailwind-variants';
 import type { carousel, CarouselVariants, SlideVariants } from './carousel/theme.js';
 import type { Slide } from './carousel/index.js';
 import type { ClipboardVariants } from './clipboard/theme.js';
-import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants, toolbar } from './toolbar/theme.js';
+import type {
+	ToolbarButtonVariants,
+	ToolbarGroupVariants,
+	ToolbarVariants,
+	toolbar
+} from './toolbar/theme.js';
 import type { DatepickerVariants, datepicker } from './datepicker/theme.js';
-import type { android, AndroidVariants, defaultMockup, DefaultMockupVariants, desktop, DesktopVariants, ios, IosVariants, laptop, LaptopVariants, smartwatch, SmartwatchVariants, tablet, TabletVariants, } from './device-mockups/theme.js';
-import type { drawer, drawerhandle, DrawerHandleVariants, drawerhead, DrawerheadVariants, DrawerVariants } from './drawer/theme.js';
+import type {
+	android,
+	AndroidVariants,
+	defaultMockup,
+	DefaultMockupVariants,
+	desktop,
+	DesktopVariants,
+	ios,
+	IosVariants,
+	laptop,
+	LaptopVariants,
+	smartwatch,
+	SmartwatchVariants,
+	tablet,
+	TabletVariants
+} from './device-mockups/theme.js';
+import type {
+	drawer,
+	drawerhandle,
+	DrawerHandleVariants,
+	drawerhead,
+	DrawerheadVariants,
+	DrawerVariants
+} from './drawer/theme.js';
 import type { dialog, DialogVariants } from './dialog/theme.js';
 import type { modal, ModalVariants } from './modal/theme.js';
-import type { footerLink, FooterLinkVariants, FooterCopyrightVariants, footerCopyright } from './footer/theme.js';
-import type { kanbanBoard, KanbanBoardVariants, kanbanCard, KanbanCardVariants } from './kanban/theme.js';
+import type {
+	footerLink,
+	FooterLinkVariants,
+	FooterCopyrightVariants,
+	footerCopyright
+} from './footer/theme.js';
+import type {
+	kanbanBoard,
+	KanbanBoardVariants,
+	kanbanCard,
+	KanbanCardVariants
+} from './kanban/theme.js';
 import type { GalleryVariants } from './gallery/theme.js';
 import type { ListgroupVariants, ListgroupItemVariants } from './list-group/theme.js';
-import type { progressbar, ProgressbarVariants, progressradial, ProgressradialVariants } from './progress/theme.js';
+import type {
+	progressbar,
+	ProgressbarVariants,
+	progressradial,
+	ProgressradialVariants
+} from './progress/theme.js';
 import type { popover, PopoverVariants } from './popover/theme.js';
 import type { PaginationItemVariants, PaginationVariants } from './pagination/theme.js';
 import type { PaginationNavVariants } from './pagination/theme.js';
 import type { TooltipVariants } from './tooltip/theme.js';
-import type { NavbarHamburgerVariants, NavbarUlVariants, navbarHamburger, navbarUl } from './navbar/theme.js';
-import type { LinkType } from './types copy.js';
+import type {
+	NavbarHamburgerVariants,
+	NavbarUlVariants,
+	navbarHamburger,
+	navbarUl
+} from './navbar/theme.js';
+export interface LinkType {
+	name: string;
+	href?: string;
+	rel?: string;
+	active?: boolean;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	[propName: string]: any;
+}
 import type { megamenu, MegaMenuVariants } from './mega-menu/theme.js';
-import type { AdvancedRatingVariants, RatingVariants, ReviewVariants, ScoreRatingVariants, advancedRating, rating, review, scoreRating } from './rating/theme.js';
-import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants, SidebarButtonVariants, sidebar, sidebarButton, sidebarCta, sidebarDropdownWrapper, sidebarBrand } from './sidebar/theme.js';
-import type { SpeedDialButtonVariants, SpeedDialVariants, speedDial, speedDialButton } from './speed-dial/theme.js';
+import type {
+	AdvancedRatingVariants,
+	RatingVariants,
+	ReviewVariants,
+	ScoreRatingVariants,
+	advancedRating,
+	rating,
+	review,
+	scoreRating
+} from './rating/theme.js';
+import type {
+	SidebarVariants,
+	SidebarCtaVariants,
+	SidebarBrandVariants,
+	SidebarDropdownWrapperVariants,
+	SidebarButtonVariants,
+	sidebar,
+	sidebarButton,
+	sidebarCta,
+	sidebarDropdownWrapper,
+	sidebarBrand
+} from './sidebar/theme.js';
+import type {
+	SpeedDialButtonVariants,
+	SpeedDialVariants,
+	speedDial,
+	speedDialButton
+} from './speed-dial/theme.js';
 import type {
 	CardPlaceholderVariants,
 	ImagePlaceholderVariants,
@@ -115,9 +194,28 @@ import type {
 } from './skeleton/theme.js';
 import type { scrollspy, ScrollSpyVariants } from './scroll-spy/theme.js';
 import type { stepIndicator, StepIndicatorVariants } from './step-indicator/theme.js';
-import type { StepperVariants, BreadcrumbStepperVariants, DetailedStepperVariants, ProgressStepperVariants, TimelineStepperVariants, VerticalStepperVariants, breadcrumbStepper, detailedStepper, progressStepper, stepper, timelineStepper, verticalStepper } from './stepper/theme.js';
-import type { table, tableSearch, TableSearchColor, TableSearchVariants, TableVariants } from './table/theme.js'
-import type { tabItem, TabItemVariants, TabsVaraints } from './tabs/theme.js'
+import type {
+	StepperVariants,
+	BreadcrumbStepperVariants,
+	DetailedStepperVariants,
+	ProgressStepperVariants,
+	TimelineStepperVariants,
+	VerticalStepperVariants,
+	breadcrumbStepper,
+	detailedStepper,
+	progressStepper,
+	stepper,
+	timelineStepper,
+	verticalStepper
+} from './stepper/theme.js';
+import type {
+	table,
+	tableSearch,
+	TableSearchColor,
+	TableSearchVariants,
+	TableVariants
+} from './table/theme.js';
+import type { tabItem, TabItemVariants, TabsVaraints } from './tabs/theme.js';
 import type { ToastVaraints, toast } from './toast/theme.js';
 import type { TimelineVariants, TimelineItemVariants, timelineItem } from './timeline/theme.js';
 import type { TourVariants, tour } from './tour/theme.js';
@@ -166,14 +264,20 @@ export type AnchorButtonAttributes =
 export type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
 export type { ThemeConfig } from './theme';
 
-export type DeviceVariantType = "default" | "ios" | "android" | "tablet" | "laptop" | "desktop" | "smartwatch";
+export type DeviceVariantType =
+	| 'default'
+	| 'ios'
+	| 'android'
+	| 'tablet'
+	| 'laptop'
+	| 'desktop'
+	| 'smartwatch';
 
 export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
 
 export type AnchorDivAttributes =
 	| ({ href: string } & HTMLAnchorAttributes)
 	| ({ href?: undefined } & HTMLAttributes<HTMLDivElement>);
-
 
 // Context Types
 // These types are used by the context system in $lib/context.ts
@@ -182,14 +286,14 @@ export interface AccordionContextType {
 	flush?: boolean;
 	activeClass?: string | null;
 	inactiveClass?: string | null;
-	transitionType?: TransitionFunc | "none";
+	transitionType?: TransitionFunc | 'none';
 }
 
 // BottomNav Context
 export interface BottomNavContextType {
 	activeClass?: string | null;
 	activeUrl?: string;
-	navType?: BottomNavVariants["navType"];
+	navType?: BottomNavVariants['navType'];
 }
 
 // Carousel Context
@@ -204,7 +308,7 @@ export interface CarouselContextType {
 
 // Drawer Context
 export interface DrawerContextType {
-	placement: "left" | "right" | "top" | "bottom";
+	placement: 'left' | 'right' | 'top' | 'bottom';
 }
 
 // Dropdown Context
@@ -216,7 +320,7 @@ export interface DropdownContextType {
 export interface PaginationContextType {
 	group: boolean;
 	table?: boolean;
-	size?: "default" | "large";
+	size?: 'default' | 'large';
 	activeClasses?: ClassValue;
 }
 
@@ -226,8 +330,8 @@ export interface ButtonToggleContextType {
 	isSelected: (toggleValue: string) => boolean;
 	multiSelect: boolean;
 	color?: string;
-	size?: "xs" | "sm" | "md" | "lg" | "xl";
-	roundedSize?: "sm" | "md" | "lg" | "xl" | "full"; // Aligned with ButtonToggleGroupProps
+	size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+	roundedSize?: 'sm' | 'md' | 'lg' | 'xl' | 'full'; // Aligned with ButtonToggleGroupProps
 	ctxIconClass?: string;
 	ctxBtnClass?: string;
 }
@@ -255,14 +359,15 @@ export interface ButtonGroupContextType {
 }
 
 export interface AccordionProps
-	extends AccordionVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
+	extends Omit<AccordionVariants, 'theme'>, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
 	children: Snippet;
 	multiple?: boolean;
 	activeClass?: string;
 	inactiveClass?: string;
 	transitionType?: TransitionFunc | 'none';
 }
-export interface AccordionItemProps extends AccordionItemVariants, HTMLAttributes<HTMLDivElement> {
+export interface AccordionItemProps
+	extends Omit<AccordionItemVariants, 'theme'>, HTMLAttributes<HTMLDivElement> {
 	children: Snippet;
 	header?: Snippet;
 	arrowup?: Snippet;
@@ -273,6 +378,7 @@ export interface AccordionItemProps extends AccordionItemVariants, HTMLAttribute
 	transitionParams?: ParamsType;
 	headerClass?: string;
 	contentClass?: string;
+	classes?: Classes<typeof accordionItem>;
 }
 
 export interface AlertProps
@@ -313,7 +419,8 @@ export interface AvatarProps extends AvatarVariants, HTMLAttributes<HTMLDivEleme
 }
 
 // badge
-export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
+export interface BadgeProps
+	extends Omit<BadgeVariants, 'theme'>, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
 	children: Snippet;
 	icon?: Snippet;
 	badgeStatus?: boolean;
@@ -423,7 +530,7 @@ export type HTMLButtonOrAnchorAttributes = Omit<
 // 		loading?: boolean;
 // 		spinnerProps?: SpinnerProps;
 // 	};
-export interface ButtonProps extends ButtonVariants, HTMLButtonOrAnchorAttributes {
+export interface ButtonProps extends Omit<ButtonVariants, 'theme'>, HTMLButtonOrAnchorAttributes {
 	tag?: string;
 	color?: ButtonVariants['color'];
 	disabled?: boolean;
@@ -452,7 +559,8 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
 // 		contentClass?: string;
 // 	};
 
-export interface CardProps extends Omit<CardVariants, 'href'>, HTMLAttributes<HTMLDivElement> {
+export interface CardProps
+	extends Omit<CardVariants, 'href' | 'theme' | 'hasImage'>, HTMLAttributes<HTMLDivElement> {
 	color?: CardVariants['color'];
 	classes?: Classes<typeof card>;
 	href?: string;
@@ -479,9 +587,7 @@ export interface CarouselProps
 	slideFit?: SlideProps['fit'];
 }
 
-
 // clipboard-manager
-
 
 export interface ClipboardItem {
 	id: number;
@@ -491,7 +597,16 @@ export interface ClipboardItem {
 }
 
 export interface ClipboardManagerProps extends ClipboardManagerVariants {
-	children?: Snippet<[{ item: ClipboardItem; copyItem: (item: ClipboardItem) => Promise<void>; deleteItem: (id: number) => void; togglePin: (id: number) => void }]>;
+	children?: Snippet<
+		[
+			{
+				item: ClipboardItem;
+				copyItem: (item: ClipboardItem) => Promise<void>;
+				deleteItem: (id: number) => void;
+				togglePin: (id: number) => void;
+			}
+		]
+	>;
 	items?: ClipboardItem[];
 	placeholder?: string;
 	saveLabel?: string;
@@ -508,7 +623,7 @@ export interface ClipboardManagerProps extends ClipboardManagerVariants {
 	emptyState?: Snippet;
 	storageKey?: string;
 	open?: boolean;
-	badgeProps?: Omit<BadgeProps, "children">;
+	badgeProps?: Omit<BadgeProps, 'children'>;
 	modalProps?: ModalProps;
 	detectSensitiveData?: (text: string) => boolean;
 	classes?: Classes<typeof clipboardManager>;
@@ -596,7 +711,8 @@ export interface ActionSlotParams {
 	close: () => void;
 }
 
-export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes<HTMLDivElement>, "onselect"> {
+export interface DatepickerProps
+	extends Omit<DatepickerVariants, 'color'>, Omit<HTMLAttributes<HTMLDivElement>, 'onselect'> {
 	value?: Date;
 	defaultDate?: Date | null;
 	range?: boolean;
@@ -610,7 +726,7 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
 	placeholder?: string;
 	disabled?: boolean;
 	required?: boolean;
-	color?: ButtonVariants['color'];
+	color?: DatepickerVariants['color'];
 	inline?: boolean;
 	autohide?: boolean;
 	showActionButtons?: boolean;
@@ -619,7 +735,7 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
 	onselect?: (x: DateOrRange) => void;
 	onclear?: () => void;
 	onapply?: (x: DateOrRange) => void;
-	inputmode?: HTMLInputAttributes["inputmode"];
+	inputmode?: HTMLInputAttributes['inputmode'];
 	monthColor?: ButtonVariants['color'];
 	btnClass?: ClassValue;
 	inputClass?: ClassValue;
@@ -631,11 +747,16 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
 	inputProps?: HTMLInputAttributes;
 }
 
-
 // device-mockups
 export interface DeviceMockupProps {
 	children: Snippet;
-	classes?: Classes<typeof desktop> | Classes<typeof android> | Classes<typeof ios> | Classes<typeof laptop> | Classes<typeof smartwatch> | Classes<typeof tablet>;
+	classes?:
+		| Classes<typeof desktop>
+		| Classes<typeof android>
+		| Classes<typeof ios>
+		| Classes<typeof laptop>
+		| Classes<typeof smartwatch>
+		| Classes<typeof tablet>;
 	device?: DeviceVariantType;
 }
 
@@ -657,7 +778,8 @@ export interface LaptopProps extends LaptopVariants, HTMLAttributes<HTMLDivEleme
 	div4Class?: ClassValue;
 }
 
-export interface AndroidProps extends Omit<AndroidVariants, 'slot'>, HTMLAttributes<HTMLDivElement> {
+export interface AndroidProps
+	extends Omit<AndroidVariants, 'slot'>, HTMLAttributes<HTMLDivElement> {
 	children?: Snippet;
 	classes?: Classes<typeof android>;
 	divClass?: ClassValue;
@@ -669,7 +791,8 @@ export interface AndroidProps extends Omit<AndroidVariants, 'slot'>, HTMLAttribu
 	div7Class?: ClassValue;
 }
 
-export interface DefaultMockupProps extends Omit<DefaultMockupVariants, 'slot'>, HTMLAttributes<HTMLDivElement> {
+export interface DefaultMockupProps
+	extends Omit<DefaultMockupVariants, 'slot'>, HTMLAttributes<HTMLDivElement> {
 	children?: Snippet;
 	classes?: Classes<typeof defaultMockup>;
 	divClass?: ClassValue;
@@ -691,7 +814,8 @@ export interface IosProps extends Omit<IosVariants, 'slot'>, HTMLAttributes<HTML
 	div6Class?: ClassValue;
 }
 
-export interface SmartwatchProps extends Omit<SmartwatchVariants, 'slot'>, HTMLAttributes<HTMLDivElement> {
+export interface SmartwatchProps
+	extends Omit<SmartwatchVariants, 'slot'>, HTMLAttributes<HTMLDivElement> {
 	children?: Snippet;
 	classes?: Classes<typeof smartwatch>;
 	divClass?: ClassValue;
@@ -713,8 +837,6 @@ export interface TabletProps extends Omit<TabletVariants, 'slot'>, HTMLAttribute
 	div6Class?: ClassValue;
 }
 
-
-
 // dialog
 
 export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
@@ -732,7 +854,7 @@ export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
 }
 
 // drawer
-export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "classes" | "form"> {
+export interface DrawerProps extends DrawerVariants, Omit<DialogProps, 'classes' | 'form'> {
 	classes?: Classes<typeof drawer>;
 	offset?: string;
 }
@@ -749,19 +871,19 @@ export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttribute
 }
 
 // toolbar
-export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+export interface ToolbarProps
+	extends ToolbarVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
 	classes?: Classes<typeof toolbar>;
 	color?: ToolbarVariants['color'];
 	end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
 
-export interface ToolbarButtonProps extends ToolbarButtonVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+export interface ToolbarButtonProps
+	extends ToolbarButtonVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
 	name?: string;
-};
-
-
+}
 
 // dropdown
 export interface DropdownProps extends PopperProps {
@@ -797,7 +919,7 @@ export interface DropdownGroupProps extends HTMLAttributes<HTMLUListElement> {
 }
 
 // footer
-export type FooterType = "default" | "sticky" | "sitemap" | "socialmedia" | "logo" | undefined;
+export type FooterType = 'default' | 'sticky' | 'sitemap' | 'socialmedia' | 'logo' | undefined;
 
 export interface FooterProps extends HTMLAttributes<HTMLElement> {
 	children: Snippet;
@@ -844,7 +966,6 @@ export interface FooterLinkProps extends FooterLinkVariants, HTMLAnchorAttribute
 	href?: string;
 }
 
-
 // gallery
 export type ImgType = {
 	src?: string;
@@ -864,11 +985,11 @@ export interface GalleryProps extends GalleryVariants, HTMLAttributes<HTMLDivEle
 // indicator
 export interface IndicatorProps extends HTMLAttributes<HTMLDivElement> {
 	children?: Snippet;
-	color?: IndicatorVariants["color"];
-	cornerStyle?: IndicatorVariants["cornerStyle"];
-	size?: IndicatorVariants["size"];
+	color?: IndicatorVariants['color'];
+	cornerStyle?: IndicatorVariants['cornerStyle'];
+	size?: IndicatorVariants['size'];
 	border?: boolean;
-	placement?: IndicatorVariants["placement"];
+	placement?: IndicatorVariants['placement'];
 	offset?: boolean;
 }
 
@@ -892,7 +1013,8 @@ export interface ListGroupItemType {
 	[key: string]: unknown;
 }
 
-export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<HTMLUListElement>, "children"> {
+export interface ListgroupProps
+	extends ListgroupVariants, Omit<HTMLAttributes<HTMLUListElement>, 'children'> {
 	children?: Snippet<[item: ListGroupItemType | string]>;
 	items?: (ListGroupItemType | string)[];
 	active?: boolean;
@@ -903,15 +1025,15 @@ export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<H
 	iconClass?: ClassValue;
 }
 
-export interface ListgroupItemProps extends Omit<ListgroupItemVariants, "state">, HTMLAttributes<HTMLDivElement> {
+export interface ListgroupItemProps
+	extends Omit<ListgroupItemVariants, 'state'>, HTMLAttributes<HTMLDivElement> {
 	current?: boolean;
 	disabled?: boolean;
 	Icon?: Component;
 	iconClass?: ClassValue;
 	name?: string;
 	children?: Snippet;
-};
-
+}
 
 // spinner
 export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
@@ -942,7 +1064,7 @@ export interface KanbanBoardProps extends KanbanBoardVariants, HTMLAttributes<HT
 	classes?: Classes<typeof kanbanBoard>;
 	onMove?: (card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) => void;
 	onAddCard?: (col: KanbanColumnType) => void;
-	cardProps?: Partial<Omit<KanbanCardProps, "card" | "isDragging" | "onDragStart" | "onDragEnd">>;
+	cardProps?: Partial<Omit<KanbanCardProps, 'card' | 'isDragging' | 'onDragStart' | 'onDragEnd'>>;
 	class?: ClassValue | null;
 }
 
@@ -955,7 +1077,7 @@ export interface KanbanCardProps extends KanbanCardVariants, HTMLAttributes<HTML
 	class?: ClassValue | null;
 }
 // mega-menu
-export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, "children"> {
+export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, 'children'> {
 	children: Snippet<[{ item: LinkType; index: number }]>;
 	extra?: Snippet;
 	items?: LinkType[];
@@ -977,12 +1099,11 @@ export interface ModalProps extends ModalVariants, DialogProps {
 	fullscreen?: boolean;
 }
 
-
 // navbar
 export interface MenuProps extends SVGAttributes<SVGSVGElement> {
 	size?: string;
 	color?: string;
-	variation?: "solid" | "outline";
+	variation?: 'solid' | 'outline';
 	ariaLabel?: string;
 }
 
@@ -993,9 +1114,9 @@ export type NavbarState = {
 	activeUrl?: string;
 };
 
-export type NavbarBreakpoint = "sm" | "md" | "lg" | "xl";
+export type NavbarBreakpoint = 'sm' | 'md' | 'lg' | 'xl';
 
-export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
 	children: Snippet<[{ hidden: boolean; toggle: () => void; NavContainer: Component }]>;
 	fluid?: boolean;
 	navContainerClass?: ClassValue;
@@ -1009,15 +1130,17 @@ export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
 	fluid?: boolean;
 }
 
-export interface NavHamburgerProps extends NavbarHamburgerVariants, Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface NavHamburgerProps
+	extends NavbarHamburgerVariants, Omit<HTMLAttributes<HTMLDivElement>, 'class'> {
 	classes?: Classes<typeof navbarHamburger>;
 	href?: undefined;
 	class?: ClassValue;
-	name?: string
+	name?: string;
 	menuClass?: ClassValue;
-};
+}
 
-export interface NavUlProps extends NavbarUlVariants, Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface NavUlProps
+	extends NavbarUlVariants, Omit<HTMLAttributes<HTMLDivElement>, 'class'> {
 	activeUrl?: string;
 	ulClass?: ClassValue;
 	hidden?: boolean;
@@ -1040,7 +1163,7 @@ export type NavLiProps = AnchorButtonAttributes & {
 
 // pagination
 export type PaginationItemType = {
-	size?: "default" | "large";
+	size?: 'default' | 'large';
 	active?: boolean | null;
 	group?: boolean | null;
 	table?: boolean | null;
@@ -1052,18 +1175,20 @@ export interface PaginationItemSpecificProps {
 	href?: string;
 	active?: boolean;
 	rel?: string;
-	size?: "default" | "large";
+	size?: 'default' | 'large';
 }
 
 export type PaginationHTMLButtonOrAnchorAttributes = HTMLButtonAttributes & HTMLAnchorAttributes;
 
-export interface PaginationButtonProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
+export interface PaginationButtonProps
+	extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
 	children?: Snippet;
 	onclick?: () => void;
 	disabled?: boolean;
 }
 
-export interface PaginationNavProps extends PaginationNavVariants, HTMLAttributes<HTMLElement>, PaginationVariants {
+export interface PaginationNavProps
+	extends PaginationNavVariants, HTMLAttributes<HTMLElement>, PaginationVariants {
 	prevContent?: Snippet;
 	nextContent?: Snippet;
 	prevClass?: ClassValue;
@@ -1072,12 +1197,12 @@ export interface PaginationNavProps extends PaginationNavVariants, HTMLAttribute
 	totalPages: number;
 	visiblePages?: number;
 	onPageChange: (page: number) => void;
-	layout?: "navigation" | "pagination" | "table";
+	layout?: 'navigation' | 'pagination' | 'table';
 	previousLabel?: string;
 	nextLabel?: string;
 	showIcons?: boolean;
 	ariaLabel?: string;
-	size?: "default" | "large";
+	size?: 'default' | 'large';
 	spanClass?: ClassValue;
 	tableDivClass?: ClassValue;
 	classes?: {
@@ -1089,7 +1214,8 @@ export interface PaginationNavProps extends PaginationNavVariants, HTMLAttribute
 	};
 }
 
-export interface PaginationItemProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
+export interface PaginationItemProps
+	extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
 	children?: Snippet;
 }
 
@@ -1103,9 +1229,9 @@ export interface PaginationProps extends PaginationVariants, HTMLLiAttributes {
 }
 
 // popover
-export interface PopoverProps extends PopoverVariants, Omit<PopperProps, "title"> {
+export interface PopoverProps extends PopoverVariants, Omit<PopperProps, 'title'> {
 	title?: Snippet | string;
-	color?: PopoverVariants["color"];
+	color?: PopoverVariants['color'];
 	classes?: Classes<typeof popover>;
 	params?: ParamsType;
 	defaultClass?: ClassValue;
@@ -1114,22 +1240,27 @@ export interface PopoverProps extends PopoverVariants, Omit<PopperProps, "title"
 }
 
 // progress
-export interface ProgressbarProps extends ProgressbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+export interface ProgressbarProps
+	extends
+		Omit<ProgressbarVariants, 'size' | 'theme'>,
+		Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
 	progress?: string | number;
 	precision?: number;
 	tweenDuration?: number;
 	animate?: boolean;
-	size?: 'sm' | 'md' | 'lg' | 'xl';
+	/** Named sizes or any height/class string (e.g. `h-4`) for backward compatibility. */
+	size?: 'sm' | 'md' | 'lg' | 'xl' | (string & {});
 	classes?: Classes<typeof progressbar>;
 	labelInside?: boolean;
 	labelOutside?: string;
 	easing?: EasingFunction;
 }
 
-export interface ProgressradialProps extends ProgressradialVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+export interface ProgressradialProps
+	extends ProgressradialVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
 	progress?: number | string;
 	radius?: number;
-	startingPosition?: "top" | "right" | "bottom" | "left";
+	startingPosition?: 'top' | 'right' | 'bottom' | 'left';
 	precision?: number;
 	tweenDuration?: number;
 	classes?: Classes<typeof progressradial>;
@@ -1141,11 +1272,11 @@ export interface ProgressradialProps extends ProgressradialVariants, Omit<HTMLAt
 	easing?: (t: number) => number;
 }
 
-
 // rating
 export type RatingItem = { label: string | null | undefined; rating: number };
 
-export interface AdvancedRatingProps extends AdvancedRatingVariants, HTMLAttributes<HTMLDivElement> {
+export interface AdvancedRatingProps
+	extends AdvancedRatingVariants, HTMLAttributes<HTMLDivElement> {
 	rating?: Snippet;
 	globalText?: Snippet;
 	classes?: Classes<typeof advancedRating>;
@@ -1279,7 +1410,7 @@ export interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElemen
 }
 
 export interface SidebarButtonProps extends SidebarButtonVariants, HTMLButtonAttributes {
-	breakpoint?: SidebarVariants["breakpoint"];
+	breakpoint?: SidebarVariants['breakpoint'];
 	classes?: Classes<typeof sidebarButton>;
 	svgClass?: ClassValue;
 }
@@ -1310,7 +1441,8 @@ export type Bindable<T> = {
 	set(value: T): void;
 };
 
-export interface SidebarDropdownWrapperProps extends SidebarDropdownWrapperVariants, HTMLButtonAttributes {
+export interface SidebarDropdownWrapperProps
+	extends SidebarDropdownWrapperVariants, HTMLButtonAttributes {
 	children: Snippet;
 	arrowup?: Snippet;
 	arrowdown?: Snippet;
@@ -1346,52 +1478,59 @@ export interface SidebarItemProps extends HTMLAnchorAttributes {
 }
 
 // skeleton
-export interface CardPlaceholderProps extends CardPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
-	size?: CardPlaceholderVariants["size"];
+export interface CardPlaceholderProps
+	extends CardPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+	size?: CardPlaceholderVariants['size'];
 	classes?: Classes<typeof cardPlaceholder>;
 }
 
-export interface ImagePlaceholderProps extends ImagePlaceholderVariants, HTMLAttributes<HTMLDivElement> {
-	size?: ImagePlaceholderVariants["size"];
+export interface ImagePlaceholderProps
+	extends ImagePlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+	size?: ImagePlaceholderVariants['size'];
 	classes?: Classes<typeof imagePlaceholder>;
-	rounded?: ImagePlaceholderVariants["rounded"];
+	rounded?: ImagePlaceholderVariants['rounded'];
 	imgOnly?: boolean;
 }
 
-export interface ListPlaceholderProps extends ListPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+export interface ListPlaceholderProps
+	extends ListPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
 	itemNumber?: number;
 	classes?: Classes<typeof listPlaceholder>;
 	title?: string;
-	size?: ListPlaceholderVariants["size"];
-	rounded?: ListPlaceholderVariants["rounded"];
+	size?: ListPlaceholderVariants['size'];
+	rounded?: ListPlaceholderVariants['rounded'];
 }
 
 export interface SkeletonProps extends SkeletonVariants, HTMLAttributes<HTMLDivElement> {
-	size?: SkeletonVariants["size"];
+	size?: SkeletonVariants['size'];
 	classes?: Classes<typeof skeleton>;
 }
 
-export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+export interface TestimonialPlaceholderProps
+	extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
 	classes?: Classes<typeof testimonialPlaceholder>;
 }
 
-export interface TextPlaceholderProps extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
-	size?: TextPlaceholderVariants["size"];
+export interface TextPlaceholderProps
+	extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+	size?: TextPlaceholderVariants['size'];
 	classes?: Classes<typeof textPlaceholder>;
 }
 
-export interface VideoPlaceholderProps extends VideoPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
-	size?: VideoPlaceholderVariants["size"];
+export interface VideoPlaceholderProps
+	extends VideoPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+	size?: VideoPlaceholderVariants['size'];
 }
 
-export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
+export interface WidgetPlaceholderProps
+	extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
 	classes?: Classes<typeof widgetPlaceholder>;
 }
 
 // speeddial
 export interface SpeedCtxType {
 	pill: boolean;
-	tooltip: Placement | "none";
+	tooltip: Placement | 'none';
 	textOutside: boolean;
 }
 
@@ -1407,28 +1546,27 @@ type BaseSpeedDialTriggerProps = {
 // Two different prop types based on gradient flag
 export type RegularSpeedDialTriggerProps = BaseSpeedDialTriggerProps & {
 	gradient?: false;
-	color?: ButtonVariants["color"];
+	color?: ButtonVariants['color'];
 };
 
 export type GradientSpeedDialTriggerProps = BaseSpeedDialTriggerProps & {
 	gradient: true;
 	color?: GradientButtonColor;
 };
-export interface SpeedDialProps extends PopperProps,
-	SpeedDialVariants {
+export interface SpeedDialProps extends PopperProps, SpeedDialVariants {
 	children: Snippet;
 	button?: Snippet;
 	popperClass?: ClassValue;
 	placement?: Placement;
-	tooltip?: Placement | "none";
-	trigger?: PopperProps["trigger"];
+	tooltip?: Placement | 'none';
+	trigger?: PopperProps['trigger'];
 	textOutside?: boolean;
 	classes?: Classes<typeof speedDial>;
 	pill?: boolean;
-	ontoggle?: PopperProps["ontoggle"];
-	onbeforetoggle?: PopperProps["onbeforetoggle"];
+	ontoggle?: PopperProps['ontoggle'];
+	onbeforetoggle?: PopperProps['onbeforetoggle'];
 	isOpen?: boolean;
-};
+}
 // Union type that forces TypeScript to check properly
 export interface SpeedDialTriggerProps extends BaseSpeedDialTriggerProps {
 	name?: string;
@@ -1440,11 +1578,9 @@ export interface SpeedDialTriggerProps extends BaseSpeedDialTriggerProps {
 	[key: string]: unknown;
 }
 
-
-
 export interface SpeedDialButtonProps extends ButtonProps, SpeedDialButtonVariants {
 	name?: string;
-	tooltip?: Placement | "none";
+	tooltip?: Placement | 'none';
 	pill?: boolean;
 	textOutside?: boolean;
 	textClass?: ClassValue;
@@ -1452,22 +1588,25 @@ export interface SpeedDialButtonProps extends ButtonProps, SpeedDialButtonVarian
 }
 
 // tooltip
-export interface TooltipProps extends TooltipVariants, PopperProps { }
+export interface TooltipProps extends TooltipVariants, PopperProps {}
 
 // popper
 export interface TriggeredToggleEvent extends ToggleEvent {
 	trigger: HTMLElement;
 }
 
-export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbeforetoggle" | "ontoggle" | "onclose" | "color"> {
+export interface PopperProps extends Omit<
+	HTMLAttributes<HTMLDivElement>,
+	'onbeforetoggle' | 'ontoggle' | 'onclose' | 'color'
+> {
 	triggeredBy?: string;
 	triggerDelay?: number;
-	trigger?: "hover" | "click";
+	trigger?: 'hover' | 'click';
 	placement?: Placement;
 	arrow?: boolean;
 	arrowClass?: string;
 	offset?: number;
-	role?: "tooltip" | "menu" | "dialog" | "listbox" | "combobox";
+	role?: 'tooltip' | 'menu' | 'dialog' | 'listbox' | 'combobox';
 	yOnly?: boolean; // special case for megamenu - only move on y axis
 	strategy?: Strategy;
 	reference?: string;
@@ -1484,11 +1623,9 @@ export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbef
 export interface ArrowProps {
 	placement?: Placement;
 	cords: Partial<Coords>;
-	strategy?: "absolute" | "fixed";
+	strategy?: 'absolute' | 'fixed';
 	class?: ClassValue | null;
 }
-
-
 
 // scrollspy
 export interface ScrollSpyItem {
@@ -1501,7 +1638,7 @@ export interface ScrollSpyProps extends ScrollSpyVariants, HTMLAttributes<HTMLEl
 	/** Array of navigation items */
 	items: ScrollSpyItem[];
 	/** Position of the navigation bar */
-	position?: "top" | "left" | "right";
+	position?: 'top' | 'left' | 'right';
 	/** Offset from top when calculating active section (useful for fixed headers) */
 	offset?: number;
 	/** Enable sticky positioning */
@@ -1523,11 +1660,9 @@ export interface ScrollSpyProps extends ScrollSpyVariants, HTMLAttributes<HTMLEl
 	onNavigate?: (itemId: string) => void;
 }
 
-
-
 // splitpane
 export interface SplitPaneProps {
-	direction?: "horizontal" | "vertical";
+	direction?: 'horizontal' | 'vertical';
 	minSize?: number;
 	responsive?: boolean;
 	breakpoint?: number;
@@ -1547,7 +1682,7 @@ export interface PaneProps {
 }
 
 export interface DividerProps {
-	direction: "horizontal" | "vertical";
+	direction: 'horizontal' | 'vertical';
 	index: number;
 	onMouseDown: (e: MouseEvent, index: number) => void;
 	onTouchStart: (e: TouchEvent, index: number) => void;
@@ -1562,20 +1697,19 @@ export interface SplitPaneContext {
 	getPaneStyle: (index: number) => string;
 	getPaneSize: (index: number) => number;
 	shouldRenderDivider: (index: number) => boolean;
-	getDirection: () => "horizontal" | "vertical";
+	getDirection: () => 'horizontal' | 'vertical';
 	getIsDragging: () => boolean;
 	onMouseDown: (e: MouseEvent, index: number) => void;
 	onTouchStart: (e: TouchEvent, index: number) => void;
 	onKeyDown: (e: KeyboardEvent, index: number) => void;
 }
 
-
 // stepindicator
 export interface StepIndicatorProps extends StepIndicatorVariants, HTMLAttributes<HTMLElement> {
 	steps?: string[];
 	currentStep?: number;
-	size?: StepIndicatorVariants["size"];
-	color?: StepIndicatorVariants["color"] | "custom";
+	size?: StepIndicatorVariants['size'];
+	color?: StepIndicatorVariants['color'] | 'custom';
 	glow?: boolean;
 	hideLabel?: boolean;
 	clickable?: boolean;
@@ -1586,7 +1720,7 @@ export interface StepIndicatorProps extends StepIndicatorVariants, HTMLAttribute
 }
 
 // stepper
-export type StepStatus = "completed" | "current" | "pending";
+export type StepStatus = 'completed' | 'current' | 'pending';
 
 export interface Step {
 	id?: number;
@@ -1633,7 +1767,7 @@ export interface DetailedStep {
 	id: number;
 	label: string;
 	description?: string;
-	status?: "completed" | "current" | "pending"; // Optional: Override auto-status
+	status?: 'completed' | 'current' | 'pending'; // Optional: Override auto-status
 	icon?: Component; // Custom icon for this step (may be replaced by checkmark if step is completed and showCheckmarkForCompleted is true)
 	iconClass?: ClassValue;
 	descriptionClass?: ClassValue;
@@ -1652,7 +1786,7 @@ export interface DetailedStepperProps extends HTMLOlAttributes, DetailedStepperV
 export interface VerticalStep {
 	id: number;
 	label: string;
-	status?: "completed" | "current" | "pending";
+	status?: 'completed' | 'current' | 'pending';
 	icon?: Component;
 	iconClass?: ClassValue;
 }
@@ -1672,7 +1806,7 @@ export interface BreadcrumbStep {
 	id: number;
 	label: string;
 	shortLabel?: string;
-	status?: "completed" | "current" | "pending";
+	status?: 'completed' | 'current' | 'pending';
 	icon?: Component;
 	iconClass?: ClassValue;
 }
@@ -1691,7 +1825,7 @@ export interface TimelineStep {
 	id?: string | number;
 	label: string;
 	description?: string;
-	status?: "completed" | "current" | "pending";
+	status?: 'completed' | 'current' | 'pending';
 	icon?: Component;
 	iconClass?: ClassValue;
 }
@@ -1711,7 +1845,7 @@ export type TableContextType = {
 	striped?: boolean;
 	hoverable?: boolean;
 	border?: boolean;
-	color?: TableVariants["color"];
+	color?: TableVariants['color'];
 };
 
 // prettier-ignore
@@ -1727,12 +1861,12 @@ export interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> 
 	headItems?: HeadItemType[];
 	striped?: boolean;
 	border?: boolean;
-	color?: TableVariants["color"];
+	color?: TableVariants['color'];
 }
 
 export type TableItemType = Record<string, string | number | boolean>;
 
-export interface TableProps extends TableVariants, Omit<HTMLTableAttributes, "border"> {
+export interface TableProps extends TableVariants, Omit<HTMLTableAttributes, 'border'> {
 	children?: Snippet;
 	footerSlot?: Snippet;
 	captionSlot?: Snippet;
@@ -1742,7 +1876,7 @@ export interface TableProps extends TableVariants, Omit<HTMLTableAttributes, "bo
 	hoverable?: boolean;
 	border?: boolean;
 	shadow?: boolean;
-	color?: TableVariants["color"];
+	color?: TableVariants['color'];
 	items?: TableItemType[];
 }
 
@@ -1751,13 +1885,13 @@ export interface TableBodyRowProps extends HTMLAttributes<HTMLTableRowElement> {
 	striped?: boolean;
 	hoverable?: boolean;
 	border?: boolean;
-	color?: TableVariants["color"];
+	color?: TableVariants['color'];
 }
 
 export interface TableBodyCellProps extends HTMLTdAttributes {
 	children?: Snippet;
 	colspan?: number;
-	color?: TableVariants["color"];
+	color?: TableVariants['color'];
 	onclick?: () => void;
 }
 
@@ -1774,9 +1908,9 @@ export interface TableHeadCellProps<T = unknown> extends HTMLThAttributes {
 	children?: Snippet;
 	padding?: string;
 	sort?: ((a: T, b: T) => number) | null;
-	defaultDirection?: "asc" | "desc";
+	defaultDirection?: 'asc' | 'desc';
 	defaultSort?: boolean;
-	direction?: "asc" | "desc" | null;
+	direction?: 'asc' | 'desc' | null;
 }
 
 export type TableSearchType = {
@@ -1809,7 +1943,7 @@ export interface TableSearchProps extends TableSearchVariants, HTMLTableAttribut
 export interface TabsProps extends TabsVaraints, HTMLAttributes<HTMLUListElement> {
 	children: Snippet;
 	selected?: string;
-	tabStyle?: TabsVaraints["tabStyle"];
+	tabStyle?: TabsVaraints['tabStyle'];
 	ulClass?: ClassValue;
 	contentClass?: ClassValue;
 	divider?: boolean;
@@ -1825,13 +1959,13 @@ export interface TabitemProps extends TabItemVariants, HTMLLiAttributes {
 	activeClass?: ClassValue;
 	inactiveClass?: ClassValue;
 	disabled?: boolean;
-	tabStyle?: TabsVaraints["tabStyle"];
+	tabStyle?: TabsVaraints['tabStyle'];
 }
 
 export interface TabCtxType {
 	activeClass?: string;
 	inactiveClass?: string;
-	tabStyle?: TabsVaraints["tabStyle"];
+	tabStyle?: TabsVaraints['tabStyle'];
 	panelId: string;
 }
 
@@ -1843,14 +1977,14 @@ export interface TabsContextType {
 	registerTab: (tab: SelectedTab) => void;
 	unregisterTab: (tabId: string) => void;
 }
-export type DateFormat = "year" | "month-year" | "full-date";
+export type DateFormat = 'year' | 'month-year' | 'full-date';
 
 export interface TimelineProps extends HTMLOlAttributes {
 	children: Snippet;
-	order?: TimelineVariants["order"];
+	order?: TimelineVariants['order'];
 }
 
-type ColorVariant = "primary" | "green" | "orange" | "red" | "blue" | "purple" | "gray";
+type ColorVariant = 'primary' | 'green' | 'orange' | 'red' | 'blue' | 'purple' | 'gray';
 
 export interface TimelineItemProps extends TimelineItemVariants, HTMLLiAttributes {
 	children: Snippet;
@@ -1875,8 +2009,8 @@ export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement
 	icon?: Snippet;
 	toastStatus?: boolean;
 	dismissable?: boolean;
-	color?: ToastVaraints["color"];
-	position?: ToastVaraints["position"];
+	color?: ToastVaraints['color'];
+	position?: ToastVaraints['position'];
 	iconClass?: string;
 	contentClass?: string;
 	align?: boolean;
@@ -1888,7 +2022,7 @@ export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement
 
 export interface ToastContainerProps extends HTMLAttributes<HTMLDivElement> {
 	children: Snippet;
-	position?: ToastVaraints["position"];
+	position?: ToastVaraints['position'];
 	class?: ClassValue | null;
 }
 
@@ -1899,7 +2033,7 @@ export type TourStep = {
 	placement?: Placement;
 };
 
-export interface TourProps extends TourVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+export interface TourProps extends TourVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
 	steps: TourStep[];
 	active?: boolean;
 	currentStep?: number;
@@ -1914,7 +2048,7 @@ export interface TourProps extends TourVariants, Omit<HTMLAttributes<HTMLDivElem
 
 export interface AnchorProps {
 	children: Snippet;
-	color?: AnchorVariants["color"];
+	color?: AnchorVariants['color'];
 	asButton?: boolean;
 	onclick?: (event: MouseEvent) => void;
 	// Common attributes that make sense for both button and anchor
@@ -1924,37 +2058,36 @@ export interface AnchorProps {
 	tabindex?: number;
 	title?: string;
 	role?: string;
-	"aria-label"?: string;
-	"data-testid"?: string;
+	'aria-label'?: string;
+	'data-testid'?: string;
 	// Anchor-specific attributes (used when asButton is false)
 	href?: string;
 	target?: string;
 	rel?: string;
 	download?: string | boolean;
 	// Button-specific attributes (used when asButton is true)
-	type?: "button" | "submit" | "reset";
+	type?: 'button' | 'submit' | 'reset';
 	disabled?: boolean;
 	name?: string;
 	value?: string | number | string[];
 	// Allow any other attributes (like data-* attributes)
 	[key: string]: any;
-
 }
 export interface BlockquoteProps extends HTMLBlockquoteAttributes {
 	children: Snippet;
 	border?: boolean;
 	italic?: boolean;
 	bg?: boolean;
-	alignment?: BlockquoteVariants["alignment"];
-	size?: BlockquoteVariants["size"];
+	alignment?: BlockquoteVariants['alignment'];
+	size?: BlockquoteVariants['size'];
 }
 export interface DescriptionListProps extends HTMLAttributes<HTMLElement> {
 	children: Snippet;
-	tag: DescriptionListVariants["tag"];
+	tag: DescriptionListVariants['tag'];
 }
 export interface HeadingProps extends HTMLAttributes<HTMLElement> {
 	children: Snippet;
-	tag?: HeadingVariants["tag"];
+	tag?: HeadingVariants['tag'];
 }
 export interface ParagraphProps extends ParagraphVariants, HTMLAttributes<HTMLParagraphElement> {
 	children: Snippet;
@@ -1975,29 +2108,29 @@ export interface Picture {
 }
 // export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string };
 
-export interface ImgProps extends ImgVariants, Omit<HTMLImgAttributes, "children"> {
+export interface ImgProps extends ImgVariants, Omit<HTMLImgAttributes, 'children'> {
 	children?: Snippet<[{ class: string; restProps: any }]>;
-	size?: ImgVariants["size"];
-	effect?: ImgVariants["effect"];
+	size?: ImgVariants['size'];
+	effect?: ImgVariants['effect'];
 	caption?: string;
 	figClass?: string;
 	captionClass?: string;
-	href?: HTMLAnchorElement["href"];
-	align?: ImgVariants["align"];
+	href?: HTMLAnchorElement['href'];
+	align?: ImgVariants['align'];
 	class?: string;
 	classes?: Classes<typeof img>;
 }
 
-export interface EnhandedImgProps extends ImgVariants, Omit<HTMLImgAttributes, "src"> {
+export interface EnhandedImgProps extends ImgVariants, Omit<HTMLImgAttributes, 'src'> {
 	src: string | Picture;
-	size?: ImgVariants["size"];
+	size?: ImgVariants['size'];
 	multiple?: boolean;
 	transform?: string;
-	effect?: ImgVariants["effect"];
+	effect?: ImgVariants['effect'];
 	caption?: string;
 	figClass?: string;
 	captionClass?: string;
-	href?: HTMLAnchorElement["href"];
+	href?: HTMLAnchorElement['href'];
 }
 export interface LayoutProps extends HTMLAttributes<HTMLElement> {
 	children: Snippet;
@@ -2005,8 +2138,8 @@ export interface LayoutProps extends HTMLAttributes<HTMLElement> {
 
 export interface ListProps extends HTMLOlAttributes {
 	children: Snippet;
-	tag?: ListVariants["tag"];
-	position?: ListVariants["position"];
+	tag?: ListVariants['tag'];
+	position?: ListVariants['position'];
 	ctxClass?: string;
 	isContenteditable?: boolean;
 }
@@ -2033,15 +2166,15 @@ export interface SpanProps extends SpanVariants, HTMLAttributes<HTMLSpanElement>
 }
 
 export interface VideoProps extends HTMLVideoAttributes {
-	type?: HTMLSourceAttributes["type"];
-	src?: HTMLSourceAttributes["src"];
-	trackSrc?: HTMLTrackAttributes["src"];
-	srclang?: HTMLTrackAttributes["lang"];
-	label?: HTMLTrackAttributes["label"];
+	type?: HTMLSourceAttributes['type'];
+	src?: HTMLSourceAttributes['src'];
+	trackSrc?: HTMLTrackAttributes['src'];
+	srclang?: HTMLTrackAttributes['lang'];
+	label?: HTMLTrackAttributes['label'];
 }
 export interface LabelProps extends HTMLLabelAttributes {
 	children: Snippet;
-	color?: LabelVariants["color"];
+	color?: LabelVariants['color'];
 	show?: boolean;
 }
 
@@ -2052,7 +2185,8 @@ export interface CheckboxItem {
 	[key: string]: any;
 }
 
-export interface CheckboxProps extends CheckboxVariants, Omit<HTMLInputAttributes, "children" | "color"> {
+export interface CheckboxProps
+	extends CheckboxVariants, Omit<HTMLInputAttributes, 'children' | 'color'> {
 	children?: Snippet<[{ value?: string | number; checked: boolean } | CheckboxItem]>;
 	custom?: boolean;
 	inline?: boolean;
@@ -2060,27 +2194,28 @@ export interface CheckboxProps extends CheckboxVariants, Omit<HTMLInputAttribute
 	rounded?: boolean;
 	choices?: CheckboxItem[];
 	divClass?: ClassValue;
-	labelProps?: Omit<LabelProps, "children">;
+	labelProps?: Omit<LabelProps, 'children'>;
 	classes?: Classes<typeof checkbox>;
 }
 
-export interface CheckboxButtonProps extends CheckboxButtonVariants, Omit<HTMLInputAttributes, "size" | "checked"> {
+export interface CheckboxButtonProps
+	extends CheckboxButtonVariants, Omit<HTMLInputAttributes, 'size' | 'checked'> {
 	inline?: boolean;
 	pill?: boolean;
 	outline?: boolean;
-	size?: ButtonProps["size"];
-	color?: ButtonProps["color"];
+	size?: ButtonProps['size'];
+	color?: ButtonProps['color'];
 	shadow?: boolean;
 }
 
-export interface FileuploadProps extends FileuploadViariants, Omit<HTMLInputAttributes, "size"> {
+export interface FileuploadProps extends FileuploadViariants, Omit<HTMLInputAttributes, 'size'> {
 	files?: FileList | null;
-	size?: FileuploadViariants["size"];
-	color?: InputProps<never>["color"];
+	size?: FileuploadViariants['size'];
+	color?: InputProps<never>['color'];
 	elementRef?: HTMLInputElement;
 	clearable?: boolean;
 	clearableSvgClass?: ClassValue;
-	clearableColor?: CloseButtonVariants["color"];
+	clearableColor?: CloseButtonVariants['color'];
 	clearableOnClick?: () => void;
 	clearableClass?: ClassValue;
 	wrapperClass?: ClassValue;
@@ -2089,21 +2224,24 @@ export interface FileuploadProps extends FileuploadViariants, Omit<HTMLInputAttr
 
 export type InputValue = string | number | string[] | undefined;
 
-export interface InputProps<T extends InputValue = string> extends InputVariants, Omit<HTMLInputAttributes, "size" | "children" | "value"> {
-	children?: Snippet<[{ class: string } & Omit<InputProps<T>, "children" | "left" | "right" | "size">]>;
+export interface InputProps<T extends InputValue = string>
+	extends InputVariants, Omit<HTMLInputAttributes, 'size' | 'children' | 'value'> {
+	children?: Snippet<
+		[{ class: string } & Omit<InputProps<T>, 'children' | 'left' | 'right' | 'size'>]
+	>;
 	left?: Snippet;
 	right?: Snippet;
-	size?: InputVariants["size"];
+	size?: InputVariants['size'];
 	value?: T;
 	elementRef?: HTMLInputElement;
-	color?: InputVariants["color"];
+	color?: InputVariants['color'];
 	leftClass?: ClassValue;
 	rightClass?: ClassValue;
 	divClass?: ClassValue;
 	wrapperClass?: ClassValue;
 	clearable?: boolean;
 	clearableSvgClass?: ClassValue;
-	clearableColor?: CloseButtonVariants["color"];
+	clearableColor?: CloseButtonVariants['color'];
 	clearableClass?: ClassValue;
 	clearableOnClick?: () => void;
 	data?: string[];
@@ -2127,17 +2265,16 @@ export interface InputProps<T extends InputValue = string> extends InputVariants
 }
 export interface InputAddonProps extends HTMLAttributes<HTMLDivElement> {
 	children: Snippet;
-	size?: ButtonGroupProps["size"];
+	size?: ButtonGroupProps['size'];
 }
-
 
 export type ButtonToggleGroupProps = HTMLAttributes<HTMLDivElement> & {
 	multiSelect?: boolean;
 	name?: string;
 	value?: string | null | string[];
-	color?: ButtonToggleVariants["color"];
-	size?: ButtonToggleVariants["size"];
-	roundedSize?: "sm" | "md" | "lg" | "xl" | "full"; // buttonToggleGroup roundedSize values
+	color?: ButtonToggleVariants['color'];
+	size?: ButtonToggleVariants['size'];
+	roundedSize?: 'sm' | 'md' | 'lg' | 'xl' | 'full'; // buttonToggleGroup roundedSize values
 	onSelect?: (val: string | null | string[]) => void;
 	children: Snippet;
 	ctxIconClass?: ClassValue;
@@ -2150,7 +2287,7 @@ export type ButtonToggleProps = ButtonToggleVariants &
 		selected?: boolean;
 		children: Snippet;
 		iconSlot?: Snippet;
-		color?: ButtonToggleVariants["color"];
+		color?: ButtonToggleVariants['color'];
 		iconClass?: ClassValue;
 		contentClass?: ClassValue;
 		txtClass?: ClassValue;
@@ -2167,25 +2304,26 @@ export type CheckIconProps = SVGAttributes<SVGSVGElement>;
 export interface DropzoneProps extends HTMLInputAttributes {
 	children: Snippet;
 	files?: FileList | null;
-	onDrop?: HTMLLabelAttributes["ondrop"];
-	onDragOver?: HTMLLabelAttributes["ondragover"];
-	onChange?: HTMLInputAttributes["onchange"];
+	onDrop?: HTMLLabelAttributes['ondrop'];
+	onDragOver?: HTMLLabelAttributes['ondragover'];
+	onChange?: HTMLInputAttributes['onchange'];
 }
 
-export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, Omit<HTMLInputAttributes, "size"> {
+export interface FloatingLabelInputProps
+	extends FloatingLabelInputVaratiants, Omit<HTMLInputAttributes, 'size'> {
 	children: Snippet;
 	id?: string;
 	value?: string | number | readonly string[];
 	elementRef?: HTMLInputElement;
-	"aria-describedby"?: string;
-	variant?: FloatingLabelInputVaratiants["variant"];
-	size?: FloatingLabelInputVaratiants["size"];
-	color?: FloatingLabelInputVaratiants["color"];
+	'aria-describedby'?: string;
+	variant?: FloatingLabelInputVaratiants['variant'];
+	size?: FloatingLabelInputVaratiants['size'];
+	color?: FloatingLabelInputVaratiants['color'];
 	inputClass?: ClassValue;
 	labelClass?: ClassValue;
 	clearable?: boolean;
 	clearableSvgClass?: ClassValue;
-	clearableColor?: CloseButtonVariants["color"];
+	clearableColor?: CloseButtonVariants['color'];
 	clearableClass?: ClassValue;
 	clearableOnClick?: () => void;
 	data?: string[];
@@ -2196,10 +2334,14 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
 	classes?: Classes<typeof floatingLabelInput>;
 }
 
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
+export interface HelperProps
+	extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, 'color'> {}
 
-export interface PhoneInputProps extends PhoneInputVariants, Omit<HTMLInputAttributes, "size" | "children" | "value"> {
-	phoneType?: "default" | "floating" | "countryCode" | "copy" | "advanced";
+export interface PhoneInputProps
+	extends
+		Omit<PhoneInputVariants, 'theme'>,
+		Omit<HTMLInputAttributes, 'size' | 'children' | 'value'> {
+	phoneType?: 'default' | 'floating' | 'countryCode' | 'copy' | 'advanced';
 	children?: Snippet;
 	floatingLabel?: string;
 	labelFor?: string;
@@ -2207,7 +2349,8 @@ export interface PhoneInputProps extends PhoneInputVariants, Omit<HTMLInputAttri
 	classes?: Classes<typeof phoneInput>;
 }
 
-export interface RadioProps<T> extends RadioVariants, Omit<HTMLInputAttributes, "color"> {
+export interface RadioProps<T>
+	extends Omit<RadioVariants, 'theme'>, Omit<HTMLInputAttributes, 'color'> {
 	group?: T;
 	value?: T;
 	inputClass?: ClassValue;
@@ -2216,30 +2359,31 @@ export interface RadioProps<T> extends RadioVariants, Omit<HTMLInputAttributes, 
 }
 
 // raido-button
-export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size"> {
+export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, 'size'> {
 	group?: T;
 	value?: T;
 	inline?: boolean;
 	pill?: boolean;
 	outline?: boolean;
-	size?: ButtonProps["size"];
-	color?: ButtonProps["color"];
+	size?: ButtonProps['size'];
+	color?: ButtonProps['color'];
 	shadow?: boolean;
 	checkedClass?: ClassValue;
 }
 
-export interface RangeProps extends RangeVariants, Omit<HTMLInputAttributes, "size" | "color"> {
+export interface RangeProps
+	extends Omit<RangeVariants, 'theme'>, Omit<HTMLInputAttributes, 'size' | 'color'> {
 	value?: number | string;
 	inputClass?: ClassValue;
 }
 
-export interface SearchProps extends SearchVariants, Omit<HTMLInputAttributes, "size"> {
+export interface SearchProps extends SearchVariants, Omit<HTMLInputAttributes, 'size'> {
 	children?: Snippet;
 	value?: string;
 	elementRef?: HTMLInputElement;
 	clearable?: boolean;
 	clearableSvgClass?: ClassValue;
-	clearableColor?: CloseButtonVariants["color"];
+	clearableColor?: CloseButtonVariants['color'];
 	clearableClass?: ClassValue;
 	clearableOnClick?: () => void;
 	inputClass?: ClassValue;
@@ -2253,7 +2397,8 @@ export type SelectOptionType<T> = {
 	[key: string]: any;
 };
 
-export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "size" | "disabled"> {
+export interface SelectProps<T>
+	extends SelectVariants, Omit<HTMLSelectAttributes, 'size' | 'disabled'> {
 	children?: Snippet;
 	items?: SelectOptionType<T>[];
 	elementRef?: HTMLSelectElement;
@@ -2261,7 +2406,7 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
 	selectClass?: ClassValue;
 	clearable?: boolean;
 	clearableSvgClass?: ClassValue;
-	clearableColor?: CloseButtonVariants["color"];
+	clearableColor?: CloseButtonVariants['color'];
 	clearableClass?: ClassValue;
 	// remove this in next major version
 	clearableOnClick?: () => void;
@@ -2270,14 +2415,17 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
 	classes?: Classes<typeof select>;
 }
 
-export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLAttributes<HTMLDivElement>, "size" | "children" | "onchange" | "onblur"> {
+export interface MultiSelectProps<T>
+	extends
+		MultiSelectVariants,
+		Omit<HTMLAttributes<HTMLDivElement>, 'size' | 'children' | 'onchange' | 'onblur'> {
 	children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
 	items: SelectOptionType<T>[];
 	value: T[];
 	dropdownClass?: ClassValue;
 	placeholder?: string;
 	disabled?: boolean | undefined;
-	size?: "sm" | "md" | "lg";
+	size?: 'sm' | 'md' | 'lg';
 	// Select-specific attributes for the hidden select element
 	name?: string | undefined | null;
 	form?: string | undefined | null;
@@ -2294,7 +2442,7 @@ export interface TagsProps extends TagsVariants, HTMLAttributes<HTMLDivElement> 
 	spanClass?: ClassValue;
 	closeClass?: ClassValue;
 	inputClass?: ClassValue;
-	closeBtnSize?: CloseButtonVariants["size"];
+	closeBtnSize?: CloseButtonVariants['size'];
 	unique?: boolean;
 	availableTags?: string[];
 	maxSuggestions?: number;
@@ -2321,14 +2469,21 @@ export interface TextareaProps extends TextareaVariants, HTMLTextareaAttributes 
 	// cols?: number;
 	clearable?: boolean;
 	clearableSvgClass?: ClassValue;
-	clearableColor?: CloseButtonVariants["color"];
+	clearableColor?: CloseButtonVariants['color'];
 	clearableClass?: ClassValue;
 	clearableOnClick?: () => void;
 	textareaClass?: ClassValue;
 	classes?: Classes<typeof textarea>;
 }
 
-export type TimePickerType = "default" | "dropdown" | "select" | "range" | "timerange-dropdown" | "timerange-toggle" | "inline-buttons";
+export type TimePickerType =
+	| 'default'
+	| 'dropdown'
+	| 'select'
+	| 'range'
+	| 'timerange-dropdown'
+	| 'timerange-toggle'
+	| 'inline-buttons';
 export type ColumnCount = 1 | 2 | 3 | 4;
 export type TimePickerOption = {
 	name: string;
@@ -2344,14 +2499,14 @@ export interface TimepickerProps {
 	max?: string;
 	required?: boolean;
 	disabled?: boolean;
-	inputColor?: InputProps["color"];
-	buttonColor?: ButtonProps["color"];
+	inputColor?: InputProps['color'];
+	buttonColor?: ButtonProps['color'];
 	Icon?: Component;
 	iconClass?: string;
 	type?: TimePickerType;
 	optionLabel?: string;
 	options?: TimePickerOption[];
-	size?: ButtonGroupVariants["size"]; // Use the specific ButtonGroupSizeType
+	size?: ButtonGroupVariants['size']; // Use the specific ButtonGroupSizeType
 	divClass?: ClassValue;
 	inputClass?: ClassValue;
 	selectClass?: ClassValue;
@@ -2360,10 +2515,11 @@ export interface TimepickerProps {
 	timeIntervals?: string[];
 	columns?: ColumnCount;
 	// Callback props instead of events
-	onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
+	onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
 }
 
-export interface ToggleProps extends Omit<ToggleVariants, "off_state_label">, Omit<HTMLInputAttributes, "size" | "color"> {
+export interface ToggleProps
+	extends Omit<ToggleVariants, 'off_state_label'>, Omit<HTMLInputAttributes, 'size' | 'color'> {
 	offLabel?: Snippet;
 	value?: string | number;
 	checked?: boolean;
@@ -2387,7 +2543,7 @@ export interface CommandItem {
 	onselect: () => void;
 }
 
-export interface CommandPaletteProps extends CommandPaletteVariants, Omit<DialogProps, "classes"> {
+export interface CommandPaletteProps extends CommandPaletteVariants, Omit<DialogProps, 'classes'> {
 	items?: CommandItem[];
 	placeholder?: string;
 	emptyMessage?: string;
@@ -2396,7 +2552,8 @@ export interface CommandPaletteProps extends CommandPaletteVariants, Omit<Dialog
 	classes?: Classes<typeof commandPalette>;
 }
 
-export interface VirtualMasonryProps<T = unknown> extends VirtualMasonryVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+export interface VirtualMasonryProps<T = unknown>
+	extends VirtualMasonryVariants, Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
 	children: Snippet<[item: T, index: number]>;
 	items?: T[];
 	columns?: number;
@@ -2411,7 +2568,8 @@ export interface VirtualMasonryProps<T = unknown> extends VirtualMasonryVariants
 	classes?: Classes<typeof virtualMasonry>;
 }
 
-export interface VirtualListProps<T = unknown> extends VirtualListVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+export interface VirtualListProps<T = unknown>
+	extends VirtualListVariants, Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
 	children: Snippet<[item: T, index: number]>;
 	items?: T[];
 	minItemHeight?: number;
@@ -2426,15 +2584,14 @@ export interface VirtualListProps<T = unknown> extends VirtualListVariants, Omit
 }
 
 // hr
-export interface HrProps extends HrVariants, HTMLAttributes<HTMLElement> {
+export interface HrProps extends Omit<HrVariants, 'theme'>, HTMLAttributes<HTMLElement> {
 	children?: Snippet;
 	divClass?: ClassValue;
 	innerDivClass?: ClassValue;
 	vertical?: boolean;
 	divProps?: HTMLAttributes<HTMLDivElement>;
 	hrProps?: HTMLAttributes<HTMLHRElement>;
-	// iconDivClass?: ClassValue;
-	// textSpanClass?: ClassValue;
+	classes?: Classes<typeof hr>;
 }
 // aura
 export interface AuraProps extends AuraVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PhoneInput } from "$lib/index";
+	import { PhoneInput } from '$lib/index';
 </script>
 
 <PhoneInput
@@ -7,5 +7,5 @@
 	id="phone-input"
 	placeholder="123-456-7890"
 	required
-	classes={{ input: 'border-blue-500', iconWrapper: 'ps-4' }}
+	classes={{ input: 'border-blue-500', div: 'ps-4' }}
 />

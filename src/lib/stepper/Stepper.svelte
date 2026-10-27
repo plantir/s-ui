@@ -5,6 +5,7 @@
 	import type { StepperProps } from '$lib/types.js';
 	import clsx from 'clsx';
 	import { getTheme } from '$lib/theme/themeUtils';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		steps = [],
@@ -25,7 +26,7 @@
 
 	const theme = $derived(getTheme('stepper'));
 
-	const { base, item, content } = $derived(stepper());
+	const { base, item, content } = $derived(stepper({ theme: getCurrentThemeVariant() }));
 
 	// Handle step click
 	function handleStepClick(stepIndex: number) {

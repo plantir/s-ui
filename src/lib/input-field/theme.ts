@@ -1,5 +1,6 @@
 import { tv, type VariantProps } from 'tailwind-variants';
 import type { Classes } from '$lib/theme/themeUtils';
+import { fluentControlBorder, fluentFocusUnderline } from '$lib/theme/fluent.js';
 
 // Variants
 export type InputVariants = VariantProps<typeof input> & Classes<typeof input>;
@@ -21,7 +22,7 @@ export const input = tv({
 	variants: {
 		theme: {
 			fluent: {
-				base: 'after:content-[""] after:absolute after:bottom-0 after:start-0 after:w-full after:h-0.5 after:bg-primary-600 after:rounded-b after:scale-x-0 after:origin-center after:transition-transform after:duration-200 focus-within:after:scale-x-100',
+				base: fluentFocusUnderline,
 				input: 'focus:ring-0'
 			},
 			default: {}
@@ -133,13 +134,7 @@ export const input = tv({
 		{
 			theme: 'fluent',
 			class: {
-				input: [
-					// Fluent UI: side borders NeutralStroke1, bottom NeutralStrokeAccessible
-					'border-(color:--colorNeutralStroke1) border-b-(color:--colorNeutralStrokeAccessible)',
-					'focus:border-(color:--colorNeutralStroke1)',
-					'dark:border-(color:--colorNeutralStroke1) dark:border-b-(color:--colorNeutralStrokeAccessible)',
-					'dark:focus:border-(color:--colorNeutralStroke1)'
-				]
+				input: [...fluentControlBorder]
 			}
 		}
 	],

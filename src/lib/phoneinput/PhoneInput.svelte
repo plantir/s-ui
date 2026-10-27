@@ -6,6 +6,7 @@
 	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars -- strip so it is not spread onto <input>
 		children,
 		phoneIcon = true,
 		pattern = '[0-9]{3}-[0-9]{3}-[0-9]{4}',
@@ -39,7 +40,7 @@
 {/snippet}
 
 {#if phoneType === 'default' || phoneType === 'countryCode'}
-	<div class={wrapper({ class: clsx(theme?.wrapper, classes?.wrapper) })}>
+	<div class={wrapper({ class: clsx(theme?.wrapper, classes?.wrapper, className) })}>
 		{#if phoneIcon}
 			<div class={div({ class: clsx(theme?.div, classes?.div) })}>
 				{@render phoneIconSnippet()}
@@ -53,7 +54,7 @@
 		/>
 	</div>
 {:else if phoneType === 'floating'}
-	<div class={wrapper({ class: clsx(theme?.wrapper, classes?.wrapper) })}>
+	<div class={wrapper({ class: clsx(theme?.wrapper, classes?.wrapper, className) })}>
 		{#if phoneIcon}
 			<span class={span({ class: clsx(theme?.span, classes?.span) })}>
 				{@render phoneIconSnippet()}

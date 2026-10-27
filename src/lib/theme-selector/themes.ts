@@ -86,7 +86,8 @@ export const themeConfigs = [
 		id: 'fluent',
 		name: 'Fluent',
 		cssPath: fluentCss,
-		fontUrl: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap',
+		fontUrl:
+			'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Vazirmatn:wght@300;400;500;700&display=swap',
 		colors: [
 			'bg-gray-100 dark:bg-gray-800',
 			'bg-blue-50 dark:bg-blue-950',

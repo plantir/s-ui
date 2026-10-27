@@ -1,5 +1,6 @@
 import { tv, type VariantProps } from 'tailwind-variants';
 import type { Classes } from '$lib/theme/themeUtils';
+import { fluentControlBorder, fluentFocusUnderline } from '$lib/theme/fluent.js';
 // Variants
 export type TextareaVariants = VariantProps<typeof textarea> & Classes<typeof textarea>;
 
@@ -19,7 +20,7 @@ export const textarea = tv({
 	variants: {
 		theme: {
 			fluent: {
-				div: 'after:content-[""] after:absolute after:bottom-0 after:start-0 after:w-full after:h-0.5 after:bg-primary-600 after:rounded-b after:scale-x-0 after:origin-center after:transition-transform after:duration-200 focus-within:after:scale-x-100',
+				div: fluentFocusUnderline,
 				wrapper: 'focus:ring-0 bg-white dark:bg-gray-600'
 			},
 			default: {}
@@ -51,13 +52,7 @@ export const textarea = tv({
 		{
 			theme: 'fluent',
 			class: {
-				wrapper: [
-					// Fluent UI: side borders NeutralStroke1, bottom NeutralStrokeAccessible
-					'border-(color:--colorNeutralStroke1) border-b-(color:--colorNeutralStrokeAccessible)',
-					'focus:border-(color:--colorNeutralStroke1)',
-					'dark:border-(color:--colorNeutralStroke1) dark:border-b-(color:--colorNeutralStrokeAccessible)',
-					'dark:focus:border-(color:--colorNeutralStroke1)'
-				]
+				wrapper: [...fluentControlBorder]
 			}
 		}
 	]
