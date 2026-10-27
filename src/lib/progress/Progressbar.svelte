@@ -23,6 +23,12 @@
 
 	const theme = $derived(getTheme('progressbar'));
 
+	const namedSizes = ['sm', 'md', 'lg', 'xl'] as const;
+	type NamedSize = (typeof namedSizes)[number];
+	const isNamedSize = $derived((namedSizes as readonly string[]).includes(size));
+	const namedSize = $derived(isNamedSize ? (size as NamedSize) : undefined);
+	const customSizeClass = $derived(isNamedSize ? undefined : size);
+
 	let _progress = $derived(
 		new Tween(0, {
 			duration: animate ? tweenDuration : 0,
@@ -40,7 +46,7 @@
 		progressbar({
 			color,
 			labelInside,
-			size,
+			size: namedSize,
 			theme: getCurrentThemeVariant()
 		})
 	);
@@ -58,7 +64,7 @@
 		>
 	</div>
 {/if}
-<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<div {...restProps} class={base({ class: clsx(theme?.base, className, customSizeClass) })}>
 	{#if labelInside}
 		<div
 			class={labelInsideCls({ class: clsx(theme?.label, classes?.label) })}
@@ -84,7 +90,7 @@
 @prop precision = 0
 @prop tweenDuration = 400
 @prop animate = false
-@prop size = "h-2.5"
+@prop size = "md"
 @prop labelInside = false
 @prop labelOutside = ""
 @prop easing = cubicOut

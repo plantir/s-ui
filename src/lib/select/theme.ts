@@ -1,5 +1,6 @@
 import { tv, type VariantProps } from 'tailwind-variants';
 import type { Classes } from '$lib/theme/themeUtils';
+import { fluentControlBorder, fluentFocusUnderline } from '$lib/theme/fluent.js';
 
 // Variants
 export type SelectVariants = VariantProps<typeof select> & Classes<typeof select>;
@@ -15,7 +16,7 @@ export const select = tv({
 	variants: {
 		theme: {
 			fluent: {
-				base: 'after:content-[""] after:absolute after:bottom-0 after:start-0 after:w-full after:h-0.5 after:bg-primary-600 after:rounded-b after:scale-x-0 after:origin-center after:transition-transform after:duration-200 focus-within:after:scale-x-100',
+				base: fluentFocusUnderline,
 				select: 'focus:ring-0'
 			},
 			default: {}
@@ -54,10 +55,7 @@ export const select = tv({
 			theme: 'fluent',
 			underline: false,
 			class: {
-				select: [
-					'border-(color:--colorNeutralStroke1) border-b-(color:--colorNeutralStrokeAccessible)',
-					'focus:border-(color:--colorNeutralStroke1)',
-				]
+				select: [...fluentControlBorder]
 			}
 		},
 		{
@@ -103,7 +101,7 @@ export const multiSelect = tv({
 	variants: {
 		theme: {
 			fluent: {
-				base: 'after:content-[""] after:absolute after:bottom-0 after:start-0 after:w-full after:h-0.5 after:bg-primary-600 after:rounded-b after:scale-x-0 after:origin-center after:transition-transform after:duration-200 focus-within:after:scale-x-100'
+				base: fluentFocusUnderline
 			},
 			default: {}
 		},

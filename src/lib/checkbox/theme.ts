@@ -95,7 +95,7 @@ export const checkbox = tv({
     },
     theme: {
       fluent: {
-        base: 'focus:ring-0 cursor-pointer'
+        base: 'focus:ring-0 focus-visible:ring-2 focus-visible:ring-primary-600 cursor-pointer'
       },
       default: ''
     }

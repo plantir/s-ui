@@ -1,6 +1,6 @@
 import { tv, type VariantProps } from 'tailwind-variants';
 
-export type BadgeVariants = VariantProps<typeof badge>
+export type BadgeVariants = VariantProps<typeof badge>;
 
 export const badge = tv({
 	slots: {
@@ -41,14 +41,14 @@ export const badge = tv({
 			},
 			purple: { base: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300' },
 			pink: { base: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300' },
-			rose: { base: 'bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-300' },
+			rose: { base: 'bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-300' }
 		},
 		size: {
 			xs: 'text-xs',
 			sm: 'text-sm',
 			md: 'text-base',
 			lg: 'text-lg',
-			xl: 'text-xl',
+			xl: 'text-xl'
 		},
 		border: {
 			true: { base: 'border' }
@@ -270,8 +270,7 @@ export const badge = tv({
 			border: true,
 			theme: 'fluent',
 			color: 'secondary',
-			class:
-				'bg-transparent text-secondary-400 border-secondary-400 dark:border-secondary-400'
+			class: 'bg-transparent text-secondary-400 border-secondary-400 dark:border-secondary-400'
 		},
 		{
 			border: true,
@@ -385,123 +384,122 @@ export const badge = tv({
 			border: false,
 			theme: 'fluent',
 			color: 'primary',
-			class: 'bg-primary-600 dark:bg-primary-600 text-white'
+			class: 'bg-primary-600 dark:bg-primary-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'secondary',
-			class:
-				'bg-secondary-600 dark:bg-secondary-600 text-white'
+			class: 'bg-secondary-600 dark:bg-secondary-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'gray',
-			class: 'bg-gray-600 dark:bg-gray-600 text-white'
+			class: 'bg-gray-600 dark:bg-gray-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'red',
-			class: 'bg-red-600 dark:bg-red-600 text-white'
+			class: 'bg-red-600 dark:bg-red-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'orange',
-			class: 'bg-orange-600 dark:bg-orange-600 text-white'
+			class: 'bg-orange-600 dark:bg-orange-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'amber',
-			class: 'bg-amber-600 dark:bg-amber-600 text-white'
+			class: 'bg-amber-600 dark:bg-amber-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'yellow',
-			class: 'bg-yellow-300 dark:bg-yellow-300 text-white'
+			class: 'bg-yellow-300 dark:bg-yellow-300 text-gray-900'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'lime',
-			class: 'bg-lime-600 dark:bg-lime-600 text-white'
+			class: 'bg-lime-600 dark:bg-lime-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'green',
-			class: 'bg-green-600 dark:bg-green-600 text-white'
+			class: 'bg-green-600 dark:bg-green-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'emerald',
-			class: 'bg-emerald-600 dark:bg-emerald-600 text-white'
+			class: 'bg-emerald-600 dark:bg-emerald-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'teal',
-			class: 'bg-teal-600 dark:bg-teal-600 text-white'
+			class: 'bg-teal-600 dark:bg-teal-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'cyan',
-			class: 'bg-cyan-600 dark:bg-cyan-600 text-white'
+			class: 'bg-cyan-600 dark:bg-cyan-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'sky',
-			class: 'bg-sky-600 dark:bg-sky-600 text-white'
+			class: 'bg-sky-600 dark:bg-sky-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'blue',
-			class: 'bg-blue-600 dark:bg-blue-600 text-white'
+			class: 'bg-blue-600 dark:bg-blue-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'indigo',
-			class: 'bg-indigo-600 dark:bg-indigo-600 text-white'
+			class: 'bg-indigo-600 dark:bg-indigo-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'violet',
-			class: 'bg-violet-600 dark:bg-violet-600 text-white'
+			class: 'bg-violet-600 dark:bg-violet-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'purple',
-			class: 'bg-purple-600 dark:bg-purple-600 text-white'
+			class: 'bg-purple-600 dark:bg-purple-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'fuchsia',
-			class: 'bg-fuchsia-600 dark:bg-fuchsia-600 text-white'
+			class: 'bg-fuchsia-600 dark:bg-fuchsia-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'pink',
-			class: 'bg-pink-600 dark:bg-pink-600 text-white'
+			class: 'bg-pink-600 dark:bg-pink-600 text-white dark:text-white'
 		},
 		{
 			border: false,
 			theme: 'fluent',
 			color: 'rose',
-			class: 'bg-rose-600 dark:bg-rose-600 text-white'
-		},
+			class: 'bg-rose-600 dark:bg-rose-600 text-white dark:text-white'
+		}
 	],
 	defaultVariants: {
 		color: 'primary',

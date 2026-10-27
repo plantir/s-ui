@@ -407,11 +407,8 @@ export const tableHeadCell = tv({
   base: "px-6 py-3",
   variants: {
     theme: {
-      fluent: {
-        base: "px-4 py-3"
-      },
-      default: {
-      }
+      fluent: "px-4 py-3",
+      default: ""
     }
   }
 });

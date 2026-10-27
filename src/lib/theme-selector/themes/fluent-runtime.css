@@ -13,17 +13,19 @@
 	--color-primary-950: #061724;
 
 	--font-sans:
-		'Segoe UI Variable', 'Segoe UI', 'Segoe UI Web (West European)', -apple-system,
-		BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+		'Segoe UI Variable', 'Segoe UI', 'Segoe UI Web (West European)', Tahoma, Vazirmatn,
+		'Noto Naskh Arabic', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, 'Roboto',
+		'Helvetica Neue', Arial, sans-serif;
 	--font-body:
-		'Segoe UI Variable', 'Segoe UI', 'Segoe UI Web (West European)', -apple-system,
-		BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+		'Segoe UI Variable', 'Segoe UI', 'Segoe UI Web (West European)', Tahoma, Vazirmatn,
+		'Noto Naskh Arabic', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, 'Roboto',
+		'Helvetica Neue', Arial, sans-serif;
 	--font-mono: 'Cascadia Mono', 'Cascadia Code', Consolas, 'Courier New', monospace;
 
 	/* TEXT VARIABLES */
 	--text-2xs: 0.625rem;
 	--text-sm: 0.875rem;
-	--text-base: 0.875rem;
+	--text-base: 1rem;
 	--spacing-8xl: 90rem;
 	--leading-9: 2.25rem;
 	--leading-7: 1.75rem;
@@ -135,8 +137,8 @@
 	/* Fluent UI neutral stroke tokens — control borders */
 	--colorNeutralStroke1: #d1d1d1;
 	--colorNeutralStroke2: #e0e0e0;
-    --colorNeutralStroke3: #f0f0f0;
-    --colorNeutralStroke4: #ebebeb;
+	--colorNeutralStroke3: #f0f0f0;
+	--colorNeutralStroke4: #ebebeb;
 	--colorNeutralStrokeAccessible: #616161;
 
 	--color-success-subtle: #9fd89f;
@@ -237,8 +239,8 @@
 	/* Fluent UI neutral stroke tokens — control borders (dark theme) */
 	--colorNeutralStroke1: #666666;
 	--colorNeutralStroke2: #525252;
-    --colorNeutralStroke3: #3d3d3d;
-    --colorNeutralStroke4: #3d3d3d;
+	--colorNeutralStroke3: #3d3d3d;
+	--colorNeutralStroke4: #3d3d3d;
 	--colorNeutralStrokeAccessible: #adadad;
 
 	--color-success-subtle: #0b5a0b;

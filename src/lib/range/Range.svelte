@@ -3,11 +3,11 @@
 	import clsx from 'clsx';
 	import type { RangeProps } from '$lib/types.js';
 	import { getTheme } from '$lib/theme/themeUtils';
-	import {  getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		value = $bindable(),
-		appearance = 'auto',
+		appearance = 'none',
 		color = 'blue',
 		size = 'md',
 		inputClass,
@@ -18,7 +18,13 @@
 	const theme = $derived(getTheme('range'));
 	// remove inputClass in next major version
 	const inputCls = $derived(
-		range({ appearance, color, size, theme:getCurrentThemeVariant(), class: clsx(theme, inputClass, className) })
+		range({
+			appearance,
+			color,
+			size,
+			theme: getCurrentThemeVariant(),
+			class: clsx(theme, inputClass, className)
+		})
 	);
 </script>
 

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Button, Modal, type ButtonProps } from "$lib/index";
+	import { Button, Modal, type ButtonProps } from '$lib/index';
 
 	let openColor = $state(false);
-	let color: ButtonProps['color'] = $state('brand');
+	let color: ButtonProps['color'] = $state('primary');
 	function onclickColor(buttonColor: ButtonProps['color']) {
 		color = buttonColor;
 		openColor = true;
@@ -10,7 +10,7 @@
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-2 rtl:space-x-reverse">
-	<Button onclick={() => onclickColor('brand')}>Brand modal</Button>
+	<Button onclick={() => onclickColor('primary')}>Primary modal</Button>
 	<Button color="danger" onclick={() => onclickColor('danger')}>Danger modal</Button>
 	<Button color="success" onclick={() => onclickColor('success')}>Success modal</Button>
 	<Button color="warning" onclick={() => onclickColor('warning')}>Warning modal</Button>

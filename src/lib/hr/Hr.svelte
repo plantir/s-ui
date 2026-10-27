@@ -4,7 +4,7 @@
 	import type { HrProps } from '$lib/types.js';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import { untrack } from 'svelte';
-	import {  getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -48,13 +48,21 @@
 
 {#if children}
 	<div {...mergedDivProps} class={div({ class: clsx(theme?.div, styling.div) })}>
-		<hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
+		<hr
+			aria-orientation={vertical ? 'vertical' : undefined}
+			{...mergedHrProps}
+			class={base({ class: clsx(theme?.base, className, bg) })}
+		/>
 		<div class={content({ class: clsx(theme?.content, styling.content) })}>
 			{@render children()}
 		</div>
 	</div>
 {:else}
-	<hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
+	<hr
+		aria-orientation={vertical ? 'vertical' : undefined}
+		{...mergedHrProps}
+		class={base({ class: clsx(theme?.base, className, bg) })}
+	/>
 {/if}
 
 <!--
@@ -69,5 +77,7 @@
 @prop innerDivClass
 @prop class: className
 @prop classes
+@prop divProps
+@prop hrProps
 @prop ...restProps
 -->
