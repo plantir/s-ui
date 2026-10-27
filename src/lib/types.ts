@@ -149,6 +149,12 @@ import type { CommandPaletteVariants, commandPalette } from './command-palette/t
 import type { VirtualMasonryVariants, virtualMasonry } from './virtual-masonry/theme.js';
 import type { VirtualListVariants, virtualList } from './virtuallist/theme.js';
 import type { HrVariants } from './hr/theme.js';
+import type { AuraVariants } from './aura/theme.js';
+import type { ChatVariants, ChatBubbleVariants } from './chat/theme.js';
+import type { OtpVariants, otp } from './otp/theme.js';
+import type { DiffVariants, diff } from './diff/theme.js';
+import type { Hover3dVariants, hover3d } from './hover-3d/theme.js';
+import type { HoverGalleryVariants, hoverGallery } from './hover-gallery/theme.js';
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -2429,4 +2435,84 @@ export interface HrProps extends HrVariants, HTMLAttributes<HTMLElement> {
 	hrProps?: HTMLAttributes<HTMLHRElement>;
 	// iconDivClass?: ClassValue;
 	// textSpanClass?: ClassValue;
+}
+// aura
+export interface AuraProps extends AuraVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
+	children?: Snippet;
+	/** Animation duration in milliseconds. Tailwind `duration-*` classes also work. */
+	duration?: number;
+}
+
+// chat
+export interface ChatContextType {
+	placement: NonNullable<ChatVariants['placement']>;
+}
+
+export interface ChatProps extends ChatVariants, HTMLAttributes<HTMLDivElement> {
+	children?: Snippet;
+}
+
+export interface ChatPartProps extends HTMLAttributes<HTMLDivElement> {
+	children?: Snippet;
+}
+
+export interface ChatBubbleProps
+	extends ChatBubbleVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
+	children?: Snippet;
+}
+
+// otp
+export interface OtpProps
+	extends
+		OtpVariants,
+		Omit<HTMLInputAttributes, 'size' | 'color' | 'value' | 'disabled' | 'children'> {
+	/** Number of characters. */
+	count?: number;
+	value?: string;
+	/** Only accept digits. Set to `false` to accept letters as well. */
+	numeric?: boolean;
+	oncomplete?: (value: string) => void;
+	classes?: Classes<typeof otp>;
+}
+
+// diff
+export interface DiffProps extends DiffVariants, Omit<HTMLAttributes<HTMLElement>, 'children'> {
+	/** Shown on the left side, clipped at the divider. */
+	item1: Snippet;
+	/** Shown on the right side, behind item1. */
+	item2: Snippet;
+	/** Divider position as a percentage from 0 to 100. */
+	position?: number;
+	/** Keyboard step in percent. Shift + arrow moves 10 steps. */
+	step?: number;
+	/** Accessible label for the divider slider. */
+	label?: string;
+	classes?: Classes<typeof diff>;
+}
+
+// hover 3d
+export interface Hover3dProps extends Hover3dVariants, Omit<HTMLAttributes<HTMLElement>, 'children'> {
+	children: Snippet;
+	/** Renders the wrapper as a link. */
+	href?: string;
+	target?: HTMLAnchorAttributes['target'];
+	rel?: HTMLAnchorAttributes['rel'];
+	/** Maximum rotation in degrees. */
+	tilt?: number;
+	/** Scale applied while hovering. */
+	scale?: number;
+	/** Shows a light reflection that follows the pointer. */
+	glare?: boolean;
+	classes?: Classes<typeof hover3d>;
+}
+
+// hover gallery
+export interface HoverGalleryProps
+	extends HoverGalleryVariants, Omit<HTMLAttributes<HTMLElement>, 'children'> {
+	images: HTMLImgAttributes[];
+	/** Index of the visible image. Resets to 0 when the pointer leaves. */
+	index?: number;
+	/** Shows a bar per image while hovering. */
+	indicators?: boolean;
+	classes?: Classes<typeof hoverGallery>;
 }

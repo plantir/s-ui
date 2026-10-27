@@ -17,7 +17,8 @@ import type {
 	SplitPaneContext,
 	TableContextType,
 	TabsContextType,
-	SpeedCtxType
+	SpeedCtxType,
+	ChatContextType
 } from './types';
 import type { ThemeConfig } from './theme';
 
@@ -119,3 +120,7 @@ export { getTabsContext, setTabsContext };
 
 const [getSpeedDialContext, setSpeedDialContext] = createSafeContext<() => SpeedCtxType>();
 export { getSpeedDialContext, setSpeedDialContext };
+
+// Chat
+const [getChatContext, setChatContext] = createSafeContext<ChatContextType>();
+export { getChatContext, setChatContext };
