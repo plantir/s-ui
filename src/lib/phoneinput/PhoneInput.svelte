@@ -6,7 +6,8 @@
 	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
-		children: _children,
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars -- strip so it is not spread onto <input>
+		children,
 		phoneIcon = true,
 		pattern = '[0-9]{3}-[0-9]{3}-[0-9]{4}',
 		phoneType = 'default',

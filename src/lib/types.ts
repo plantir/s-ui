@@ -554,7 +554,7 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
 // 	};
 
 export interface CardProps
-	extends Omit<CardVariants, 'href' | 'theme' | 'hasImage'>, AnchorDivAttributes {
+	extends Omit<CardVariants, 'href' | 'theme' | 'hasImage'>, HTMLAttributes<HTMLDivElement> {
 	color?: CardVariants['color'];
 	classes?: Classes<typeof card>;
 	href?: string;
