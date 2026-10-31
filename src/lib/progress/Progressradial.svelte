@@ -66,7 +66,9 @@
 
 <div class="flex flex-col items-center">
 	{#if labelOutside}
-		<div class={outside({ class: clsx(theme?.outside, classes?.outside) })}>
+		<div
+			class={outside({ class: clsx(theme?.outside, classes?.outside ?? classes?.labelWrapper) })}
+		>
 			<span class={span({ class: clsx(theme?.span, classes?.span) })}>{labelOutside}</span>
 			<span class={progressCls({ class: clsx(theme?.progressCls, classes?.progressCls) })}
 				>{formattedProgress}%</span

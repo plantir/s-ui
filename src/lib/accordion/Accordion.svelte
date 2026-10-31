@@ -16,8 +16,12 @@
 		multiple = false,
 		class: className,
 		transitionType,
+		transition,
+		classes,
 		...restProps
 	}: AccordionProps = $props();
+
+	const resolvedTransitionType = $derived(transitionType ?? transition);
 
 	const theme = $derived(getTheme('accordion'));
 
@@ -27,13 +31,19 @@
 			return flush;
 		},
 		get activeClass() {
-			return activeClass;
+			return activeClass ?? classes?.active;
 		},
 		get inactiveClass() {
-			return inactiveClass;
+			return inactiveClass ?? classes?.inactive;
+		},
+		get buttonClass() {
+			return classes?.button;
+		},
+		get contentClass() {
+			return classes?.content;
 		},
 		get transitionType() {
-			return transitionType;
+			return resolvedTransitionType;
 		}
 	};
 
@@ -47,7 +57,7 @@
 	const base = $derived(
 		accordion({
 			flush,
-			class: clsx(theme, className),
+			class: clsx(theme, className, classes?.base),
 			theme: getCurrentThemeVariant()
 		})
 	);

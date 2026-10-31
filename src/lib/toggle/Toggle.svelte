@@ -28,12 +28,22 @@
 		{ inputClass: 'input', spanClass: 'span' }
 	);
 
-	const styling = $derived(classes ?? { input: inputClass, span: spanClass });
+	const styling = $derived({
+		input: classes?.input ?? inputClass,
+		span: classes?.span ?? classes?.track ?? spanClass
+	});
 
 	const theme = $derived(getTheme('toggle'));
 
 	const { input, label, span } = $derived(
-		toggle({ color, checked, size, disabled, off_state_label: !!offLabel, theme:getCurrentThemeVariant() })
+		toggle({
+			color,
+			checked,
+			size,
+			disabled,
+			off_state_label: !!offLabel,
+			theme: getCurrentThemeVariant()
+		})
 	);
 </script>
 

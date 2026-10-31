@@ -68,6 +68,21 @@ export const checkbox = tv({
       },
       rose: {
         base: "text-rose-600 focus:ring-rose-600 dark:ring-offset-rose-600 dark:focus:ring-rose-600"
+      },
+      success: {
+        base: "text-green-600 focus:ring-green-600 dark:ring-offset-green-600 dark:focus:ring-green-600"
+      },
+      danger: {
+        base: "text-red-600 focus:ring-red-600 dark:ring-offset-red-600 dark:focus:ring-red-600"
+      },
+      warning: {
+        base: "text-yellow-400 focus:ring-yellow-400 dark:ring-offset-yellow-400 dark:focus:ring-yellow-400"
+      },
+      dark: {
+        base: "text-gray-800 focus:ring-gray-600 dark:ring-offset-gray-800 dark:focus:ring-gray-600"
+      },
+      neutral: {
+        base: "text-gray-600 focus:ring-gray-600 dark:ring-offset-gray-800 dark:focus:ring-gray-600"
       }
     },
     tinted: {

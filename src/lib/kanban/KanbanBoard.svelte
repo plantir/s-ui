@@ -60,6 +60,9 @@
 
 		fromCol.cards = fromCol.cards.filter((c) => c.id !== draggedCard!.id);
 		toCol.cards = [...toCol.cards, draggedCard!];
+		columns = columns.map((column) =>
+			column.id === fromCol.id ? fromCol : column.id === toCol.id ? toCol : column
+		);
 
 		onMove(draggedCard, fromCol, toCol);
 
@@ -110,7 +113,9 @@
 			</div>
 
 			<button
-				class={styles.addButton({ class: clsx(theme?.addButton, classes?.addButton) })}
+				class={styles.addButton({
+					class: clsx(theme?.addButton, classes?.addButton ?? classes?.button)
+				})}
 				onclick={() => onAddCard(col)}
 				aria-label={`Add card to ${col.title}`}>+ Add card</button
 			>

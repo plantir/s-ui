@@ -47,11 +47,6 @@
 		MegaMenu,
 		Dropdown,
 		DropdownItem,
-		Rating,
-		Star,
-		Heart,
-		Thumbup,
-		type RatingIconProps,
 		Skeleton,
 		ImagePlaceholder,
 		ListPlaceholder,
@@ -64,9 +59,7 @@
 		SpeedDial,
 		SpeedDialButton,
 		isDark
-	} from "$lib/index";
-	const wrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) =>
-		Heart(anchor, { ..._props, ...props });
+	} from '$lib/index';
 
 	import {
 		ChevronDownOutline,
@@ -76,7 +69,6 @@
 		FileCopySolid,
 		ImageOutline,
 		ArrowRightOutline,
-		CalendarWeekSolid,
 		QuoteSolid,
 		CheckCircleSolid,
 		CloseCircleSolid,
@@ -759,7 +751,8 @@
 				</NavLi>
 				<MegaMenu items={menu}>
 					{#snippet children({ item })}
-						<a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500"
+						<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- demo href -->
+						<a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">
 							>{item.name}</a
 						>
 					{/snippet}

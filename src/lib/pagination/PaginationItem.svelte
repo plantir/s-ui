@@ -31,13 +31,14 @@
 </script>
 
 {#if href}
+	<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- href is a user-supplied prop -->
 	<a {href} {...restProps} class={paginationCls}>
 		{#if children}
 			{@render children()}
 		{/if}
 	</a>
 {:else}
-	<button {...restProps} class={paginationCls}>
+	<button type="button" {...restProps} class={paginationCls}>
 		{#if children}
 			{@render children()}
 		{/if}

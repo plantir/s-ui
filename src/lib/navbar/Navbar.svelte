@@ -21,7 +21,7 @@
 	let navState = $state<NavbarState>({ hidden: true });
 	setNavbarStateContext(navState);
 
-	const navBreakpointRef = $state<{ value: NavbarBreakpoint }>({ value: breakpoint });
+	const navBreakpointRef = $state<{ value: NavbarBreakpoint }>({ value: 'md' });
 	setNavbarBreakpointContext(navBreakpointRef);
 
 	$effect(() => {
