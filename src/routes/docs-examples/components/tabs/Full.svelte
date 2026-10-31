@@ -4,7 +4,7 @@
 
 <Tabs
 	tabStyle="full"
-	class="flex divide-x divide-default rounded-base shadow-xs rtl:divide-x-reverse"
+	class="flex divide-x divide-default rounded-base shadow-xs rtl:divide-x-reverse space-x-0"
 >
 	<TabItem class="w-full" open>
 		{#snippet titleSlot()}

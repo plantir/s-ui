@@ -92,6 +92,12 @@ export const checkbox = tv({
         div: "cursor-not-allowed opacity-70"
       },
       false: {}
+    },
+    theme: {
+      fluent: {
+        base: 'focus:ring-0 focus-visible:ring-2 focus-visible:ring-primary-600 cursor-pointer'
+      },
+      default: ''
     }
   },
   defaultVariants: {

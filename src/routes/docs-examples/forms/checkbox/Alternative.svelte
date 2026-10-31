@@ -29,5 +29,5 @@
 </Table>
 
 <Label color="red" class="mt-4 flex items-center font-bold italic">
-	Label on the other side <Checkbox classes={{ label: 'ms-2' }} />
+	Label on the other side <Checkbox class="ms-2" />
 </Label>

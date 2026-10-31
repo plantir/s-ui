@@ -35,6 +35,12 @@ export const stepper = tv({
         content: "after:!hidden"
       },
       false: {}
+    },
+    theme: {
+      fluent: {
+        item: "after:h-0.5"
+      },
+      default: ""
     }
   },
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Progressbar } from "$lib/index";
+	import { Progressbar } from '$lib/index';
 </script>
 
 <div class="my-4">
@@ -9,7 +9,7 @@
 
 <div class="my-4">
 	<div class="mb-1 text-base font-medium text-fg-brand">Brand</div>
-	<Progressbar progress="50" color="brand" />
+	<Progressbar progress="50" color="primary" />
 </div>
 
 <div class="my-4">

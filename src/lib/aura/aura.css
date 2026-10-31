@@ -1,0 +1,23 @@
+@property --aura-angle {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}
+
+@keyframes aura-spin {
+	to {
+		--aura-angle: 360deg;
+	}
+}
+
+@keyframes aura-glow {
+	0%,
+	100% {
+		opacity: 0.35;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.9;
+		transform: scale(1.03);
+	}
+}

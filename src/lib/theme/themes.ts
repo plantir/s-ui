@@ -2,6 +2,12 @@
 export { alert } from '../alert';
 export { accordion, accordionItem } from '../accordion';
 export { avatar } from '../avatar';
+export { aura } from '../aura';
+export { chat, chatImage, chatHeader, chatFooter, chatBubble } from '../chat';
+export { otp } from '../otp';
+export { diff } from '../diff';
+export { hover3d } from '../hover-3d';
+export { hoverGallery } from '../hover-gallery';
 export { indicator } from '../indicator';
 export { badge } from '../badge';
 export { banner } from '../banner';

@@ -5,6 +5,7 @@
 	import type { RadioProps } from '$lib/types.js';
 	import Label from '$lib/label/Label.svelte';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 	import { untrack } from 'svelte';
 
 	// remove inputClass in next major version
@@ -34,7 +35,7 @@
 	const theme = $derived(getTheme('radio'));
 
 	const { input, label } = $derived(
-		radio({ color, tinted: !!getContext('background'), custom, inline })
+		radio({ color, tinted: !!getContext('background'), custom, inline, theme: getCurrentThemeVariant() })
 	);
 </script>
 

@@ -34,6 +34,10 @@ export const tooltip = tv({
       fuchsia: "bg-fuchsia-600 dark:bg-fuchsia-600",
       pink: "bg-pink-600 dark:bg-pink-600",
       rose: "bg-rose-800 dark:bg-rose-800"
+    },
+    theme: {
+      fluent: "text-xs py-1 px-1.5",
+      default: ""
     }
   },
   compoundVariants: [

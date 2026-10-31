@@ -5,6 +5,16 @@ export { default as Alert } from './alert/Alert.svelte';
 export { default as Accordion } from './accordion/Accordion.svelte';
 export { default as AccordionItem } from './accordion/AccordionItem.svelte';
 export { default as Avatar } from './avatar/Avatar.svelte';
+export { default as Aura } from './aura/Aura.svelte';
+export { default as Chat } from './chat/Chat.svelte';
+export { default as ChatImage } from './chat/ChatImage.svelte';
+export { default as ChatHeader } from './chat/ChatHeader.svelte';
+export { default as ChatFooter } from './chat/ChatFooter.svelte';
+export { default as ChatBubble } from './chat/ChatBubble.svelte';
+export { default as Otp } from './otp/Otp.svelte';
+export { default as Diff } from './diff/Diff.svelte';
+export { default as Hover3d } from './hover-3d/Hover3d.svelte';
+export { default as HoverGallery } from './hover-gallery/HoverGallery.svelte';
 export { default as Badge } from './badge/Badge.svelte';
 export { default as Banner } from './banner/Banner.svelte';
 export { default as BottomNav } from './bottom-navigation/BottomNav.svelte';
@@ -50,12 +60,12 @@ export { default as DropdownHeader } from './dropdown/DropdownHeader.svelte';
 export { default as DropdownItem } from './dropdown/DropdownItem.svelte';
 export { default as Dialog } from './dialog/Dialog.svelte';
 export { default as Modal } from './modal/Modal.svelte';
-export { default as Footer } from "./footer/Footer.svelte";
-export { default as FooterBrand } from "./footer/FooterBrand.svelte";
-export { default as FooterCopyright } from "./footer/FooterCopyright.svelte";
-export { default as FooterIcon } from "./footer/FooterIcon.svelte";
-export { default as FooterLink } from "./footer/FooterLink.svelte";
-export { default as FooterLinkGroup } from "./footer/FooterLinkGroup.svelte";
+export { default as Footer } from './footer/Footer.svelte';
+export { default as FooterBrand } from './footer/FooterBrand.svelte';
+export { default as FooterCopyright } from './footer/FooterCopyright.svelte';
+export { default as FooterIcon } from './footer/FooterIcon.svelte';
+export { default as FooterLink } from './footer/FooterLink.svelte';
+export { default as FooterLinkGroup } from './footer/FooterLinkGroup.svelte';
 export { default as KanbanBoard } from './kanban/KanbanBoard.svelte';
 export { default as KanbanCard } from './kanban/KanbanCard.svelte';
 export { default as Kbd } from './kbd/Kbd.svelte';
@@ -173,13 +183,20 @@ export { default as Textarea } from './textarea/Textarea.svelte';
 export { default as Timepicker } from './timepicker/Timepicker.svelte';
 export { default as Toggle } from './toggle/Toggle.svelte';
 export { default as ThemeSelector } from './theme-selector/ThemeSelector.svelte';
+export {
+	loadTheme,
+	initTheme,
+	getThemeBootScript,
+	getCurrentTheme,
+	getCurrentThemeVariant
+} from './theme-selector/themeStore.svelte.js';
 export { default as TabItem } from './tabs/TabItem.svelte';
 export { default as Tabs } from './tabs/Tabs.svelte';
-export { default as Gallery } from "./gallery/Gallery.svelte";
-export { default as ClipboardManager } from "./clipboard-manager/ClipboardManager.svelte";
-export { default as CommandPalette } from "./command-palette/CommandPalette.svelte";
-export { default as VirtualMasonry } from "./virtual-masonry/VirtualMasonry.svelte";
-export { default as VirtualList } from "./virtuallist/VirtualList.svelte";
+export { default as Gallery } from './gallery/Gallery.svelte';
+export { default as ClipboardManager } from './clipboard-manager/ClipboardManager.svelte';
+export { default as CommandPalette } from './command-palette/CommandPalette.svelte';
+export { default as VirtualMasonry } from './virtual-masonry/VirtualMasonry.svelte';
+export { default as VirtualList } from './virtuallist/VirtualList.svelte';
 
 export { type ThemeConfig, ThemeProvider } from '$lib/theme';
 export * from './types';

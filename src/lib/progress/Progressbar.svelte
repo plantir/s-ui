@@ -5,13 +5,13 @@
 	import { Tween } from 'svelte/motion';
 	import { progressbar } from './theme.js';
 	import { getTheme } from '$lib/theme/themeUtils';
-
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 	let {
 		progress = '45',
 		precision = 0,
 		tweenDuration = 400,
 		animate = false,
-		size = 'h-2.5',
+		size = 'md',
 		labelInside = false,
 		labelOutside = '',
 		easing = cubicOut,
@@ -22,6 +22,12 @@
 	}: ProgressbarProps = $props();
 
 	const theme = $derived(getTheme('progressbar'));
+
+	const namedSizes = ['sm', 'md', 'lg', 'xl'] as const;
+	type NamedSize = (typeof namedSizes)[number];
+	const isNamedSize = $derived((namedSizes as readonly string[]).includes(size));
+	const namedSize = $derived(isNamedSize ? (size as NamedSize) : undefined);
+	const customSizeClass = $derived(isNamedSize ? undefined : size);
 
 	let _progress = $derived(
 		new Tween(0, {
@@ -39,7 +45,9 @@
 	} = $derived(
 		progressbar({
 			color,
-			labelInside
+			labelInside,
+			size: namedSize,
+			theme: getCurrentThemeVariant()
 		})
 	);
 
@@ -56,17 +64,17 @@
 		>
 	</div>
 {/if}
-<div {...restProps} class={base({ class: clsx(size, theme?.base, className) })}>
+<div {...restProps} class={base({ class: clsx(theme?.base, className, customSizeClass) })}>
 	{#if labelInside}
 		<div
-			class={labelInsideCls({ class: clsx(size, theme?.label, classes?.label) })}
+			class={labelInsideCls({ class: clsx(theme?.label, classes?.label) })}
 			style="width: {_progress.current}%"
 		>
 			{_progress.current.toFixed(precision)}%
 		</div>
 	{:else}
 		<div
-			class={inside({ class: clsx(size, theme?.inside, classes?.label) })}
+			class={inside({ class: clsx(theme?.inside, classes?.label) })}
 			style="width: {_progress.current}%"
 		></div>
 	{/if}
@@ -82,7 +90,7 @@
 @prop precision = 0
 @prop tweenDuration = 400
 @prop animate = false
-@prop size = "h-2.5"
+@prop size = "md"
 @prop labelInside = false
 @prop labelOutside = ""
 @prop easing = cubicOut

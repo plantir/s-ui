@@ -1,9 +1,11 @@
 <script lang="ts">
 	import type { CardProps } from '../types.js';
+	import type { HTMLAnchorAttributes } from 'svelte/elements';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import clsx from 'clsx';
 	import { card } from './theme.js';
 	import { untrack } from 'svelte';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -36,7 +38,8 @@
 			shadow,
 			horizontal,
 			reverse,
-			href: !!restProps.href
+			href: !!restProps.href,
+			theme: getCurrentThemeVariant()
 		})
 	);
 </script>
@@ -66,7 +69,7 @@
 		{@render childSlot()}
 	</div>
 {:else}
-	<a {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+	<a {...restProps as HTMLAnchorAttributes} class={base({ class: clsx(theme?.base, className) })}>
 		{@render childSlot()}
 	</a>
 {/if}

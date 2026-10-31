@@ -26,6 +26,10 @@ export const range = tv({
     appearance: {
       auto: "range accent-red-500",
       none: "appearance-none"
+    },
+    theme: {
+      fluent: '',
+      default: ''
     }
   },
   compoundVariants: [
@@ -73,6 +77,21 @@ export const range = tv({
       appearance: "auto",
       color: "rose",
       class: "accent-rose-500"
+    },
+    {
+      theme: 'fluent',
+      size: 'sm',
+      class: 'h-0.5'
+    },
+    {
+      theme: 'fluent',
+      size: 'md',
+      class: 'h-1'
+    },
+    {
+      theme: 'fluent',
+      size: 'lg',
+      class: 'h-1.5'
     }
   ]
 });

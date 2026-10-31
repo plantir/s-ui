@@ -4,6 +4,7 @@
 	import type { HrProps } from '$lib/types.js';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import { untrack } from 'svelte';
+	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
 
 	let {
 		children,
@@ -11,6 +12,7 @@
 		innerDivClass,
 		class: className,
 		classes,
+		vertical = false,
 		divProps = {},
 		hrProps = {},
 		...restProps
@@ -39,18 +41,28 @@
 	const mergedDivProps = $derived({ ...restProps, ...divProps });
 	const mergedHrProps = $derived({ ...restProps, ...hrProps });
 
-	let { base, div, content } = $derived(hr({ withChildren: !!children }));
+	let { base, div, content } = $derived(
+		hr({ withChildren: !!children, theme: getCurrentThemeVariant(), vertical })
+	);
 </script>
 
 {#if children}
 	<div {...mergedDivProps} class={div({ class: clsx(theme?.div, styling.div) })}>
-		<hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
+		<hr
+			aria-orientation={vertical ? 'vertical' : undefined}
+			{...mergedHrProps}
+			class={base({ class: clsx(theme?.base, className, bg) })}
+		/>
 		<div class={content({ class: clsx(theme?.content, styling.content) })}>
 			{@render children()}
 		</div>
 	</div>
 {:else}
-	<hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
+	<hr
+		aria-orientation={vertical ? 'vertical' : undefined}
+		{...mergedHrProps}
+		class={base({ class: clsx(theme?.base, className, bg) })}
+	/>
 {/if}
 
 <!--
@@ -61,8 +73,11 @@
 ## Props
 @prop children
 @prop divClass
+@prop vertical = false
 @prop innerDivClass
 @prop class: className
 @prop classes
+@prop divProps
+@prop hrProps
 @prop ...restProps
 -->
