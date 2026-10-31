@@ -38,12 +38,11 @@
 			src={item.src}
 			alt={item.alt}
 			class={image({ class: clsx(theme?.image, styling.image) })}
-			{...restProps}
 		/>
 	</div>
 {/snippet}
 
-<div class={div({ class: clsx(theme?.div, className) })} use:init>
+<div class={div({ class: clsx(theme?.div, className) })} use:init {...restProps}>
 	{#each items as item, i (item.src || i)}
 		{#if figure}
 			{@render figure(item as ImgType)}

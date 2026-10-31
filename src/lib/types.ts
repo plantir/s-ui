@@ -50,7 +50,7 @@ import type { badge, BadgeVariants } from './badge/theme.js';
 import type { card, CardVariants } from '$lib/card/theme.js';
 import type { CloseButtonVariants } from './utils/theme.js';
 import type { IndicatorVariants } from './indicator/theme.js';
-import type { BannerVariants } from './banner/theme.js';
+import type { banner, BannerVariants } from './banner/theme.js';
 import type { SpinnerVariants } from './spinner/theme.js';
 import type { ClipboardManagerVariants, clipboardManager } from './clipboard-manager/theme.js';
 import type { Classes } from './theme/slots.js';
@@ -120,7 +120,7 @@ import type {
 	kanbanCard,
 	KanbanCardVariants
 } from './kanban/theme.js';
-import type { GalleryVariants } from './gallery/theme.js';
+import type { gallery, GalleryVariants } from './gallery/theme.js';
 import type { ListgroupVariants, ListgroupItemVariants } from './list-group/theme.js';
 import type {
 	progressbar,
@@ -215,9 +215,16 @@ import type {
 	TableSearchVariants,
 	TableVariants
 } from './table/theme.js';
-import type { tabItem, TabItemVariants, TabsVaraints } from './tabs/theme.js';
+import type { tabItem, tabs, TabItemVariants, TabsVaraints } from './tabs/theme.js';
 import type { ToastVaraints, toast } from './toast/theme.js';
-import type { TimelineVariants, TimelineItemVariants, timelineItem } from './timeline/theme.js';
+import type {
+	TimelineVariants,
+	TimelineItemVariants,
+	timelineItem,
+	activityItem,
+	group,
+	groupItem
+} from './timeline/theme.js';
 import type { TourVariants, tour } from './tour/theme.js';
 import type { AnchorVariants } from './a/theme.js';
 import type { BlockquoteVariants } from './blockquote/theme.js';
@@ -246,18 +253,18 @@ import type { ThemeSelectorVariants, themeSelector } from './theme-selector/them
 import type { CommandPaletteVariants, commandPalette } from './command-palette/theme.js';
 import type { VirtualMasonryVariants, virtualMasonry } from './virtual-masonry/theme.js';
 import type { VirtualListVariants, virtualList } from './virtuallist/theme.js';
-import type { HrVariants } from './hr/theme.js';
+import type { HrVariants, hr } from './hr/theme.js';
 import type { AuraVariants } from './aura/theme.js';
 import type { ChatVariants, ChatBubbleVariants } from './chat/theme.js';
 import type { OtpVariants, otp } from './otp/theme.js';
 import type { DiffVariants, diff } from './diff/theme.js';
 import type { Hover3dVariants, hover3d } from './hover-3d/theme.js';
 import type { HoverGalleryVariants, hoverGallery } from './hover-gallery/theme.js';
-export declare const xs = "xs";
-export declare const sm = "sm";
-export declare const md = "md";
-export declare const lg = "lg";
-export declare const xl = "xl";
+export declare const xs = 'xs';
+export declare const sm = 'sm';
+export declare const md = 'md';
+export declare const lg = 'lg';
+export declare const xl = 'xl';
 export type AnchorButtonAttributes =
 	| ({ href: string } & HTMLAnchorAttributes)
 	| ({ href?: undefined } & HTMLButtonAttributes);
@@ -284,8 +291,10 @@ export type AnchorDivAttributes =
 // Accordion Context
 export interface AccordionContextType {
 	flush?: boolean;
-	activeClass?: string | null;
-	inactiveClass?: string | null;
+	activeClass?: ClassValue | null;
+	inactiveClass?: ClassValue | null;
+	buttonClass?: ClassValue | null;
+	contentClass?: ClassValue | null;
 	transitionType?: TransitionFunc | 'none';
 }
 
@@ -365,6 +374,15 @@ export interface AccordionProps
 	activeClass?: string;
 	inactiveClass?: string;
 	transitionType?: TransitionFunc | 'none';
+	/** @deprecated Use `transitionType` instead. */
+	transition?: TransitionFunc | 'none';
+	classes?: {
+		base?: ClassValue;
+		button?: ClassValue;
+		content?: ClassValue;
+		active?: ClassValue;
+		inactive?: ClassValue;
+	};
 }
 export interface AccordionItemProps
 	extends Omit<AccordionItemVariants, 'theme'>, HTMLAttributes<HTMLDivElement> {
@@ -375,6 +393,8 @@ export interface AccordionItemProps
 	activeClass?: string;
 	inactiveClass?: string;
 	transitionType?: TransitionFunc | 'none';
+	/** @deprecated Use `transitionType` instead. */
+	transition?: TransitionFunc | 'none';
 	transitionParams?: ParamsType;
 	headerClass?: string;
 	contentClass?: string;
@@ -393,6 +413,8 @@ export interface AlertProps
 	params?: ParamsType;
 	onclick?: () => void;
 	listContent?: boolean;
+	borderAccent?: boolean;
+	closeButtonProps?: { class?: ClassValue; ariaLabel?: string; color?: string };
 }
 
 // indicator
@@ -432,6 +454,8 @@ export interface BadgeProps
 	target?: HTMLAnchorAttributes['target'];
 	transition?: TransitionFunc;
 	params?: ParamsType;
+	/** @deprecated Use `params` instead. */
+	transitionParams?: ParamsType;
 }
 
 // banner
@@ -444,8 +468,11 @@ export interface BannerProps
 	innerClass?: ClassValue;
 	transition?: TransitionFunc;
 	params?: ParamsType;
+	/** @deprecated Use `params` instead. */
+	transitionParams?: ParamsType;
 	closeClass?: ClassValue;
 	onclose?: (ev: MouseEvent) => void;
+	classes?: Classes<typeof banner> & { content?: ClassValue };
 }
 
 // bottom-navigation
@@ -453,7 +480,7 @@ export interface BannerProps
 export interface BottomNavProps extends BottomNavVariants, HTMLAttributes<HTMLDivElement> {
 	children: Snippet;
 	header?: Snippet;
-	classes?: Classes<typeof bottomNav>;
+	classes?: Classes<typeof bottomNav> & { content?: ClassValue; active?: ClassValue };
 	activeUrl?: string;
 	outerClass?: ClassValue;
 	innerClass?: ClassValue;
@@ -567,6 +594,7 @@ export interface CardProps
 	img?: string;
 	imgClass?: ClassValue;
 	contentClass?: string;
+	hoverable?: boolean;
 }
 // carousel
 
@@ -675,6 +703,7 @@ export interface CarouselContextType {
 	forward: boolean;
 	changeSlide: (newIndex: number) => void;
 }
+
 // CloseButton
 export type CloseButtonProps = CloseButtonVariants &
 	AnchorButtonAttributes & {
@@ -683,6 +712,7 @@ export type CloseButtonProps = CloseButtonVariants &
 		ariaLabel?: string;
 		class?: string;
 		svgClass?: string;
+		children?: Snippet;
 	};
 // clipboard
 export interface ClipboardProps extends ClipboardVariants, Omit<ButtonProps, 'children'> {
@@ -731,7 +761,7 @@ export interface DatepickerProps
 	autohide?: boolean;
 	showActionButtons?: boolean;
 	title?: string;
-	classes?: Classes<typeof datepicker>;
+	classes?: Classes<typeof datepicker> & { label?: ClassValue; title?: ClassValue };
 	onselect?: (x: DateOrRange) => void;
 	onclear?: () => void;
 	onapply?: (x: DateOrRange) => void;
@@ -840,7 +870,7 @@ export interface TabletProps extends Omit<TabletVariants, 'slot'>, HTMLAttribute
 // dialog
 
 export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
-	onaction?: ({ action, data }: { action: string; data: FormData }) => void;
+	onaction?: ({ action, data }: { action: string; data: FormData }) => boolean | void;
 	classes?: Classes<typeof dialog>;
 	form?: boolean;
 	modal?: boolean;
@@ -857,6 +887,7 @@ export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
 export interface DrawerProps extends DrawerVariants, Omit<DialogProps, 'classes' | 'form'> {
 	classes?: Classes<typeof drawer>;
 	offset?: string;
+	form?: boolean;
 }
 
 export interface DrawerHandleProps extends DrawerHandleVariants, HTMLButtonAttributes {
@@ -881,8 +912,9 @@ export interface ToolbarProps
 export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
 
 export interface ToolbarButtonProps
-	extends ToolbarButtonVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
+	extends ToolbarButtonVariants, Omit<HTMLButtonOrAnchorAttributes, 'color'> {
 	name?: string;
+	children?: Snippet;
 }
 
 // dropdown
@@ -980,17 +1012,7 @@ export interface GalleryProps extends GalleryVariants, HTMLAttributes<HTMLDivEle
 	height?: string;
 	rowHeight?: number;
 	columns?: number;
-}
-
-// indicator
-export interface IndicatorProps extends HTMLAttributes<HTMLDivElement> {
-	children?: Snippet;
-	color?: IndicatorVariants['color'];
-	cornerStyle?: IndicatorVariants['cornerStyle'];
-	size?: IndicatorVariants['size'];
-	border?: boolean;
-	placement?: IndicatorVariants['placement'];
-	offset?: boolean;
+	classes?: Classes<typeof gallery>;
 }
 
 // kbd
@@ -1026,13 +1048,14 @@ export interface ListgroupProps
 }
 
 export interface ListgroupItemProps
-	extends Omit<ListgroupItemVariants, 'state'>, HTMLAttributes<HTMLDivElement> {
+	extends Omit<ListgroupItemVariants, 'state'>, Omit<HTMLButtonOrAnchorAttributes, 'color'> {
 	current?: boolean;
 	disabled?: boolean;
 	Icon?: Component;
 	iconClass?: ClassValue;
 	name?: string;
 	children?: Snippet;
+	href?: string;
 }
 
 // spinner
@@ -1061,7 +1084,7 @@ export interface KanbanColumnType {
 
 export interface KanbanBoardProps extends KanbanBoardVariants, HTMLAttributes<HTMLDivElement> {
 	columns?: KanbanColumnType[];
-	classes?: Classes<typeof kanbanBoard>;
+	classes?: Classes<typeof kanbanBoard> & { button?: ClassValue };
 	onMove?: (card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) => void;
 	onAddCard?: (col: KanbanColumnType) => void;
 	cardProps?: Partial<Omit<KanbanCardProps, 'card' | 'isDragging' | 'onDragStart' | 'onDragEnd'>>;
@@ -1080,6 +1103,8 @@ export interface KanbanCardProps extends KanbanCardVariants, HTMLAttributes<HTML
 export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, 'children'> {
 	children: Snippet<[{ item: LinkType; index: number }]>;
 	extra?: Snippet;
+	/** @deprecated Use `extra` instead. */
+	addon?: Snippet;
 	items?: LinkType[];
 	classes?: Classes<typeof megamenu>;
 	full?: boolean;
@@ -1122,6 +1147,7 @@ export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, 'child
 	navContainerClass?: ClassValue;
 	closeOnClickOutside?: boolean;
 	breakpoint?: NavbarBreakpoint;
+	classes?: { navContainer?: ClassValue; content?: ClassValue };
 }
 
 export type NavBrandProps = HTMLAnchorAttributes;
@@ -1131,7 +1157,7 @@ export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export interface NavHamburgerProps
-	extends NavbarHamburgerVariants, Omit<HTMLAttributes<HTMLDivElement>, 'class'> {
+	extends NavbarHamburgerVariants, Omit<HTMLButtonAttributes, 'class' | 'color'> {
 	classes?: Classes<typeof navbarHamburger>;
 	href?: undefined;
 	class?: ClassValue;
@@ -1144,7 +1170,7 @@ export interface NavUlProps
 	activeUrl?: string;
 	ulClass?: ClassValue;
 	hidden?: boolean;
-	classes?: Classes<typeof navbarUl>;
+	classes?: Classes<typeof navbarUl> & { list?: ClassValue; item?: ClassValue };
 	// Legacy support
 	slideParams?: SlideParams;
 	// New transition props
@@ -1248,9 +1274,10 @@ export interface ProgressbarProps
 	precision?: number;
 	tweenDuration?: number;
 	animate?: boolean;
+	color?: ProgressbarVariants['color'];
 	/** Named sizes or any height/class string (e.g. `h-4`) for backward compatibility. */
 	size?: 'sm' | 'md' | 'lg' | 'xl' | (string & {});
-	classes?: Classes<typeof progressbar>;
+	classes?: Classes<typeof progressbar> & { bar?: ClassValue };
 	labelInside?: boolean;
 	labelOutside?: string;
 	easing?: EasingFunction;
@@ -1258,12 +1285,13 @@ export interface ProgressbarProps
 
 export interface ProgressradialProps
 	extends ProgressradialVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
+	color?: ProgressradialVariants['color'];
 	progress?: number | string;
 	radius?: number;
 	startingPosition?: 'top' | 'right' | 'bottom' | 'left';
 	precision?: number;
 	tweenDuration?: number;
-	classes?: Classes<typeof progressradial>;
+	classes?: Classes<typeof progressradial> & { labelWrapper?: ClassValue };
 	animate?: boolean;
 	size?: string;
 	thickness?: number | string;
@@ -1400,6 +1428,8 @@ export interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElemen
 	nonActiveClass?: ClassValue;
 	activeClass?: ClassValue;
 	params?: ParamsType;
+	/** @deprecated Use `params` instead. */
+	transitionParams?: ParamsType;
 	classes?: Classes<typeof sidebar>;
 	transition?: TransitionFunc;
 	backdrop?: boolean;
@@ -1431,7 +1461,7 @@ export interface SiteType {
 
 export interface SidebarBrandProps extends SidebarBrandVariants, HTMLAnchorAttributes {
 	site?: SiteType;
-	classes?: Classes<typeof sidebarBrand>;
+	classes?: Classes<typeof sidebarBrand> & { logo?: ClassValue };
 	imgClass?: ClassValue;
 	spanClass?: ClassValue;
 }
@@ -1453,9 +1483,11 @@ export interface SidebarDropdownWrapperProps
 	spanClass?: ClassValue;
 	ulClass?: ClassValue;
 	params?: ParamsType;
+	/** @deprecated Use `params` instead. */
+	transitionParams?: ParamsType;
 	transition?: TransitionFunc;
 	svgClass?: ClassValue;
-	classes?: Classes<typeof sidebarDropdownWrapper>;
+	classes?: Classes<typeof sidebarDropdownWrapper> & { trigger?: ClassValue; list?: ClassValue };
 	onclick?: () => void;
 	isSingle?: boolean;
 }
@@ -1475,6 +1507,7 @@ export interface SidebarItemProps extends HTMLAnchorAttributes {
 	nonActiveClass?: ClassValue;
 	aClass?: ClassValue;
 	active?: boolean;
+	classes?: { label?: ClassValue; icon?: ClassValue; subtext?: ClassValue };
 }
 
 // skeleton
@@ -1756,13 +1789,6 @@ export interface ProgressStepperProps extends HTMLOlAttributes, ProgressStepperV
 	onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
 }
 
-export interface ProgressStepperProps extends HTMLOlAttributes, ProgressStepperVariants {
-	steps: ProgressStep[];
-	current?: number; // Current step index (bindable)
-	clickable?: boolean; // Allow clicking steps to navigate (default: true)
-	showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps (default: true)
-	onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
-}
 export interface DetailedStep {
 	id: number;
 	label: string;
@@ -1947,6 +1973,7 @@ export interface TabsProps extends TabsVaraints, HTMLAttributes<HTMLUListElement
 	ulClass?: ClassValue;
 	contentClass?: ClassValue;
 	divider?: boolean;
+	classes?: Classes<typeof tabs> & { active?: ClassValue; inactive?: ClassValue };
 }
 
 export interface TabitemProps extends TabItemVariants, HTMLLiAttributes {
@@ -2002,8 +2029,64 @@ export interface TimelineItemProps extends TimelineItemVariants, HTMLLiAttribute
 	isLast?: boolean;
 	connectorClass?: string;
 	datePrefix?: string;
-	classes?: Classes<typeof timelineItem>;
+	classes?: Classes<typeof timelineItem> & { title?: ClassValue };
 }
+
+export interface ActivityType {
+	title: string | Snippet;
+	date: Date | string;
+	src?: string;
+	alt?: string;
+	text?: string | Snippet;
+	id?: string | number;
+}
+
+export interface ActivityProps extends HTMLOlAttributes {
+	children: Snippet;
+}
+
+export interface ActivityItemProps extends Omit<HTMLLiAttributes, 'title'> {
+	activities: ActivityType[];
+	liClass?: ClassValue;
+	spanClass?: ClassValue;
+	imgClass?: ClassValue;
+	outerDivClass?: ClassValue;
+	innerDivClass?: ClassValue;
+	timeClass?: ClassValue;
+	titleClass?: ClassValue;
+	textClass?: ClassValue;
+	classes?: Classes<typeof activityItem>;
+}
+
+export interface GroupProps extends HTMLOlAttributes {
+	children: Snippet;
+	divClass?: ClassValue;
+	timeClass?: ClassValue;
+	date?: Date | string;
+	olClass?: ClassValue;
+	classes?: Classes<typeof group>;
+}
+
+export interface GroupTimelineType {
+	name: string;
+	src?: string;
+	alt?: string;
+	href?: string;
+	isPrivate?: boolean;
+	comment?: string;
+	id?: string | number;
+}
+
+export interface GroupItemProps extends Omit<HTMLLiAttributes, 'title'> {
+	timelines: GroupTimelineType[];
+	aClass?: ClassValue;
+	imgClass?: ClassValue;
+	divClass?: ClassValue;
+	titleClass?: ClassValue;
+	spanClass?: ClassValue;
+	classes?: Classes<typeof groupItem>;
+}
+
 export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement> {
 	children: Snippet;
 	icon?: Snippet;
@@ -2015,6 +2098,8 @@ export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement
 	contentClass?: string;
 	align?: boolean;
 	params?: ParamsType;
+	/** @deprecated Use `params` instead. */
+	transitionParams?: ParamsType;
 	transition?: TransitionFunc;
 	class?: string;
 	classes?: Classes<typeof toast>;
@@ -2030,10 +2115,11 @@ export type TourStep = {
 	target: string;
 	title?: string;
 	description: string;
-	placement?: Placement;
+	placement?: Placement | string;
 };
 
-export interface TourProps extends TourVariants, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
+export interface TourProps
+	extends Omit<TourVariants, 'title'>, Omit<HTMLAttributes<HTMLDivElement>, 'color' | 'title'> {
 	steps: TourStep[];
 	active?: boolean;
 	currentStep?: number;
@@ -2071,6 +2157,7 @@ export interface AnchorProps {
 	name?: string;
 	value?: string | number | string[];
 	// Allow any other attributes (like data-* attributes)
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any -- extra HTML/data attributes
 	[key: string]: any;
 }
 export interface BlockquoteProps extends HTMLBlockquoteAttributes {
@@ -2109,6 +2196,7 @@ export interface Picture {
 // export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string };
 
 export interface ImgProps extends ImgVariants, Omit<HTMLImgAttributes, 'children'> {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any -- snippet rest bag
 	children?: Snippet<[{ class: string; restProps: any }]>;
 	size?: ImgVariants['size'];
 	effect?: ImgVariants['effect'];
@@ -2182,6 +2270,7 @@ export interface CheckboxItem {
 	value: string | number;
 	label?: string;
 	checked?: boolean | null;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any -- extra option fields
 	[key: string]: any;
 }
 
@@ -2195,7 +2284,7 @@ export interface CheckboxProps
 	choices?: CheckboxItem[];
 	divClass?: ClassValue;
 	labelProps?: Omit<LabelProps, 'children'>;
-	classes?: Classes<typeof checkbox>;
+	classes?: Classes<typeof checkbox> & { label?: ClassValue };
 }
 
 export interface CheckboxButtonProps
@@ -2332,6 +2421,7 @@ export interface FloatingLabelInputProps
 	comboClass?: ClassValue;
 	placeholder?: string; // this will filter out placeholder from restProps
 	classes?: Classes<typeof floatingLabelInput>;
+	validation?: boolean | 'success' | 'error';
 }
 
 export interface HelperProps
@@ -2394,6 +2484,7 @@ export type SelectOptionType<T> = {
 	name: string | number;
 	value: T;
 	disabled?: boolean;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any -- extra option fields
 	[key: string]: any;
 };
 
@@ -2473,7 +2564,7 @@ export interface TextareaProps extends TextareaVariants, HTMLTextareaAttributes 
 	clearableClass?: ClassValue;
 	clearableOnClick?: () => void;
 	textareaClass?: ClassValue;
-	classes?: Classes<typeof textarea>;
+	classes?: Classes<typeof textarea> & { container?: ClassValue; textarea?: ClassValue };
 }
 
 export type TimePickerType =
@@ -2526,7 +2617,7 @@ export interface ToggleProps
 	disabled?: boolean;
 	spanClass?: ClassValue;
 	inputClass?: ClassValue;
-	classes?: Classes<typeof toggle>;
+	classes?: Classes<typeof toggle> & { track?: ClassValue };
 }
 export interface ThemeSelectorProps extends ThemeSelectorVariants, HTMLAttributes<HTMLDivElement> {
 	loadFromStatic?: boolean;
@@ -2648,7 +2739,8 @@ export interface DiffProps extends DiffVariants, Omit<HTMLAttributes<HTMLElement
 }
 
 // hover 3d
-export interface Hover3dProps extends Hover3dVariants, Omit<HTMLAttributes<HTMLElement>, 'children'> {
+export interface Hover3dProps
+	extends Hover3dVariants, Omit<HTMLAttributes<HTMLElement>, 'children'> {
 	children: Snippet;
 	/** Renders the wrapper as a link. */
 	href?: string;

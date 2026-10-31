@@ -26,7 +26,12 @@ export const indicator = tv({
       purple: "bg-purple-500",
       fuchsia: "bg-fuchsia-500",
       pink: "bg-pink-500",
-      rose: "bg-rose-500"
+      rose: "bg-rose-500",
+      success: "bg-green-500",
+      danger: "bg-red-500",
+      warning: "bg-yellow-400",
+      dark: "bg-gray-800",
+      neutral: "bg-gray-500"
     },
     size: {
       xs: "w-2 h-2",

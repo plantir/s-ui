@@ -14,6 +14,7 @@
 		aClass,
 		active,
 		class: className,
+		classes,
 		...restProps
 	}: SidebarItemProps = $props();
 
@@ -35,21 +36,23 @@
 </script>
 
 <li class={clsx(className)}>
+	<!-- eslint-disable svelte/no-navigation-without-resolve -- href is a user-supplied prop -->
 	<a
+		{href}
 		onclick={context.closeSidebar ?? undefined}
 		{...restProps}
-		{href}
 		aria-current={activeItem ? 'page' : undefined}
 		class={clsx(aCls, aClass)}
 	>
 		{#if icon}
 			{@render icon()}
 		{/if}
-		<span class={clsx(spanClass)}>{label}</span>
+		<span class={clsx(spanClass, classes?.label)}>{label}</span>
 		{#if subtext}
 			{@render subtext()}
 		{/if}
 	</a>
+	<!-- eslint-enable svelte/no-navigation-without-resolve -->
 </li>
 
 <!--

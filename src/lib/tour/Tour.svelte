@@ -84,7 +84,7 @@
     );`;
 
     // Calculate tooltip position using Floating UI
-    const placement = currentStepData.placement || "bottom";
+    const placement = (currentStepData.placement || "bottom") as Placement;
 
     const {
       x,
@@ -239,6 +239,7 @@
 
       {#if steps.length > 1}
         <div class={styles.progressContainer({ class: clsx(theme?.progressContainer, classes?.progressContainer) })}>
+          <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -- index-only iteration -->
           {#each steps as _, index (index)}
             <button
               class="{styles.progressDot({ class: clsx(theme?.progressDot, classes?.progressDot) })} {index === currentStep ? styles.progressDotActive() : ''}"

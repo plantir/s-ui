@@ -55,18 +55,16 @@
 		}
 	);
 
-	const styling = $derived(
-		classes ?? {
-			div: divClass,
-			inner: innerClass,
-			header: headerClass,
-			footer: footerClass,
-			addon: addonClass,
-			textarea: textareaClass,
-			close: clearableClass,
-			svg: clearableSvgClass
-		}
-	);
+	const styling = $derived({
+		div: classes?.div ?? classes?.container ?? divClass,
+		inner: classes?.inner ?? innerClass,
+		header: classes?.header ?? headerClass,
+		footer: classes?.footer ?? footerClass,
+		addon: classes?.addon ?? addonClass,
+		textarea: classes?.textarea ?? textareaClass,
+		close: classes?.close ?? clearableClass,
+		svg: classes?.svg ?? clearableSvgClass
+	});
 
 	const theme = $derived(getTheme('textarea'));
 

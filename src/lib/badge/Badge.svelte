@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { BadgeProps, ParamsType } from '../types.js';
+	import type { BadgeProps, CloseButtonProps, ParamsType } from '../types.js';
 	import CloseButton from '$lib/utils/CloseButton.svelte';
 	import { getTheme } from '$lib/theme/themeUtils';
 	import clsx from 'clsx';
@@ -7,6 +7,7 @@
 	import { badge } from './theme';
 	import { createDismissableContext } from '$lib/utils/dismissable';
 	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
+	import { resolveColor } from '$lib/theme/semanticColor';
 
 	let {
 		children,
@@ -22,6 +23,7 @@
 		rounded,
 		transition = fade,
 		params,
+		transitionParams,
 		classes,
 		...restProps
 	}: BadgeProps = $props();
@@ -50,10 +52,11 @@
 	<div
 		{...restProps}
 		bind:this={ref}
-		transition:transition={params as ParamsType}
+		transition:transition={(params ?? transitionParams) as ParamsType}
 		class={base({ class: clsx(theme?.base, className) })}
 	>
 		{#if href}
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- href is a user-supplied prop -->
 			<a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling.linkClass) })}>
 				{@render children()}
 			</a>
@@ -63,11 +66,21 @@
 
 		{#if dismissable}
 			{#if icon}
-				<CloseButton class="ms-1.5 -me-1.5" {color} {size} ariaLabel="Remove badge">
+				<CloseButton
+					class="ms-1.5 -me-1.5"
+					color={resolveColor(color) as CloseButtonProps['color']}
+					{size}
+					ariaLabel="Remove badge"
+				>
 					{@render icon()}
 				</CloseButton>
 			{:else}
-				<CloseButton class="ms-1.5 -me-1.5" {color} {size} ariaLabel="Remove badge" />
+				<CloseButton
+					class="ms-1.5 -me-1.5"
+					color={resolveColor(color) as CloseButtonProps['color']}
+					{size}
+					ariaLabel="Remove badge"
+				/>
 			{/if}
 		{/if}
 	</div>

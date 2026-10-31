@@ -43,7 +43,10 @@ export const datepicker = tv({
       violet: { input: "focus:ring-violet-500 dark:focus:ring-violet-400", dayButton: "bg-violet-300 dark:bg-violet-900" },
       fuchsia: { input: "focus:ring-fuchsia-500 dark:focus:ring-fuchsia-400", dayButton: "bg-fuchsia-300 dark:bg-fuchsia-900" },
       pink: { input: "focus:ring-pink-500 dark:focus:ring-pink-400", dayButton: "bg-pink-300 dark:bg-pink-900" },
-      rose: { input: "focus:ring-rose-500 dark:focus:ring-rose-400", dayButton: "bg-rose-300 dark:bg-rose-900" }
+      rose: { input: "focus:ring-rose-500 dark:focus:ring-rose-400", dayButton: "bg-rose-300 dark:bg-rose-900" },
+      success: { input: "focus:ring-green-500 dark:focus:ring-green-400", dayButton: "bg-green-300 dark:bg-green-900" },
+      danger: { input: "focus:ring-red-500 dark:focus:ring-red-400", dayButton: "bg-red-300 dark:bg-red-900" },
+      warning: { input: "focus:ring-yellow-500 dark:focus:ring-yellow-400", dayButton: "bg-yellow-300 dark:bg-yellow-900" }
     },
     inline: {
       false: { base: "absolute z-10 mt-1" }

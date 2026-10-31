@@ -18,12 +18,15 @@
 		activeClass,
 		inactiveClass,
 		transitionType = slide,
+		transition,
 		transitionParams,
 		class: className,
 		classes,
 		headerClass,
 		contentClass
 	}: AccordionItemProps = $props();
+
+	const resolvedTransitionType = $derived(transition ?? transitionType);
 
 	warnThemeDeprecation(
 		'AccordionItem',
@@ -53,11 +56,13 @@
 	// Get context - it will be undefined if used outside Accordion
 	const ctx = getAccordionContext();
 
-	const ctxTransitionType = $derived(ctx?.transitionType ?? transitionType);
-	// Check if transitionType is explicitly set to undefined in props
+	const ctxTransitionType = $derived(ctx?.transitionType ?? resolvedTransitionType);
 	const useTransition = $derived(
-		transitionType === 'none' ? false : ctxTransitionType === 'none' ? false : true
+		resolvedTransitionType === 'none' ? false : ctxTransitionType === 'none' ? false : true
 	);
+	const panelId = $props.id();
+	const headerId = `accordion-heading-${panelId}`;
+	const contentId = `accordion-panel-${panelId}`;
 
 	// Theme context
 	const theme = $derived(getTheme('accordionItem'));
@@ -85,14 +90,18 @@
 			!open && !ctx?.flush && (styling.inactive || ctx?.inactiveClass || inactive())
 		)
 	);
+	const resolvedButtonClass = $derived(styling.button ?? ctx?.buttonClass);
+	const resolvedContentClass = $derived(styling.content ?? ctx?.contentClass);
 </script>
 
 <h2 class={base({ class: clsx(theme?.base, className) })}>
 	<button
 		type="button"
+		id={headerId}
 		onclick={handleToggle}
-		class={button({ class: clsx(buttonClass, theme?.button, styling.button) })}
+		class={button({ class: clsx(buttonClass, theme?.button, resolvedButtonClass) })}
 		aria-expanded={open}
+		aria-controls={contentId}
 	>
 		{#if header}
 			{@render header()}
@@ -140,16 +149,21 @@
 </h2>
 
 {#if useTransition}
-	{#if open && transitionType !== 'none'}
-		<div transition:transitionType={transitionParams as ParamsType}>
-			<div class={content({ class: clsx(theme?.content, styling.content) })}>
+	{#if open && resolvedTransitionType !== 'none'}
+		<div
+			id={contentId}
+			role="region"
+			aria-labelledby={headerId}
+			transition:resolvedTransitionType={transitionParams as ParamsType}
+		>
+			<div class={content({ class: clsx(theme?.content, resolvedContentClass) })}>
 				{@render children()}
 			</div>
 		</div>
 	{/if}
 {:else}
-	<div class={open ? 'block' : 'hidden'}>
-		<div class={content({ class: clsx(theme?.content, styling.content) })}>
+	<div id={contentId} role="region" aria-labelledby={headerId} class={open ? 'block' : 'hidden'}>
+		<div class={content({ class: clsx(theme?.content, resolvedContentClass) })}>
 			{@render children()}
 		</div>
 	</div>

@@ -43,7 +43,7 @@
 		svg: svgClass,
 		div: divClass,
 		time: timeClass,
-		h3: h3Class,
+		h3: h3Class ?? classes?.title,
 		connector: connectorClass
 	});
 

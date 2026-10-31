@@ -3,7 +3,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
 // Variants
 export type ButtonVariants = VariantProps<typeof button>;
 export type GradientButtonVariantes = VariantProps<typeof gradientButton>;
-export type ButtonColor = "primary" | "dark" | "alternative" | "light" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
+export type ButtonColor = NonNullable<VariantProps<typeof button>['color']>;
 
 export const button = tv({
 	slots: {
@@ -282,6 +282,18 @@ export const gradientButton = tv({
 			},
 			redToYellow: {
 				base: 'text-gray-900 bg-linear-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-linear-to-bl focus:ring-red-100 dark:focus:ring-red-400'
+			},
+			success: {
+				base: 'from-green-400 via-green-500 to-green-600 hover:bg-linear-to-br focus:ring-green-300 dark:focus:ring-green-800'
+			},
+			danger: {
+				base: 'text-white bg-linear-to-r from-red-400 via-red-500 to-red-600 hover:bg-linear-to-br focus:ring-red-300 dark:focus:ring-red-800'
+			},
+			warning: {
+				base: 'text-gray-900 bg-linear-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-linear-to-bl focus:ring-red-100 dark:focus:ring-red-400'
+			},
+			dark: {
+				base: 'text-white bg-linear-to-r from-gray-700 via-gray-800 to-gray-900 hover:bg-linear-to-br focus:ring-gray-300 dark:focus:ring-gray-800'
 			}
 		},
 		outline: {

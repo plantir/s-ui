@@ -94,6 +94,22 @@ export const progressbar = tv({
       rose: {
         label: "bg-rose-600 dark:bg-rose-500",
         inside: "bg-rose-600 dark:bg-rose-500"
+      },
+      success: {
+        label: "bg-green-600 dark:bg-green-500",
+        inside: "bg-green-600 dark:bg-green-500"
+      },
+      danger: {
+        label: "bg-red-600 dark:bg-red-500",
+        inside: "bg-red-600 dark:bg-red-500"
+      },
+      warning: {
+        label: "bg-yellow-400 dark:bg-yellow-500",
+        inside: "bg-yellow-400 dark:bg-yellow-500"
+      },
+      dark: {
+        label: "bg-gray-800 dark:bg-gray-500",
+        inside: "bg-gray-800 dark:bg-gray-500"
       }
     },
     size: {
@@ -259,6 +275,22 @@ export const progressradial = tv({
       rose: {
         background: "stroke-rose-600 dark:stroke-rose-500",
         foreground: "stroke-rose-600 dark:stroke-rose-500"
+      },
+      success: {
+        background: "stroke-green-600 dark:stroke-green-500",
+        foreground: "stroke-green-600 dark:stroke-green-500"
+      },
+      danger: {
+        background: "stroke-red-600 dark:stroke-red-500",
+        foreground: "stroke-red-600 dark:stroke-red-500"
+      },
+      warning: {
+        background: "stroke-yellow-400 dark:stroke-yellow-500",
+        foreground: "stroke-yellow-400 dark:stroke-yellow-500"
+      },
+      dark: {
+        background: "stroke-gray-800 dark:stroke-gray-500",
+        foreground: "stroke-gray-800 dark:stroke-gray-500"
       }
     },
     labelInside: {

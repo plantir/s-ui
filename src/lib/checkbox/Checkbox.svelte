@@ -32,7 +32,9 @@
     { divClass: "div" }
   );
 
-  const styling = $derived(classes ?? { div: divClass });
+  const styling = $derived({
+    div: classes?.div ?? classes?.label ?? divClass
+  });
 
   const theme = $derived(getTheme("checkbox"));
 
@@ -67,7 +69,7 @@
 {#if choices.length > 0}
   {#each choices as choice, i (choice.value ?? i)}
     <Label show={!!children || !!choice.label} {...labelProps} class={divStyle({ class: clsx(theme?.div, styling.div) })}>
-      <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={base({ class: clsx(theme?.base, className) })} />
+      <input type="checkbox" value={choice.value} {disabled} bind:group {...restProps} class={base({ class: clsx(theme?.base, className) })} />
       {#if children}
         {@render children({ value: choice.value, checked: choice.checked, disabled })}
       {:else}

@@ -188,7 +188,9 @@ export {
 	initTheme,
 	getThemeBootScript,
 	getCurrentTheme,
-	getCurrentThemeVariant
+	getCurrentThemeVariant,
+	getSelectedTheme,
+	themeConfigs
 } from './theme-selector/themeStore.svelte.js';
 export { default as TabItem } from './tabs/TabItem.svelte';
 export { default as Tabs } from './tabs/Tabs.svelte';

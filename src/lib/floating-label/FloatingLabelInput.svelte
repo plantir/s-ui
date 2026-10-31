@@ -29,9 +29,20 @@
 		maxSuggestions = 5,
 		onSelect,
 		comboClass,
+		// Intentionally omitted from restProps so it is not forwarded to the wrapper.
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars -- strip placeholder from rest
 		placeholder,
+		validation,
 		...restProps
 	}: FloatingLabelInputProps = $props();
+
+	const resolvedColor = $derived(
+		validation === true || validation === 'success'
+			? 'green'
+			: validation === 'error'
+				? 'red'
+				: color
+	);
 
 	warnThemeDeprecation(
 		'FloatingLabelInput',
@@ -58,7 +69,7 @@
 	const theme = $derived(getTheme('floatingLabelInput'));
 
 	const { base, input, label, close, combo } = $derived(
-		floatingLabelInput({ variant, size, color })
+		floatingLabelInput({ variant, size, color: resolvedColor })
 	);
 
 	const clearAll = () => {

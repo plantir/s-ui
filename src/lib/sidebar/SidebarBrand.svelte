@@ -21,18 +21,17 @@
 		{ imgClass: 'img', spanClass: 'span' }
 	);
 
-	const styling = $derived(
-		classes ?? {
-			img: imgClass,
-			span: spanClass
-		}
-	);
+	const styling = $derived({
+		img: classes?.img ?? classes?.logo ?? imgClass,
+		span: classes?.span ?? spanClass
+	});
 
 	const theme = $derived(getTheme('sidebarBrand'));
 
 	const { base, img, span } = $derived(sidebarBrand());
 </script>
 
+<!-- eslint-disable svelte/no-navigation-without-resolve -- href is a user-supplied prop -->
 <a
 	{...restProps}
 	href={site?.href ? site.href : '/'}
@@ -45,6 +44,7 @@
 		{@render children()}
 	{/if}
 </a>
+<!-- eslint-enable svelte/no-navigation-without-resolve -->
 
 <!--
 @component

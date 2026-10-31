@@ -37,6 +37,13 @@ export const alert = tv({
 				'bg-fuchsia-100 text-fuchsia-500 focus:ring-fuchsia-400 dark:bg-fuchsia-200 dark:text-fuchsia-600',
 			pink: 'bg-pink-100 text-pink-500 focus:ring-pink-400 dark:bg-pink-200 dark:text-pink-600',
 			rose: 'bg-rose-100 text-rose-500 focus:ring-rose-400 dark:bg-rose-200 dark:text-rose-600',
+			success:
+				'bg-green-100 text-green-500 focus:ring-green-400 dark:bg-green-200 dark:text-green-600',
+			danger: 'bg-red-100 text-red-500 focus:ring-red-400 dark:bg-red-200 dark:text-red-600',
+			warning:
+				'bg-yellow-100 text-yellow-500 focus:ring-yellow-400 dark:bg-yellow-200 dark:text-yellow-600',
+			dark: 'bg-gray-100 text-gray-500 focus:ring-gray-400 dark:bg-gray-700 dark:text-gray-300',
+			neutral: 'bg-gray-100 text-gray-500 focus:ring-gray-400 dark:bg-gray-700 dark:text-gray-300'
 		},
 		rounded: {
 			true: 'rounded-lg'
@@ -49,6 +56,12 @@ export const alert = tv({
 		},
 		dismissable: {
 			true: 'flex items-center'
+		},
+		listContent: {
+			true: 'flex-col items-start'
+		},
+		borderAccent: {
+			true: 'border-t-4'
 		}
 	},
 	compoundVariants: [

@@ -19,16 +19,11 @@
 
 	const theme = $derived(getTheme('dropzone'));
 
-	let inputElement: HTMLInputElement;
-
 	const handleDrop: DragEventHandler<HTMLLabelElement> = function (this: Window, event) {
 		event.preventDefault();
 
 		if (event.dataTransfer?.files && event.dataTransfer.files.length > 0) {
 			files = event.dataTransfer.files;
-			if (inputElement) {
-				inputElement.files = event.dataTransfer.files;
-			}
 		}
 
 		if (onDrop) {
@@ -60,14 +55,7 @@
 >
 	{@render children()}
 
-	<input
-		{...restProps}
-		bind:files
-		bind:this={inputElement}
-		onchange={handleChange}
-		type="file"
-		class="hidden"
-	/>
+	<input {...restProps} bind:files onchange={handleChange} type="file" class="hidden" />
 </label>
 
 <!--

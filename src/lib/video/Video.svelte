@@ -22,7 +22,9 @@
 	{#if children}
 		{@render children()}
 	{/if}
-	<track src={trackSrc} kind="captions" {srclang} {label} />
+	{#if trackSrc}
+		<track src={trackSrc} kind="captions" {srclang} {label} />
+	{/if}
 	Your browser does not support the video tag.
 </video>
 
