@@ -94,6 +94,22 @@ export const toast = tv({
       rose: {
         icon: "text-rose-500 bg-rose-100 dark:bg-rose-700 dark:text-rose-200",
         close: "text-rose-500 dark:text-rose-200 hover:text-rose-600 dark:hover:text-rose-500"
+      },
+      success: {
+        icon: "text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-200",
+        close: "text-green-500 dark:text-green-200 hover:text-green-600 dark:hover:text-green-500"
+      },
+      danger: {
+        icon: "text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200",
+        close: "text-red-500 dark:text-red-200 hover:text-red-600 dark:hover:text-red-500"
+      },
+      warning: {
+        icon: "text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200",
+        close: "text-yellow-500 dark:text-yellow-200 hover:text-yellow-600 dark:hover:text-yellow-500"
+      },
+      dark: {
+        icon: "text-gray-500 bg-gray-100 dark:bg-gray-700 dark:text-gray-200",
+        close: "text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-500"
       }
     },
     align: {

@@ -50,9 +50,15 @@
 
 		if (handleGlobalKeydown(e)) return;
 
+		const target = e.target as HTMLElement | null;
+		const typingInField =
+			target instanceof HTMLInputElement ||
+			target instanceof HTMLTextAreaElement ||
+			target?.isContentEditable;
+
 		switch (e.key) {
 			case 'j':
-				if (!vim || e.ctrlKey) break;
+				if (!vim || e.ctrlKey || typingInField) break;
 			// falls through
 			case 'ArrowDown':
 				e.preventDefault();
@@ -60,7 +66,7 @@
 				scrollToSelected();
 				break;
 			case 'k':
-				if (!vim || e.ctrlKey) break;
+				if (!vim || e.ctrlKey || typingInField) break;
 			// falls through
 			case 'ArrowUp':
 				e.preventDefault();

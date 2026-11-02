@@ -27,7 +27,9 @@
 		{ innerClass: 'inner', outerClass: 'class' }
 	);
 
-	const styling = $derived(classes ?? { inner: innerClass });
+	const styling = $derived({
+		inner: classes?.inner ?? classes?.content ?? innerClass
+	});
 
 	// Theme context
 	const theme = $derived(getTheme('bottomNav'));
@@ -35,7 +37,8 @@
 	const activeCls = $derived(
 		cn(
 			'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900',
-			activeClass
+			activeClass,
+			classes?.active
 		)
 	);
 

@@ -14,6 +14,8 @@
 		rounded = true,
 		border,
 		listContent,
+		borderAccent,
+		closeButtonProps,
 		class: className,
 		dismissable,
 		transition = fade,
@@ -28,6 +30,7 @@
 		alert({
 			color,
 			listContent,
+			borderAccent,
 			rounded,
 			border,
 			icon: !!icon,
@@ -44,12 +47,7 @@
 </script>
 
 {#if alertStatus}
-	<div
-		role="alert"
-		{...restProps}
-		transition:transition={params as ParamsType}
-		class={className ? `${divCls} ${className}` : divCls}
-	>
+	<div role="alert" {...restProps} transition:transition={params as ParamsType} class={divCls}>
 		{#if icon}
 			{@render icon()}
 		{/if}
@@ -65,8 +63,8 @@
 		{#if dismissable}
 			<button
 				type="button"
-				class="ms-auto inline-flex cursor-pointer"
-				aria-label="Close alert"
+				class={clsx('ms-auto inline-flex cursor-pointer', closeButtonProps?.class)}
+				aria-label={closeButtonProps?.ariaLabel ?? 'Close alert'}
 				onclick={close}
 			>
 				{#if CloseIcon}

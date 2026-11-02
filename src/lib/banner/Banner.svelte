@@ -20,6 +20,7 @@
 		innerClass,
 		transition = fade,
 		params,
+		transitionParams,
 		closeClass,
 		onclose,
 		...restProps
@@ -31,7 +32,10 @@
 		{ innerClass: 'insideDiv', closeClass: 'dismissable' }
 	);
 
-	const styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
+	const styling = $derived({
+		insideDiv: classes?.insideDiv ?? classes?.content ?? innerClass,
+		dismissable: classes?.dismissable ?? closeClass
+	});
 
 	// Theme context
 	const theme = $derived(getTheme('banner'));
@@ -54,9 +58,12 @@
 		bind:this={ref}
 		class={base({ class: clsx(theme?.base, className) })}
 		{...restProps}
-		transition:transition={params as ParamsType}
+		transition:transition={(params ?? transitionParams) as ParamsType}
 	>
 		<div class={insideDiv({ class: clsx(theme?.insideDiv, styling.insideDiv) })}>
+			{#if header}
+				{@render header()}
+			{/if}
 			{@render children?.()}
 		</div>
 

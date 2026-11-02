@@ -23,6 +23,7 @@
 		backdropClass,
 		transition = fly,
 		params,
+		transitionParams,
 		divClass,
 		ariaLabel,
 		nonActiveClass,
@@ -115,7 +116,9 @@
 		}
 	};
 
-	let transitionParams = $derived(params ? params : { x: -320, duration: 200, easing: sineIn });
+	let resolvedTransitionParams = $derived(
+		params ?? transitionParams ?? { x: -320, duration: 200, easing: sineIn }
+	);
 
 	setSidebarContext(sidebarCtx);
 
@@ -155,7 +158,7 @@
 			use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen
 				? { onEscape: closeSidebar ? handleEscape : undefined }
 				: null}
-			transition:transition={!alwaysOpen ? transitionParams : undefined}
+			transition:transition={!alwaysOpen ? resolvedTransitionParams : undefined}
 			{...restProps}
 			class={base({ class: clsx(theme?.base, className) })}
 			aria-label={ariaLabel}

@@ -67,6 +67,21 @@ export const radio = tv({
 			},
 			rose: {
 				input: 'text-rose-600 focus:ring-rose-500 dark:focus:ring-rose-600'
+			},
+			success: {
+				input: 'text-green-600 focus:ring-green-500 dark:focus:ring-green-600'
+			},
+			danger: {
+				input: 'text-red-600 focus:ring-red-500 dark:focus:ring-red-600'
+			},
+			warning: {
+				input: 'text-yellow-400 focus:ring-yellow-500 dark:focus:ring-yellow-600'
+			},
+			dark: {
+				input: 'text-gray-800 focus:ring-gray-500 dark:focus:ring-gray-600'
+			},
+			neutral: {
+				input: 'text-gray-600 focus:ring-gray-500 dark:focus:ring-gray-600'
 			}
 		},
 		tinted: {

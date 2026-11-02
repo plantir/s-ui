@@ -44,9 +44,17 @@
 
 {#if !src || !!href || children || dot || indicator}
 	<svelte:element
-		this={href ? 'a' : 'div'}
-		role={href ? undefined : 'button'}
+		this={href ? 'a' : onclick ? 'button' : 'div'}
+		type={href ? undefined : onclick ? 'button' : undefined}
 		{onclick}
+		onkeydown={onclick && !href
+			? (e: KeyboardEvent) => {
+					if (e.key === 'Enter' || e.key === ' ') {
+						e.preventDefault();
+						onclick();
+					}
+				}
+			: undefined}
 		{href}
 		{target}
 		{...restProps}

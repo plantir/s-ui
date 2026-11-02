@@ -20,6 +20,7 @@
 		ulClass,
 		transition = slide,
 		params,
+		transitionParams,
 		svgClass,
 		class: className,
 		classes,
@@ -41,6 +42,8 @@
 			svg: svgClass
 		}
 	);
+	const triggerClass = $derived(styling.btn ?? classes?.trigger);
+	const listClass = $derived(styling.ul ?? classes?.list);
 
 	const theme = $derived(getTheme('sidebarDropdownWrapper'));
 	const { base, btn, span, svg, ul } = sidebarDropdownWrapper();
@@ -61,6 +64,9 @@
 		isControlled ? isOpen : ctx.isSingle ? $selectedStore === self : localOpen
 	);
 
+	const dropdownId = $props.id();
+	const controlsId = `sidebar-dropdown-${dropdownId}`;
+
 	function handleDropdown() {
 		if (isControlled) {
 			isOpen = !isOpen;
@@ -79,8 +85,9 @@
 		{...restProps}
 		onclick={handleDropdown}
 		type="button"
-		class={btn({ class: clsx(theme?.btn, styling.btn) })}
-		aria-controls="sidebar-dropdown"
+		class={btn({ class: clsx(theme?.btn, triggerClass) })}
+		aria-expanded={openState}
+		aria-controls={controlsId}
 	>
 		{#if icon}
 			{@render icon()}
@@ -128,8 +135,9 @@
 	</button>
 	{#if openState}
 		<ul
-			class={ul({ class: clsx(theme?.ul, styling.ul) })}
-			transition:transition={params as ParamsType}
+			id={controlsId}
+			class={ul({ class: clsx(theme?.ul, listClass) })}
+			transition:transition={(params ?? transitionParams) as ParamsType}
 		>
 			{@render children()}
 		</ul>

@@ -2,7 +2,9 @@
 	import { onMount } from 'svelte';
 	import { getCurrentTheme, themeConfigs, loadTheme, initTheme } from './themeStore.svelte';
 	import type { ThemeSelectorProps } from '$lib/types.js';
-	import { Button, Dropdown, DropdownItem } from '$lib/index';
+	import Button from '$lib/buttons/Button.svelte';
+	import Dropdown from '$lib/dropdown/Dropdown.svelte';
+	import DropdownItem from '$lib/dropdown/DropdownItem.svelte';
 	import ThemeIcon from './ThemeIcon.svelte';
 	import { themeSelector } from './theme';
 	import { getTheme } from '$lib/theme/themeUtils.js';

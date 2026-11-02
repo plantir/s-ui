@@ -15,7 +15,7 @@
 		name,
 		Icon,
 		class: className,
-		iconClass = 'me-2.5 h-15 w-15',
+		iconClass = 'me-2.5 h-4 w-4',
 		...restProps
 	}: ListgroupItemProps = $props();
 

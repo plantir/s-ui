@@ -4,7 +4,6 @@
 	import Menu from './Menu.svelte';
 	import { navbarHamburger } from './theme.js';
 	import type { NavHamburgerProps } from '$lib/types.js';
-	import type { MouseEventHandler } from 'svelte/elements';
 	import { getTheme, warnThemeDeprecation } from '$lib/theme/themeUtils';
 	import { getNavbarStateContext, getNavbarBreakpointContext } from '$lib/context';
 	import { untrack } from 'svelte';
@@ -14,8 +13,7 @@
 		menuClass,
 		class: className,
 		classes,
-		name = 'Open main menu',
-		...restProps
+		name = 'Open main menu'
 	}: NavHamburgerProps = $props();
 
 	warnThemeDeprecation(
@@ -31,17 +29,27 @@
 	const navBreakpoint = getNavbarBreakpointContext();
 	const { base, menu } = navbarHamburger({ breakpoint: navBreakpoint?.value ?? 'md' });
 
-	const toggle: MouseEventHandler<HTMLButtonElement> = () => {
+	const toggle = () => {
 		if (!navState) return;
 		navState.hidden = !navState.hidden;
+	};
+
+	const handleClick = () => {
+		if (onclick) {
+			onclick(
+				new MouseEvent('click') as MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }
+			);
+			return;
+		}
+		toggle();
 	};
 </script>
 
 <ToolbarButton
 	{name}
-	onclick={onclick || toggle}
-	{...restProps}
+	onclick={handleClick}
 	class={base({ class: clsx(theme?.base, className) })}
+	aria-expanded={!navState?.hidden}
 >
 	<Menu class={menu({ class: clsx(theme?.menu, styling.menu) })} />
 </ToolbarButton>

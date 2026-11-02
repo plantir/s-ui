@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CloseButton from '$lib/utils/CloseButton.svelte';
-	import type { ParamsType, ToastProps } from '$lib/types.js';
+	import type { CloseButtonProps, ParamsType, ToastProps } from '$lib/types.js';
 	import { toast } from './theme.js';
 	import { fly } from 'svelte/transition';
 	import clsx from 'clsx';
@@ -8,6 +8,7 @@
 	import { createDismissableContext } from '$lib/utils/dismissable';
 	import { untrack } from 'svelte';
 	import { getCurrentThemeVariant } from '$lib/theme-selector/themeStore.svelte.js';
+	import { resolveColor } from '$lib/theme/semanticColor';
 
 	let {
 		children,
@@ -20,6 +21,7 @@
 		contentClass,
 		align = true,
 		params,
+		transitionParams,
 		transition = fly,
 		class: className,
 		classes,
@@ -42,6 +44,7 @@
 		}
 	);
 
+	const resolvedParams = $derived(params ?? transitionParams);
 	const theme = $derived(getTheme('toast'));
 
 	const {
@@ -66,7 +69,7 @@
 	<div
 		role="alert"
 		bind:this={ref}
-		transition:transition={params as ParamsType}
+		transition:transition={resolvedParams as ParamsType}
 		{...restProps}
 		class={base({ class: clsx(theme?.base, className) })}
 	>
@@ -84,7 +87,7 @@
 			<CloseButton
 				class={close({ class: clsx(theme?.close, classes?.close) })}
 				ariaLabel="Remove toast"
-				{color}
+				color={resolveColor(color) as CloseButtonProps['color']}
 			/>
 		{/if}
 	</div>

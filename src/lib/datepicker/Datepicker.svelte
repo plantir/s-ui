@@ -19,6 +19,8 @@
 		isWithinInterval
 	} from 'date-fns';
 	import { getTheme } from '$lib/theme/themeUtils.js';
+	import { resolveColor } from '$lib/theme/semanticColor';
+	import type { ButtonProps } from '$lib/types.js';
 
 	let {
 		value = $bindable(),
@@ -57,10 +59,13 @@
 	}: DatepickerProps = $props();
 
 	const theme = $derived(getTheme('datepicker'));
+	const buttonColor = $derived((resolveColor(color) ?? color) as ButtonProps['color']);
 
 	// If translationLocale is not explicitly provided, it will default to the value of locale. This ensures reactivity as both are directly exposed as props.
 	const finalTranslationLocale = $derived(translationLocale ?? locale);
 
+	// Syncs the open flag when the `inline` prop changes; isOpen is also toggled by the user.
+	// eslint-disable-next-line svelte/prefer-writable-derived -- mixed prop-sync + user writes
 	let isOpen: boolean = $state(false);
 	$effect(() => {
 		isOpen = inline;
@@ -74,6 +79,8 @@
 		}
 	});
 	let datepickerContainerElement: HTMLDivElement;
+	// Resets the visible month when value/defaultDate change; also mutated by month navigation.
+	// eslint-disable-next-line svelte/prefer-writable-derived -- mixed prop-sync + user writes
 	let currentMonth: Date = $state(new Date());
 	$effect(() => {
 		currentMonth = value || defaultDate || new Date();
@@ -245,7 +252,7 @@
 			if (isValid(parsedDate)) {
 				return parsedDate;
 			}
-		} catch (error) {
+		} catch {
 			// Continue to next strategy
 		}
 
@@ -268,7 +275,7 @@
 				if (isValid(parsedDate)) {
 					return parsedDate;
 				}
-			} catch (error) {
+			} catch {
 				// Continue to next format
 			}
 		}
@@ -278,7 +285,7 @@
 			if (isValid(nativeDate) && !isNaN(nativeDate.getTime())) {
 				return nativeDate;
 			}
-		} catch (error) {
+		} catch {
 			// Continue
 		}
 
@@ -630,7 +637,7 @@
 						{@const available = isDateAvailable(day)}
 						<Button
 							type="button"
-							color={isSelected(day) ? color : 'alternative'}
+							color={isSelected(day) ? buttonColor : 'alternative'}
 							class={dayButton({
 								current,
 								today: isToday(day),
@@ -665,12 +672,12 @@
 				<div class={actionButtons({ class: clsx(theme?.actionButtons, classes?.actionButtons) })}>
 					<Button
 						onclick={() => handleDaySelect(new Date())}
-						{color}
+						color={buttonColor}
 						size="sm"
 						disabled={!isDateAvailable(new Date())}>Today</Button
 					>
 					<Button onclick={handleClear} color="red" size="sm">Clear</Button>
-					<Button onclick={handleApply} {color} size="sm">Apply</Button>
+					<Button onclick={handleApply} color={buttonColor} size="sm">Apply</Button>
 				</div>
 			{/if}
 

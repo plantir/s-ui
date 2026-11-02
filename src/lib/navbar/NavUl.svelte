@@ -33,9 +33,11 @@
 		{ ulClass: 'ul', activeClass: 'active', nonActiveClass: 'nonActive' }
 	);
 
-	const styling = $derived(
-		classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass }
-	);
+	const styling = $derived({
+		ul: classes?.ul ?? classes?.list ?? ulClass,
+		active: classes?.active ?? activeClass,
+		nonActive: classes?.nonActive ?? nonActiveClass
+	});
 
 	const theme = $derived(getTheme('navbarUl'));
 

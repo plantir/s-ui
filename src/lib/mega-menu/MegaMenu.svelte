@@ -9,6 +9,7 @@
 	let {
 		children,
 		extra,
+		addon,
 		items = [],
 		full,
 		ulClass,
@@ -25,9 +26,10 @@
 		{ ulClass: 'ul', extraClass: 'extra' }
 	);
 
+	const extraContent = $derived(extra ?? addon);
 	const styling = $derived(classes ?? { ul: ulClass, extra: extraClass });
 	const theme = $derived(getTheme('megamenu'));
-	const { base, div, ul, extra: extraCls } = $derived(megamenu({ full, hasExtra: !!extra }));
+	const { base, div, ul, extra: extraCls } = $derived(megamenu({ full, hasExtra: !!extraContent }));
 </script>
 
 <Popper
@@ -41,16 +43,18 @@
 >
 	<div class={div({ class: clsx(theme?.div, classes?.div) })}>
 		<ul class={ul({ class: clsx(theme?.ul, styling.ul) })}>
-			{#each items as item, index (item.name)}
-				<li>
-					{@render children({ item, index })}
-				</li>
+			{#if items.length}
+				{#each items as item, index (item.name ?? index)}
+					<li>
+						{@render children({ item, index })}
+					</li>
+				{/each}
 			{:else}
-				{@render children({ item: items[0], index: 0 })}
-			{/each}
+				{@render children({ item: { name: '' }, index: 0 })}
+			{/if}
 		</ul>
-		{#if full && extra}<div class={extraCls({ class: clsx(theme?.extra, styling.extra) })}>
-				{@render extra()}
+		{#if full && extraContent}<div class={extraCls({ class: clsx(theme?.extra, styling.extra) })}>
+				{@render extraContent()}
 			</div>{/if}
 	</div>
 </Popper>

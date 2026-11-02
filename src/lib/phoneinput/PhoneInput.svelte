@@ -61,6 +61,7 @@
 			</span>
 		{/if}
 		<input
+			id={labelFor}
 			type="tel"
 			class={floatingInput({ class: clsx(theme?.floatingInput, classes?.floatingInput) })}
 			{pattern}

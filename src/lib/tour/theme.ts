@@ -1,8 +1,7 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
-export type TourVariants = VariantProps<typeof tour> & Classes<typeof tour>;
+export type TourVariants = VariantProps<typeof tour>;
 
 export const tour = tv({
   slots: {

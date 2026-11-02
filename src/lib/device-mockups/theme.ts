@@ -1,4 +1,3 @@
-import type { Classes } from "$lib/theme/themeUtils";
 import { tv, type VariantProps } from "tailwind-variants";
 
 export type AndroidVariants = VariantProps<typeof android> ;

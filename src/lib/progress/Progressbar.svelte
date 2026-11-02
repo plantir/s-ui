@@ -57,14 +57,22 @@
 </script>
 
 {#if labelOutside}
-	<div {...restProps} class={outside({ class: clsx(theme?.outside, classes?.outside) })}>
+	<div class={outside({ class: clsx(theme?.outside, classes?.outside) })}>
 		<span class={span({ class: clsx(theme?.span, classes?.span) })}>{labelOutside}</span>
 		<span class={progressCls({ class: clsx(theme?.progressCls, classes?.progressCls) })}
 			>{progress}%</span
 		>
 	</div>
 {/if}
-<div {...restProps} class={base({ class: clsx(theme?.base, className, customSizeClass) })}>
+<div
+	{...restProps}
+	role="progressbar"
+	aria-valuemin={0}
+	aria-valuemax={100}
+	aria-valuenow={Number(_progress.current.toFixed(precision))}
+	aria-label={labelOutside || restProps['aria-label'] || 'Progress'}
+	class={base({ class: clsx(theme?.base, className, customSizeClass) })}
+>
 	{#if labelInside}
 		<div
 			class={labelInsideCls({ class: clsx(theme?.label, classes?.label) })}
@@ -74,7 +82,9 @@
 		</div>
 	{:else}
 		<div
-			class={inside({ class: clsx(theme?.inside, classes?.label) })}
+			class={inside({
+				class: clsx(theme?.inside, classes?.inside ?? classes?.bar ?? classes?.label)
+			})}
 			style="width: {_progress.current}%"
 		></div>
 	{/if}

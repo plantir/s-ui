@@ -223,7 +223,9 @@
 
 <select {name} {form} {required} {autocomplete} {value} hidden multiple {onchange}>
 	{#each items as item (item.value)}
-		<option value={item.value} disabled={item.disabled}>{item.name}</option>
+		<option value={item.value} disabled={item.disabled} selected={value.includes(item.value)}
+			>{item.name}</option
+		>
 	{/each}
 </select>
 
