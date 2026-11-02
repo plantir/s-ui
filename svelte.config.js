@@ -1,11 +1,25 @@
 import path from 'path';
-import adapter from '@sveltejs/adapter-auto';
-// import adapter from '@sveltejs/adapter-auto';
-// import preprocess from 'svelte-preprocess';
+import autoAdapter from '@sveltejs/adapter-auto';
+import nodeAdapter from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { includeFiles } from './include-files.js';
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.js';
+
+/**
+ * Keep adapter-auto as the default so Vercel/Netlify/local `vite build` is unchanged.
+ * Docker sets ADAPTER=node (see `build:docs`) because adapter-auto cannot detect a
+ * platform inside a generic Linux container. adapter-node is already a dependency
+ * and preserves SSR plus server redirects. A fully static nginx image would need
+ * global prerender (currently commented out) and entries for dynamic [slug] routes.
+ */
+function resolveAdapter() {
+	if (process.env.ADAPTER === 'node') {
+		return nodeAdapter();
+	}
+
+	return autoAdapter();
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -38,7 +52,7 @@ const config = {
 		}
 	},
 	kit: {
-		adapter: adapter(),
+		adapter: resolveAdapter(),
 		alias: {
 			$icons: path.resolve('./src/routes/utils/icons'),
 			$utils: path.resolve('./src/routes/utils')

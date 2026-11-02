@@ -1,0 +1,37 @@
+.git
+.github
+.cursor
+.vscode
+.idea
+.claude
+
+# Dependencies and build output
+node_modules
+.svelte-kit
+build
+dist
+.output
+.vercel
+.netlify
+.wrangler
+storybook-static
+
+# Tests and reports
+coverage
+test-results
+playwright-report
+playwright/.cache
+*.log
+*storybook.log
+
+# Env and OS
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# Local tooling
+.vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
